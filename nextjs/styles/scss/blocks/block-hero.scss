@@ -7,7 +7,7 @@
     position: relative;
     display: flex;
     min-height: 500px;
-    padding: spacing.$xxl 0;
+    padding: calc(spacing.$xxl * 3) 0 calc(spacing.$xxxs + spacing.$xl);
     
     @include responsive.mq($from: tablet_large) {
         min-height: 600px;
@@ -27,13 +27,12 @@
     }
 
     &__title {
-        * {
-            font-size: fz.$h1-mobile;
-            color: colors.$white;
-    
-            @include responsive.mq($from: tablet_large) {
-                font-size: 50px;
-            }
-         }
+        @include responsive.mq($from: tablet_large) {
+            font-size: 72px;
+        }
+    }
+
+    &__text {
+        line-height: fz.$t-lh-l;
     }
 }

@@ -1,17 +1,29 @@
+// @font-face {
+//   font-family: 'icomoon';
+//   src:  url('/icons/icomoon.eot?x8148v');
+//   src:  url('/icons/icomoon.eot?x8148v#iefix') format('embedded-opentype'),
+//     url('/icons/icomoon.ttf?x8148v') format('truetype'),
+//     url('/icons/icomoon.woff?x8148v') format('woff'),
+//     url('/icons/icomoon.svg?x8148v#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: block;
+// }
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('/icons/icomoon.eot?x8148v');
-  src:  url('/icons/icomoon.eot?x8148v#iefix') format('embedded-opentype'),
-    url('/icons/icomoon.ttf?x8148v') format('truetype'),
-    url('/icons/icomoon.woff?x8148v') format('woff'),
-    url('/icons/icomoon.svg?x8148v#icomoon') format('svg');
+  src:  url('/icons/icomoon.eot?2wvtml');
+  src:  url('/icons/icomoon.eot?2wvtml#iefix') format('embedded-opentype'),
+    url('/icons/icomoon.ttf?2wvtml') format('truetype'),
+    url('/icons/icomoon.woff?2wvtml') format('woff'),
+    url('/icons/icomoon.svg?2wvtml#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change /icons */
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -25,15 +37,66 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-twitter:before {
+.icon-arrow-left:before {
   content: "\e900";
 }
-.icon-linkedin:before {
+.icon-arrow-right:before {
   content: "\e901";
 }
-.icon-facebook:before {
+.icon-attach:before {
   content: "\e902";
 }
-.icon-instagram:before {
+.icon-chat:before {
   content: "\e903";
+}
+.icon-check:before {
+  content: "\e904";
+}
+.icon-check-outline:before {
+  content: "\e905";
+}
+.icon-chevron-up:before {
+  content: "\e906";
+}
+.icon-clock:before {
+  content: "\e907";
+}
+.icon-convert:before {
+  content: "\e908";
+}
+.icon-cross:before {
+  content: "\e909";
+}
+.icon-facebook:before {
+  content: "\e90a";
+}
+.icon-iphone:before {
+  content: "\e90b";
+}
+.icon-linked-In:before {
+  content: "\e90c";
+}
+.icon-messanger:before {
+  content: "\e90d";
+}
+.icon-minus:before {
+  content: "\e90e";
+}
+.icon-pin:before {
+  content: "\e90f";
+}
+.icon-play:before {
+  content: "\e910";
+}
+.icon-plus:before {
+  content: "\e911";
+}
+.icon-twitter:before {
+  content: "\e912";
+}
+.icon-whatsapp:before {
+  content: "\e913";
+}
+.icon-youtube:before {
+  content: "\e914";
 }

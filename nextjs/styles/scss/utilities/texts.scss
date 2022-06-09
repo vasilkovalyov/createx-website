@@ -1,1 +1,13 @@
-// for the text blocks
+@use '../settings/font-sizes.scss' as fz;
+
+.text-lg {
+    font-size: fz.$size-l;
+}
+
+.text-sm {
+    font-size: fz.$size-s;
+}
+
+.text-xs {
+    font-size: fz.$size-xs;
+}

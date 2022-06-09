@@ -1,0 +1,82 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+
+.service-card {
+    position: relative;
+    max-width: 285px;
+    width: 100%;
+    height: 285px;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    border-radius: setup.$border-radius-sm;
+    overflow: hidden;
+
+    &:hover {
+        .service-card__overlay {
+            opacity: 1;
+        }
+        
+        .service-card__image {
+            opacity: 1;
+        }
+
+        .service-card__title {
+            color: var(--text-color-light);
+        }
+
+        .service-card__logo-primary {
+            opacity: 0;
+        }
+
+        .service-card__logo-secondary {
+            opacity: 1;
+        }
+    }
+
+    &__overlay {
+        opacity: 0;
+        @include mixins.animate(opacity);
+    }
+
+    &__image {
+        @include mixins.absoluteCover();
+        opacity: 0;
+        @include mixins.animate(opacity);
+
+        img {
+            @include mixins.coverImage();
+        }
+    }
+
+    &__logo-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    &__logo {
+        @include mixins.animate(opacity);
+    }
+
+    &__logo-secondary {
+        @include mixins.centeredAbsolute();
+        opacity: 0;
+    }
+
+    &__body {
+        @include mixins.absoluteCover();
+        @include mixins.flexCentered();
+        z-index: 3;
+        padding: spacing.$m;
+    }
+
+    &__title {
+        @include mixins.animate(color);
+    }
+
+    &__link {
+        @include mixins.absoluteCover();
+        z-index: 4;
+    }
+}

@@ -1,4 +1,4 @@
-import { Identificator, ColSize, GridItemsAlignment, GridJustify } from '../types/common'
+import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType } from '../types/common'
 import { HeadingLevel } from '../enums/common'
 
 export interface IImage {
@@ -35,4 +35,23 @@ export interface ICol {
   xl?: ColSize | null
   children: React.ReactNode
   className?: string
+}
+
+export interface IButton {
+  url?: string
+  className?: string
+  outline?: boolean
+  name?: string
+  onClick?: () => void
+}
+
+export interface IService {
+  type: ServiceType
+  reverse?: boolean
+  Image: IImage
+  Logo?: IImage
+  Logo2?: IImage
+  Title: string
+  Text?: string
+  Link?: ILink
 }

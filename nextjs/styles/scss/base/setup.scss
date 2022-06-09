@@ -5,8 +5,8 @@
 @use '../settings/font-sizes.scss' as fz;
 
 
-$base-font-family:            'OpenSans';
-$base-font-heading:           'OpenSans';
+$base-font-family:            'Ubuntu';
+$base-font-heading:           'Ubuntu';
 
 $heading-color:               var(--text-color) !default;
 $heading-font-weight:         fw.$bold !default;
@@ -19,14 +19,16 @@ $base-link-color:             var(--link-color) !default;
 $base-link-hover-color:       rgba(var(--link-color), 0.5) !default;
 
 $font-size-base:              fz.$size-s !default;
-$line-height-base:            fz.$t-lh !default;
+$line-height-base:            fz.$t-lh-l !default;
 
-$container-width:             1160px;
+$container-width:             1272px;
 $container-width-middle:      760px;
-$container-width-large:       1366px;
+$container-width-large:       1272px;
 $padding-container:           0 spacing.$m;
 
 $animation-speed:             0.3s;
 
 $header-menu-breakpoint:      responsive.$tablet;
 $base-animation-breakpoint:   responsive.$tablet_large;
+
+$border-radius-sm:            4px;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import IcoMoonIcon from '../../components/theme/plain/IcoMoonIcon'
-import { EnumsIcon } from '../../enums/common'
+import { EnumsIcon } from '../../enums/icons'
 
 export default {
   title: 'Components/IcoMoonIcon',

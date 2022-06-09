@@ -1,0 +1,38 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: spacing.$xs spacing.$xl;
+    border-radius: setup.$border-radius-sm;
+    color: var(--text-color-light);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    font-weight: fw.$bold;
+    font-size: fz.$size-xs;
+    letter-spacing: 0.5px;
+
+    @include mixins.animate(background-color color);
+
+
+    &:hover {
+        opacity: 1;
+        color: var(--primary-color);
+        background-color: transparent;
+    }
+
+    &--outline {
+        color: var(--primary-color);
+        background-color: transparent;
+
+        &:hover {
+            color: var(--text-color-light);
+            background-color: var(--primary-color);
+        }
+    }
+}

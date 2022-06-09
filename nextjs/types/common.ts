@@ -1,4 +1,5 @@
-import { HeadingLevel, EnumsIcon } from '../enums/common'
+import { HeadingLevel } from '../enums/common'
+import { EnumsIcon } from '../enums/icons'
 import { IHeader, IFooter } from '../interfaces/pages'
 
 export type Identificator = string
@@ -13,3 +14,5 @@ export type GridSizes = 'sm' | 'md' | 'lg' | 'xl'
 export type ColSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 export type GridItemsAlignment = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 export type GridJustify = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
+
+export type ServiceType = 'card' | 'post'

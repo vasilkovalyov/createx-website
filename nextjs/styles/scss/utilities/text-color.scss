@@ -1,8 +1,17 @@
 @use '../settings/colors';
 
-.color-white {
-	color: colors.$white;
+.text-color-light {
+	color: var(--text-color-light);
 }
-.color-black {
-	color: colors.$black;
+.text-title-color {
+	color: var(--text-title-color);
+}
+.text-color-primary {
+	color: var(--text-color-primary);
+}
+.text-color-secondary {
+	color: var(--text-color-secondary);
+}
+.color-primary {
+	color: var(--primary-color);
 }

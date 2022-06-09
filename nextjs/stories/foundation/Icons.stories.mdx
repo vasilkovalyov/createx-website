@@ -1,7 +1,10 @@
 import { Meta, Typeset } from '@storybook/addon-docs';
 import IcoMoonIcon from '../../components/theme/plain/IcoMoonIcon'
 import Typography from '../../components/theme/plain/Typography'
-import { EnumsIcon } from '../../enums/common'
+import Container from '../../components/theme/plain/Container'
+import Row from '../../components/theme/plain/Grid/Row'
+import Col from '../../components/theme/plain/Grid/Col'
+import { EnumsIcon } from '../../enums/icons'
 
 <Meta
   title="Foundation/IcoMoonIcon"
@@ -10,11 +13,89 @@ import { EnumsIcon } from '../../enums/common'
   }}
 />
 
-<Typography level="H1" text="Icons"  />
 
-<IcoMoonIcon icon={EnumsIcon.Twitter} />
-<IcoMoonIcon icon={EnumsIcon.Linkedin} />
-<IcoMoonIcon icon={EnumsIcon.Facebook} />
-<IcoMoonIcon icon={EnumsIcon.Instagram} />
-
-
+<Container>
+  <Typography level="h1" text="Icons"  />
+  <Row className="story-icons">
+    <Col base={4} md={3}>
+      <Typography text="ArrowLeft"  />
+      <IcoMoonIcon icon={EnumsIcon.ArrowLeft} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Attach"  />
+      <IcoMoonIcon icon={EnumsIcon.Attach} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Chat"  />
+      <IcoMoonIcon icon={EnumsIcon.Chat} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Check"  />
+      <IcoMoonIcon icon={EnumsIcon.Check} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="CheckOutline"  />
+      <IcoMoonIcon icon={EnumsIcon.CheckOutline} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="ChevronUp"  />
+      <IcoMoonIcon icon={EnumsIcon.ChevronUp} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Clock"  />
+      <IcoMoonIcon icon={EnumsIcon.Clock} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Convert"  />
+      <IcoMoonIcon icon={EnumsIcon.Convert} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Cross"  />
+      <IcoMoonIcon icon={EnumsIcon.Cross} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Facebook"  />
+      <IcoMoonIcon icon={EnumsIcon.Facebook} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Iphone"  />
+      <IcoMoonIcon icon={EnumsIcon.Iphone} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="LinkedIn"  />
+      <IcoMoonIcon icon={EnumsIcon.LinkedIn} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Messanger"  />
+      <IcoMoonIcon icon={EnumsIcon.Messanger} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Minus"  />
+      <IcoMoonIcon icon={EnumsIcon.Minus} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Pin"  />
+      <IcoMoonIcon icon={EnumsIcon.Pin} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Play"  />
+      <IcoMoonIcon icon={EnumsIcon.Play} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Plus"  />
+      <IcoMoonIcon icon={EnumsIcon.Plus} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Twitter"  />
+      <IcoMoonIcon icon={EnumsIcon.Twitter} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Whatsapp"  />
+      <IcoMoonIcon icon={EnumsIcon.Whatsapp} />
+    </Col>
+    <Col base={4} md={3}>
+      <Typography text="Youtube"  />
+      <IcoMoonIcon icon={EnumsIcon.Youtube} />
+    </Col>
+  </Row>
+</Container>
