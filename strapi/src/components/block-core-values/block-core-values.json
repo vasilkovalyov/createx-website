@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_block_core_values_block_core_values",
+  "info": {
+    "displayName": "Block Core Values",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockCoreValues"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-core-values.items"
+    }
+  }
+}

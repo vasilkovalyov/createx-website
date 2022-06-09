@@ -1,0 +1,458 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    &.flex-start {
+        justify-content: flex-start;
+    }
+    
+    &.center {
+        justify-content: center;
+    }
+    
+    &.flex-end {
+        justify-content: flex-end;
+    }
+    
+    &.space-between {
+        justify-content: space-between;
+    }
+    
+    &.space-around {
+        justify-content: space-around;
+    }
+    
+    &.align-center {
+        align-items: center;
+    }
+    
+    .col {
+        flex: 1 1 100%;
+        
+        @include responsive.mq($from: mobile_md) {
+            padding-left: spacing.$xxs;
+            padding-right: spacing.$xxs;
+        }
+
+        @include responsive.mq($from: tablet) {
+            padding-left: spacing.$s;
+            padding-right: spacing.$s;
+        }
+    }
+    
+    .col > .row {
+        @include responsive.mq($from: mobile_md) {
+            margin-left: -(spacing.$xxs);
+            margin-right: -(spacing.$xxs);
+        }
+
+        @include responsive.mq($from: tablet) {
+            margin-left: -(spacing.$s);
+            margin-right: -(spacing.$s);
+        }
+    }
+
+    .base-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+    
+    .base-2 {
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+    
+    .base-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .base-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    
+    .base-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+    
+    .base-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .base-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+    
+    .base-8 {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+    
+    .base-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+    
+    .base-10 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+    
+    .base-11 {
+        flex: 0 0 91.66667%;
+        max-width: 91.66667%;
+    }
+    
+    .base-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .sm-1 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 8.33333%;
+            max-width: 8.33333%;
+        }
+    }
+    
+    .sm-2 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 16.66667%;
+            max-width: 16.66667%;
+        }
+    }
+    
+    .sm-3 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+    
+    .sm-4 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+    }
+    
+    .sm-5 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 41.66667%;
+            max-width: 41.66667%;
+        }
+    }
+    
+    .sm-6 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+    
+    .sm-7 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 58.33333%;
+            max-width: 58.33333%;
+        }
+    }
+    
+    .sm-8 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+        }
+    }
+    
+    .sm-9 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+    
+    .sm-10 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 83.33333%;
+            max-width: 83.33333%;
+        }
+    }
+    
+    .sm-11 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 91.66667%;
+            max-width: 91.66667%;
+        }
+    }
+    
+    .sm-12 {
+        @include responsive.mq($from: mobile_md) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+  
+  
+    .md-1 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 8.33333%;
+            max-width: 8.33333%;
+        }
+    }
+
+    .md-2 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 16.66667%;
+            max-width: 16.66667%;
+        }
+    }
+
+    .md-3 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+
+    .md-4 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+    }
+
+    .md-5 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 41.66667%;
+            max-width: 41.66667%;
+        }
+    }
+
+    .md-6 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    .md-7 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 58.33333%;
+            max-width: 58.33333%;
+        }
+    }
+
+    .md-8 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+        }
+    }
+
+    .md-9 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+
+    .md-10 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 83.33333%;
+            max-width: 83.33333%;
+        }
+    }
+
+    .md-11 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 91.66667%;
+            max-width: 91.66667%;
+        }
+    }
+
+    .md-12 {
+        @include responsive.mq($from: tablet) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    
+    .lg-1 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 8.33333%;
+            max-width: 8.33333%;
+        }
+    }
+  
+    .lg-2 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 16.66667%;
+            max-width: 16.66667%;
+        }
+    }
+  
+    .lg-3 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+  
+    .lg-4 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+    }
+  
+    .lg-5 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 41.66667%;
+            max-width: 41.66667%;
+        }
+    }
+  
+    .lg-6 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+  
+    .lg-7 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 58.33333%;
+            max-width: 58.33333%;
+        }
+    }
+  
+    .lg-8 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+        }
+    }
+  
+    .lg-9 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+  
+    .lg-10 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 83.33333%;
+            max-width: 83.33333%;
+        }
+    }
+  
+    .lg-11 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 91.66667%;
+            max-width: 91.66667%;
+        }
+    }
+  
+    .lg-12 {
+        @include responsive.mq($from: tablet_large) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+
+    .xl-1 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 8.33333%;
+            max-width: 8.33333%;
+        }
+    }
+  
+    .xl-2 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 16.66667%;
+            max-width: 16.66667%;
+        }
+    }
+  
+    .xl-3 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+  
+    .xl-4 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+    }
+  
+    .xl-5 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 41.66667%;
+            max-width: 41.66667%;
+        }
+    }
+  
+    .xl-6 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+  
+    .xl-7 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 58.33333%;
+            max-width: 58.33333%;
+        }
+    }
+  
+    .xl-8 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+        }
+    }
+  
+    .xl-9 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+    }
+  
+    .lx-10 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 83.33333%;
+            max-width: 83.33333%;
+        }
+    }
+  
+    .lx-11 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 91.66667%;
+            max-width: 91.66667%;
+        }
+    }
+  
+    .lx-12 {
+        @include responsive.mq($from: wide) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}

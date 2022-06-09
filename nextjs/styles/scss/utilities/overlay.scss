@@ -1,0 +1,10 @@
+@use '../tools/mixins.scss';
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+
+.overlay {
+    @include mixins.absoluteCover();
+    background-color: rgba(colors.$black, 0.4);
+    z-index: 1;
+}

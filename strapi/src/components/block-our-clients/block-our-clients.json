@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_block_our_clients_block_our_clients",
+  "info": {
+    "displayName": "Block Our Clients",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockOurClients"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-our-clients.items"
+    }
+  }
+}

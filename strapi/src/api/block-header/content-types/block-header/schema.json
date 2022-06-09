@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "block_headers",
+  "info": {
+    "singularName": "block-header",
+    "pluralName": "block-headers",
+    "displayName": "Block Header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true
+    },
+    "Menu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.menu"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageAlt": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

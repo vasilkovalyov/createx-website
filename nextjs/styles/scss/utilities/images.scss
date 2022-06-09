@@ -1,0 +1,21 @@
+@use '../tools/mixins.scss';
+@use '../settings/colors.scss';
+
+.image-absolute-fill {
+    @include mixins.absoluteCover();
+    
+    img {
+        @include mixins.coverImage();
+    }
+}
+
+.image-absolute-overlay {
+    position: relative;
+
+    z-index: 1;
+    background-color: rgba(colors.$black, 0.7);
+    @include mixins.fillBlockAbsolute();
+    &:before {
+        content: '';
+    }
+}

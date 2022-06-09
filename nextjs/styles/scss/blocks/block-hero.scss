@@ -1,0 +1,39 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+
+.block-hero {
+    position: relative;
+    display: flex;
+    min-height: 500px;
+    padding: spacing.$xxl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        min-height: 600px;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    &__title {
+        * {
+            font-size: fz.$h1-mobile;
+            color: colors.$white;
+    
+            @include responsive.mq($from: tablet_large) {
+                font-size: 50px;
+            }
+         }
+    }
+}

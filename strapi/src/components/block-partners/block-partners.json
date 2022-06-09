@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_block_partners_block_partners",
+  "info": {
+    "displayName": "Block Partners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockPartners"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-partners.items"
+    }
+  }
+}

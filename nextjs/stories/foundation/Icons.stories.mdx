@@ -1,0 +1,20 @@
+import { Meta, Typeset } from '@storybook/addon-docs';
+import IcoMoonIcon from '../../components/theme/plain/IcoMoonIcon'
+import Typography from '../../components/theme/plain/Typography'
+import { EnumsIcon } from '../../enums/common'
+
+<Meta
+  title="Foundation/IcoMoonIcon"
+  parameters={{
+    previewTabs: { 'storybook/docs/panel': { hidden: true } },
+  }}
+/>
+
+<Typography level="H1" text="Icons"  />
+
+<IcoMoonIcon icon={EnumsIcon.Twitter} />
+<IcoMoonIcon icon={EnumsIcon.Linkedin} />
+<IcoMoonIcon icon={EnumsIcon.Facebook} />
+<IcoMoonIcon icon={EnumsIcon.Instagram} />
+
+

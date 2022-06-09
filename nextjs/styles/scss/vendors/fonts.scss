@@ -1,0 +1,4 @@
+// ../fonts/ path to fonts
+@use '../tools/mixins.scss';
+
+@include mixins.font-face('OpenSans', 'OpenSans-Regular', 400, 'normal');

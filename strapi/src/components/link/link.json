@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_link_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string"
+    },
+    "Target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self"
+      ],
+      "default": "_self"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string",
+      "required": true,
+      "default": "#"
+    }
+  }
+}
