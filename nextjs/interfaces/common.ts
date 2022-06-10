@@ -96,3 +96,14 @@ export interface ISocialList {
   className?: string
   size?: SocialIconSize
 }
+
+export interface INewsPost {
+  id?: Identificator
+  IsCompact?: boolean
+  Image?: IImage
+  Title: string
+  Text?: string
+  Category: string
+  Date: string
+  Slug: string
+}

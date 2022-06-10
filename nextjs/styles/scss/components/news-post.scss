@@ -1,0 +1,62 @@
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
+
+.news-post {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: setup.$base-shadow;
+    border-radius: setup.$border-radius-sm;
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    &--compact {
+        .news-post__image {
+            @include responsive.mq($from: tablet) {
+                padding-top: 25%;
+            }
+        }
+    }
+
+    &__body {
+        padding: spacing.$l spacing.$l spacing.$xxs;
+    }
+
+    &__description {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+
+        &-item {
+            &:not(:last-child) {
+                &:after {
+                    content: '|';
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+        padding-top: 50%;
+
+        img {
+            @include mixins.coverImage();
+        }
+    }
+
+    &__title {
+	    @include mixins.animate(color);
+    }
+
+    &__link-title {
+        &:hover {
+            .news-post__title {
+                color: inherit;
+            }
+        }
+    }
+}
