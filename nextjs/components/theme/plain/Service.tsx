@@ -13,7 +13,7 @@ import { IService } from '../../../interfaces/common'
 export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text, Link }: IService) {
   if (type === 'card') {
     return (
-      <div className="service-card">
+      <div className="service-card shadow-wrapper">
         <ImageComponent Url={Image.Url} Alt={Image.Alt} className="service-card__image" />
         <div className="service-card__overlay overlay overlay--light"></div>
         <div className="service-card__body">

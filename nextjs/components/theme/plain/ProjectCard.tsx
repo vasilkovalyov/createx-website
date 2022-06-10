@@ -9,7 +9,7 @@ import { HeadingLevel } from '../../../enums/common'
 
 export default function ProjectCard({ Image, Title, Description, Link }: IProject) {
   return (
-    <div className="project-card">
+    <div className="project-card shadow-wrapper">
       <ImageComponent Url={Image.Url} Alt={Image.Alt} className="project-card__image" />
       <div className="project-card__body text-align--center">
         <div className="project-card__heading">

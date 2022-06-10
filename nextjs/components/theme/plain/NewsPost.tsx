@@ -9,7 +9,7 @@ import { HeadingLevel } from '../../../enums/common'
 
 export default function NewsPost({ Image, Title, Category, Date, Text, Slug, IsCompact = false }: INewsPost) {
 	return (
-		<div className={`news-post ${IsCompact ? 'news-post--compact' : ''}`}>
+		<div className={`news-post shadow-wrapper ${IsCompact ? 'news-post--compact' : ''}`}>
 			{ Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt}  className="news-post__image" /> }
 			<div className="news-post__body">
 				{

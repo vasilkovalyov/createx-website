@@ -2,6 +2,7 @@
 @use '../tools/responsive.scss';
 @use '../settings/spacing.scss';
 @use '../settings/colors.scss';
+@use '../base/setup.scss';
 
 .overlay {
     @include mixins.absoluteCover();
@@ -11,4 +12,10 @@
     &--light {
         background-color: rgba(colors.$black, 0.6);
     }
+}
+
+.shadow-wrapper {
+    box-shadow: setup.$base-shadow;
+    border-radius: setup.$border-radius-sm;
+    overflow: hidden;
 }

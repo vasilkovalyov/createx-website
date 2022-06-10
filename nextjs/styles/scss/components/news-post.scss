@@ -7,9 +7,6 @@
     position: relative;
     max-width: 600px;
     width: 100%;
-    box-shadow: setup.$base-shadow;
-    border-radius: setup.$border-radius-sm;
-    overflow: hidden;
     margin-bottom: 50px;
 
     &--compact {
