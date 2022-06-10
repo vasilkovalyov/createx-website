@@ -84,7 +84,6 @@ export interface IPerson {
   } 
 }
 
-
 export interface ISocialLink {
   id?: Identificator
   Url: string
@@ -106,4 +105,13 @@ export interface INewsPost {
   Category: string
   Date: string
   Slug: string
+}
+
+export interface ITestimonial {
+  id?: Identificator
+  Image?: IImage
+  Image2?: IImage
+  Text: string
+  Name: string
+  Position?: string
 }

@@ -1,11 +1,32 @@
 import React from 'react'
+
+import ImageComponent from './Image'
+import Row from './Grid/Row'
+import Col from './Grid/Col'
+import Typography from './Typography'
+
 import { ITestimonial } from '../../../interfaces/common'
 
-export default function Image({ id, text, author }: ITestimonial) {
-  return (
-    <blockquote className="testimonial text-align--center">
-      <p className="testimonial__text">{text}</p>
-      <figcaption className="testimonial__author text-uppercase">{author}</figcaption>
-    </blockquote>
-  )
+export default function Testimonial({ Image, Text, Name, Position, Image2 }: ITestimonial) {
+	return (
+		<div className="testimonial">
+			{ Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="testimonial__image" /> }
+			<div className="testimonial__body shadow-wrapper bg-color-white">
+				<Row justify='space-between' className="testimonial__row">
+					<Col base={12}>
+						<div className="testimonial__text font-bold" dangerouslySetInnerHTML={{ __html: Text }} />
+					</Col>
+					<Col base={12} md={7}>
+						<Typography text={Name} className="client-testimonial__author font-bold" />
+						{ Position && <Typography text={Position} className="client-testimonial__position text-xs text-color-secondary" /> }
+					</Col>
+					{ Image2 && Image2.Url && (
+						<Col base={12} md={5}>
+							<ImageComponent Url={Image2.Url} Alt={Image2.Alt} className="testimonial__signature" />
+						</Col>
+					) }
+				</Row>
+			</div>
+		</div>
+	)
 }
