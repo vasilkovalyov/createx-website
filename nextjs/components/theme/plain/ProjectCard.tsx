@@ -14,7 +14,7 @@ export default function ProjectCard({ Image, Title, Description, Link }: IProjec
       <div className="project-card__body text-align--center">
         <div className="project-card__heading">
           <Typography level={HeadingLevel.H6} text={Title} className="project-card__title" />
-          <Typography text={Description} className="text-xs text-color-secondary" />
+          <Typography text={Description} className="project-card__description text-xs text-color-secondary" />
         </div>
         <Button name="View project" url={Link?.url} outline={true} className="project-card__btn" />
       </div>

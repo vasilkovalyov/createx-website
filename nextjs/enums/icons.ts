@@ -21,4 +21,12 @@ export enum EnumsIcon {
     Whatsapp = 'icon-whatsapp',
     Youtube = 'icon-youtube',
 }
-    
+
+export enum SocialIcon {
+    Twitter = 'icon-twitter',
+    Whatsapp = 'icon-whatsapp',
+    Youtube = 'icon-youtube',
+    Facebook = 'icon-facebook',
+    LinkedIn = 'icon-linked-In',
+    Messanger = 'icon-messanger',
+}

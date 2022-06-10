@@ -1,5 +1,6 @@
-import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType } from '../types/common'
+import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize } from '../types/common'
 import { HeadingLevel } from '../enums/common'
+import { SocialIcon } from '../enums/icons'
 
 export interface IImage {
   id?: Identificator
@@ -71,4 +72,27 @@ export interface IBenefit {
   Title: string
   Text: string
   className?: string
+}
+
+export interface IPerson {
+  id?: Identificator
+  Image: IImage
+  Title: string
+  Description: string
+  Socials: {
+    Items: ISocialLink[]
+  } 
+}
+
+
+export interface ISocialLink {
+  id?: Identificator
+  Url: string
+  Icon: SocialIcon
+}
+
+export interface ISocialList {
+  Items: ISocialLink[]
+  className?: string
+  size?: SocialIconSize
 }

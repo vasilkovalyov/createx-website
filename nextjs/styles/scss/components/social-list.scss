@@ -1,0 +1,24 @@
+.social-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--small {
+        font-size: 18px;
+    }
+
+    &--middle {
+        font-size: 20px;
+    }
+
+    &--large {
+        font-size: 26px;
+    }
+
+    &__item {
+        margin: 0 8px;
+    }
+
+    &__link {
+        color: inherit;
+    }
+}

@@ -10,13 +10,25 @@
 //   font-display: block;
 // }
 
+// @font-face {
+//   font-family: 'icomoon';
+//   src:  url('/icons/icomoon.eot?2wvtml');
+//   src:  url('/icons/icomoon.eot?2wvtml#iefix') format('embedded-opentype'),
+//     url('/icons/icomoon.ttf?2wvtml') format('truetype'),
+//     url('/icons/icomoon.woff?2wvtml') format('woff'),
+//     url('/icons/icomoon.svg?2wvtml#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: block;
+// }
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('/icons/icomoon.eot?2wvtml');
-  src:  url('/icons/icomoon.eot?2wvtml#iefix') format('embedded-opentype'),
-    url('/icons/icomoon.ttf?2wvtml') format('truetype'),
-    url('/icons/icomoon.woff?2wvtml') format('woff'),
-    url('/icons/icomoon.svg?2wvtml#icomoon') format('svg');
+  src:  url('/icons/icomoon.eot?jhlwbc');
+  src:  url('/icons/icomoon.eot?jhlwbc#iefix') format('embedded-opentype'),
+    url('/icons/icomoon.ttf?jhlwbc') format('truetype'),
+    url('/icons/icomoon.woff?jhlwbc') format('woff'),
+    url('/icons/icomoon.svg?jhlwbc#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -98,5 +110,5 @@
   content: "\e913";
 }
 .icon-youtube:before {
-  content: "\e914";
+  content: "\e915";
 }

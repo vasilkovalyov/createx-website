@@ -1,0 +1,56 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../settings/colors.scss';
+
+.person-card {
+    max-width: 285px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    &:hover {
+        .person-card__social-list {
+            transform: translateY(0);
+        }
+    }
+
+    &__image-wrapper {
+        position: relative;
+        border-radius: setup.$border-radius-sm;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__social-list {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        padding: spacing.$s;
+        transform: translateY(100%);
+        @include mixins.animate(transform);
+
+
+        .social-list__link {
+            position: relative;
+            z-index: 1;
+            color: var(--text-color-light);
+        }
+        
+        &::before {
+            content: '';
+            @include mixins.absoluteCover();
+            background-color: var(--primary-color);
+            opacity: 0.7;
+            z-index: 0;
+        }
+    }
+}

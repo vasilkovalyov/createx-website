@@ -16,3 +16,5 @@ export type GridItemsAlignment = 'flex-start' | 'center' | 'flex-end' | 'stretch
 export type GridJustify = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
 
 export type ServiceType = 'card' | 'post'
+
+export type SocialIconSize = 'small' | 'middle' | 'large'
