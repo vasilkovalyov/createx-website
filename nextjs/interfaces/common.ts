@@ -64,3 +64,11 @@ export interface IProject {
   Description: string
   Link?: ILink
 }
+
+export interface IBenefit {
+  id?: Identificator
+  Image: IImage
+  Title: string
+  Text: string
+  className?: string
+}

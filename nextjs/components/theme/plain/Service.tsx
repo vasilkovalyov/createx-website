@@ -1,6 +1,6 @@
 import React from 'react'
+
 import LinkComponent from 'next/link'
-import cn from 'classnames'
 import ImageComponent from '../plain/Image'
 import Typography from '../plain/Typography'
 import Row from '../plain/Grid/Row'

@@ -1,0 +1,19 @@
+.benefit {
+    max-width: 285px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &__logo {
+        max-width: 60px;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 28px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+    }
+}

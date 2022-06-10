@@ -1,4 +1,4 @@
-@use '../settings/colors';
+@use '../settings/colors.scss';
 
 .bg-color-white {
   background-color: colors.$white;
@@ -7,3 +7,6 @@
   background-color: colors.$black;
 }
 
+.bg-color-grey-extra-light {
+  background-color: colors.$grey-extra-light;
+}
