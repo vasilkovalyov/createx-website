@@ -9,10 +9,6 @@
     width: 100%;
     margin: 0 auto;
 
-    @include responsive.mq($from: laptop) {
-        
-    }
-
     &__image {
         width: 100%;
         margin-bottom: 20px;

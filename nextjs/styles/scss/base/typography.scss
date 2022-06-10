@@ -81,6 +81,7 @@ h6 {
 }
 
 p {
+  color: setup.$base-text-color;
   line-height: setup.$line-height-base;
   margin: 0 0 spacing.$s;
   

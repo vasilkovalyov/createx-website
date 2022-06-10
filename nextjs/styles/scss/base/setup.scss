@@ -8,11 +8,11 @@
 $base-font-family:            'Ubuntu';
 $base-font-heading:           'Ubuntu';
 
-$heading-color:               var(--text-color) !default;
+$heading-color:               var(--text-title-color) !default;
 $heading-font-weight:         fw.$bold !default;
 $heading-line-height:         fz.$h-lh !default;
 
-$base-text-color:             var(--text-color) !default;
+$base-text-color:             var(--text-color-primary) !default;
 $base-background-color:       var(--bg-page) !default;
 $base-link-color:             var(--link-color) !default;
 
@@ -32,3 +32,4 @@ $header-menu-breakpoint:      responsive.$tablet;
 $base-animation-breakpoint:   responsive.$tablet_large;
 
 $border-radius-sm:            4px;
+$base-shadow:                 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);

@@ -46,6 +46,7 @@ export interface IButton {
 }
 
 export interface IService {
+  id?: Identificator
   type: ServiceType
   reverse?: boolean
   Image: IImage
@@ -53,5 +54,13 @@ export interface IService {
   Logo2?: IImage
   Title: string
   Text?: string
+  Link?: ILink
+}
+
+export interface IProject {
+  id?: Identificator
+  Image: IImage
+  Title: string
+  Description: string
   Link?: ILink
 }
