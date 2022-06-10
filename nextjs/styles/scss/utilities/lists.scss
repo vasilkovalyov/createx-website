@@ -1,4 +1,4 @@
-@use '../tools/mixins';
+@use '../tools/mixins.scss';
 
 .list-reset {
 	@include mixins.listreset;

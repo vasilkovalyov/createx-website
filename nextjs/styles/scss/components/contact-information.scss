@@ -1,0 +1,39 @@
+.contact-information {
+    &--light {
+        .contact-information__title {
+            color: var(--text-color-light);
+        }
+        .contact-information__description {
+            color: var(--text-color-light);
+            opacity: 0.6;   
+        }
+    }
+
+    &--dark {
+        .contact-information__title {}
+        .contact-information__description {
+            color: var(--text-title-color);
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+
+    &__title {
+        color: var(--text-color-secondary);
+    }
+
+    &__description {
+        font-style: normal;
+        display: inline-block;
+    }
+
+    a {
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}

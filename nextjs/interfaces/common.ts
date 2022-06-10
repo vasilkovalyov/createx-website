@@ -115,3 +115,17 @@ export interface ITestimonial {
   Name: string
   Position?: string
 }
+
+
+export interface IContactInformation {
+  Theme?: 'light' | 'dark'
+  className?: string
+  Address?: string
+  Phone?: string
+  Email?: string
+  Schedule?: string
+}
+
+export interface IOfficeAddress extends Omit<IContactInformation, 'Theme' | 'className'> {
+  Title: string
+}

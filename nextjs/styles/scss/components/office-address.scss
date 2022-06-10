@@ -1,0 +1,13 @@
+.office-address {
+    max-width: 260px;
+    width: 100%;
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__address {
+        font-style: normal;
+        margin-bottom: 10px;
+    }
+}

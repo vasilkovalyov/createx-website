@@ -1,4 +1,4 @@
-@use '../settings/font-weights';
+@use '../settings/font-weights.scss';
 
 .font-bold {
 	font-weight: font-weights.$bold;
