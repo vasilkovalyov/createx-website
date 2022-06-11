@@ -1,23 +1,24 @@
 import { InputType, Identificator, SizeFormField } from '../types/common'
 
-export interface IInput {
+export interface IFormField {
     id?: Identificator
-    type?: InputType
     label?: string
     name: string
     placeholder?: string
-    size?: SizeFormField
     required?: boolean
+    size?: SizeFormField
+}
+
+export interface IInput extends IFormField {
+    type?: InputType
     value?: string | number
     onHandleChange?: (value: string | number) => string | number
 }
 
-
-export interface ITextArea extends Omit<IInput, 'type'> {
+export interface ITextArea extends IFormField {
     value?: string
     cols?: number
     rows?: number
-    size?: SizeFormField
     onHandleChange?: (value: string) => string
 }
 
@@ -26,17 +27,18 @@ export interface ISelectOption {
     name: string
 }
 
-export interface ISelect extends Omit<ITextArea, 'type'> {
-    size?: SizeFormField
+export interface ISelect extends Pick<IFormField, 'size'> {
     options: ISelectOption[]
 }
 
-export interface ICheckbox {
-    id?: Identificator
-    label?: string
-    name: string
-    required?: boolean
-    value?: string | number
+export interface ICheckbox extends Omit<IFormField, 'placeholder'> {
+    value?: string
+    checked?: boolean
+    onHandleChange?: (value: boolean) => boolean
+}
+
+export interface IRadio extends Omit<IFormField, 'placeholder'> {
+    value?: string
     checked?: boolean
     onHandleChange?: (value: boolean) => boolean
 }

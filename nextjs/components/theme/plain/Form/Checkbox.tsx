@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import IcoMoonIcon from '../IcoMoonIcon'
-
-import { EnumsIcon } from '../../../../enums/icons'
 import { ICheckbox } from '../../../../interfaces/form'
 
 export default function Checkbox({ id, label, name, required = false, value, checked, onHandleChange }: ICheckbox) {
-	const [inputValue, setInputValue] = useState<boolean>(false)
-
+	const [inputValue, setInputValue] = useState<boolean>(checked || false)
 
 	useEffect(() => {
 		if (checked !== undefined) {
 			onHandleChange && onHandleChange(checked)
+			setInputValue(checked)
 		}
 	}, [checked])
 

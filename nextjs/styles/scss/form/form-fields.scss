@@ -47,15 +47,15 @@
         width: 100%;
         
 
-        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        &::placeholder {
             color: colors.$grey-dark;
           }
           
-        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        &:-ms-input-placeholder {
             color: colors.$grey-dark;
         }
         
-        &::-ms-input-placeholder { /* Microsoft Edge */
+        &::-ms-input-placeholder {
             color: colors.$grey-dark;
         }
     }
@@ -106,6 +106,54 @@
             + .form-field-checkbox__checkbox-marker {
                 background-color: var(--primary-color);
                 border-color: var(--primary-color);
+            }
+        }
+    }
+}
+
+
+.form-field-radio {
+    &__label {
+        display: flex;
+        cursor: pointer;
+    }
+
+    &__radio-marker {
+        position: relative;
+        border: 1px solid #D7DADD;
+        border-radius: setup.$border-radius-sm;
+        border-radius: 50%;
+        overflow: hidden;
+        min-width: 16px;
+        height: 16px;
+        margin-right: 12px;
+        margin-top: 2px;
+
+        &:before {
+            content: '';
+            @include mixins.centeredAbsolute();
+            background-color: var(--primary-color);
+            font-size: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    &__radio {
+        display: none;
+
+        &:checked {
+            + .form-field-radio__radio-marker {
+                border-color: var(--primary-color);
+                
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }
