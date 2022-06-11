@@ -14,9 +14,9 @@ export default function PersonCard({ Image, Title, Description, Socials }: IPers
             <ImageComponent Url={Image.Url} Alt={Image.Alt} className="person-card__image" />
             <SocialList Items={Socials.Items} size={'small'} className="person-card__social-list" />
         </div>
-      <div className="person-card__body text-align--center">
-        <Typography level={HeadingLevel.H6} text={Title} className="person-card__title" />
-        <Typography text={Description} className="person-card__description text-color-secondary" />
+      <div className="person-card__body">
+        <Typography level={HeadingLevel.H6} text={Title} className="person-card__title" aligned="center" />
+        <Typography text={Description} className="person-card__description text-color-secondary" aligned="center" />
       </div>
     </div>
   )

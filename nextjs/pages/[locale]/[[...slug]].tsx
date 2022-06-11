@@ -12,6 +12,7 @@ import { getPageData } from '../../libs/cms/queries'
 
 import { PageProvider } from '../../context/project'
 
+
 export const getServerSideProps = async ({ params, resolvedUrl }) => {
   const pageName = resolvedUrl.replace('/en', '')
   const data = await getPageData(!pageName ? '/' : pageName.replace('/', ''))
@@ -30,7 +31,7 @@ const defaultSeo: ISeo = {
   Description: 'Description',
 }
 
-const DynamicPage: NextPage = (page: IPageField) => {
+const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
   const [pageProject, setPageProject] = useState<IPageField | null>(null)
   const router = useRouter()
@@ -45,6 +46,7 @@ const DynamicPage: NextPage = (page: IPageField) => {
   if (!router.isReady) {
     return <div>Loading...</div>
   }
+
   return (
     <>
       <Head>
@@ -54,7 +56,9 @@ const DynamicPage: NextPage = (page: IPageField) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageProvider.Provider value={pageProject}>
-        <PrimaryLayout>{pageBody && pageBody.length && renderBlocks(pageBody)}</PrimaryLayout>
+        <PrimaryLayout>
+          {pageBody && pageBody.length && renderBlocks(pageBody)}
+        </PrimaryLayout>
       </PageProvider.Provider>
     </>
   )

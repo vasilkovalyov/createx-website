@@ -1,4 +1,4 @@
-import { InputType, Identificator } from '../types/common'
+import { InputType, Identificator, SizeFormField } from '../types/common'
 
 export interface IInput {
     id?: Identificator
@@ -6,6 +6,7 @@ export interface IInput {
     label?: string
     name: string
     placeholder?: string
+    size?: SizeFormField
     required?: boolean
     value?: string | number
     onHandleChange?: (value: string | number) => string | number
@@ -16,14 +17,18 @@ export interface ITextArea extends Omit<IInput, 'type'> {
     value?: string
     cols?: number
     rows?: number
+    size?: SizeFormField
     onHandleChange?: (value: string) => string
 }
 
+export interface ISelectOption {
+    value: string
+    name: string
+}
+
 export interface ISelect extends Omit<ITextArea, 'type'> {
-    options: {
-        value: string
-        name: string
-    }[]
+    size?: SizeFormField
+    options: ISelectOption[]
 }
 
 export interface ICheckbox {

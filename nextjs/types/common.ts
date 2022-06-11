@@ -18,6 +18,7 @@ export type GridJustify = 'flex-start' | 'center' | 'flex-end' | 'space-between'
 export type ServiceType = 'card' | 'post'
 
 export type SocialIconSize = 'small' | 'middle' | 'large'
+export type SizeFormField = 'small'
 
 export type InputType = 'text' | 'search' | 'number' | 'email'
 

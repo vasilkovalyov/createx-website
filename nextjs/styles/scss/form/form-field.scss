@@ -7,12 +7,31 @@
 .form-field {
     margin-bottom: 20px;
 
+    &--small {
+        .form-field__label-text {
+            font-size: fz.$size-xs;
+            margin-bottom: 6px;
+        }
+
+        .form-field__select,
+        .form-field__textarea, 
+        .form-field__input {
+            font-size: fz.$size-xs;
+            padding: spacing.$xxs spacing.$s;
+            height: 44px;
+        }
+
+        .form-field__textarea {
+            height: auto;
+        }
+    }
+
     &__label {
         display: block;
     }
 
     &__label-text {
-        margin-bottom: 6px;
+        margin-bottom: 10px;
     }
     
     &__select,
@@ -21,11 +40,32 @@
         border: 1px solid #D7DADD;
         background: colors.$grey-extra-light;
         border-radius: setup.$border-radius-sm;
-        font-size: fz.$size-xs;
+        font-size: fz.$size-s;
         padding: spacing.$xxs spacing.$s;
         outline: none;
-        height: 44px;
+        height: 52px;
         width: 100%;
+        
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: colors.$grey-dark;
+          }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: colors.$grey-dark;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: colors.$grey-dark;
+        }
+    }
+
+    &__select {
+        option {
+            &:first{
+                display: none;
+            }
+        }
     }
     
     &__textarea {
@@ -38,13 +78,14 @@
 .form-field-checkbox {
     &__label {
         display: flex;
+        cursor: pointer;
     }
 
     &__checkbox-marker {
         position: relative;
         border: 1px solid #D7DADD;
         border-radius: setup.$border-radius-sm;
-        flex: 1 0 16px;
+        min-width: 16px;
         height: 16px;
         margin-right: 12px;
         margin-top: 2px;

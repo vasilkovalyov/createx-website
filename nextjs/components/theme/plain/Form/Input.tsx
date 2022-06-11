@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import cn from 'classnames'
 
 import { IInput } from '../../../../interfaces/form'
 
-export default function Input({ id, type = 'text', label, name, placeholder, required = false, value, onHandleChange }: IInput) {
+export default function Input({ id, type = 'text', label, name, placeholder, required = false, value, size, onHandleChange }: IInput) {
 	const [inputValue, setInputValue] = useState<string | number>('')
+
+	const sizeField = cn({
+		'form-field--small': size === 'small',
+	})
 
 	useEffect(() => {
 		if (value) {
@@ -13,7 +18,7 @@ export default function Input({ id, type = 'text', label, name, placeholder, req
 	}, [value])
 
   return (
-    <div className="form-field">
+    <div className={`form-field ${sizeField}`}>
 			<label className="form-field__label">
 					{ label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
 					<input

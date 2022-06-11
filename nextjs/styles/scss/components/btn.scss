@@ -8,23 +8,30 @@
 .btn {
     display: inline-block;
     text-transform: uppercase;
-    padding: spacing.$xs spacing.$xl;
+    padding: spacing.$s spacing.$xxl;
     border-radius: setup.$border-radius-sm;
     color: var(--text-color-light);
     background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
     font-weight: fw.$bold;
-    font-size: fz.$size-xs;
-    letter-spacing: 0.5px;
+    font-size: fz.$size-s;
     cursor: pointer;
 
     @include mixins.animate(opacity background-color color);
-
 
     &:hover {
         opacity: 1;
         color: var(--primary-color);
         background-color: transparent;
+    }
+
+    &--small {
+        font-size: fz.$size-xs;
+        padding: spacing.$xs spacing.$xl;
+    }
+
+    &--fullwidth {
+        width: 100%;
     }
 
     &--outline {

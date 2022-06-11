@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react'
+import cn from 'classnames'
 
 import { ISelect } from '../../../../interfaces/form'
 
-export default function Select({ id, label, name, placeholder, required = false, value, options, onHandleChange }: ISelect) {
-	const [inputValue, setInputValue] = useState<string>()
+export default function Select({ id, label, name, placeholder, required = false, value, options, size, onHandleChange }: ISelect) {
+	const [inputValue, setInputValue] = useState<string>('')
 
-	useEffect(() => {
-		if (options && options.length) {
-			setInputValue(options[0].value)
-		}
-		// onHandleChange && onHandleChange(value)
-	}, [value])
+	const sizeField = cn({
+		'form-field--small': size === 'small',
+	})
 
-  return (
-    <div className="form-field">
+	// useEffect(() => {
+	// 	onHandleChange && onHandleChange(inputValue)
+	// }, [inputValue])
+
+	const onHandleClick = (value: string) => {
+		setInputValue(value)
+		onHandleChange && onHandleChange(value)
+	}
+
+	return (
+		<div className={`form-field ${sizeField}`}>
 			<label className="form-field__label">
 					{ label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
 					<select
@@ -22,14 +29,14 @@ export default function Select({ id, label, name, placeholder, required = false,
 						name={name}
 						placeholder={placeholder}
 						value={inputValue}
-						onChange={(e) => setInputValue(e.target.value)}
+						onChange={(e) => onHandleClick(e.target.value)}
 					>
-						<option value=''>Select</option>
+						<option value='' disabled>{placeholder || 'Select'}</option>
 						{
-							options && options.length && options.map((item) => <option key={item.value} value={item.value}>{item.name}</option> )
+							options && options.length && options.map((item, index) => <option key={index} value={item.name}>{item.name}</option> )
 						}
 					</select>
 			</label>
-    </div>
-  )
+		</div>
+	)
 }

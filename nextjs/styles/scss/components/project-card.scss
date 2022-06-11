@@ -12,12 +12,14 @@
     height: 440px;
     
     &:hover {
-        @include responsive.mq($from: laptop) {
-            .project-card__body {
+        .project-card__body {
+            @include responsive.mq($from: laptop) {
                 transform: translateY(0);
             }
-    
-            .project-card__btn {
+        }
+            
+        .project-card__btn {
+            @include responsive.mq($from: laptop) {
                 opacity: 1;
             }
         }

@@ -1,4 +1,4 @@
-import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize } from '../types/common'
+import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType } from '../types/common'
 import { HeadingLevel } from '../enums/common'
 import { SocialIcon } from '../enums/icons'
 
@@ -13,6 +13,7 @@ export interface ITypography {
   level?: HeadingLevel
   className?: string
   text: string
+  aligned?: AlignContentType
 }
 
 export interface ILink {
@@ -43,6 +44,8 @@ export interface IButton {
   className?: string
   outline?: boolean
   name?: string
+  size?: 'small' | ''
+  fullwidth?: boolean
   onClick?: () => void
 }
 
