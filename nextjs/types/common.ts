@@ -19,6 +19,8 @@ export type ServiceType = 'card' | 'post'
 
 export type SocialIconSize = 'small' | 'middle' | 'large'
 
+export type InputType = 'text' | 'search' | 'number' | 'email'
+
 export type RequireAtLeastOne<T, Keys extends keyof T = keyof T> =
     Pick<T, Exclude<keyof T, Keys>> 
     & {

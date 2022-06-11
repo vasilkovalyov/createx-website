@@ -19,6 +19,7 @@ export const parameters = {
         ['Welcome'],
         'Foundation',
         'Components',
+        'Form',
         'Pages',
       ],
     },

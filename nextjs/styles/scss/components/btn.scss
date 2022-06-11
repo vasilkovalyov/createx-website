@@ -16,6 +16,7 @@
     font-weight: fw.$bold;
     font-size: fz.$size-xs;
     letter-spacing: 0.5px;
+    cursor: pointer;
 
     @include mixins.animate(opacity background-color color);
 
