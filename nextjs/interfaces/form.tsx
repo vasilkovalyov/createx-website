@@ -12,14 +12,14 @@ export interface IFormField {
 export interface IInput extends IFormField {
     type?: InputType
     value?: string | number
-    onHandleChange?: (value: string | number) => string | number
+    onHandleChange?: (value: string | number) => void
 }
 
 export interface ITextArea extends IFormField {
     value?: string
     cols?: number
     rows?: number
-    onHandleChange?: (value: string) => string
+    onHandleChange?: (value: string) => void
 }
 
 export interface ISelectOption {
@@ -27,18 +27,20 @@ export interface ISelectOption {
     name: string
 }
 
-export interface ISelect extends Pick<IFormField, 'size'> {
+export interface ISelect extends IFormField {
+    value?: string
+    onHandleChange?: (value: string) => void
     options: ISelectOption[]
 }
 
-export interface ICheckbox extends Omit<IFormField, 'placeholder'> {
-    value?: string
+export interface ICheckbox extends Omit<IFormField, 'placeholder | size'> {
+    value: string
     checked?: boolean
-    onHandleChange?: (value: boolean) => boolean
+    onHandleChange?: (e: any) => void
 }
 
-export interface IRadio extends Omit<IFormField, 'placeholder'> {
-    value?: string
+export interface IRadio extends Omit<IFormField, 'placeholder | size'> {
+    value: string
     checked?: boolean
-    onHandleChange?: (value: boolean) => boolean
+    onHandleChange?: (e: any) => void
 }

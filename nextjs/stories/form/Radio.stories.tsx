@@ -15,5 +15,5 @@ Default.args = {
     label: 'Radio',
     name: 'radio',
     value: 'radio',
-    checked: true
+    checked: false
 }

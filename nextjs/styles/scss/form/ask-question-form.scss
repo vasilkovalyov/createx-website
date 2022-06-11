@@ -1,0 +1,30 @@
+@use '../tools/responsive.scss';
+
+.ask-question-form {
+    padding: 40px 40px 20px;
+    
+    @include responsive.mq($from: tablet) {
+        padding: 60px 60px 20px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .col {
+        padding: 0;
+    }
+
+    &__btn-wrapper {
+        &.md-2 {
+            @include responsive.mq($from: tablet) {
+                flex: 0 0 12%;
+                max-width: 12%;
+            }
+        }
+    }
+}
