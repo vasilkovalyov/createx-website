@@ -4,12 +4,11 @@ import Col from '../Grid/Col'
 import Input from './Input'
 import Button from '../Button'
 import Typography from '../Typography'
-import { HeadingLevel } from '../../../../enums/common'
 
 export default function SubscribeForm() {
   return (
     <div className="subscribe-form">
-        <Typography level={HeadingLevel.H4} text="Subscribe to our newsletter" className="subscribe-form__title" aligned="center" />
+        <Typography level="h4" text="Subscribe to our newsletter" className="subscribe-form__title" aligned="center" />
         <form action="" className="subscribe-form__form">
             <Row>
                 <Col base={12}>

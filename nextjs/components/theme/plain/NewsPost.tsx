@@ -5,7 +5,6 @@ import Typography from './Typography'
 import ImageComponent from './Image'
 
 import { INewsPost } from '../../../interfaces/common'
-import { HeadingLevel } from '../../../enums/common'
 
 export default function NewsPost({ Image, Title, Category, Date, Text, Slug, IsCompact = false }: INewsPost) {
 	return (
@@ -16,11 +15,11 @@ export default function NewsPost({ Image, Title, Category, Date, Text, Slug, IsC
 					Slug ? (
 						<Link href={Slug}>
 							<a className="news-post__link-title">
-								<Typography level={HeadingLevel.H6} text={Title} className="news-post__title"/>
+								<Typography level="h6" text={Title} className="news-post__title"/>
 							</a>
 						</Link>
 					) : (
-						<Typography level={HeadingLevel.H6} text={Title} className="news-post__title"/>
+						<Typography level="h6" text={Title} className="news-post__title"/>
 					)
 				}
 

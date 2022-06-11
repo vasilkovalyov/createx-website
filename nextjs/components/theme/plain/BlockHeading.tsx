@@ -2,10 +2,9 @@ import React from 'react'
 import cn from 'classnames'
 
 import Typography from './Typography'
-import { HeadingLevel } from '../../../enums/common'
-import { AlignContentType } from '../../../types/common'
+import { AlignContentType, HeadingLevel } from '../../../types/common'
 
-function BlockHeading({ Title, Text, headingLevel = HeadingLevel.H2, aligned }: { Title: string, Text?: string, headingLevel: HeadingLevel, aligned: AlignContentType}) {
+function BlockHeading({ Title, Text, headingLevel = 'h2', aligned }: { Title: string, Text?: string, headingLevel: HeadingLevel, aligned: AlignContentType}) {
 	const alignedContent = cn({
 		'block-heading--center text-align--center': aligned === 'center',
 		'block-heading--right text-align--right': aligned === 'right',

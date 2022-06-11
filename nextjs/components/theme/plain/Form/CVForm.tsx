@@ -6,7 +6,6 @@ import TextArea from './TextArea'
 import Select from './Select'
 import Button from '../Button'
 import Typography from '../Typography'
-import { HeadingLevel } from '../../../../enums/common'
 
 import LocationsSelect from '../../../hocs/LocationsSelect'
 import { ISelect } from 'interfaces/form'
@@ -29,7 +28,7 @@ export default function CVForm() {
     
     return (
         <div className="cv-form shadow-wrapper">
-            <Typography level={HeadingLevel.H4} text="Send your CV" className="cv-form__title" aligned="center" />
+            <Typography level="h4" text="Send your CV" className="cv-form__title" aligned="center" />
             <form action="" className="cv-form__form">
                 <Row>
                     <Col base={12}>

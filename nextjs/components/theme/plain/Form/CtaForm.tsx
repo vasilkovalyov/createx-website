@@ -6,12 +6,11 @@ import TextArea from './TextArea'
 import Checkbox from './Checkbox'
 import Button from '../Button'
 import Typography from '../Typography'
-import { HeadingLevel } from '../../../../enums/common'
 
 export default function CtaForm() {
   return (
 		<div className="cta-form shadow-wrapper">
-			<Typography level={HeadingLevel.H4} text="A quick way to discuss details" className="cta-form__title" />
+			<Typography level="h4" text="A quick way to discuss details" className="cta-form__title" />
 			<form action="" className="cta-form__form">
 				<Row>
 					<Col base={12}>

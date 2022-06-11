@@ -1,5 +1,4 @@
-import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType } from '../types/common'
-import { HeadingLevel } from '../enums/common'
+import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType, HeadingLevel } from '../types/common'
 import { SocialIcon } from '../enums/icons'
 
 export interface IImage {

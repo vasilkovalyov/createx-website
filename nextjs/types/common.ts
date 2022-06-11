@@ -1,11 +1,9 @@
-import { HeadingLevel } from '../enums/common'
 import { EnumsIcon } from '../enums/icons'
 import { IHeader, IFooter } from '../interfaces/pages'
 
 export type Identificator = string
 export type DateType = string
 export type IconType = EnumsIcon | undefined | string
-export type HighHeadingType = HeadingLevel.H2 | HeadingLevel.H3 | HeadingLevel.H4
 export type AlignContentType = 'center' | 'right'
 export type ContainerWidthType = 'medium' | 'large'
 export type OrientType = 'vertical' | 'horizontal'
@@ -19,6 +17,8 @@ export type ServiceType = 'card' | 'post'
 
 export type SocialIconSize = 'small' | 'middle' | 'large'
 export type SizeFormField = 'small'
+
+export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export type InputType = 'text' | 'search' | 'number' | 'email'
 

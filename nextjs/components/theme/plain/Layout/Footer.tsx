@@ -6,7 +6,6 @@ import Col from '../Grid/Col'
 import ImageComponent from '../Image'
 import Typography from '../Typography'
 
-import { HeadingLevel } from '../../../../enums/common'
 import { IFooter } from '../../../../interfaces/pages'
 
 export default function Footer({ Image, Text, Menu }: IFooter) {
@@ -24,7 +23,7 @@ export default function Footer({ Image, Text, Menu }: IFooter) {
                 {Menu.map((item) => (
                   <div key={item.id}>
                     {item.Name && (
-                      <Typography text={item.Name} level={HeadingLevel.H6} className="footer__navigation-title" />
+                      <Typography text={item.Name} level="h6" className="footer__navigation-title" />
                     )}
                     <Navigation className="header-navigation" Menu={item} />
                   </div>

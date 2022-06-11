@@ -7,7 +7,6 @@ import Row from '../plain/Grid/Row'
 import Col from '../plain/Grid/Col'
 import Button from './Button'
 
-import { HeadingLevel } from '../../../enums/common'
 import { IService } from '../../../interfaces/common'
 
 export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text, Link }: IService) {
@@ -25,7 +24,7 @@ export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text
               </div>
             ) : null
           }
-          <Typography level={HeadingLevel.H6} text={Title} className="service-card__title" />
+          <Typography level="h6" text={Title} className="service-card__title" />
         </div>
         {
           Link && (
@@ -46,7 +45,7 @@ export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text
           </Col>
           <Col base={12} md={6}>
             <div className="service-post__body">
-              <Typography level={HeadingLevel.H3} text={Title} className="service-post__title" />
+              <Typography level="h3" text={Title} className="service-post__title" />
               { Text && <Typography text={Text} className="service-post__text" /> }
               { Link && <Button url={Link.url} name='Learn more' className="service-post__btn" outline={true} /> }
             </div>

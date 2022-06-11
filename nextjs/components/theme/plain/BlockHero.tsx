@@ -3,7 +3,6 @@ import React from 'react'
 import ImageComponent from './Image'
 import Typography from './Typography'
 import Container from './Container'
-import { HeadingLevel } from '../../../enums/common'
 
 import { IBlockHero } from '../../../interfaces/blocks'
 
@@ -16,7 +15,7 @@ function BlockHero({ Image, Title, Text, Overlay = true }: IBlockHero) {
       ) : null}
       <Container className="block-hero__container">
         <div className="block-hero__content">
-          {Title ? <Typography level={HeadingLevel.H1} text={Title} className="block-hero__title" /> : null}
+          {Title ? <Typography level="h1" text={Title} className="block-hero__title" /> : null}
           {Text ? <Typography text={Text} className="block-hero__text text-lg" /> : null}
         </div>
       </Container>
