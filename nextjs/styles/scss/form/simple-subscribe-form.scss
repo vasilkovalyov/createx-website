@@ -1,0 +1,37 @@
+@use '../settings/colors.scss';
+@use '../base/setup.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+
+.simple-subscribe-form {
+    &__title {
+        color: inherit;
+        margin-bottom: 26px;
+    }
+    
+    &__description {
+        color: inherit;
+        font-size: fz.$size-xxs;
+        opacity: 0.6;
+    }
+
+    &__form {
+        position: relative;
+    }
+
+    .form-field {
+        margin-bottom: 16px;
+
+        &__input {
+            padding-right: 160px;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

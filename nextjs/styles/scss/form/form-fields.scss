@@ -4,8 +4,31 @@
 @use '../settings/spacing.scss';
 @use '../tools/mixins.scss';
 
+$light-bg-color: colors.$grey-extra-light;
+$light-border-color: #D7DADD;
+$dark-bg-color: rgba(255, 255, 255, 0.12);
+$dark-border-color: rgba(255, 255, 255, 0.2);
+
 .form-field {
     margin-bottom: 20px;
+
+    &--light {
+        .form-field__select,
+        .form-field__textarea,
+        .form-field__input {
+            background: $light-bg-color;
+            border: 1px solid $light-border-color;
+        }
+    }
+
+    &--dark {
+        .form-field__select,
+        .form-field__textarea,
+        .form-field__input {
+            background: $dark-bg-color;
+            border: 1px solid $dark-border-color;
+        }
+    }
 
     &--small {
         .form-field__label-text {
@@ -45,8 +68,8 @@
     &__select,
     &__textarea,
     &__input {
-        border: 1px solid #D7DADD;
-        background: colors.$grey-extra-light;
+        // border: 1px solid #D7DADD;
+        // background: colors.$grey-extra-light;
         border-radius: setup.$border-radius-sm;
         font-size: fz.$size-s;
         padding: spacing.$xxs spacing.$s;

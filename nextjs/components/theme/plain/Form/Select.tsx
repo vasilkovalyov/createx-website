@@ -3,16 +3,14 @@ import cn from 'classnames'
 
 import { ISelect } from '../../../../interfaces/form'
 
-export default function Select({ id, label, name, placeholder, required = false, value, options, size, onHandleChange }: ISelect) {
+export default function Select({ id, label, name, placeholder, required = false, value, options, theme = 'light', size, onHandleChange }: ISelect) {
 	const [inputValue, setInputValue] = useState<string>('')
 
-	const sizeField = cn({
+	const fieldView = cn({
 		'form-field--small': size === 'small',
+		'form-field--light': theme === 'light',
+		'form-field--dark': theme === 'dark',
 	})
-
-	// useEffect(() => {
-	// 	onHandleChange && onHandleChange(inputValue)
-	// }, [inputValue])
 
 	const onHandleClick = (value: string) => {
 		setInputValue(value)
@@ -20,7 +18,7 @@ export default function Select({ id, label, name, placeholder, required = false,
 	}
 
 	return (
-		<div className={`form-field ${sizeField}`}>
+		<div className={`form-field ${fieldView}`}>
 			<label className="form-field__label">
 					{ label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
 					<select

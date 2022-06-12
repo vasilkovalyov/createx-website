@@ -3,22 +3,24 @@ import cn from 'classnames'
 
 import { ITextArea } from '../../../../interfaces/form'
 
-export default function TextArea({ id, label, name, placeholder, required = false, value, cols = 30, rows = 2, size, onHandleChange }: ITextArea) {
-    const [inputValue, setInputValue] = useState<string>('')
+export default function TextArea({ id, label, name, placeholder, required = false, value, cols = 30, rows = 2, theme = 'light', size, onHandleChange }: ITextArea) {
+  const [inputValue, setInputValue] = useState<string>('')
 
-    const sizeField = cn({
-		'form-field--small': size === 'small',
-	})
+  const fieldView = cn({
+    'form-field--small': size === 'small',
+    'form-field--light': theme === 'light',
+    'form-field--dark': theme === 'dark',
+  })
 
 	useEffect(() => {
-        if (value) {
-            setInputValue(value)
-            onHandleChange && onHandleChange(value)
-        }
+    if (value) {
+        setInputValue(value)
+        onHandleChange && onHandleChange(value)
+    }
 	}, [value])
 
   return (
-    <div className={`form-field ${sizeField}`}>
+    <div className={`form-field ${fieldView}`}>
         <label className="form-field__label">
             { label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
             <textarea 

@@ -3,11 +3,13 @@ import cn from 'classnames'
 
 import { IInput } from '../../../../interfaces/form'
 
-export default function Input({ id, type = 'text', label, name, placeholder, required = false, value, size, onHandleChange }: IInput) {
+export default function Input({ id, type = 'text', label, name, placeholder, required = false, value, size, theme = 'light', onHandleChange }: IInput) {
 	const [inputValue, setInputValue] = useState<string | number>('')
 
-	const sizeField = cn({
+	const fieldView = cn({
 		'form-field--small': size === 'small',
+		'form-field--light': theme === 'light',
+		'form-field--dark': theme === 'dark',
 	})
 
 	useEffect(() => {
@@ -18,7 +20,7 @@ export default function Input({ id, type = 'text', label, name, placeholder, req
 	}, [value])
 
   return (
-    <div className={`form-field ${sizeField}`}>
+    <div className={`form-field ${fieldView}`}>
 			<label className="form-field__label">
 					{ label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
 					<input

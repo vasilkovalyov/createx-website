@@ -7,6 +7,7 @@ export interface IFormField {
     placeholder?: string
     required?: boolean
     size?: SizeFormField
+    theme?: 'light' | 'dark'
 }
 
 export interface IInput extends IFormField {
