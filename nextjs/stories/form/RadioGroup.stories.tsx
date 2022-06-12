@@ -12,6 +12,8 @@ const Template: ComponentStory<typeof RadioGroup> = (args) => <RadioGroup {...ar
 export const Default = Template.bind({})
 
 Default.args = {
+    label: 'Preferred contact method',
+    required: false,
     items: [
         {
             id: '1',

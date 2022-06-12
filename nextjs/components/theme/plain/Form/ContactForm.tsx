@@ -1,14 +1,15 @@
-import React, { ComponentType } from 'react'
+import React from 'react'
 import Row from '../Grid/Row'
 import Col from '../Grid/Col'
 import Input from './Input'
 import TextArea from './TextArea'
 import Checkbox from './Checkbox'
 import Select from './Select'
+import RadioGroup from './RadioGroup'
 import Button from '../Button'
 
 import LocationsSelect from '../../../hocs/LocationsSelect'
-import { ISelect } from 'interfaces/form'
+import { ISelect, IRadio } from 'interfaces/form'
 import { ILocationsSelect } from 'interfaces/hocs'
 
 export default function CtaForm() {
@@ -25,6 +26,31 @@ export default function CtaForm() {
             } 
         } as ILocationsSelect<ISelect>
     )
+
+    
+    const radioGroup = [
+        {
+            id: '1',
+            label: 'Phone',
+            name: 'contact',
+            value: 'phone',
+            checked: false
+        },
+        {
+            id: '2',
+            label: 'Email',
+            name: 'contact',
+            value: 'email',
+            checked: false
+        },
+        {
+            id: '3',
+            label: 'Viber',
+            name: 'contact',
+            value: 'viber',
+            checked: false
+        },
+    ] as IRadio[]
 
     return (
         <div className="contact-form">
@@ -44,6 +70,9 @@ export default function CtaForm() {
                     </Col>
                     <Col base={12} md={6}>
                         <Input name='email' label="Email" placeholder="Your working email" />
+                    </Col>
+                    <Col base={12} md={6}>
+                        <RadioGroup items={radioGroup} label="Preferred contact method" />
                     </Col>
                     <Col base={12}>
                         <TextArea name='message' label="Message" placeholder="Your message"  rows={3} />

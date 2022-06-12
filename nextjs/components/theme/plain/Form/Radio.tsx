@@ -6,15 +6,15 @@ export default function Radio({ id, label, name, required = false, value, checke
 	const [inputValue, setInputValue] = useState<boolean>(checked)
 
 	useEffect(() => {
-		if (inputValue !== undefined) {
-			onHandleChange && onHandleChange(inputValue)
-			setInputValue(inputValue)
+		if (checked !== undefined) {
+			onHandleChange && onHandleChange(checked, value)
+			setInputValue(checked)
 		}
-	}, [inputValue])
+	}, [checked])
 
-	const onHandleClick = (e) => {
-		onHandleChange && onHandleChange(e)
-		setInputValue(e.target.checked)
+	const onHandleClick = (checked) => {
+		onHandleChange && onHandleChange(checked, value)
+		setInputValue(checked)
 	}
 
   return (
@@ -27,10 +27,10 @@ export default function Radio({ id, label, name, required = false, value, checke
 				name={name}
 				value={value}
 				checked={inputValue}
-				onChange={(e) => onHandleClick(e)}
+				onChange={(e) => onHandleClick(e.target.checked)}
 			/>
 			<span className="form-field-radio__radio-marker"></span>
-			{ label && <p className="form-field-radio__label-text text-xs">{label}{required === true ? '*' : ''}<span></span></p> }
+			{ label && <p className="form-field-radio__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
 		</label>
     </div>
   )

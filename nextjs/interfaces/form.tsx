@@ -33,14 +33,19 @@ export interface ISelect extends IFormField {
     options: ISelectOption[]
 }
 
-export interface ICheckbox extends Omit<IFormField, 'placeholder | size'> {
+export interface ICheckbox extends Omit<IFormField, 'placeholder' | 'size'> {
     value: string
     checked?: boolean
     onHandleChange?: (e: any) => void
 }
 
-export interface IRadio extends Omit<IFormField, 'placeholder | size'> {
+export interface IRadio extends Omit<IFormField, 'placeholder' | 'size'> {
     value: string
     checked?: boolean
-    onHandleChange?: (e: any) => void
+    onHandleChange?: (e: any, value: string) => void
+}
+
+export interface IRadioGroup extends Pick<IFormField, 'label' | 'size' | 'required'>{
+    items: IRadio[],
+    onHandleChange?: (checked: boolean, value?: string) => void
 }

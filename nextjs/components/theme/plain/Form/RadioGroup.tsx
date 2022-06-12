@@ -1,31 +1,31 @@
 import React, { useState } from 'react'
+import cn from 'classnames'
 
 import Radio from './Radio'
-import { IRadio } from '../../../../interfaces/form'
+import { IRadioGroup } from '../../../../interfaces/form'
 
-export default function RadioGroup({ items, onChange }: { items: IRadio[], onChange: (checked: boolean, name?: string) => void }) {
+export default function RadioGroup({ items, label, size, required, onHandleChange }: IRadioGroup) {
     const [selectedRadioButton, setSelectedRadioButton] = useState<string>('')
-    const isRadioSelected = (value: string): boolean => selectedRadioButton === value
 
-    const onChangeClick = (e) => {
-        // onChange && onChange(target)
-        // if (e.target) {
-        //     console.log('checked', e.target?.checked)
-        //     console.log('value', e.target?.value)
-        // }
-        // console.log('e.currentTarget.value', e.currentTarget)
-        // setSelectedRadioButton(e.currentTarget.value)
+    const sizeField = cn({
+		'form-field--small': size === 'small',
+	})
+
+    const onChangeClick = (checked, value) => {
+        onHandleChange && onHandleChange(checked, value)
+        if (checked) setSelectedRadioButton(value)
     }
 
     return (
-        <div>
-            {
-                items && items.length && items.map((item) => (
-                    <div key={item.id}>
-                        <Radio {...item} checked={isRadioSelected(item.value)} onHandleChange={onChangeClick}  />
-                    </div>
-                ))
-            }
+        <div className={`form-field ${sizeField ? sizeField : ''}`}>
+            { label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
+            <div className="form-field__radio-group">
+                {
+                    items && items.length && items.map((item) => (
+                        <Radio key={item.id} {...item} checked={selectedRadioButton === item.value} onHandleChange={onChangeClick}  />
+                    ))
+                }
+            </div>
         </div>
     )
 }

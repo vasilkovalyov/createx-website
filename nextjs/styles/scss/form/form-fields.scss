@@ -24,6 +24,14 @@
         .form-field__textarea {
             height: auto;
         }
+
+        .form-field__radio-group {
+            min-height: 44px;
+        }
+
+        .form-field-radio__label-text {
+            font-size: fz.$size-xs;
+        }
     }
 
     &__label {
@@ -72,6 +80,29 @@
         padding: spacing.$s;
         max-width: 100%;
         height: auto;
+    }
+
+    &__radio-group {
+        display: flex;
+        align-items: center;
+        min-height: 52px;
+
+        .form-field-radio {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-right: 24px;
+            }
+        }
+
+        .form-field-radio__label {
+            align-items: center;
+        }
+
+        .form-field-radio__label-text {
+            margin-bottom: 0;
+        }
     }
 }
 
