@@ -1,4 +1,4 @@
-import { InputType, Identificator, SizeFormField } from '../types/common'
+import { InputType, Identificator, SizeFormField, ColorTheme } from '../types/common'
 
 export interface IFormField {
     id?: Identificator
@@ -7,7 +7,7 @@ export interface IFormField {
     placeholder?: string
     required?: boolean
     size?: SizeFormField
-    theme?: 'light' | 'dark'
+    theme?: ColorTheme
 }
 
 export interface IInput extends IFormField {

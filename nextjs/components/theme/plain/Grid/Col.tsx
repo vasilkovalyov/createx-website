@@ -7,7 +7,7 @@ export default function Col({ className, children, base, sm, md, lg, xl }: ICol)
     (base ? ` ${['base-' + base]}` : '') +
     (sm ? ` ${['sm-' + sm]}` : '') +
     (md ? ` ${['md-' + md]}` : '') +
-    (lg ? ` ${['lg-' + md]}` : '') +
-    (xl ? ` ${['xl-' + lg]}` : '')
+    (lg ? ` ${['lg-' + lg]}` : '') +
+    (xl ? ` ${['xl-' + xl]}` : '')
   return <div className={`col ${mediaClasses} ${className ? className : ''}`}>{children}</div>
 }

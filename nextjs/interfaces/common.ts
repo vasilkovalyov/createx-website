@@ -1,10 +1,27 @@
-import { Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType, HeadingLevel } from '../types/common'
-import { SocialIcon } from '../enums/icons'
+import {
+  Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType, HeadingLevel, ColorTheme, TextSize, ListType
+} from '../types/common'
+import { SocialIcon, EnumsIcon } from '../enums/icons'
 
 export interface IImage {
   id?: Identificator
   Url: string
   Alt: string
+  className?: string
+}
+
+export interface IList {
+  type?: ListType
+  className?: string
+  icon: EnumsIcon
+  Items: {
+    id?: Identificator
+    Text: string
+  }[]
+}
+
+export interface IIcon {
+  icon: EnumsIcon
   className?: string
 }
 
@@ -46,6 +63,14 @@ export interface IButton {
   size?: 'small' | ''
   fullwidth?: boolean
   onClick?: () => void
+}
+
+export interface IBlockHeading {
+  Title: string,
+  Text?: string,
+  headingLevel?: HeadingLevel,
+  textSize?: TextSize
+  aligned?: AlignContentType
 }
 
 export interface IService {
@@ -120,7 +145,7 @@ export interface ITestimonial {
 
 
 export interface IContactInformation {
-  Theme?: 'light' | 'dark'
+  Theme?: ColorTheme
   className?: string
   Address?: string
   Phone?: string

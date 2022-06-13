@@ -1,0 +1,70 @@
+@use '../tools/responsive.scss';
+@use '../settings/colors.scss';
+
+.block-benefits {
+    padding: 60px 0 30px;
+
+    @include responsive.mq($from: tablet) {
+        padding: 84px 0 98px;
+    }
+
+    &--light {
+        .col {
+            &:after {
+                background-color: colors.$grey-extra-light;
+            }
+        }
+    }
+
+    &--dark {
+        color: var(--text-color-light);
+        background-color: colors.$black;
+
+        .col {
+            &:after {
+                background-color: colors.$white;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .block-heading {
+        margin-bottom: 42px;
+
+        &__title {
+            margin-bottom: 26px;
+            color: inherit;
+        }
+
+        &__text {
+            color: inherit;
+        }
+    }
+
+    .benefit {
+        margin-left: auto;
+        margin-right: auto;
+        
+        &__text {
+            color: var(--text-color-secondary);
+        }
+    }
+
+    .col {
+        position: relative;
+
+        &:not(:last-child) {
+            &:after {
+                @include responsive.mq($from: tablet) {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 1px;
+                    height: 186px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.constructive-decisions {
+    position: relative;
+    padding: spacing.$m 0;
+    
+    @include responsive.mq($from: wide) {
+        padding: calc(spacing.$m + spacing.$xxxl) 0;
+    }
+
+    &__overlay {
+        @include mixins.absoluteCover();
+        background-color: colors.$grey-extra-light;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    &__image {
+        margin-bottom: 30px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__list {
+        margin-bottom: 30px;
+
+        @include responsive.mq($from: wide) {
+            margin-bottom: 0;
+        }
+    }
+
+    &--reverse {
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .block-heading {
+        &__title {
+            @include responsive.mq($from: wide) {
+                margin-bottom: 66px;
+            }
+        }
+    }
+}
