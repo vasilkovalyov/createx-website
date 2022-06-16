@@ -1,0 +1,54 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.block-latest-project {
+    padding: 40px 0;
+    
+    &__title {
+        width: 100%;
+        margin-bottom: 26px;
+        
+        @include responsive.mq($from: tablet) {
+            margin-right: 20px;
+            max-width: 490px;
+        }
+        
+        @include responsive.mq($from: tablet_large) {
+            margin-bottom: 40px;
+            max-width: 724px;
+        }
+    }
+
+    &__carousel {
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 60px;
+        }
+    }
+
+    .swiper-button-control {
+        @include responsive.mq($from: tablet) {
+            display: flex;
+            position: absolute;
+            top: -70px;
+            right: 0;
+            margin: 0 -10px;
+        }
+
+        .swiper-button {
+            @include responsive.mq($from: tablet) {
+                position: static;
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+}

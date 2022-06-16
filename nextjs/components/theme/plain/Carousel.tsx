@@ -52,14 +52,14 @@ export default function Carousel({ slides, settings, className, typeButton = 'pr
 			</div>
 			{
 				useCustomNavigation ? (
-					<>
+					<div className="swiper-button-control">
 						<button className={`swiper-button swiper-button-prev ${typeButtonClass}`} ref={navigationPrevRef}>
 							<IcoMoonIcon icon={EnumsIcon.ArrowLeft} className="swiper-button__icon" />
 						</button>
 						<button className={`swiper-button swiper-button-next ${typeButtonClass}`} ref={navigationNextRef}>
 							<IcoMoonIcon icon={EnumsIcon.ArrowRight} className="swiper-button__icon" />
 						</button>
-					</>
+					</div>
 				) : null
 			}
 		</div>

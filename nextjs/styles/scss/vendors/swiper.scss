@@ -267,11 +267,16 @@ button.swiper-pagination-bullet {
     }
     
     &--secondary {
+        color: var(--text-color-light);
         background-color: var(--primary-color);
+
+        &.swiper-button-disabled {
+            background-color: var(--primary-color);
+            opacity: 0.5;
+        }
 
         &:hover {
             background-color: var(--primary-color);
-            opacity: 0.7;
         }
     }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import cn from 'classnames'
 
 import Typography from './Typography'
 import Button from './Button'

@@ -1,0 +1,33 @@
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
+
+.block-additional-info {
+    padding: spacing.$m 0;
+    
+    @include responsive.mq($until: tablet) {
+        text-align: center;
+    }
+
+    @include responsive.mq($from: tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 0;
+            margin-right: 40px;
+        }
+    }
+
+    &__btn {
+        @include responsive.mq($until: tablet) {
+            margin-bottom: 20px;
+        }
+    }
+}

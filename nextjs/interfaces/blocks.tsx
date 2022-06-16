@@ -1,7 +1,7 @@
 import { IImage, IBenefit } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme } from '../types/common'
-import { IList, ILink } from './common'
+import { IList, ILink, IProject } from './common'
 
 export interface IBlockHero {
   Image: IImage
@@ -44,3 +44,10 @@ export interface IBlockIntroCarousel {
   Items: IImage[]
 }
 
+export interface IBlockLatestProjects {
+  BlockType: Block
+  Title: string
+  Items: IProject[]
+  Text?: string
+  Link?: ILink
+}
