@@ -12,7 +12,6 @@ import { getPageData } from '../../libs/cms/queries'
 
 import { PageProvider } from '../../context/project'
 
-
 export const getServerSideProps = async ({ params, resolvedUrl }) => {
   const pageName = resolvedUrl.replace('/en', '')
   const data = await getPageData(!pageName ? '/' : pageName.replace('/', ''))

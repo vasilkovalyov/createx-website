@@ -3,6 +3,8 @@ import {
 } from '../types/common'
 import { SocialIcon, EnumsIcon } from '../enums/icons'
 
+import { SwiperOptions } from 'swiper'
+
 export interface IImage {
   id?: Identificator
   Url: string
@@ -59,6 +61,7 @@ export interface IButton {
   url?: string
   className?: string
   outline?: boolean
+  color?: 'white' | 'primary'
   name?: string
   size?: 'small' | ''
   fullwidth?: boolean
@@ -155,4 +158,12 @@ export interface IContactInformation {
 
 export interface IOfficeAddress extends Omit<IContactInformation, 'Theme' | 'className'> {
   Title: string
+}
+
+export interface ICarousel {
+  slides: React.ReactNode[]
+  className?: string
+  useCustomNavigation?: boolean
+  settings?: SwiperOptions
+  typeButton?: 'primary' | 'secondary'
 }

@@ -1,0 +1,164 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.block-intro-carousel {
+    &__inner {
+        min-height: 100vh;
+        padding: 130px 0 130px;
+        display: flex;
+
+        @media (max-height: 700px) and (orientation:landscape) {
+            min-height: 550px;
+            padding: 130px 0 80px;
+        }
+        
+        @media (max-height: 900px) and (orientation:landscape) {
+            min-height: 550px;
+            padding: 160px 0 180px
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include responsive.mq($from: tablet) {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        @include responsive.mq($from: tablet_large) {
+            max-width: 1394px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        max-width: 595px;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: fz.$size-xxl;
+
+        @include responsive.mq($from: tablet) {
+            font-size: fz.$h1-medium;
+        }
+
+        @include responsive.mq($from: tablet_large) {
+            font-size: 72px;
+        }
+    }
+
+    &__text {
+        @include responsive.mq($from: tablet_large) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__carousel {
+        @include mixins.absoluteCover();
+
+        .carousel__wrapper {
+            height: 100%;
+        }
+
+        .swiper-pagination {
+            max-width: 1394px;
+            width: 100%;
+            bottom: 50px;
+            left: 50%;
+            display: flex;
+            justify-content: flex-start;
+            transform: translateX(-50%);
+            padding: 0 20px;
+            
+            @include responsive.mq($from: tablet) {
+                padding-left: 80px;
+                padding-right: 80px;
+                bottom: 100px;
+            }
+            
+            @include responsive.mq($from: tablet_large) {
+                max-width: 1394px;
+            }
+
+            @media (max-height: 700px) and (orientation:landscape) {
+                bottom: 50px;
+            }
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .swiper-button {
+            @include responsive.mq($until: tablet) {
+                display: none;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            position: relative;
+            width: 60px;
+            height: 4px;
+            border-radius: 0;
+            background-color: var(--text-color-light);
+            opacity: 0.3;
+            
+            @include responsive.mq($from: tablet) {
+                width: 120px;
+                height: 2px;
+            }
+
+            @include responsive.mq($from: tablet_large) {
+                width: 178px;
+            }
+
+            &-active {
+                opacity: 1;
+            }
+
+            &__count {
+                position: absolute;
+                top: -50px;
+                left: 0;
+                font-weight: fw.$bold;
+                font-size: fz.$size-l;
+                color: var(--text-color-light);
+
+                @include responsive.mq($from: tablet) {
+                    font-size: fz.$size-xl;
+                }
+
+                @include responsive.mq($from: tablet_large) {
+                    font-size: fz.$size-xxl;
+                }
+            }
+        }
+    }
+
+    &__slide {
+        min-height: 100vh;
+        display: flex;
+
+        @media (max-height: 700px) and (orientation:landscape) {
+            min-height: 550px;
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+
+        img {
+            @include mixins.coverImage();
+        }
+    }
+}

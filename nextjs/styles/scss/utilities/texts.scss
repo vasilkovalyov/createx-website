@@ -1,11 +1,16 @@
 @use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
 
 .text-lg {
-    font-size: fz.$size-l;
+    @include responsive.mq($from: tablet) {
+        font-size: fz.$size-l;
+    }
 }
 
 .text-md {
-    font-size: fz.$size-m;
+    @include responsive.mq($from: tablet) {
+        font-size: fz.$size-m;
+    }
 }
 
 .text-sm {

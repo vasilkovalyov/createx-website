@@ -20,7 +20,7 @@ export default function PersonCard({ Items, className, size = 'large' }: ISocial
                     <li key={link.id} className="social-list__item">
                         <Link href={link.Url}>
                             <a target='_blank' className="social-list__link">
-                                <IcoMoonIcon icon={link.Icon as unknown as EnumsIcon | ''} />
+                                <IcoMoonIcon icon={link.Icon as unknown as EnumsIcon} />
                             </a>
                         </Link>
                     </li>
