@@ -1,0 +1,72 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.block-our-clients {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: spacing.$xxxl 0;
+    }
+
+    &__inner {
+        position: relative;
+        padding: spacing.$xl 0;
+        
+        @include responsive.mq($from: tablet_large) {
+            padding: calc(spacing.$xl + spacing.$xxxl) 0;
+        }
+    }
+
+    &__overlay {
+        @include mixins.absoluteCover();
+        background-color: colors.$grey-extra-light;
+        
+        @include responsive.mq($from: laptop) {
+            bottom: 134px;
+        }
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__col-image {
+        @include responsive.mq($until: tablet_large) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        
+        @include responsive.mq($from: tablet_large) {
+            margin-bottom: 64px;
+        }
+    }
+
+    .swiper-button-control {
+        display: flex;
+        margin: 0 -10px;
+
+        @include responsive.mq($from: tablet_large) {
+            padding: 0;
+            position: absolute;
+            bottom: -15px;
+            right: -34px;
+        }
+
+        .swiper-button {
+            position: static;
+            margin: 0 10px;
+            transform: none;
+        }
+    }
+
+    .client-testimonial {
+        max-width: 100%;
+    }
+}

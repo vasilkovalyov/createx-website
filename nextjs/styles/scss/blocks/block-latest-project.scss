@@ -1,9 +1,4 @@
-@use '../settings/font-sizes.scss' as fz;
-@use '../settings/font-weights.scss' as fw;
 @use '../tools/responsive.scss';
-@use '../settings/spacing.scss';
-@use '../settings/colors.scss';
-@use '../tools/mixins.scss';
 
 .block-latest-project {
     padding: 40px 0;
