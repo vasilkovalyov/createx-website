@@ -9,9 +9,9 @@ import ImageComponent from './Image'
 import Row from './Grid/Row'
 import Col from './Grid/Col'
 
-import { IBlockOurClients } from '../../../interfaces/blocks'
+import { IBlockOurClientsTestimonials } from '../../../interfaces/blocks'
 
-export default function BlockOurClients({ BlockType, Title, Image, Items }: IBlockOurClients) {
+export default function BlockOurClientsTestimonials({ BlockType, Title, Image, Items }: IBlockOurClientsTestimonials) {
   return (
     <section className="block-our-clients">
         <div className="block-our-clients__inner">

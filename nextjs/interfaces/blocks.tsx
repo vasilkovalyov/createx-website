@@ -52,7 +52,7 @@ export interface IBlockLatestProjects {
   Link?: ILink
 }
 
-export interface IBlockOurClients {
+export interface IBlockOurClientsTestimonials {
   BlockType: Block
   Title: string
   Image: IImage
