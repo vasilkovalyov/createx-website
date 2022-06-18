@@ -167,3 +167,10 @@ export interface ICarousel {
   settings?: SwiperOptions
   typeButton?: 'primary' | 'secondary'
 }
+
+export interface IPosition {
+  Location: string
+  WorkTime: string
+  Title: string
+  Link: ILink
+}

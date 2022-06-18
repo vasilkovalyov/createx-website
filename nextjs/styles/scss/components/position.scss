@@ -1,0 +1,53 @@
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
+
+.position {
+    padding: spacing.$m;
+    max-width: 705px;
+    width: 100%;
+    border: 1px solid #E5E8ED;
+    margin-bottom: 18px;
+
+    @include responsive.mq($from: mobile_md) {
+        padding: spacing.$m spacing.$xxl;
+    }
+
+    &:hover {
+        box-shadow: setup.$base-shadow;
+    }
+
+    &__body {
+        padding-top: spacing.$xxs;
+    }
+
+    &__description {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            color: var(--text-color-secondary);
+
+            &:not(:last-child) {
+                &:after {
+                    content: '|';
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        &-icon {
+            margin-right: 8px;
+        }
+    }
+
+    &__btn-wrapper {
+        @include responsive.mq($from: mobile_md) {
+            text-align: right;
+        }
+    }
+}
