@@ -47,6 +47,5 @@ Default.args = {
 			Name: 'Shawn Edwards',
 			Position: 'Position, Company name',
 		},
-		
 	]
 }

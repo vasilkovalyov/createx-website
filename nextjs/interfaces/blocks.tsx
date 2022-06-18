@@ -1,6 +1,6 @@
 import { IImage, IBenefit } from './common'
 import { Block } from '../enums/blocks'
-import { ColorTheme } from '../types/common'
+import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
 
 export interface IBlockHero {
@@ -59,3 +59,15 @@ export interface IBlockOurClientsTestimonials {
   Items: ITestimonial[]
 }
 
+export interface IHistory {
+  id: Identificator
+  Image: IImage
+  Text: string
+  Date: string
+}
+
+export interface IBlockOurHistory {
+  BlockType: Block
+  Title: string
+  Items: IHistory[]
+}

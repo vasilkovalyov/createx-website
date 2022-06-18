@@ -1,5 +1,3 @@
-@use '../settings/font-sizes.scss' as fz;
-@use '../settings/font-weights.scss' as fw;
 @use '../tools/responsive.scss';
 @use '../settings/spacing.scss';
 @use '../settings/colors.scss';
@@ -40,11 +38,13 @@
         }
     }
 
-    &__title {
-        margin-bottom: 40px;
-        
-        @include responsive.mq($from: tablet_large) {
-            margin-bottom: 64px;
+    .block-heading {
+        &__title {
+            margin-bottom: 40px;
+            
+            @include responsive.mq($from: tablet_large) {
+                margin-bottom: 64px;
+            }
         }
     }
 

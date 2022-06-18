@@ -14,7 +14,6 @@ type SwiperType = React.HTMLAttributes<HTMLElement> & {
 }
 
 export default function Carousel({ slides, settings, className, typeButton = 'primary', useCustomNavigation = true}: ICarousel) {
-	console.log('settings', settings)
 	const sliderRef = useRef<SwiperType>(null)
 	const navigationPrevRef = useRef(null)
   	const navigationNextRef = useRef(null)

@@ -34,6 +34,9 @@
         "block-partners.block-partners",
         "block-hero.block-hero"
       ]
+    },
+    "Date": {
+      "type": "date"
     }
   }
 }

@@ -1,0 +1,169 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/mixins.scss';
+
+.block-our-history {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: spacing.$xxxl 0;
+    }
+
+    &__inner {
+        position: relative;
+        padding: spacing.$xl 0;
+        
+        @include responsive.mq($from: tablet_large) {
+            padding: calc(spacing.$xl + spacing.$xxxl) 0;
+        }
+    }
+
+    &__overlay {
+        @include mixins.absoluteCover();
+        background-color: colors.$grey-extra-light;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .block-heading {
+        &__title {
+            margin-bottom: 40px;
+            
+            @include responsive.mq($from: tablet_large) {
+                margin-bottom: 64px;
+            }
+        }
+    }
+
+    .swiper-button-control {
+        display: flex;
+        justify-content: center;
+        margin: 0 -10px;
+
+        @include responsive.mq($from: tablet) {
+            position: absolute;
+            top: -70px;
+            right: 0;
+        }
+
+        .swiper-button {
+            position: static;
+            margin: 0 10px;
+            transform: none;
+        }
+    }
+
+    .history-list {
+        position: relative;
+
+        @include responsive.mq($until: tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        @include responsive.mq($from: tablet) {
+            display: block;
+            padding-left: 40px;
+        }
+
+        &:before {
+            @include responsive.mq($from: tablet) {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 0;
+                bottom: -10px;
+                background-color: colors.$grey-dark;
+                width: 1px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            position: relative;
+
+            &:before {
+                @include responsive.mq($from: tablet) {
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    height: 20px;
+                    background-color: colors.$grey-extra-light;
+                    z-index: 0;
+                    top: 12px;
+                    left: -45px;
+                }
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            .history-list__date {
+                color: var(--primary-color);
+
+                &:before {
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+
+        &__item {
+            cursor: pointer;
+            display: block;
+            width: auto;
+            height: auto;
+            background: transparent;
+            opacity: 1;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+
+                @include responsive.mq($from: tablet) {
+                    margin-bottom: 20px;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__date{
+            position: relative;
+            cursor: pointer;
+            color: colors.$grey-dark;
+            font-size: fz.$size-l;
+            
+            @include responsive.mq($from: tablet) {
+                font-size: fz.$size-xxl;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 10px;
+                right: -16px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: colors.$grey-dark;
+                z-index: 1;
+
+                @include responsive.mq($from: tablet) {
+                    top: 12px;
+                    left: -43px;
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+.history {
+    &__image {
+        margin-bottom: 36px;
+    }
+}
