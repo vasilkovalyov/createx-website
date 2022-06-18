@@ -43,7 +43,6 @@ export default function BlockOurHistory({ BlockType, Title, Items }: IBlockOurHi
                                     return `<div class="${className} history-list__item">
                                         <strong class="history-list__date">${getHistoryDate(Items[index].Date, 'Present')}</strong>
                                     </div>`
-                                    
                                 }
                             }
                         }} className="block-our-history__carousel" typeButton="secondary" />

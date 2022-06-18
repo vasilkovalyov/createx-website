@@ -71,3 +71,8 @@ export interface IBlockOurHistory {
   Title: string
   Items: IHistory[]
 }
+
+export interface IBlockImageGallery {
+  BlockType: Block
+  Items: IImage[]
+}

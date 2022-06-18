@@ -249,8 +249,8 @@ button.swiper-pagination-bullet {
     border-radius: 50%;
     outline: none;
     border: none;
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,6 +259,11 @@ button.swiper-pagination-bullet {
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
+
+    @include responsive.mq($from: tablet) {
+        width: 48px;
+        height: 48px;
+    }
 
     &--primary {
         &:hover {
@@ -282,7 +287,11 @@ button.swiper-pagination-bullet {
 
     &__icon {
         display: flex;
-        font-size: fz.$size-m;
+        font-size: fz.$size-xs;
+
+        @include responsive.mq($from: tablet) {
+            font-size: fz.$size-m;
+        }
     }
 
     &-prev {
