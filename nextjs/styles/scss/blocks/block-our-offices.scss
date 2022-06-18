@@ -1,0 +1,43 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/mixins.scss';
+
+.block-our-offices {
+    @include responsive.mq($from: tablet_large) {
+        padding: calc(spacing.$xl + spacing.$xxxl) 0;
+    }
+
+    .block-heading {
+        margin-bottom: 65px;
+    }
+
+    &__contact-info {
+        max-width: 250px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__col-title {
+        margin-bottom: 30px;
+    }
+
+    .col {
+        position: relative;
+
+        &:not(:last-child) {
+            &:after {
+                @include responsive.mq($from: tablet) {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 1px;
+                    background-color: colors.$grey-dark;
+                }
+            }
+        }
+    }
+}

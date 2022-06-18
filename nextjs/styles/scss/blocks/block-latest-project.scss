@@ -3,18 +3,20 @@
 .block-latest-project {
     padding: 40px 0;
     
-    &__title {
-        width: 100%;
-        margin-bottom: 26px;
-        
-        @include responsive.mq($from: tablet) {
-            margin-right: 20px;
-            max-width: 490px;
-        }
-        
-        @include responsive.mq($from: tablet_large) {
-            margin-bottom: 40px;
-            max-width: 724px;
+    .block-heading {
+        &__title {
+            width: 100%;
+            margin-bottom: 26px;
+            
+            @include responsive.mq($from: tablet) {
+                margin-right: 20px;
+                max-width: 490px;
+            }
+            
+            @include responsive.mq($from: tablet_large) {
+                margin-bottom: 40px;
+                max-width: 724px;
+            }
         }
     }
 

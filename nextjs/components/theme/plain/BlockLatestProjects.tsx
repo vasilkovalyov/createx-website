@@ -15,8 +15,7 @@ export default function BlockLatestProjects({ BlockType, Title, Text, Link, Item
   return (
     <section className="block-latest-project">
         <Container className="block-latest-project__container">
-            <Typography level="h2" text={Title} className="block-latest-project__title"  />
-            
+            <BlockHeading Title={Title} />
             <Carousel slides={Items.map((item, index) => (
                 <div key={index} className="block-latest-project__slide">
                     <ProjectCard {...item} />

@@ -1,4 +1,4 @@
-import { IImage, IBenefit } from './common'
+import { IImage, IBenefit, IContactInformation } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
@@ -75,4 +75,16 @@ export interface IBlockOurHistory {
 export interface IBlockImageGallery {
   BlockType: Block
   Items: IImage[]
+}
+
+interface IOurOffice extends IContactInformation {
+  id: Identificator
+  Title: string
+}
+
+export interface IBlockOurOffices {
+  BlockType: Block
+  Title: string
+  Text: string
+  Items: IOurOffice[]
 }

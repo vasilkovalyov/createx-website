@@ -1,0 +1,41 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.project-description {
+    max-width: 495px;
+    width: 100%;
+    padding: spacing.$s;
+    
+    @include responsive.mq($from: tablet) {
+        padding: spacing.$xxl calc(spacing.$m + spacing.$xxl);
+    }
+
+    &__item {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__title {
+        max-width: 100px;
+        width: 100%;
+        margin-right: 15px;
+        margin-bottom: 0;
+        word-break: break-all;
+
+        @include responsive.mq($from: mobile_md) {
+            max-width: 130px;
+        }
+
+        @include responsive.mq($from: tablet) {
+            max-width: 116px;
+        }
+    }
+
+    &__text {
+        color: var(--text-color-secondary);
+        margin-bottom: 0;
+    }
+}

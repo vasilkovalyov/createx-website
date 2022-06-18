@@ -174,3 +174,11 @@ export interface IPosition {
   Title: string
   Link: ILink
 }
+
+export interface IProjectDescription {
+  Items: {
+    id: Identificator
+    Title: string
+    Text: string
+  }[]
+}

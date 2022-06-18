@@ -47,9 +47,14 @@
 
         @include responsive.mq($from: tablet) {
             position: absolute;
-            top: -70px;
+            top: -85px;
             right: 0;
         }
+        
+        @include responsive.mq($from: tablet_large) {
+            top: -92px;
+        }
+
 
         .swiper-button {
             position: static;
