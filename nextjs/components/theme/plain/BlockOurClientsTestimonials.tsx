@@ -11,7 +11,7 @@ import Col from './Grid/Col'
 
 import { IBlockOurClientsTestimonials } from '../../../interfaces/blocks'
 
-export default function BlockOurClientsTestimonials({ BlockType, Title, Image, Items }: IBlockOurClientsTestimonials) {
+export default function BlockOurClientsTestimonials({ Title, Image, Items }: IBlockOurClientsTestimonials) {
   return (
     <section className="block-our-clients">
         <div className="block-our-clients__inner">
@@ -27,7 +27,7 @@ export default function BlockOurClientsTestimonials({ BlockType, Title, Image, I
                         ))} className="block-our-clients__carousel" />
                     </Col>
                     <Col base={12} sm={12} lg={5} className="block-our-clients__col-image">
-                        <ImageComponent Url={Image.Url} Alt={Image.Alt} className="block-our-clients__image" />
+                        { Image && Image.Url &&<ImageComponent Url={Image.Url} Alt={Image.Alt} className="block-our-clients__image" /> }
                     </Col>
                 </Row>
             </Container>

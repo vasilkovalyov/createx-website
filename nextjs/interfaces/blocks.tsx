@@ -88,3 +88,8 @@ export interface IBlockOurOffices {
   Text: string
   Items: IOurOffice[]
 }
+
+export interface IBlockFormDetail {
+  BlockType: Block
+  Image?: IImage
+}

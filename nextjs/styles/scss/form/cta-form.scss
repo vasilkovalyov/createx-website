@@ -1,8 +1,15 @@
+@use '../tools/responsive.scss';
+
 .cta-form {
     border: 1px solid #E5E8ED;
-    padding: 50px 40px;
+    padding: 30px 20px;
     max-width: 495px;
     width: 100%;
+    background-color: var(--bg-page);
+
+    @include responsive.mq($from: tablet) {
+        padding: 50px 40px;
+    }
 
     &__title {
         margin-bottom: 28px;

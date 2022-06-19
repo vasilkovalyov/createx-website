@@ -85,11 +85,45 @@ export async function getPageData(page: string) {
           }
         }
       }
+      blockFormDetail {
+        data {
+          attributes {
+            BlockType
+            Image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            ImageAlt
+          }
+        }
+      }
       pages(filters: { Slug: { contains: $page } }) {
         data {
           attributes {
             Slug
+            ShowFormDetails
             Body {
+              ... on ComponentBlockOurClientsBlockOurClients {
+                id
+                BlockType
+                Title
+                Items {
+                  id
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                  Name
+                  Position
+                }
+              }
               ... on ComponentBlockHeroBlockHero {
                 id
                 Title

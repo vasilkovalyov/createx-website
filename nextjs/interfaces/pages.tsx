@@ -1,5 +1,6 @@
 import { Identificator } from '../types/common'
 import { IContactInformation, IImage, ISocialList } from '../interfaces/common'
+import { Block } from 'enums/blocks'
 
 export interface ISeo {
   id?: Identificator
@@ -20,13 +21,13 @@ export interface IMenu {
 }
 
 export interface IHeader {
-  BlockType: string
+  BlockType: Block
   Image?: IImage | null
   Menu?: IMenu | null
 }
 
 export interface IFooter {
-  BlockType: string
+  BlockType: Block
   Image: IImage
   Menu?: IMenu[] | null
   Text: string
@@ -37,10 +38,15 @@ export interface IFooter {
 
 export interface IContentBlock {
   id: Identificator
-  BlockType: string
+  BlockType: Block
   Title: string
   Text: string
   Image: IImage
   ImageAlt: string
   Overlay: boolean
+}
+
+export interface IBlockFormDetail {
+  BlockType: Block
+  Image: IImage
 }

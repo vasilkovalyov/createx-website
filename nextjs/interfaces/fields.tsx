@@ -2,6 +2,7 @@ import { Identificator } from '../types/common'
 import { IContactInformation, ISocialList } from './common'
 
 export interface FieldAttributes {
+  [x: string]: any
   id?: Identificator
   BlockType?: string
   Slug: string
@@ -34,6 +35,11 @@ export interface IPageField {
       attributes: IHeaderBlockField
     }
   }
+  blockFormDetail: {
+    data: {
+      attributes: IHeaderBlockField
+    }
+  }
   blockFooter: {
     data: {
       attributes: IFooterBlockField
@@ -43,22 +49,26 @@ export interface IPageField {
     data: {
       attributes: {
         Body: FieldAttributes[]
+        ShowFormDetails: boolean
         Slug: string
       }
     }[]
   }
 }
 
+
+export interface IBlockFormDetailField extends IImageField {
+  BlockType: string
+}
+
 export interface IHeaderBlockField extends IImageField {
   BlockType: string
   Menu: IMenuField
-  Slug: string
 }
 
 export interface IFooterBlockField extends IImageField {
   BlockType: string
   Menu: IMenuField[]
-  Slug: string
   Text: string
   ContactInformation: IContactInformation
   SocialList: ISocialList
@@ -81,4 +91,12 @@ export interface IMenuField {
       attributes: Pick<FieldAttributes, 'Slug' | 'Name'>
     }[]
   }
+}
+
+
+export interface ITestimonialField extends IImageField {
+  id?: Identificator
+  Name: string
+  Position: string
+  Text: string
 }

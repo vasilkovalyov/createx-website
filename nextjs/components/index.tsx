@@ -3,6 +3,8 @@ import React from 'react'
 import BlockHeroBlock from './blocks/BlockHeroBlock'
 import BlockHeaderBlock from './blocks/BlockHeaderBlock'
 import BlockFooterBlock from './blocks/BlockFooterBlock'
+import BlockFormDetailBlock from './blocks/BlockFormDetailBlock'
+import BlockOurClientsTestimonialsBlock from './blocks/BlockOurClientsTestimonialsBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -14,6 +16,8 @@ export const blockComponents = {
   [Block.BlockHeader]: BlockHeaderBlock,
   [Block.BlockFooter]: BlockFooterBlock,
   [Block.BlockHero]: BlockHeroBlock,
+  [Block.BlockFormDetail]: BlockFormDetailBlock,
+  [Block.BlockOurClientsTestimonials]: BlockOurClientsTestimonialsBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
@@ -31,9 +35,7 @@ export function renderBlock(BlockType: Block, index?: number) {
   // const byBlockType = registeredComponents['plain']?.filter((c) => c.BlockType === BlockType)
   if (!Component) return <></>
   return (
-    <>
-      <Component key={index} />
-    </>
+    <Component key={index} />
   )
 }
 

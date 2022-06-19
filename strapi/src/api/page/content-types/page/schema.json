@@ -34,6 +34,9 @@
         "block-our-clients.block-our-clients",
         "block-partners.block-partners"
       ]
+    },
+    "ShowFormDetails": {
+      "type": "boolean"
     }
   }
 }

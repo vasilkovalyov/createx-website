@@ -1,0 +1,30 @@
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
+
+.block-form-detail {
+    position: relative;
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet) {
+        padding: calc(spacing.$xl + spacing.$xxxl) 0;
+    }
+
+    &__image {
+        @include mixins.absoluteCover();
+        
+        img {
+            @include mixins.coverImage();
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-form {
+        max-width: 100%;
+    }
+}

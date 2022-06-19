@@ -38,7 +38,7 @@ export default function BlockFooterBlock() {
   }
 
   const props: IFooter = {
-    BlockType: BlockType,
+    BlockType: BlockType as Block,
     Image: image,
     Text: text,
     Menu: convertedMenu,

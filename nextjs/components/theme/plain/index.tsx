@@ -4,6 +4,8 @@ import { IRegistryItem } from '../../../interfaces/blocks'
 import Header from './Layout/Header'
 import Footer from './Layout/Footer'
 import BlockHero from './BlockHero'
+import BlockFormDetail from './BlockFormDetail'
+import BlockOurClientsTestimonials from './BlockOurClientsTestimonials'
 
 const components: IRegistryItem[] = [
   {
@@ -17,6 +19,14 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockHero,
     component: BlockHero,
+  },
+  {
+    BlockType: Block.BlockFormDetail,
+    component: BlockFormDetail,
+  },
+  {
+    BlockType: Block.BlockOurClientsTestimonials,
+    component: BlockOurClientsTestimonials,
   },
 ]
 

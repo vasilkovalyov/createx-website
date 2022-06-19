@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "block_form_details",
+  "info": {
+    "singularName": "block-form-detail",
+    "pluralName": "block-form-details",
+    "displayName": "Block Form Detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockFormDetail"
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
