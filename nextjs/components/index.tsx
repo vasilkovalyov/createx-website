@@ -5,6 +5,7 @@ import BlockHeaderBlock from './blocks/BlockHeaderBlock'
 import BlockFooterBlock from './blocks/BlockFooterBlock'
 import BlockFormDetailBlock from './blocks/BlockFormDetailBlock'
 import BlockOurClientsTestimonialsBlock from './blocks/BlockOurClientsTestimonialsBlock'
+import BlockIntroCarouselBlock from './blocks/BlockIntroCarouselBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -18,6 +19,7 @@ export const blockComponents = {
   [Block.BlockHero]: BlockHeroBlock,
   [Block.BlockFormDetail]: BlockFormDetailBlock,
   [Block.BlockOurClientsTestimonials]: BlockOurClientsTestimonialsBlock,
+  [Block.BlockIntroCarousel]: BlockIntroCarouselBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {

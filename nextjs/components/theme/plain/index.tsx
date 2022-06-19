@@ -6,6 +6,7 @@ import Footer from './Layout/Footer'
 import BlockHero from './BlockHero'
 import BlockFormDetail from './BlockFormDetail'
 import BlockOurClientsTestimonials from './BlockOurClientsTestimonials'
+import BlockIntroCarousel from './BlockIntroCarousel'
 
 const components: IRegistryItem[] = [
   {
@@ -19,6 +20,10 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockHero,
     component: BlockHero,
+  },
+  {
+    BlockType: Block.BlockIntroCarousel,
+    component: BlockIntroCarousel,
   },
   {
     BlockType: Block.BlockFormDetail,

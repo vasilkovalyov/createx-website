@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_intro_carousel_items",
+  "info": {
+    "displayName": "Items"
+  },
+  "options": {},
+  "attributes": {
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

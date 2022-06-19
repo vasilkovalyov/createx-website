@@ -106,6 +106,32 @@ export async function getPageData(page: string) {
             Slug
             ShowFormDetails
             Body {
+              ... on ComponentBlockIntroCarouselBlockIntroCarousel {
+                id
+                TitleIntroCarousel: Title
+                Text
+                BlockType
+                Items {
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                }
+                PageLink: Link {
+                  page {
+                    data {
+                      attributes {
+                        Slug
+                      }
+                    }
+                  }
+                  Name
+                }
+              }
               ... on ComponentBlockHeroBlockHero {
                 id
                 Title

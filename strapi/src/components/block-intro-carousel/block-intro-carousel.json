@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_block_intro_carousel_block_intro_carousels",
+  "info": {
+    "displayName": "Block Intro Carousel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockIntroCarousel"
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-intro-carousel.items"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "link.menu-item"
+    }
+  }
+}

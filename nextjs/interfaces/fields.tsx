@@ -1,18 +1,25 @@
 import { Identificator } from '../types/common'
 import { IContactInformation, ISocialList } from './common'
 
-export interface FieldAttributes {
+export interface FieldAttributes<T> {
   [x: string]: any
   id?: Identificator
   BlockType?: string
   Slug: string
   Name: string
   Title: string
+  TitleIntroCarousel: string
+  PageLink: IMenuItemField
+  Items: T[]
   Text: string
   Image: IImageField
   ClientImage?: IImageFieldData
   ClientImageAlt?: string
   Overlay?: boolean | null
+}
+
+export interface ILinkPageField {
+
 }
 
 export interface IImageFieldData {
@@ -52,7 +59,7 @@ export interface IPageField {
   pages: {
     data: {
       attributes: {
-        Body: FieldAttributes[]
+        Body: FieldAttributes<any>[]
         ShowFormDetails: boolean
         Slug: string
       }
@@ -81,7 +88,7 @@ export interface IFooterBlockField extends IImageField {
 export interface IDataFields {
   id?: Identificator
   data: {
-    attributes: FieldAttributes
+    attributes: FieldAttributes<any>
   }
 }
 
@@ -91,8 +98,17 @@ export interface IMenuField {
   pages: {
     data: {
       id?: Identificator
-      attributes: Pick<FieldAttributes, 'Slug' | 'Name'>
+      attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
     }[]
+  }
+}
+
+export interface IMenuItemField extends Pick<IMenuField, 'id' |'Name'>{
+  page: {
+    data: {
+      id?: Identificator
+      attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
+    }
   }
 }
 

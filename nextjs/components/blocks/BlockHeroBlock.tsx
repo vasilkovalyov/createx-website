@@ -13,8 +13,8 @@ export default function BlockHeroBlock() {
     BlockType: blockHeroData.BlockType,
     Title: blockHeroData.Title,
     Image: {
-      Url: blockHeroData.Image.data.attributes.url,
-      Alt: blockHeroData.Image.ImageAlt,
+      Url: blockHeroData.HeroImage.data.attributes.url,
+      Alt: blockHeroData.HeroImage.ImageAlt,
     },
     Text: blockHeroData.Text,
     Overlay: blockHeroData.Overlay,
