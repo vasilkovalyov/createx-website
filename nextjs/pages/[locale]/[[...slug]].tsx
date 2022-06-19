@@ -42,6 +42,7 @@ const DynamicPage = (page: IPageField) => {
   const pageAttributes = page?.pages.data[0].attributes
   const pageBody = pageAttributes.Body
   const showFormDetails = pageAttributes.ShowFormDetails
+  console.log('pageBody', pageBody)
 
   useEffect(() => {
     if (page) {

@@ -9,10 +9,11 @@ import Col from './Grid/Col'
 
 import { IBlockBenefits } from '../../../interfaces/blocks'
 
-function BlockHero({ BlockType, Items, Theme = 'light', Title, Text }: IBlockBenefits) {
+function BlockHero({ Items, Theme = 'light', Title, Text }: IBlockBenefits) {
     const themeColor = cn({
 		'block-benefits--light': Theme === 'light',
 		'block-benefits--dark': Theme === 'dark',
+		'block-benefits--grey': Theme === 'grey',
 	})
 	return (
 		<section className={`block-benefits ${themeColor ? themeColor : ''}`}>

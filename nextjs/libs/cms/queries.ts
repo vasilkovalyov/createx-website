@@ -132,6 +132,26 @@ export async function getPageData(page: string) {
                   Name
                 }
               }
+              ... on ComponentBlockBenefitsBlockBenefits {
+                id
+                BlockType
+                Text
+                Theme
+                Title
+                Items {
+                  id
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                  Title
+                  Text
+                }
+              }
               ... on ComponentBlockHeroBlockHero {
                 id
                 Title

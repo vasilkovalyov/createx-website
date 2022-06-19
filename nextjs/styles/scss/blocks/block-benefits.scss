@@ -28,6 +28,17 @@
         }
     }
 
+    &--grey {
+        background-color: colors.$grey-extra-light;
+
+        .col {
+            &:after {
+                background-color: colors.$white;
+                opacity: 0.4;
+            }
+        }
+    }
+
     .block-heading {
         margin-bottom: 42px;
 

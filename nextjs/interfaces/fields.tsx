@@ -1,5 +1,5 @@
-import { Identificator } from '../types/common'
-import { IContactInformation, ISocialList } from './common'
+import { ColorTheme, Identificator } from '../types/common'
+import { IBenefit, IContactInformation, ISocialList } from './common'
 
 export interface FieldAttributes<T> {
   [x: string]: any
@@ -11,15 +11,12 @@ export interface FieldAttributes<T> {
   TitleIntroCarousel: string
   PageLink: IMenuItemField
   Items: T[]
+  Theme?: ColorTheme
   Text: string
   Image: IImageField
   ClientImage?: IImageFieldData
   ClientImageAlt?: string
   Overlay?: boolean | null
-}
-
-export interface ILinkPageField {
-
 }
 
 export interface IImageFieldData {
@@ -119,4 +116,8 @@ export interface ITestimonialField {
   Name: string
   Position: string
   Text: string
+}
+
+export interface IBenefitField extends Pick<IBenefit, 'Title' | 'Text' | 'id'> {
+  Image: IImageField
 }

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_block_benefits_block_benefits",
+  "info": {
+    "displayName": "Block Benefits",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockBenefits",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-benefits.items"
+    },
+    "Theme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark",
+        "grey"
+      ],
+      "default": "light"
+    }
+  }
+}

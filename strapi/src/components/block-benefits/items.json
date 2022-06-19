@@ -1,10 +1,17 @@
 {
-  "collectionName": "components_block_core_values_items",
+  "collectionName": "components_block_benefits_items",
   "info": {
     "displayName": "Items"
   },
   "options": {},
   "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "text"
+    },
     "Image": {
       "allowedTypes": [
         "images"
@@ -14,12 +21,6 @@
     },
     "ImageAlt": {
       "type": "string"
-    },
-    "Title": {
-      "type": "string"
-    },
-    "Text": {
-      "type": "text"
     }
   }
 }

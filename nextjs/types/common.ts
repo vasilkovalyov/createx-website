@@ -22,7 +22,7 @@ export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 export type InputType = 'text' | 'search' | 'number' | 'email'
 
-export type ColorTheme = 'light' | 'dark'
+export type ColorTheme = 'light' | 'dark' | 'grey'
 
 export type ListType = 'default' | 'with-icon'
 
