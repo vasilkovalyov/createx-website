@@ -13,6 +13,14 @@ export default function PersonCard({ Items, className, size = 'large' }: ISocial
 		'social-list--large': size === 'large',
 	})
 
+    const renderSocialIcon = (name: EnumsIcon) => {
+        if (name === 'icon-linked_in') {
+            return <IcoMoonIcon icon={'icon-linked-In' as EnumsIcon} />
+        } else {
+            return <IcoMoonIcon icon={name as unknown as EnumsIcon} />
+        }
+    }
+
     return (
         <ul className={`social-list list-reset ${socialSize} ${className ? className : ''}`}>
             {
@@ -20,7 +28,7 @@ export default function PersonCard({ Items, className, size = 'large' }: ISocial
                     <li key={link.id} className="social-list__item">
                         <Link href={link.Url}>
                             <a target='_blank' className="social-list__link">
-                                <IcoMoonIcon icon={link.Icon as unknown as EnumsIcon} />
+                                { renderSocialIcon(link.Icon as unknown as EnumsIcon) }
                             </a>
                         </Link>
                     </li>
