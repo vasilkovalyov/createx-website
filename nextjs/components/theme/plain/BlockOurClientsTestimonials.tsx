@@ -12,6 +12,7 @@ import Col from './Grid/Col'
 import { IBlockOurClientsTestimonials } from '../../../interfaces/blocks'
 
 export default function BlockOurClientsTestimonials({ Title, Image, Items }: IBlockOurClientsTestimonials) {
+    console.log('Items', Items)
   return (
     <section className="block-our-clients">
         <div className="block-our-clients__inner">

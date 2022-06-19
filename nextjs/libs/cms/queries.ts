@@ -106,10 +106,32 @@ export async function getPageData(page: string) {
             Slug
             ShowFormDetails
             Body {
+              ... on ComponentBlockHeroBlockHero {
+                id
+                Title
+                Text
+                BlockType
+                HeroImage: Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Overlay
+              }
               ... on ComponentBlockOurClientsBlockOurClients {
                 id
                 BlockType
                 Title
+                ClientImage: Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
                 Items {
                   id
                   Image {
@@ -122,22 +144,8 @@ export async function getPageData(page: string) {
                   ImageAlt
                   Name
                   Position
+                  Text
                 }
-              }
-              ... on ComponentBlockHeroBlockHero {
-                id
-                Title
-                Text
-                BlockType
-                Image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                ImageAlt
-                Overlay
               }
             }
           }

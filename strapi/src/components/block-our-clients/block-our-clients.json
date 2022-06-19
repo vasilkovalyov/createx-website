@@ -12,7 +12,14 @@
       "default": "blockOurClients"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "unique": false
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-our-clients.items"
     },
     "Image": {
       "type": "media",
@@ -24,12 +31,6 @@
     },
     "ImageAlt": {
       "type": "string"
-    },
-    "Items": {
-      "displayName": "Items",
-      "type": "component",
-      "repeatable": true,
-      "component": "block-our-clients.items"
     }
   }
 }

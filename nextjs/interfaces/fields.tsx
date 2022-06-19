@@ -10,21 +10,25 @@ export interface FieldAttributes {
   Title: string
   Text: string
   Image: IImageField
-  Overlay: boolean | null
+  ClientImage?: IImageFieldData
+  ClientImageAlt?: string
+  Overlay?: boolean | null
+}
+
+export interface IImageFieldData {
+  id?: Identificator
+  data: {
+    attributes: {
+      url: string
+      width?: string | number
+      height?: string | number
+    }
+  }
 }
 
 export interface IImageField {
   data: any
-  Image: {
-    id?: Identificator
-    data: {
-      attributes: {
-        url: string
-        width?: string | number
-        height?: string | number
-      }
-    }
-  }
+  Image: IImageFieldData
   ImageAlt: string
 }
 
@@ -55,7 +59,6 @@ export interface IPageField {
     }[]
   }
 }
-
 
 export interface IBlockFormDetailField extends IImageField {
   BlockType: string
@@ -94,7 +97,8 @@ export interface IMenuField {
 }
 
 
-export interface ITestimonialField extends IImageField {
+export interface ITestimonialField {
+  [x: string]: any
   id?: Identificator
   Name: string
   Position: string

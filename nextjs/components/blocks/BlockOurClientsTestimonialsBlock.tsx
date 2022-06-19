@@ -11,23 +11,29 @@ export default function BlockOurClientsTestimonialsBlock() {
   const ctx = useContext(PageProvider)
   const blockOurClientsData = ctx?.pages.data[0].attributes.Body.filter((item) => item.BlockType === Block.BlockOurClientsTestimonials)[0]
   if (!blockOurClientsData) return null
+
   const updatedItems = (items: ITestimonialField[]): ITestimonial[] => {
     return items.map((item) => {
-        return {
-            ...item,
-            Image: {
-                Url: item.Image.data.attributes.url,
-                Alt: item.ImageAlt
-            } 
-        }
+      return {
+          ...item,
+          Image: {
+              Url: item.Image.data.attributes.url,
+              Alt: item.ImageAlt
+          } 
+      }
     })
   }
 
   const props = {
     BlockType: blockOurClientsData.BlockType,
     Title: blockOurClientsData.Title,
-    Items: updatedItems(blockOurClientsData.Items)
-  } as unknown as IBlockOurClientsTestimonials
+    Image: {
+      Url: blockOurClientsData.ClientImage?.data.attributes.url,
+      Alt: blockOurClientsData.ClientImageAlt,
+    },
+    Items: updatedItems(blockOurClientsData.Items),
+    Text: blockOurClientsData.Text
+  } as IBlockOurClientsTestimonials
   
   return getComponent<IBlockOurClientsTestimonials>(Block.BlockOurClientsTestimonials, props)
 }
