@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_contact_information_contact_informations",
+  "info": {
+    "displayName": "Contact Information",
+    "icon": "file-contract",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Address": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Schedule": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

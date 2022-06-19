@@ -30,13 +30,10 @@
       "type": "dynamiczone",
       "components": [
         "block-core-values.block-core-values",
+        "block-hero.block-hero",
         "block-our-clients.block-our-clients",
-        "block-partners.block-partners",
-        "block-hero.block-hero"
+        "block-partners.block-partners"
       ]
-    },
-    "Date": {
-      "type": "date"
     }
   }
 }

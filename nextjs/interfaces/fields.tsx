@@ -1,4 +1,5 @@
 import { Identificator } from '../types/common'
+import { IContactInformation, ISocialList } from './common'
 
 export interface FieldAttributes {
   id?: Identificator
@@ -27,6 +28,7 @@ export interface IImageField {
 }
 
 export interface IPageField {
+  NODE_ENV: string
   blockHeader: {
     data: {
       attributes: IHeaderBlockField
@@ -58,6 +60,9 @@ export interface IFooterBlockField extends IImageField {
   Menu: IMenuField[]
   Slug: string
   Text: string
+  ContactInformation: IContactInformation
+  SocialList: ISocialList
+  SubscribeForm: boolean
 }
 
 export interface IDataFields {

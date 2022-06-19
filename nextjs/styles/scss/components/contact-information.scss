@@ -29,6 +29,13 @@
     &__description {
         font-style: normal;
         display: inline-block;
+
+        &[href] {
+            &:hover {
+                color: var(--primary-color);
+                opacity: 1;
+            }
+        }
     }
 
     a {

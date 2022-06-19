@@ -1,5 +1,5 @@
 import { Identificator } from '../types/common'
-import { IImage } from '../interfaces/common'
+import { IContactInformation, IImage, ISocialList } from '../interfaces/common'
 
 export interface ISeo {
   id?: Identificator
@@ -30,6 +30,9 @@ export interface IFooter {
   Image: IImage
   Menu?: IMenu[] | null
   Text: string
+  ContactInformation: IContactInformation
+  SocialList?: ISocialList
+  SubscribeForm: boolean
 }
 
 export interface IContentBlock {

@@ -118,6 +118,7 @@ export interface ISocialLink {
   id?: Identificator
   Url: string
   Icon: SocialIcon
+  Target: string
 }
 
 export interface ISocialList {
@@ -150,6 +151,7 @@ export interface ITestimonial {
 export interface IContactInformation {
   Theme?: ColorTheme
   className?: string
+  Title?: string
   Address?: string
   Phone?: string
   Email?: string

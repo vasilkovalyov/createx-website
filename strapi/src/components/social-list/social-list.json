@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_social_list_social_lists",
+  "info": {
+    "displayName": "Social List",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social-link.social-link"
+    }
+  }
+}

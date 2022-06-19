@@ -16,8 +16,8 @@ export default function Image({ Items, icon, className, type = 'default' }: ILis
 			{
 				Items && Items.length && Items.map((item) => (
 					<li key={item.id} className="list__item">
-							<IcoMoonIcon icon={icon} className="list__icon" />
-							<span className="list__text">{item.Text}</span>
+						{ type !== 'default' ? <IcoMoonIcon icon={icon} className="list__icon" /> : null }
+						<span className="list__text">{item.Text}</span>
 					</li>
 				))
 			}

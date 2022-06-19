@@ -67,6 +67,21 @@ export async function getPageData(page: string) {
                 }
               }
             }
+            SocialList {
+              Items{
+                id
+                Url
+                Target
+                Icon
+              }
+            }
+            ContactInformation {
+              Title
+              Address
+              Phone
+              Email
+            }
+            SubscribeForm
           }
         }
       }

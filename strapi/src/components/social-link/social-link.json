@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_social_link_social_links",
+  "info": {
+    "displayName": "SocialLink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Url": {
+      "type": "string"
+    },
+    "Target": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank"
+      ]
+    },
+    "Icon": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "whatsapp",
+        "youtube",
+        "facebook",
+        "linked-in",
+        "messanger"
+      ],
+      "required": true
+    }
+  }
+}

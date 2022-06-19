@@ -13,12 +13,15 @@ import { getPageData } from '../../libs/cms/queries'
 import { PageProvider } from '../../context/project'
 
 export const getServerSideProps = async ({ params, resolvedUrl }) => {
+  const NODE_ENV = process.env.NODE_ENV
+
   const pageName = resolvedUrl.replace('/en', '')
   const data = await getPageData(!pageName ? '/' : pageName.replace('/', ''))
   let page = {}
   if (data) page = data
   return {
     props: {
+      NODE_ENV,
       ...page,
     },
   }
@@ -56,7 +59,7 @@ const DynamicPage = (page: IPageField) => {
       </Head>
       <PageProvider.Provider value={pageProject}>
         <PrimaryLayout>
-          {pageBody && pageBody.length && renderBlocks(pageBody)}
+          {pageBody && pageBody.length ? renderBlocks(pageBody) : null}
         </PrimaryLayout>
       </PageProvider.Provider>
     </>

@@ -36,6 +36,20 @@
     "BlockType": {
       "type": "string",
       "required": true
+    },
+    "ContactInformation": {
+      "displayName": "Contact Information",
+      "type": "component",
+      "repeatable": false,
+      "component": "contact-information.contact-information"
+    },
+    "SocialList": {
+      "type": "component",
+      "repeatable": false,
+      "component": "social-list.social-list"
+    },
+    "SubscribeForm": {
+      "type": "boolean"
     }
   }
 }

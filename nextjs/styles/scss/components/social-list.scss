@@ -1,6 +1,8 @@
 .social-list {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
 
     &--small {
         font-size: 18px;

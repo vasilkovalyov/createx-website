@@ -1,8 +1,85 @@
-.footer {
-    color: #ffffff;
-    background-color: #1E212C;
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
 
-    * {
-        color: inherit;
+.footer {
+    padding: spacing.$xxl 0 spacing.$m;
+    background-color: var(--bg-footer);
+    
+    @include responsive.mq($from: tablet) {
+        padding: calc(spacing.$xl + spacing.$xxxl) 0 spacing.$xxxl;
+    }
+
+    &__logo {
+        padding-top: 10px;
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet_large) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__navigation-title,
+    &__contact-title {
+        letter-spacing: 1px;
+        color: var(--text-color-light);
+    }
+
+    .navigation__link {
+        color: rgba(colors.$white, 0.6);
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    &__text {
+        color: rgba(colors.$white, 0.6);
+    }
+
+    &__navigation-title {
+        letter-spacing: 1px;
+    }
+
+    &__navigation-row {
+        @include responsive.mq($from: wide) {
+            padding-left: 50px;
+        }
+    }
+
+    &__top-left-content {
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 46px;
+        }
+    }
+
+    &__social-list {
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 24px;
+        }
+
+        .social-list__link {
+            color: rgba(colors.$white, 0.6);
+            
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .footer-navigation,
+    .simple-subscribe-form,
+    .contact-information {
+        margin-bottom: 20px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 24px;
+        }
     }
 }
