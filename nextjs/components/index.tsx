@@ -48,9 +48,7 @@ export function renderBlock(BlockType: Block, index?: number) {
   const Component = BlockType ? blockComponents[BlockType] : null
   // const byBlockType = registeredComponents['plain']?.filter((c) => c.BlockType === BlockType)
   if (!Component) return <></>
-  return (
-    <Component key={index} />
-  )
+  return <Component key={index} />
 }
 
 export function getComponent<T>(BlockType: Block, props: T) {

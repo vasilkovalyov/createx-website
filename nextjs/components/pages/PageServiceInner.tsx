@@ -12,38 +12,38 @@ import BlockHero from 'components/theme/plain/BlockHero'
 import { IBlockHero } from 'interfaces/blocks'
 
 export default function PageServiceInner(props) {
-    const ctx = useContext(PageProvider)
+  const ctx = useContext(PageProvider)
 
-    let image : IImage | null
+  let image: IImage | null
 
-    if (!ctx?.servicePages.data.length) {
-        return <h1>Page is empty</h1>
+  if (!ctx?.servicePages.data.length) {
+    return <h1>Page is empty</h1>
+  }
+
+  const attributes = ctx?.servicePages.data[0].attributes
+
+  if (attributes.BlockHero.Image.data) {
+    image = {
+      Url: attributes.BlockHero.Image.data.attributes.url,
+      Alt: attributes.BlockHero.ImageAlt,
     }
+  } else {
+    image = null
+  }
 
-    const attributes = ctx?.servicePages.data[0].attributes
-    
-    if (attributes.BlockHero.Image.data) {
-        image = {
-            Url: attributes.BlockHero.Image.data.attributes.url,
-            Alt: attributes.BlockHero.ImageAlt,
-        }
-    } else {
-        image = null
-    }
+  const blockHeroAttributes = ctx?.servicePages.data[0].attributes.BlockHero
 
-    const blockHeroAttributes = ctx?.servicePages.data[0].attributes.BlockHero
+  const blockHeroProps = {
+    Image: image,
+    Text: blockHeroAttributes.Text,
+    Title: blockHeroAttributes.Title,
+    Overlay: blockHeroAttributes.Overlay,
+  } as IBlockHero
+  console.log('blockHeroProps', blockHeroProps)
 
-    const blockHeroProps = {
-        Image: image,
-        Text: blockHeroAttributes.Text,
-        Title: blockHeroAttributes.Title,
-        Overlay: blockHeroAttributes.Overlay
-    } as IBlockHero
-    console.log('blockHeroProps', blockHeroProps)
-  
-    return (
-        <>
-            <BlockHero {...blockHeroProps} />
-        </>
-      )
+  return (
+    <>
+      <BlockHero {...blockHeroProps} />
+    </>
+  )
 }

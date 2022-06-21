@@ -8,25 +8,24 @@ import Typography from '../Typography'
 
 export default function LeaveCommentForm() {
   return (
-		<div className="leave-comment-form">
-			<Typography level="h2" text="Leave your comment" className="leave-comment-form__title" aligned="center" />
-			<form action="" className="leave-comment-form__form">
-				<Row>
-					<Col base={12} md={6}>
-						<Input name='name' label="Name" placeholder="Your name" required={true} />
-					</Col>
-					<Col base={12} md={6}>
-						<Input name='email' label="Email" placeholder="Your working email" type="email" required={true} />
-					</Col>
-					<Col base={12}>
-						<TextArea name='message' label="Message" placeholder="Your message" rows={4} />
-					</Col>
-					<Col base={12} className="leave-comment-form__btn-wrapper text-align--center">
-						<Button className="leave-comment-form__btn" name="Post comment" />
-					</Col>
-				</Row>
-			</form>
-		</div>
+    <div className="leave-comment-form">
+      <Typography level="h2" text="Leave your comment" className="leave-comment-form__title" aligned="center" />
+      <form action="" className="leave-comment-form__form">
+        <Row>
+          <Col base={12} md={6}>
+            <Input name="name" label="Name" placeholder="Your name" required={true} />
+          </Col>
+          <Col base={12} md={6}>
+            <Input name="email" label="Email" placeholder="Your working email" type="email" required={true} />
+          </Col>
+          <Col base={12}>
+            <TextArea name="message" label="Message" placeholder="Your message" rows={4} />
+          </Col>
+          <Col base={12} className="leave-comment-form__btn-wrapper text-align--center">
+            <Button className="leave-comment-form__btn" name="Post comment" />
+          </Col>
+        </Row>
+      </form>
+    </div>
   )
 }
-

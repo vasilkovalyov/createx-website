@@ -32,7 +32,7 @@ export default function BlockFooterBlock() {
     return socialList.map((item) => {
       return {
         ...item,
-        Icon: `icon-${item.Icon}` as SocialIcon
+        Icon: `icon-${item.Icon}` as SocialIcon,
       }
     })
   }
@@ -44,9 +44,9 @@ export default function BlockFooterBlock() {
     Menu: convertedMenu,
     ContactInformation: ctx.blockFooter.data.attributes.ContactInformation,
     SocialList: {
-      Items: getSocialUpdateItems(iconsList)
+      Items: getSocialUpdateItems(iconsList),
     },
-    SubscribeForm: ctx.blockFooter.data.attributes.SubscribeForm
+    SubscribeForm: ctx.blockFooter.data.attributes.SubscribeForm,
   }
 
   return getComponent<IFooter>(Block.BlockFooter, props)

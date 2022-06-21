@@ -19,25 +19,25 @@ export default function Footer({ Image, Text, Menu, ContactInformation, SocialLi
           <Col base={12} md={6}>
             <Row className="footer__top-left-content">
               <Col base={12} lg={4}>
-                {Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="footer__logo" /> }
+                {Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="footer__logo" />}
               </Col>
               <Col base={12} lg={6}>
-                { SocialList && SocialList.Items.length && <SocialListComponent Items={SocialList.Items} className="footer__social-list" /> }
+                {SocialList && SocialList.Items.length && (
+                  <SocialListComponent Items={SocialList.Items} className="footer__social-list" />
+                )}
               </Col>
               <Col base={12} lg={10}>
-                { Text && <Typography text={Text} className="footer__text text-xs" /> }
+                {Text && <Typography text={Text} className="footer__text text-xs" />}
               </Col>
             </Row>
           </Col>
           <Col base={12} md={6} xl={5}>
-            {
-              SubscribeForm ? (
-                <SimpleSubscribeForm />
-              ) : null
-            }
+            {SubscribeForm ? <SimpleSubscribeForm /> : null}
           </Col>
           <Col base={12} md={6} xl={4} className="footer__contact-col">
-            {ContactInformation.Title && <Typography level="h6" text={ContactInformation.Title} className="footer__contact-title text-sm" />}
+            {ContactInformation.Title && (
+              <Typography level="h6" text={ContactInformation.Title} className="footer__contact-title text-sm" />
+            )}
             <ContactInformationComponent {...ContactInformation} Theme="light" />
           </Col>
           <Col base={12} md={6} xl={8}>

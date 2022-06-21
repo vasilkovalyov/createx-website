@@ -17,7 +17,7 @@ function BlockHero({ Image, Title, Text, Overlay = false, BreadCrumbs }: IBlockH
       ) : null}
       <Container className="block-hero__container">
         <div className="block-hero__content">
-          { BreadCrumbs && <BreadcrumbsComponent {...BreadCrumbs as IBreadcrumbs} /> }
+          {BreadCrumbs && <BreadcrumbsComponent {...(BreadCrumbs as IBreadcrumbs)} />}
           {Title ? <Typography level="h1" text={Title} className="block-hero__title text-uppercase" /> : null}
           {Text ? <Typography text={Text} className="block-hero__text text-lg" /> : null}
         </div>

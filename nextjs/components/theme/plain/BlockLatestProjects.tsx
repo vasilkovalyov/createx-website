@@ -11,22 +11,27 @@ import { IBlockLatestProjects } from '../../../interfaces/blocks'
 
 import { swiperForThreeVisiblePosts } from '../../../utilities/swiper'
 
-export default function BlockLatestProjects({ BlockType, Title, Text, Link, Items }: IBlockLatestProjects) {
+export default function BlockLatestProjects({ Title, Text, Link, Items }: IBlockLatestProjects) {
   return (
     <section className="block-latest-project">
-        <Container className="block-latest-project__container">
-            <BlockHeading Title={Title} />
-            <Carousel slides={Items.map((item, index) => (
-                <div key={index} className="block-latest-project__slide">
-                    <ProjectCard {...item} />
-                </div>
-            ))} className="block-latest-project__carousel" settings={{...swiperForThreeVisiblePosts}} typeButton="secondary" />
-
-            <div className="block-additional-info block-latest-project__additional-info">
-                { Text && <Typography level='h4' text={Text} className="block-additional-info__title"  /> }
-                { Link && <Button className="block-additional-info__btn" name={Link.text} url={Link.url} /> }
+      <Container className="block-latest-project__container">
+        <BlockHeading Title={Title} />
+        <Carousel
+          slides={Items.map((item, index) => (
+            <div key={index} className="block-latest-project__slide">
+              <ProjectCard {...item} />
             </div>
-        </Container>
+          ))}
+          className="block-latest-project__carousel"
+          settings={{ ...swiperForThreeVisiblePosts }}
+          typeButton="secondary"
+        />
+
+        <div className="block-additional-info block-latest-project__additional-info">
+          {Text && <Typography level="h4" text={Text} className="block-additional-info__title" />}
+          {Link && <Button className="block-additional-info__btn" name={Link.text} url={Link.url} />}
+        </div>
+      </Container>
     </section>
   )
 }

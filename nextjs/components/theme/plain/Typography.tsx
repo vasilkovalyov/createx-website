@@ -5,9 +5,9 @@ import { ITypography } from '../../../interfaces/common'
 
 export default function Typography({ level, className, text, aligned }: ITypography) {
   const alignedContent = cn({
-		'text-align--center': aligned === 'center',
-		'text-align--right': aligned === 'right',
-	})
+    'text-align--center': aligned === 'center',
+    'text-align--right': aligned === 'right',
+  })
 
   if (level) {
     const Component = level

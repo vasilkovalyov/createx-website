@@ -16,38 +16,38 @@ export default function BlockHeroBlock() {
   let breadcrumbsData: IBreadcrumbs
 
   const breadCrumbsData = {
-    "pages": {
-      "data": [
+    pages: {
+      data: [
         {
-          "id": "1",
-          "attributes": {
-            "Slug": "home",
-            "Name": "Home"
-          }
+          id: '1',
+          attributes: {
+            Slug: 'home',
+            Name: 'Home',
+          },
         },
         {
-          "id": "2",
-          "attributes": {
-            "Slug": "about",
-            "Name": "About"
-          }
-        }
-      ]
+          id: '2',
+          attributes: {
+            Slug: 'about',
+            Name: 'About',
+          },
+        },
+      ],
     } as IMenuDataFields,
-    "activePage": {
-      "data": {
-        "attributes": {
-          "Slug": "about"
-        }
-      }
-    } as IMenuDataField
+    activePage: {
+      data: {
+        attributes: {
+          Slug: 'about',
+        },
+      },
+    } as IMenuDataField,
   }
-  
+
   const breadActivePage: string = breadCrumbsData.activePage.data.attributes.Slug
   const breadCrumbsPages: IMenuItem[] = breadCrumbsData.pages.data.map((item) => {
     return {
       Name: item.attributes.Name,
-      Slug: item.attributes.Slug
+      Slug: item.attributes.Slug,
     }
   })
 
@@ -63,8 +63,8 @@ export default function BlockHeroBlock() {
     Overlay: blockHeroData.Overlay,
     BreadCrumbs: {
       pages: breadCrumbsPages,
-      activePage: breadActivePage
-    }
+      activePage: breadActivePage,
+    },
   } as unknown as IBlockHero
   return getComponent<IBlockHero>(Block.BlockHero, props)
 }

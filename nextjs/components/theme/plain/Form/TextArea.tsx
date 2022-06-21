@@ -3,7 +3,19 @@ import cn from 'classnames'
 
 import { ITextArea } from '../../../../interfaces/form'
 
-export default function TextArea({ id, label, name, placeholder, required = false, value, cols = 30, rows = 2, theme = 'light', size, onHandleChange }: ITextArea) {
+export default function TextArea({
+  id,
+  label,
+  name,
+  placeholder,
+  required = false,
+  value,
+  cols = 30,
+  rows = 2,
+  theme = 'light',
+  size,
+  onHandleChange,
+}: ITextArea) {
   const [inputValue, setInputValue] = useState<string>('')
 
   const fieldView = cn({
@@ -12,29 +24,34 @@ export default function TextArea({ id, label, name, placeholder, required = fals
     'form-field--dark': theme === 'dark',
   })
 
-	useEffect(() => {
+  useEffect(() => {
     if (value) {
-        setInputValue(value)
-        onHandleChange && onHandleChange(value)
+      setInputValue(value)
+      onHandleChange && onHandleChange(value)
     }
-	}, [value])
+  }, [value])
 
   return (
     <div className={`form-field ${fieldView}`}>
-        <label className="form-field__label">
-            { label && <p className="form-field__label-text">{label}{required === true ? '*' : ''}<span></span></p> }
-            <textarea 
-                id={id}
-                name={name} 
-                placeholder={placeholder}
-                value={inputValue}
-                className="form-field__textarea"
-                cols={cols}
-                rows={rows}
-                onChange={(e) => setInputValue(e.target.value)}
-            ></textarea>
-        </label>
+      <label className="form-field__label">
+        {label && (
+          <p className="form-field__label-text">
+            {label}
+            {required === true ? '*' : ''}
+            <span></span>
+          </p>
+        )}
+        <textarea
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          value={inputValue}
+          className="form-field__textarea"
+          cols={cols}
+          rows={rows}
+          onChange={(e) => setInputValue(e.target.value)}
+        ></textarea>
+      </label>
     </div>
   )
 }
-

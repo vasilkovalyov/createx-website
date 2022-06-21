@@ -26,7 +26,6 @@ export const getServerSideProps = async ({ params, resolvedUrl }) => {
   if (data) {
     page = data
   }
-  
 
   return {
     props: {
@@ -69,7 +68,6 @@ const DynamicPage = (page: IPageField) => {
   useEffect(() => {
     if (page) {
       if (page?.pages.data.length) {
-
       }
       setPageProject(page)
     }
@@ -79,7 +77,6 @@ const DynamicPage = (page: IPageField) => {
     return <div>Loading...</div>
   }
 
- 
   const renderPages = () => {
     if (pageAttributes.ContentType === Page.ServicePage) {
       return <PageServiceInner />
@@ -106,14 +103,8 @@ const DynamicPage = (page: IPageField) => {
       </Head>
       <PageProvider.Provider value={pageProject}>
         <PrimaryLayout>
-          { renderPages() }
-          {
-            showFormDetails ? (
-              <>
-                { renderByBlockType(Block.BlockFormDetail) }
-              </>
-            ) : null
-          }
+          {renderPages()}
+          {showFormDetails ? <>{renderByBlockType(Block.BlockFormDetail)}</> : null}
         </PrimaryLayout>
       </PageProvider.Provider>
     </>
