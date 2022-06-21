@@ -2,12 +2,14 @@ import { IImage, IBenefit, IContactInformation, IService } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
+import { IBreadcrumbs } from './common'
 
 export interface IBlockHero {
   Image: IImage
   Title?: string
   Text?: string
   Overlay?: boolean
+  BreadCrumbs?: IBreadcrumbs | null
 }
 
 export interface IBlockBenefits {

@@ -47,6 +47,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::page.page"
+    },
+    "Breadcrumbs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "breadcrumbs.breadcrumbs"
     }
   }
 }

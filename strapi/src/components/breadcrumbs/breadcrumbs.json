@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_breadcrumbs_breadcrumbs",
+  "info": {
+    "displayName": "Breadcrumbs"
+  },
+  "options": {},
+  "attributes": {
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "activePage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

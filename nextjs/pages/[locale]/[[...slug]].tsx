@@ -46,7 +46,6 @@ const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
   const [pageProject, setPageProject] = useState<IPageField | null>(null)
   const router = useRouter()
-  console.log(page)
   let pageData: IPageField | null
 
   let pageBody
@@ -81,7 +80,6 @@ const DynamicPage = (page: IPageField) => {
   }
 
  
-  console.log('pageAttributes', pageAttributes)
   const renderPages = () => {
     if (pageAttributes.ContentType === Page.ServicePage) {
       return <PageServiceInner />

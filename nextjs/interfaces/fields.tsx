@@ -41,7 +41,10 @@ export interface IPageDataField {
   data: {
     attributes: FieldAttributes<any>[] & {
       ContentType: string
-      BreadCrumbs: IMenuDataField 
+      BreadCrumbs?: {
+        pages: IMenuDataFields | null
+        activePage: IMenuDataField
+      }
       Body: FieldAttributes<any>[]
       ShowFormDetails: boolean
       Slug: string
@@ -96,17 +99,24 @@ export interface IDataFields {
   }
 }
 
-export interface IMenuDataField {
+export interface IMenuDataFields {
   data: {
     id?: Identificator
     attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
   }[]
 }
 
+export interface IMenuDataField {
+  data: {
+    id?: Identificator
+    attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
+  }
+}
+
 export interface IMenuField {
   id?: Identificator
   Name?: string
-  pages: IMenuDataField
+  pages: IMenuDataFields
 }
 
 export interface IMenuItemField extends Pick<IMenuField, 'id' |'Name'>{

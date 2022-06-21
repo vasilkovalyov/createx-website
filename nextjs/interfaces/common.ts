@@ -4,12 +4,18 @@ import {
 import { SocialIcon, EnumsIcon } from '../enums/icons'
 
 import { SwiperOptions } from 'swiper'
+import { IMenuItem } from './pages'
 
 export interface IImage {
   id?: Identificator
   Url: string
   Alt: string
   className?: string
+}
+
+export interface IBreadcrumbs {
+  pages: IMenuItem[]
+  activePage: string
 }
 
 export interface IList {

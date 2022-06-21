@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "BlockHero": {
-      "type": "component",
-      "repeatable": false,
-      "component": "block-hero.block-hero"
-    },
     "Title": {
       "type": "string",
       "required": true
@@ -55,6 +50,7 @@
     "Body": {
       "type": "dynamiczone",
       "components": [
+        "block-hero.block-hero",
         "block-price.block-price"
       ]
     }

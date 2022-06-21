@@ -143,33 +143,12 @@ export async function getPageData(page: string) {
         data {
           attributes {
             ContentType
-            BreadCrumbs :pages {
-              data {
-                attributes {
-                  Name
-                }
-              }
-            }
             Title
             Slug
             Seo {
               Title
               Description
               Keywords
-            }
-            BlockHero {
-              Image {
-                data {
-                  attributes {
-                    url
-                  }
-                }
-              }
-              ImageAlt
-              Title
-              Text
-              BlockType
-              Overlay
             }
           }
         }
@@ -180,6 +159,24 @@ export async function getPageData(page: string) {
             ContentType
             Slug
             ShowFormDetails
+            Breadcrumbs {
+              pages {
+                data {
+                  id
+                  attributes {
+                    Slug
+                    Name
+                  }
+                }
+              }
+              activePage {
+                data {
+                  attributes {
+                    Slug
+                  }
+                }
+              }
+            }
             Body {
               ... on ComponentBlockIntroCarouselBlockIntroCarousel {
                 id
