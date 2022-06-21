@@ -13,7 +13,8 @@ export interface FieldAttributes<T> {
   Items: T[]
   Theme?: ColorTheme
   Text: string
-  Image: IImageField
+  Image: IImageFieldData
+  ImageAlt: string
   ClientImage?: IImageFieldData
   ClientImageAlt?: string
   Overlay?: boolean | null
@@ -36,6 +37,19 @@ export interface IImageField {
   ImageAlt: string
 }
 
+export interface IPageDataField {
+  data: {
+    attributes: FieldAttributes<any>[] & {
+      ContentType: string
+      BreadCrumbs: IMenuDataField 
+      Body: FieldAttributes<any>[]
+      ShowFormDetails: boolean
+      Slug: string
+      BlockHero: FieldAttributes<any>
+    }
+  }[]
+}
+
 export interface IPageField {
   NODE_ENV: string
   blockHeader: {
@@ -53,15 +67,8 @@ export interface IPageField {
       attributes: IFooterBlockField
     }
   }
-  pages: {
-    data: {
-      attributes: {
-        Body: FieldAttributes<any>[]
-        ShowFormDetails: boolean
-        Slug: string
-      }
-    }[]
-  }
+  pages: IPageDataField
+  servicePages: IPageDataField
 }
 
 export interface IBlockFormDetailField extends IImageField {
@@ -89,15 +96,17 @@ export interface IDataFields {
   }
 }
 
+export interface IMenuDataField {
+  data: {
+    id?: Identificator
+    attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
+  }[]
+}
+
 export interface IMenuField {
   id?: Identificator
   Name?: string
-  pages: {
-    data: {
-      id?: Identificator
-      attributes: Pick<FieldAttributes<any>, 'Slug' | 'Name'>
-    }[]
-  }
+  pages: IMenuDataField
 }
 
 export interface IMenuItemField extends Pick<IMenuField, 'id' |'Name'>{
@@ -120,4 +129,16 @@ export interface ITestimonialField {
 
 export interface IBenefitField extends Pick<IBenefit, 'Title' | 'Text' | 'id'> {
   Image: IImageField
+}
+
+
+export interface IItemField {
+  id?: Identificator
+  attributes: {
+    Title: string
+    Text: string
+    Image: IImageFieldData
+    ImageAlt: string
+    Link: IMenuItemField
+  }
 }

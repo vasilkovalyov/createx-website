@@ -1,18 +1,17 @@
 {
-  "collectionName": "components_link_menu_items",
+  "collectionName": "components_block_intro_carousel_menu_items",
   "info": {
     "displayName": "MenuItem"
   },
   "options": {},
   "attributes": {
+    "Name": {
+      "type": "string"
+    },
     "page": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page"
-    },
-    "Name": {
-      "type": "string",
-      "required": true
     }
   }
 }

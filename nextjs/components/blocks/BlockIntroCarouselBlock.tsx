@@ -12,10 +12,15 @@ export default function BlockIntroCarouselBlock() {
     const blockIntroCarouselData = ctx?.pages.data[0].attributes.Body.filter((item) => item.BlockType === Block.BlockIntroCarousel)[0]
     if (!blockIntroCarouselData) return null
 
-    const link = {
-        url: `/${blockIntroCarouselData.PageLink.page.data.attributes.Slug}`,
-        text: blockIntroCarouselData.PageLink.Name
-    } as ILink
+    let link: ILink | null
+    if (blockIntroCarouselData.PageLink.page.data) {
+        link = {
+            url: `/${blockIntroCarouselData.PageLink.page.data.attributes.Slug}`,
+            text: blockIntroCarouselData.PageLink.Name
+        }
+    } else {
+        link = null
+    }
 
     const items = (items: IImageField[]):IImage[] => {
         return items.map((item) => {

@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import PageServices from '../../components/pages/PageServices'
+import PageServiceInner from 'components/pages/PageServiceInner'
+
 import { renderBlocks, renderByBlockType } from '../../components'
 import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
@@ -10,6 +13,7 @@ import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
 import { getPageData } from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
+import { Page } from '../../enums/pages'
 
 import { PageProvider } from '../../context/project'
 
@@ -19,7 +23,10 @@ export const getServerSideProps = async ({ params, resolvedUrl }) => {
   const pageName = resolvedUrl.replace('/en', '')
   const data = await getPageData(!pageName ? '/' : pageName.replace('/', ''))
   let page = {}
-  if (data) page = data
+  if (data) {
+    page = data
+  }
+  
 
   return {
     props: {
@@ -39,19 +46,56 @@ const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
   const [pageProject, setPageProject] = useState<IPageField | null>(null)
   const router = useRouter()
-  const pageAttributes = page?.pages.data[0].attributes
-  const pageBody = pageAttributes.Body
-  const showFormDetails = pageAttributes.ShowFormDetails
-  console.log('pageBody', pageBody)
+  console.log(page)
+  let pageData: IPageField | null
+
+  let pageBody
+  let showFormDetails
+  let pageAttributes
+
+  if (page?.pages.data.length) {
+    pageAttributes = page?.pages.data[0].attributes
+    pageBody = pageAttributes.Body
+    showFormDetails = pageAttributes.ShowFormDetails
+  }
+  if (page?.servicePages.data.length) {
+    pageAttributes = page?.servicePages.data[0].attributes
+    pageBody = pageAttributes.Body
+    showFormDetails = pageAttributes.ShowFormDetails
+  }
+  // const pageAttributes = page?.pages.data[0].attributes
+  // const pageBody = pageAttributes.Body
+  // const showFormDetails = pageAttributes.ShowFormDetails
 
   useEffect(() => {
     if (page) {
+      if (page?.pages.data.length) {
+
+      }
       setPageProject(page)
     }
   }, [])
 
   if (!router.isReady) {
     return <div>Loading...</div>
+  }
+
+ 
+  console.log('pageAttributes', pageAttributes)
+  const renderPages = () => {
+    if (pageAttributes.ContentType === Page.ServicePage) {
+      return <PageServiceInner />
+    }
+
+    if (pageAttributes.ContentType === Page.ServicesPage) {
+      return <PageServices />
+    }
+
+    if (pageBody && pageBody.length) {
+      return renderBlocks(pageBody)
+    }
+
+    return null
   }
 
   return (
@@ -64,7 +108,7 @@ const DynamicPage = (page: IPageField) => {
       </Head>
       <PageProvider.Provider value={pageProject}>
         <PrimaryLayout>
-          {pageBody && pageBody.length ? renderBlocks(pageBody) : null}
+          { renderPages() }
           {
             showFormDetails ? (
               <>

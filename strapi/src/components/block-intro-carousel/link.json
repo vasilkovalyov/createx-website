@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_intro_carousel_links",
+  "info": {
+    "displayName": "Link"
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "Name": {
+      "type": "string"
+    }
+  }
+}

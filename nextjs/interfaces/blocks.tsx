@@ -1,4 +1,4 @@
-import { IImage, IBenefit, IContactInformation } from './common'
+import { IImage, IBenefit, IContactInformation, IService } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
@@ -40,7 +40,7 @@ export interface IBlockIntroCarousel {
   BlockType: Block
   Title: string
   Text?: string
-  Link?: ILink
+  Link?: ILink | null
   Items: IImage[]
 }
 
@@ -92,4 +92,36 @@ export interface IBlockOurOffices {
 export interface IBlockFormDetail {
   BlockType: Block
   Image?: IImage
+}
+
+export interface IBlockService {
+  Items: IService[]
+}
+
+interface IPriceCol {
+  id: Identificator,
+  PriceCost: string,
+  PricePlan: string
+}
+
+interface IPriceRow {
+  id: Identificator
+  Title: string
+  Plan1: string
+  Text1: string | null
+  Available1: boolean | null
+  Plan2: string | null
+  Text2: string | null | null
+  Available2: boolean | null
+  Plan3: string | null
+  Text3: string | null | null
+  Available3: boolean | null
+}
+
+export interface IBlockPricing {
+  BlockType: Block
+  Title: string
+  Text?: string
+  PriceCol: IPriceCol[]
+  PriceRow: IPriceRow[]
 }

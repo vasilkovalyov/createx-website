@@ -1,0 +1,63 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+
+.table-wrapper {
+    @include responsive.mq($until: tablet_large) {
+        overflow-x: auto;
+        margin: 0 -30px;
+    }
+}
+
+.table {
+    width: 100%;
+    max-width: 1230px;
+    border: 1px solid #E5E8ED;
+
+    @include responsive.mq($until: tablet_large) {
+        width: 1000px;
+    }
+
+    &__head-heading {
+        margin-bottom: 0;
+    }
+
+    &__head-col {
+        padding: spacing.$xl spacing.$m;
+
+        &:first-child {
+            text-align: left;
+            vertical-align: bottom;
+        }
+
+        &:not(:first-child) {
+            width: 245px;
+            text-align: center;
+        }
+    }
+
+    &__body-row {
+        &:nth-child(odd) {
+            background-color: colors.$grey-extra-light;
+        }
+    }
+
+    &__body-col {
+        padding: spacing.$s spacing.$m;
+
+        &:not(:first-child) {
+            width: 245px;
+            text-align: center;
+        }
+    }
+
+    &__body-col-btn-wrapper {
+        padding-top: spacing.$xl;
+        padding-bottom: spacing.$xl;
+    }
+
+    .icomoon-icon {
+        color: var(--primary-color);
+    }
+}

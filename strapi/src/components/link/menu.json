@@ -12,7 +12,8 @@
       "target": "api::page.page"
     },
     "Name": {
-      "type": "string"
+      "type": "string",
+      "default": "Learn more"
     }
   }
 }

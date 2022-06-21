@@ -29,22 +29,24 @@
     "Body": {
       "type": "dynamiczone",
       "components": [
+        "block-benefits.block-benefits",
+        "block-benefits.items",
         "block-hero.block-hero",
         "block-intro-carousel.block-intro-carousel",
         "block-our-clients.block-our-clients",
-        "block-partners.block-partners",
-        "block-benefits.block-benefits",
-        "block-benefits.items"
+        "block-partners.block-partners"
       ]
     },
     "ShowFormDetails": {
       "type": "boolean"
     },
-    "BlockIntroCarousel": {
-      "displayName": "Block Intro Carousel",
-      "type": "component",
-      "repeatable": false,
-      "component": "block-intro-carousel.block-intro-carousel"
+    "ContentType": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
     }
   }
 }

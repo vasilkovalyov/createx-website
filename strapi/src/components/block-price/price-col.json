@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_block_price_price_cols",
+  "info": {
+    "displayName": "Price Col",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "PriceCost": {
+      "type": "string"
+    },
+    "PricePlan": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "standard",
+        "business"
+      ]
+    }
+  }
+}

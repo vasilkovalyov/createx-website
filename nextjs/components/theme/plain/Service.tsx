@@ -47,7 +47,7 @@ export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text
             <div className="service-post__body">
               <Typography level="h3" text={Title} className="service-post__title" />
               { Text && <Typography text={Text} className="service-post__text" /> }
-              { Link && <Button url={Link.url} name='Learn more' className="service-post__btn" outline={true} /> }
+              { Link && <Button url={Link.url} name={Link.text} className="service-post__btn" outline={true} /> }
             </div>
           </Col>
         </Row>

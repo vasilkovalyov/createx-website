@@ -25,9 +25,10 @@
       "component": "block-intro-carousel.items"
     },
     "Link": {
+      "displayName": "Link",
       "type": "component",
       "repeatable": false,
-      "component": "link.menu-item"
+      "component": "block-intro-carousel.link"
     }
   }
 }

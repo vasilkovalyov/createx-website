@@ -63,13 +63,13 @@ export interface IButton {
   outline?: boolean
   color?: 'white' | 'primary'
   name?: string
-  size?: 'small' | ''
+  size?: 'small' | 'extra-small' | ''
   fullwidth?: boolean
   onClick?: () => void
 }
 
 export interface IBlockHeading {
-  Title: string,
+  Title?: string,
   Text?: string,
   headingLevel?: HeadingLevel,
   textSize?: TextSize
@@ -85,7 +85,7 @@ export interface IService {
   Logo2?: IImage
   Title: string
   Text?: string
-  Link?: ILink
+  Link?: ILink | null
 }
 
 export interface IProject {

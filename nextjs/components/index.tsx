@@ -1,5 +1,10 @@
 import React from 'react'
 
+// Pages blocks
+import PageServices from './pages/PageServices'
+import PageServiceInner from './pages/PageServiceInner'
+
+// Component blocks
 import BlockHeroBlock from './blocks/BlockHeroBlock'
 import BlockHeaderBlock from './blocks/BlockHeaderBlock'
 import BlockFooterBlock from './blocks/BlockFooterBlock'
@@ -15,6 +20,11 @@ import { Block } from '../enums/blocks'
 import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
+  // Pages blocks
+  servicesPage: PageServices,
+  PageServiceInner: PageServiceInner,
+
+  // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
   [Block.BlockFooter]: BlockFooterBlock,
   [Block.BlockHero]: BlockHeroBlock,

@@ -39,6 +39,11 @@
         }
     }
 
+    &--extra-small {
+        font-size: fz.$size-xxs;
+        padding: spacing.$xs spacing.$l;
+    }
+
     &--fullwidth {
         width: 100%;
     }

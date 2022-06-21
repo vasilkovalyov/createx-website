@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_block_price_block_prices",
+  "info": {
+    "displayName": "Block Price",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ContentType": {
+      "type": "string",
+      "required": true,
+      "default": "blockPrice"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "PriceCol": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block-price.price-col"
+    },
+    "PriceRow": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block-price.price-row"
+    }
+  }
+}

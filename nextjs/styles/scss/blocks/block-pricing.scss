@@ -1,0 +1,14 @@
+@use '../settings/spacing.scss';
+@use '../tools/responsive.scss';
+
+.block-pricing {
+    padding: spacing.$xxl 0;
+    
+    @include responsive.mq($from: tablet) {
+        padding: 116px 0;
+    }
+
+    .block-heading {
+        margin-bottom: 70px;
+    }
+}

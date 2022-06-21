@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_block_price_price_rows",
+  "info": {
+    "displayName": "Price Row",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Plan1": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "standard",
+        "business"
+      ]
+    },
+    "Text1": {
+      "type": "string"
+    },
+    "Available1": {
+      "type": "boolean"
+    },
+    "Plan2": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "standard",
+        "business"
+      ]
+    },
+    "Text2": {
+      "type": "string"
+    },
+    "Available2": {
+      "type": "boolean"
+    },
+    "Plan3": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "standard",
+        "business"
+      ]
+    },
+    "Text3": {
+      "type": "string"
+    },
+    "Available3": {
+      "type": "boolean"
+    }
+  }
+}

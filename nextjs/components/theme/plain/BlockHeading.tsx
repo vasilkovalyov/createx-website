@@ -18,7 +18,7 @@ function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', a
 			
 	return (
 		<div className={`block-heading ${alignedContent}`}>
-			<Typography level={headingLevel} text={Title} className="block-heading__title" />
+			{ Title && <Typography level={headingLevel} text={Title} className="block-heading__title" /> }
 			{ Text && <Typography text={Text} className={`block-heading__text ${textSizeView}`} /> }
 		</div>
 	)

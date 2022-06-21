@@ -9,4 +9,6 @@ export enum Block {
   BlockOurClientsTestimonials = 'blockOurClientsTestimonials',
   BlockOurHistory = 'blockOurHistory',
   BlockFormDetail = 'blockFormDetail',
+  BlockServices = 'blockServices',
+  BlockPricing = 'blockPricing',
 }

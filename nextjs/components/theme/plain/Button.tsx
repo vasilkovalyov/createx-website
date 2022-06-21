@@ -7,6 +7,7 @@ import { IButton } from '../../../interfaces/common'
 function Button({ url, className, outline, name, size, fullwidth, color, onClick }: IButton) {
   const sizeField = cn({
 		'btn--small': size === 'small',
+		'btn--extra-small': size === 'extra-small',
     'btn--fullwidth': fullwidth === true
 	})
 
@@ -19,7 +20,7 @@ function Button({ url, className, outline, name, size, fullwidth, color, onClick
   const outlineProp = outline ? 'btn--outline' : ''
   if (url) {
       return (
-          <LinkComponent href={url}>
+          <LinkComponent href={`/en/${url}`}>
               <a className={`btn ${colorButton} ${outlineProp} ${sizeField} ${classNameProp}`}>{name && name}</a>
           </LinkComponent>
       )
