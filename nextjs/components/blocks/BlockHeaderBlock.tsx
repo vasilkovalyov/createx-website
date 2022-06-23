@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IHeader } from '../../interfaces/pages'
@@ -9,15 +8,14 @@ import { IImage } from '../../interfaces/common'
 import { getConvertMenu } from '../../utilities/convertDataFromBackend'
 
 export default function BlockHeaderBlock() {
-  const ctx = useContext(PageProvider)
-  if (!ctx) return null
+  const [page] = usePage()
 
-  const BlockType = ctx.blockHeader.data.attributes.BlockType
+  const BlockType = page.blockHeader.data.attributes.BlockType
   const image = {
-    Url: ctx.blockHeader.data.attributes.Image?.data.attributes.url,
-    Alt: ctx.blockHeader.data.attributes.ImageAlt,
+    Url: page.blockHeader.data.attributes.Image?.data.attributes.url,
+    Alt: page.blockHeader.data.attributes.ImageAlt,
   } as IImage
-  const menu = ctx.blockHeader.data.attributes.Menu
+  const menu = page.blockHeader.data.attributes.Menu
   const convertedMenu = getConvertMenu(menu) || null
 
   const props: IHeader = {

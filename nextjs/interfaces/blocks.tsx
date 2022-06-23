@@ -101,8 +101,8 @@ export interface IBlockService {
 }
 
 interface IPriceCol {
-  id: Identificator,
-  PriceCost: string,
+  id: Identificator
+  PriceCost: string
   PricePlan: string
 }
 

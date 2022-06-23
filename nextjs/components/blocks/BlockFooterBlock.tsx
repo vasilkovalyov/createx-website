@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IFooter } from '../../interfaces/pages'
@@ -13,19 +12,19 @@ import { getConvertMenuArray } from '../../utilities/convertDataFromBackend'
 import { SocialIcon } from 'enums/icons'
 
 export default function BlockFooterBlock() {
-  const ctx = useContext(PageProvider)
-  if (!ctx) return null
+  const [page] = usePage()
+  if (!page) return null
 
-  const BlockType = ctx.blockFooter.data.attributes.BlockType
+  const BlockType = page.blockFooter.data.attributes.BlockType
   const image = {
-    Url: ctx.blockFooter.data.attributes.Image?.data.attributes.url,
-    Alt: ctx.blockFooter.data.attributes.ImageAlt,
+    Url: page.blockFooter.data.attributes.Image?.data.attributes.url,
+    Alt: page.blockFooter.data.attributes.ImageAlt,
   } as IImage
-  const text = ctx.blockFooter.data.attributes.Text
-  const menu = ctx.blockFooter.data.attributes.Menu
+  const text = page.blockFooter.data.attributes.Text
+  const menu = page.blockFooter.data.attributes.Menu
   const convertedMenu = getConvertMenuArray(menu) || null
 
-  const iconsList = ctx.blockFooter.data.attributes.SocialList.Items
+  const iconsList = page.blockFooter.data.attributes.SocialList.Items
 
   const getSocialUpdateItems = (socialList: ISocialLink[]) => {
     if (!socialList.length) return []
@@ -42,11 +41,11 @@ export default function BlockFooterBlock() {
     Image: image,
     Text: text,
     Menu: convertedMenu,
-    ContactInformation: ctx.blockFooter.data.attributes.ContactInformation,
+    ContactInformation: page.blockFooter.data.attributes.ContactInformation,
     SocialList: {
       Items: getSocialUpdateItems(iconsList),
     },
-    SubscribeForm: ctx.blockFooter.data.attributes.SubscribeForm,
+    SubscribeForm: page.blockFooter.data.attributes.SubscribeForm,
   }
 
   return getComponent<IFooter>(Block.BlockFooter, props)

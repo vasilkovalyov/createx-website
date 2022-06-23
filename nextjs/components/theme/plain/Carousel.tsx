@@ -20,7 +20,7 @@ export default function Carousel({
   typeButton = 'primary',
   useCustomNavigation = true,
 }: ICarousel) {
-  const sliderRef = useRef<SwiperType>(null)
+  // const sliderRef = useRef<SwiperType>(null)
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
 

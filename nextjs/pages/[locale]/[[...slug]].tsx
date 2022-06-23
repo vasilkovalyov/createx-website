@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import PageServices from '../../components/pages/PageServices'
@@ -11,7 +10,7 @@ import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
 import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
-import { getPageData } from '../../libs/cms/queries'
+import { getPageData, getPageServices } from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
 import { Page } from '../../enums/pages'
 
@@ -21,7 +20,16 @@ export const getServerSideProps = async ({ params, resolvedUrl }) => {
   const NODE_ENV = process.env.NODE_ENV
 
   const pageName = resolvedUrl.replace('/en', '')
-  const data = await getPageData(!pageName ? '/' : pageName.replace('/', ''))
+  let data: any
+  const pathName = !pageName ? '/' : pageName.replace('/', '')
+
+  if (pathName === 'services') {
+    data = await getPageServices(pathName)
+  } else {
+    data = await getPageData(pathName)
+    console.log('data', data)
+  }
+
   let page = {}
   if (data) {
     page = data
@@ -43,38 +51,33 @@ const defaultSeo: ISeo = {
 
 const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
-  const [pageProject, setPageProject] = useState<IPageField | null>(null)
+  let updatedPage = page
+
   const router = useRouter()
-  let pageData: IPageField | null
 
   let pageBody
   let showFormDetails
   let pageAttributes
-
-  if (page?.pages.data.length) {
-    pageAttributes = page?.pages.data[0].attributes
+  if (updatedPage?.pages.data.length) {
+    pageAttributes = updatedPage?.pages.data[0].attributes
     pageBody = pageAttributes.Body
     showFormDetails = pageAttributes.ShowFormDetails
   }
-  if (page?.servicePages.data.length) {
-    pageAttributes = page?.servicePages.data[0].attributes
+  if (updatedPage?.servicePages && updatedPage?.servicePages.data.length) {
+    pageAttributes = updatedPage?.servicePages.data[0].attributes
     pageBody = pageAttributes.Body
     showFormDetails = pageAttributes.ShowFormDetails
   }
-  // const pageAttributes = page?.pages.data[0].attributes
-  // const pageBody = pageAttributes.Body
-  // const showFormDetails = pageAttributes.ShowFormDetails
-
-  useEffect(() => {
-    if (page) {
-      if (page?.pages.data.length) {
-      }
-      setPageProject(page)
-    }
-  }, [])
 
   if (!router.isReady) {
     return <div>Loading...</div>
+  }
+
+  if (pageAttributes.ContentType === Page.ServicePage) {
+    updatedPage = {
+      ...page,
+      pages: page.servicePages,
+    }
   }
 
   const renderPages = () => {
@@ -101,12 +104,12 @@ const DynamicPage = (page: IPageField) => {
         <meta name="keywords" content={seo.Keywords.toString() || 'Keywords'}></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PageProvider.Provider value={pageProject}>
+      <PageProvider {...updatedPage}>
         <PrimaryLayout>
           {renderPages()}
           {showFormDetails ? <>{renderByBlockType(Block.BlockFormDetail)}</> : null}
         </PrimaryLayout>
-      </PageProvider.Provider>
+      </PageProvider>
     </>
   )
 }

@@ -1,55 +1,52 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
+// import { usePage, useBreadcrumbs } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IBlockHero } from '../../interfaces/blocks'
-import { IBreadcrumbs } from '../../interfaces/common'
-import { IMenuItem } from '../../interfaces/pages'
 import { Block } from '../../enums/blocks'
-import { IMenuDataFields, IMenuDataField } from '../../interfaces/fields'
+// import { IBreadcrumbs } from 'interfaces/common'
 
 export default function BlockHeroBlock() {
-  const ctx = useContext(PageProvider)
-  if (!ctx?.pages.data.length) return null
+  const [page] = usePage()
+  // const [breadcrumbs] = useBreadcrumbs()
 
-  const blockHeroData = ctx?.pages.data[0].attributes.Body.filter((item) => item.BlockType === Block.BlockHero)[0]
-  let breadcrumbsData: IBreadcrumbs
+  // if (!page?.pages.data.length) return null
 
-  const breadCrumbsData = {
-    pages: {
-      data: [
-        {
-          id: '1',
-          attributes: {
-            Slug: 'home',
-            Name: 'Home',
-          },
-        },
-        {
-          id: '2',
-          attributes: {
-            Slug: 'about',
-            Name: 'About',
-          },
-        },
-      ],
-    } as IMenuDataFields,
-    activePage: {
-      data: {
-        attributes: {
-          Slug: 'about',
-        },
-      },
-    } as IMenuDataField,
-  }
+  if (!page?.pages.data[0].attributes.Body) return null
 
-  const breadActivePage: string = breadCrumbsData.activePage.data.attributes.Slug
-  const breadCrumbsPages: IMenuItem[] = breadCrumbsData.pages.data.map((item) => {
-    return {
-      Name: item.attributes.Name,
-      Slug: item.attributes.Slug,
+  const blockHeroData = page?.pages.data[0].attributes.Body.filter((item) => {
+    if (item.BlockType === Block.BlockHero) {
+      return item.BlockType === Block.BlockHero
     }
-  })
+  })[0]
+
+  // let breadcrumbsData: IBreadcrumbs | null
+
+  // if (breadcrumbs !== null && breadcrumbs.pages.length == null) {
+  //   breadcrumbsData = {
+  //     activePage: breadcrumbs.activePage.data.attributes.Slug,
+  //     pages: breadcrumbs.pages.data.map((item) => {
+  //       return {
+  //         Name: item.attributes.Name,
+  //         Slug: item.attributes.Slug,
+  //       }
+  //     }),
+  //   }
+  //   if (breadcrumbs.inner_page) {
+  //     breadcrumbsData = {
+  //       ...breadcrumbsData,
+  //       pages: [
+  //         ...breadcrumbsData.pages,
+  //         {
+  //           Name: breadcrumbs.inner_page.data.attributes.Title,
+  //           Slug: breadcrumbs.inner_page.data.attributes.Slug,
+  //         },
+  //       ],
+  //     }
+  //   }
+  // } else {
+  //   breadcrumbsData = null
+  // }
 
   if (!blockHeroData) return null
   const props = {
@@ -61,10 +58,7 @@ export default function BlockHeroBlock() {
     },
     Text: blockHeroData.Text,
     Overlay: blockHeroData.Overlay,
-    BreadCrumbs: {
-      pages: breadCrumbsPages,
-      activePage: breadActivePage,
-    },
+    // BreadCrumbs: breadcrumbsData || null,
   } as unknown as IBlockHero
   return getComponent<IBlockHero>(Block.BlockHero, props)
 }

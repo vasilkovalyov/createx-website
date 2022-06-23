@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IBlockBenefits } from '../../interfaces/blocks'
@@ -8,8 +7,11 @@ import { IBenefit } from '../../interfaces/common'
 import { IBenefitField } from 'interfaces/fields'
 
 export default function BlockBenefitsBlock() {
-  const ctx = useContext(PageProvider)
-  const blockBenefitsData = ctx?.pages.data[0].attributes.Body.filter(
+  const [page] = usePage()
+
+  if (!page?.pages.data[0].attributes.Body) return null
+
+  const blockBenefitsData = page?.pages.data[0].attributes.Body.filter(
     (item) => item.BlockType === Block.BlockBenefits,
   )[0]
   if (!blockBenefitsData) return null

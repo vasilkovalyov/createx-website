@@ -53,6 +53,11 @@
         "block-hero.block-hero",
         "block-price.block-price"
       ]
+    },
+    "BreadcrumbsInner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "breadcrumbs-inner.breadcrumbs-inner"
     }
   }
 }

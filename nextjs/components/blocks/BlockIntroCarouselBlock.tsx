@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IBlockIntroCarousel } from '../../interfaces/blocks'
@@ -8,8 +7,9 @@ import { IImage, ILink } from '../../interfaces/common'
 import { IImageField } from 'interfaces/fields'
 
 export default function BlockIntroCarouselBlock() {
-  const ctx = useContext(PageProvider)
-  const blockIntroCarouselData = ctx?.pages.data[0].attributes.Body.filter(
+  const [page] = usePage()
+
+  const blockIntroCarouselData = page?.pages.data[0].attributes.Body.filter(
     (item) => item.BlockType === Block.BlockIntroCarousel,
   )[0]
   if (!blockIntroCarouselData) return null

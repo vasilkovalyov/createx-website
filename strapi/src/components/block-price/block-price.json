@@ -6,10 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "ContentType": {
+    "BlockType": {
       "type": "string",
       "required": true,
-      "default": "blockPrice"
+      "default": "blockPricing"
     },
     "Title": {
       "type": "string"

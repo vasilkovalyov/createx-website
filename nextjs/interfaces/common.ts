@@ -1,5 +1,15 @@
 import {
-  Identificator, ColSize, GridItemsAlignment, GridJustify, ServiceType, SocialIconSize, AlignContentType, HeadingLevel, ColorTheme, TextSize, ListType
+  Identificator,
+  ColSize,
+  GridItemsAlignment,
+  GridJustify,
+  ServiceType,
+  SocialIconSize,
+  AlignContentType,
+  HeadingLevel,
+  ColorTheme,
+  TextSize,
+  ListType,
 } from '../types/common'
 import { SocialIcon, EnumsIcon } from '../enums/icons'
 
@@ -15,6 +25,7 @@ export interface IImage {
 
 export interface IBreadcrumbs {
   pages: IMenuItem[]
+  inner_page?: IMenuItem | null
   activePage: string
 }
 
@@ -75,9 +86,9 @@ export interface IButton {
 }
 
 export interface IBlockHeading {
-  Title?: string,
-  Text?: string,
-  headingLevel?: HeadingLevel,
+  Title?: string
+  Text?: string
+  headingLevel?: HeadingLevel
   textSize?: TextSize
   aligned?: AlignContentType
 }
@@ -117,7 +128,7 @@ export interface IPerson {
   Description: string
   Socials: {
     Items: ISocialLink[]
-  } 
+  }
 }
 
 export interface ISocialLink {
@@ -152,7 +163,6 @@ export interface ITestimonial {
   Name: string
   Position?: string
 }
-
 
 export interface IContactInformation {
   Theme?: ColorTheme

@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { PageProvider } from '../../context/project'
+import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IBlockOurClientsTestimonials } from '../../interfaces/blocks'
@@ -8,8 +7,9 @@ import { ITestimonialField } from 'interfaces/fields'
 import { ITestimonial } from 'interfaces/common'
 
 export default function BlockOurClientsTestimonialsBlock() {
-  const ctx = useContext(PageProvider)
-  const blockOurClientsData = ctx?.pages.data[0].attributes.Body.filter(
+  const [page] = usePage()
+
+  const blockOurClientsData = page?.pages.data[0].attributes.Body.filter(
     (item) => item.BlockType === Block.BlockOurClientsTestimonials,
   )[0]
   if (!blockOurClientsData) return null

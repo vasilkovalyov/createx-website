@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_breadcrumbs_inner_breadcrumbs_inners",
+  "info": {
+    "displayName": "BreadcrumbsInner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "inner_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-page.service-page"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "activePage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service-page.service-page"
+    }
+  }
+}

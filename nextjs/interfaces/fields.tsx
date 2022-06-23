@@ -11,6 +11,7 @@ export interface FieldAttributes<T> {
   TitleIntroCarousel: string
   PageLink: IMenuItemField
   Items: T[]
+  Link: IMenuItemField
   Theme?: ColorTheme
   Text: string
   Image: IImageFieldData
@@ -18,6 +19,7 @@ export interface FieldAttributes<T> {
   ClientImage?: IImageFieldData
   ClientImageAlt?: string
   Overlay?: boolean | null
+  BreadCrumbs: IBreadCrumbsField
 }
 
 export interface IImageFieldData {
@@ -37,15 +39,20 @@ export interface IImageField {
   ImageAlt: string
 }
 
+export interface IBreadCrumbsField {
+  // [x: string]: any
+  pages: IMenuDataFields
+  inner_page?: IMenuDataField
+  activePage: IMenuDataField
+}
+
 export interface IPageDataField {
   data: {
     attributes: FieldAttributes<any>[] & {
       ContentType: string
-      BreadCrumbs?: {
-        pages: IMenuDataFields | null
-        activePage: IMenuDataField
-      }
-      Body: FieldAttributes<any>[]
+      BreadCrumbs: IBreadCrumbsField | null
+      BreadCrumbsInner: IBreadCrumbsField | null
+      Body?: FieldAttributes<any>[] | null
       ShowFormDetails: boolean
       Slug: string
       BlockHero: FieldAttributes<any>
@@ -71,6 +78,7 @@ export interface IPageField {
     }
   }
   pages: IPageDataField
+  services: IServiceFields | null
   servicePages: IPageDataField
 }
 
@@ -92,11 +100,18 @@ export interface IFooterBlockField extends IImageField {
   SubscribeForm: boolean
 }
 
-export interface IDataFields {
+export interface IDataField {
   id?: Identificator
   data: {
     attributes: FieldAttributes<any>
   }
+}
+
+export interface IDataFields {
+  id?: Identificator
+  data: {
+    attributes: FieldAttributes<any>
+  }[]
 }
 
 export interface IMenuDataFields {
@@ -119,7 +134,7 @@ export interface IMenuField {
   pages: IMenuDataFields
 }
 
-export interface IMenuItemField extends Pick<IMenuField, 'id' |'Name'>{
+export interface IMenuItemField extends Pick<IMenuField, 'id' | 'Name'> {
   page: {
     data: {
       id?: Identificator
@@ -127,7 +142,6 @@ export interface IMenuItemField extends Pick<IMenuField, 'id' |'Name'>{
     }
   }
 }
-
 
 export interface ITestimonialField {
   [x: string]: any
@@ -141,7 +155,6 @@ export interface IBenefitField extends Pick<IBenefit, 'Title' | 'Text' | 'id'> {
   Image: IImageField
 }
 
-
 export interface IItemField {
   id?: Identificator
   attributes: {
@@ -151,4 +164,26 @@ export interface IItemField {
     ImageAlt: string
     Link: IMenuItemField
   }
+}
+
+export interface IServiceFields {
+  data: {
+    id?: Identificator
+    attributes: {
+      Title: string
+      Text: string
+      Image: IImageFieldData
+      ImageAlt: string
+      Link: {
+        Name: string
+        Slug: {
+          data: {
+            attributes: {
+              Slug
+            }
+          }
+        }
+      }
+    }
+  }[]
 }

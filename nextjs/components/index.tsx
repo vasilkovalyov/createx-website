@@ -12,6 +12,8 @@ import BlockFormDetailBlock from './blocks/BlockFormDetailBlock'
 import BlockOurClientsTestimonialsBlock from './blocks/BlockOurClientsTestimonialsBlock'
 import BlockIntroCarouselBlock from './blocks/BlockIntroCarouselBlock'
 import BlockBenefitsBlock from './blocks/BlockBenefitsBlock'
+import BlockServicesBlock from './blocks/BlockServicesBlock'
+import BlockPricingBlock from './blocks/BlockPricingBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -32,6 +34,8 @@ export const blockComponents = {
   [Block.BlockOurClientsTestimonials]: BlockOurClientsTestimonialsBlock,
   [Block.BlockIntroCarousel]: BlockIntroCarouselBlock,
   [Block.BlockBenefits]: BlockBenefitsBlock,
+  [Block.BlockPricing]: BlockPricingBlock,
+  [Block.BlockServices]: BlockServicesBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
@@ -39,9 +43,9 @@ const registeredComponents: { [theme: string]: IRegistryItem[] } = {
 }
 
 export function renderBlocks(blocks: IContentBlock[] | any[]) {
-  return blocks.map((blockContent, index) => (
-    <div key={index}>{blockContent.BlockType ? renderBlock(blockContent.BlockType as Block, index) : null}</div>
-  ))
+  return blocks.map((blockContent, index) => {
+    return <div key={index}>{blockContent.BlockType ? renderBlock(blockContent.BlockType as Block, index) : null}</div>
+  })
 }
 
 export function renderBlock(BlockType: Block, index?: number) {

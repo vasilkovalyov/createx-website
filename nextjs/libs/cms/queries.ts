@@ -1,12 +1,41 @@
 import { request, gql, GraphQLClient } from 'graphql-request'
 
+import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL } from './fragments'
 
-export async function getServices()   {
+export async function getPageServices(page: string) {
   const url = 'http://localhost:1337/graphql'
-  const graphQLClient = new GraphQLClient(url)
+  const graphQLClient = new GraphQLClient(url, {
+    // headers: {
+    //   Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+    // },
+  })
+
+  const pageData = page === '/' ? 'home' : page
 
   const query = gql`
-    query Services {
+    query PAGE_DATA($page: String) {
+      blockHeader {
+        data {
+          attributes {
+            ...GetHeader
+          }
+        }
+      }
+      blockFooter {
+        data {
+          id
+          attributes {
+            ...GetFooter
+          }
+        }
+      }
+      blockFormDetail {
+        data {
+          attributes {
+            ...GetFormDetail
+          }
+        }
+      }
       services {
         data {
           id
@@ -23,7 +52,7 @@ export async function getServices()   {
             ImageAlt
             Link {
               Name
-              page: service_page {
+              Slug: service_page {
                 data {
                   attributes {
                     Slug
@@ -34,9 +63,41 @@ export async function getServices()   {
           }
         }
       }
+      pages(filters: { Slug: { contains: $page } }) {
+        data {
+          attributes {
+            ContentType
+            Slug
+            ShowFormDetails
+            Body {
+              ... on ComponentBlockHeroBlockHero {
+                Title
+                Text
+                BlockType
+                HeroImage: Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Overlay
+              }
+            }
+          }
+        }
+      }
     }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
   `
-  return await graphQLClient.request(query)
+
+  const data = await graphQLClient.request(query, {
+    page: pageData,
+  })
+  return data
 }
 
 export async function getPageData(page: string) {
@@ -53,29 +114,8 @@ export async function getPageData(page: string) {
     query PAGE_DATA($page: String) {
       blockHeader {
         data {
-          id
           attributes {
-            BlockType
-            Image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            ImageAlt
-            Menu {
-              id
-              pages {
-                data {
-                  id
-                  attributes {
-                    Slug
-                    Name
-                  }
-                }
-              }
-            }
+            ...GetHeader
           }
         }
       }
@@ -83,59 +123,14 @@ export async function getPageData(page: string) {
         data {
           id
           attributes {
-            BlockType
-            Image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            ImageAlt
-            Text
-            Menu {
-              id
-              Name
-              pages {
-                data {
-                  id
-                  attributes {
-                    Slug
-                    Name
-                  }
-                }
-              }
-            }
-            SocialList {
-              Items{
-                id
-                Url
-                Target
-                Icon
-              }
-            }
-            ContactInformation {
-              Title
-              Address
-              Phone
-              Email
-            }
-            SubscribeForm
+            ...GetFooter
           }
         }
       }
       blockFormDetail {
         data {
           attributes {
-            BlockType
-            Image {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            ImageAlt
+            ...GetFormDetail
           }
         }
       }
@@ -145,10 +140,77 @@ export async function getPageData(page: string) {
             ContentType
             Title
             Slug
+            ShowFormDetails
             Seo {
               Title
               Description
               Keywords
+            }
+            BreadcrumbsInner {
+              pages {
+                data {
+                  id
+                  attributes {
+                    Slug
+                    Name
+                  }
+                }
+              }
+              activePage {
+                data {
+                  attributes {
+                    Slug
+                  }
+                }
+              }
+              inner_page {
+                data {
+                  id
+                  attributes {
+                    Slug
+                    Title
+                  }
+                }
+              }
+            }
+            Body {
+              ... on ComponentBlockHeroBlockHero {
+                Title
+                Text
+                BlockType
+                HeroImage: Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Overlay
+              }
+              ... on ComponentBlockPriceBlockPrice {
+                BlockType
+                Title
+                Text
+                PriceCol {
+                  id
+                  PriceCost
+                  PricePlan
+                }
+                PriceRow {
+                  id
+                  Title
+                  Plan1
+                  Text1
+                  Available1
+                  Plan2
+                  Text2
+                  Available2
+                  Plan3
+                  Text3
+                  Available3
+                }
+              }
             }
           }
         }
@@ -270,6 +332,9 @@ export async function getPageData(page: string) {
         }
       }
     }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
   `
 
   const data = await graphQLClient.request(query, {

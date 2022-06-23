@@ -9,6 +9,7 @@ import BlockOurClientsTestimonials from './BlockOurClientsTestimonials'
 import BlockIntroCarousel from './BlockIntroCarousel'
 import BlockBenefits from './BlockBenefits'
 import BlockServices from './BlockServices'
+import BlockPricing from './BlockPricing'
 
 const components: IRegistryItem[] = [
   {
@@ -42,6 +43,10 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockServices,
     component: BlockServices,
+  },
+  {
+    BlockType: Block.BlockPricing,
+    component: BlockPricing,
   },
 ]
 
