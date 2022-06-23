@@ -7,7 +7,6 @@ import { ILink, IService } from '../../interfaces/common'
 
 export default function BlockServicesBlock() {
   const [page] = usePage()
-  console.log('page?.services', page?.services)
 
   if (!page?.services || page?.services.data.length === 0) return null
 

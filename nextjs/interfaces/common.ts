@@ -115,9 +115,9 @@ export interface IProject {
 
 export interface IBenefit {
   id?: Identificator
-  Image: IImage
+  Image?: IImage | null
   Title: string
-  Text: string
+  Text?: string
   className?: string
 }
 

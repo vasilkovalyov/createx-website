@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_block_work_steps_items",
+  "info": {
+    "displayName": "Items",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "ShowNumber": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

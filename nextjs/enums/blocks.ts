@@ -11,4 +11,5 @@ export enum Block {
   BlockFormDetail = 'blockFormDetail',
   BlockServices = 'blockServices',
   BlockPricing = 'blockPricing',
+  BlockWorkSteps = 'blockWorkSteps',
 }

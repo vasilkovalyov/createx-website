@@ -27,7 +27,6 @@ export const getServerSideProps = async ({ params, resolvedUrl }) => {
     data = await getPageServices(pathName)
   } else {
     data = await getPageData(pathName)
-    console.log('data', data)
   }
 
   let page = {}
@@ -52,7 +51,7 @@ const defaultSeo: ISeo = {
 const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
   let updatedPage = page
-
+  console.log('page', page)
   const router = useRouter()
 
   let pageBody

@@ -3,7 +3,7 @@ import { usePage } from '../../context/project'
 import { getComponent } from 'components'
 import { IBlockBenefits } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
-import { IBenefit } from '../../interfaces/common'
+import { IBenefit, IImage } from '../../interfaces/common'
 import { IBenefitField } from 'interfaces/fields'
 
 export default function BlockBenefitsBlock() {
@@ -18,12 +18,18 @@ export default function BlockBenefitsBlock() {
 
   const items = (items: IBenefitField[]): IBenefit[] => {
     return items.map((item) => {
-      return {
-        ...item,
-        Image: {
+      let Image: IImage | null
+      if (item.Image.data) {
+        Image = {
           Url: item.Image.data.attributes.url,
           Alt: item.Image.ImageAlt,
-        },
+        }
+      } else {
+        Image = null
+      }
+      return {
+        ...item,
+        Image: Image,
       }
     })
   }

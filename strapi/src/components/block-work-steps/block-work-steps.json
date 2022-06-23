@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_block_work_steps_block_work_steps",
+  "info": {
+    "displayName": "BlockWorkSteps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockWorkSteps",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-work-steps.items"
+    }
+  }
+}

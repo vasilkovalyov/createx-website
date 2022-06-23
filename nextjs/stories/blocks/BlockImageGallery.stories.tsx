@@ -12,30 +12,30 @@ const Template: ComponentStory<typeof BlockImageGallery> = (args) => <BlockImage
 export const Default = Template.bind({})
 
 Default.args = {
-    Items: [
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/image-gallery.jpg',
-            Alt: 'image description',
-        }
-    ]
+  Items: [
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/image-gallery.jpg',
+      Alt: 'image description',
+    },
+  ],
 }

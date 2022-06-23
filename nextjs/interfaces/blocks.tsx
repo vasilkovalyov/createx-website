@@ -100,6 +100,17 @@ export interface IBlockService {
   Items: IService[]
 }
 
+export interface IBlockWorkSteps {
+  BlockType: Block
+  Title
+  Items: {
+    id: Identificator
+    WorkStepTitle: string
+    Text: string
+    ShowNumber: boolean
+  }[]
+}
+
 interface IPriceCol {
   id: Identificator
   PriceCost: string

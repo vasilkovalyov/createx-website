@@ -17,7 +17,7 @@ function BlockHero({ Items, Theme = 'light', Title, Text }: IBlockBenefits) {
   })
   return (
     <section className={`block-benefits ${themeColor ? themeColor : ''}`}>
-      <Container className="block-hero__container">
+      <Container className="block-benefits__container">
         <BlockHeading Title={Title} Text={Text} headingLevel="h2" aligned="center" />
         <div className="block-benefits__items">
           <Row>

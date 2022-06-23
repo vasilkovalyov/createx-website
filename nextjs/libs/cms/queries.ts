@@ -188,6 +188,16 @@ export async function getPageData(page: string) {
                 ImageAlt
                 Overlay
               }
+              ... on ComponentBlockWorkStepsBlockWorkSteps {
+                BlockType
+                Title
+                Items {
+                  id
+                  WorkStepTitle: Title
+                  Text
+                  ShowNumber
+                }
+              }
               ... on ComponentBlockPriceBlockPrice {
                 BlockType
                 Title
@@ -209,6 +219,26 @@ export async function getPageData(page: string) {
                   Plan3
                   Text3
                   Available3
+                }
+              }
+              ... on ComponentBlockBenefitsBlockBenefits {
+                id
+                BlockType
+                Text
+                Title
+                Theme
+                Items {
+                  id
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                  Title
+                  Text
                 }
               }
             }

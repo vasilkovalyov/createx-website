@@ -1,0 +1,148 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.block-work-steps {
+    padding: spacing.$xxl 0;
+    
+    @include responsive.mq($from: tablet) {
+        padding: 116px 0;
+    }
+
+    &__heading {
+        margin-bottom: 40px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 66px;
+        }
+    }
+
+    .work-steps {
+        &__col {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4n + 1),
+            &:nth-child(4n + 2),
+            &:nth-child(4n + 3) {
+                .work-step {
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        border: 1px dashed #D7DADD;
+
+                        @include responsive.mq($from: tablet) {
+                            top: 25px;
+                            right: -10px;
+                            width: 70%;
+                            
+                        }
+                        
+                        @include responsive.mq($from: tablet_large) {
+                            top: 30px;
+                            right: -10px;
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                .work-step {
+                    &:after {
+                        @include responsive.mq($until: tablet) {
+                            bottom: -58px;
+                            left: 20px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .work-step {
+        position: relative;
+        margin-bottom: 60px;
+
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 40px;
+        }
+
+        &:hover {
+            .work-step__number {
+                @include responsive.mq($from: tablet) {
+                    color: var(--primary-color);
+                }
+            }
+
+            .work-step__number-circle {
+
+                &::before {
+                    @include responsive.mq($from: tablet) {
+                        opacity: 0.12;
+                    }
+                }
+                
+                &::after {
+                    @include responsive.mq($from: tablet) {
+                        opacity: 0.06;
+                        transform: scale(1) translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+
+        &__number {
+            max-width: 84px;
+            width: 100%;
+            height: 56px;
+            position: relative;
+            color: #D7DADD;
+            @include mixins.animate(color);
+
+            &-circle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-70%, -50%);
+                width: 84px;
+                height: 84px;
+
+                &:before {
+                    content: '';
+                    @include mixins.centeredAbsolute();
+                    @include mixins.animate(opacity);
+    
+                    width: 84px;
+                    height: 84px;
+                    background-color: var(--primary-color);
+                    opacity: 0;
+                    border-radius: 50%;
+                }
+
+                &:after {
+                    content: '';
+                    @include mixins.centeredAbsolute();
+                    @include mixins.animate(opacity transform);
+                    
+                    width: 118px;
+                    height: 118px;
+                    border-radius: 50%;
+                    background-color: var(--primary-color);
+                    opacity: 0;
+                    border-radius: 50%;
+                    transform-origin: 0 0;
+                    transform: scale(0) translate(-50%, -50%);
+                }
+            }
+        }
+
+        &__heading {
+            margin-bottom: 10px;
+        }
+    }
+}

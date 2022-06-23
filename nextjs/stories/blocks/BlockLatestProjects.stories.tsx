@@ -19,84 +19,83 @@ Default.args = {
   },
   Items: [
     {
-        id: '1',
-        Image: {
-            Url: '/images/service-img.jpg',
-            Alt: 'Qualified Workers'
-        },
-        Title: 'Red Finger Building',
-        Description: 'Business Centers',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '1',
+      Image: {
+        Url: '/images/service-img.jpg',
+        Alt: 'Qualified Workers',
+      },
+      Title: 'Red Finger Building',
+      Description: 'Business Centers',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
     {
-        id: '2',
-        Image: {
-            Url: '/images/service-img.jpg',
-            Alt: 'Cubes Building'
-        },
-        Title: 'Cubes Building',
-        Description: 'Business Centers',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '2',
+      Image: {
+        Url: '/images/service-img.jpg',
+        Alt: 'Cubes Building',
+      },
+      Title: 'Cubes Building',
+      Description: 'Business Centers',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
     {
-        id: '3',
-        Image: {
-            Url: '/images/service-img.jpg',
-            Alt: 'The Pencil Building'
-        },
-        Title: 'The Pencil Building',
-        Description: 'Stores & Malls',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '3',
+      Image: {
+        Url: '/images/service-img.jpg',
+        Alt: 'The Pencil Building',
+      },
+      Title: 'The Pencil Building',
+      Description: 'Stores & Malls',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
     {
-        id: '4',
-        Image: {
-            Url: '/images/service-img.jpg',
-            Alt: 'Qualified Workers'
-        },
-        Title: 'Red Finger Building',
-        Description: 'Business Centers',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '4',
+      Image: {
+        Url: '/images/service-img.jpg',
+        Alt: 'Qualified Workers',
+      },
+      Title: 'Red Finger Building',
+      Description: 'Business Centers',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
     {
-        id: '5',
-        Image: {
-            text: 'View Project',
-            Url: '/images/service-img.jpg',
-            Alt: 'Cubes Building'
-        },
-        Title: 'Cubes Building',
-        Description: 'Business Centers',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '5',
+      Image: {
+        text: 'View Project',
+        Url: '/images/service-img.jpg',
+        Alt: 'Cubes Building',
+      },
+      Title: 'Cubes Building',
+      Description: 'Business Centers',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
     {
-        id: '6',
-        Image: {
-            Url: '/images/service-img.jpg',
-            Alt: 'The Pencil Building'
-        },
-        Title: 'The Pencil Building',
-        Description: 'Stores & Malls',
-        Link: {
-            text: 'View Project',
-            url: '/',
-        },
+      id: '6',
+      Image: {
+        Url: '/images/service-img.jpg',
+        Alt: 'The Pencil Building',
+      },
+      Title: 'The Pencil Building',
+      Description: 'Stores & Malls',
+      Link: {
+        text: 'View Project',
+        url: '/',
+      },
     },
-    
-  ]
+  ],
 }

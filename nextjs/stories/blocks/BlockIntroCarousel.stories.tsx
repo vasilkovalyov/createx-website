@@ -12,28 +12,28 @@ const Template: ComponentStory<typeof BlockIntroCarousel> = (args) => <BlockIntr
 export const Default = Template.bind({})
 
 Default.args = {
-    Title: "CREATEX CONSTRUCTION",
-    Text: "Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ",
-    Link: {
-        text: "Learn more about us",
-        url: '/',
+  Title: 'CREATEX CONSTRUCTION',
+  Text: 'Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. ',
+  Link: {
+    text: 'Learn more about us',
+    url: '/',
+  },
+  Items: [
+    {
+      Url: '/images/bg-image.jpg',
+      Alt: 'image description',
     },
-    Items: [
-        {
-            Url: '/images/bg-image.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/bg-image.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/bg-image.jpg',
-            Alt: 'image description',
-        },
-        {
-            Url: '/images/bg-image.jpg',
-            Alt: 'image description',
-        }
-    ]
+    {
+      Url: '/images/bg-image.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/bg-image.jpg',
+      Alt: 'image description',
+    },
+    {
+      Url: '/images/bg-image.jpg',
+      Alt: 'image description',
+    },
+  ],
 }

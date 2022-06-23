@@ -16,7 +16,7 @@ function BlockHero({ Image, Title, Text, Overlay = false }: IBlockHero) {
       <Container className="block-hero__container">
         <div className="block-hero__content">
           {Title ? <Typography level="h1" text={Title} className="block-hero__title text-uppercase" /> : null}
-          {Text ? <Typography text={Text} className="block-hero__text text-lg" /> : null}
+          {Text ? <Typography text={Text} className="block-hero__text text-lg text-color-secondary" /> : null}
         </div>
       </Container>
     </section>

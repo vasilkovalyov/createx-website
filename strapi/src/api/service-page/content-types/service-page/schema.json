@@ -51,7 +51,9 @@
       "type": "dynamiczone",
       "components": [
         "block-hero.block-hero",
-        "block-price.block-price"
+        "block-price.block-price",
+        "block-benefits.block-benefits",
+        "block-work-steps.block-work-steps"
       ]
     },
     "BreadcrumbsInner": {

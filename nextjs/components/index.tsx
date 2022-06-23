@@ -14,6 +14,7 @@ import BlockIntroCarouselBlock from './blocks/BlockIntroCarouselBlock'
 import BlockBenefitsBlock from './blocks/BlockBenefitsBlock'
 import BlockServicesBlock from './blocks/BlockServicesBlock'
 import BlockPricingBlock from './blocks/BlockPricingBlock'
+import BlockWorkStepsBlock from './blocks/BlockWorkStepsBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -36,6 +37,7 @@ export const blockComponents = {
   [Block.BlockBenefits]: BlockBenefitsBlock,
   [Block.BlockPricing]: BlockPricingBlock,
   [Block.BlockServices]: BlockServicesBlock,
+  [Block.BlockWorkSteps]: BlockWorkStepsBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
