@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_block_service_description_block_service_descriptions",
+  "info": {
+    "displayName": "BlockServiceDescription"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockServiceDescription"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-service-description.items"
+    }
+  }
+}

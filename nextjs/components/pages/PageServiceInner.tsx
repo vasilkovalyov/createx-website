@@ -8,6 +8,7 @@ export default function PageServiceInner() {
   return (
     <>
       {renderByBlockType(Block.BlockHero)}
+      {renderByBlockType(Block.BlockServiceDescription)}
       {renderByBlockType(Block.BlockWorkSteps)}
       {renderByBlockType(Block.BlockBenefits)}
       {renderByBlockType(Block.BlockPricing)}

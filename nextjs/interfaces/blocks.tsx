@@ -138,3 +138,14 @@ export interface IBlockPricing {
   PriceCol: IPriceCol[]
   PriceRow: IPriceRow[]
 }
+
+export interface IBlockServiceDescription {
+  BlockType: Block
+  Title: string
+  Image?: IImage
+  Items?: {
+    id: Identificator
+    Title: string
+    Text: string
+  }[]
+}

@@ -16,6 +16,7 @@ export interface FieldAttributes<T> {
   Text: string
   Image: IImageFieldData
   ImageAlt: string
+  ServiceDescriptionImageAlt?: string
   ClientImage?: IImageFieldData
   ClientImageAlt?: string
   Overlay?: boolean | null

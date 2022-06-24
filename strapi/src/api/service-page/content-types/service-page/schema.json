@@ -53,7 +53,8 @@
         "block-hero.block-hero",
         "block-price.block-price",
         "block-benefits.block-benefits",
-        "block-work-steps.block-work-steps"
+        "block-work-steps.block-work-steps",
+        "block-service-description.block-service-description"
       ]
     },
     "BreadcrumbsInner": {

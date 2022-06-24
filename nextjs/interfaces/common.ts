@@ -200,3 +200,10 @@ export interface IProjectDescription {
     Text: string
   }[]
 }
+
+export interface IAccordion {
+  Title: string
+  Text: string
+  className?: string
+  isOpen?: boolean
+}

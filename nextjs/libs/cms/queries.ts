@@ -174,6 +174,23 @@ export async function getPageData(page: string) {
               }
             }
             Body {
+              ... on ComponentBlockServiceDescriptionBlockServiceDescription {
+                BlockType
+                Title
+                Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ServiceDescriptionImageAlt: ImageAlt
+                ServiceDescriptionItems: Items {
+                  id
+                  Title
+                  Text
+                }
+              }
               ... on ComponentBlockHeroBlockHero {
                 Title
                 Text

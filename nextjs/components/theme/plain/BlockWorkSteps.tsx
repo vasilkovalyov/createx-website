@@ -11,7 +11,7 @@ export default function BlockWorkSteps({ Title, Items }: IBlockWorkSteps) {
   return (
     <section className="block-work-steps">
       <Container className="block-work-steps__container">
-        {Title && <Typography level="h2" text={Title} className="block-work-steps__heading" />}
+        {Title && <Typography level="h2" text={Title} className="block-work-steps__title" />}
         {Items && Items.length ? (
           <Row className="work-steps">
             {Items.map((item, index) => (
@@ -25,7 +25,7 @@ export default function BlockWorkSteps({ Title, Items }: IBlockWorkSteps) {
                     ) : null}
                   </div>
                   <div className="work-step__body">
-                    <Typography level="h6" text={item.WorkStepTitle} className="work-step__heading" />
+                    <Typography level="h6" text={item.WorkStepTitle} className="work-step__title" />
                     {item.Text && (
                       <Typography text={item.Text} className="work-step__text text-color-secondary text-sm" />
                     )}

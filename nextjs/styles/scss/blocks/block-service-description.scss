@@ -1,0 +1,28 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.block-service-description {
+    padding: spacing.$xxl 0;
+    
+    @include responsive.mq($from: tablet) {
+        padding: 118px 0;
+    }
+
+    &__image {
+        @include responsive.mq($until: tablet) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__col-image {
+        @include responsive.mq($from: wide) {
+            margin-right: 70px;
+        }
+    }
+
+    &__title {
+        @include responsive.mq($from: tablet) {
+            margin-bottom: 70px;
+        }
+    }
+}

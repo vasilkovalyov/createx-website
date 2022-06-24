@@ -51,7 +51,6 @@ const defaultSeo: ISeo = {
 const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
   let updatedPage = page
-  console.log('page', page)
   const router = useRouter()
 
   let pageBody
@@ -81,6 +80,7 @@ const DynamicPage = (page: IPageField) => {
 
   const renderPages = () => {
     if (pageAttributes.ContentType === Page.ServicePage) {
+      console.log('updatedPage', updatedPage)
       return <PageServiceInner />
     }
 

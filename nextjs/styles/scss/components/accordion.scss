@@ -1,0 +1,44 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.accordion {
+    padding-left: spacing.$xxxl;
+    margin-bottom: 28px;
+
+    &--active {
+        .accordion__title {
+            &::before {
+                content: "\e90e";
+            }
+        }
+
+        .accordion__body {
+            display: block;
+        }
+    }
+
+    &__title {
+        position: relative;
+        line-height: 1.5;
+        cursor: pointer;
+        
+        &:before {
+            content: "\e911";
+            font-family: 'icomoon' !important;
+            position: absolute;
+            top: 4px;
+            left: -42px;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--primary-color);
+        }
+    }
+
+    &__body {
+        display: none;
+    }
+
+    &__text {
+
+    }
+}
