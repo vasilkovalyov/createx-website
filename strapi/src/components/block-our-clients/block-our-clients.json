@@ -9,7 +9,7 @@
     "BlockType": {
       "type": "string",
       "required": true,
-      "default": "blockOurClients"
+      "default": "blockOurClientsTestimonials"
     },
     "Title": {
       "type": "string",

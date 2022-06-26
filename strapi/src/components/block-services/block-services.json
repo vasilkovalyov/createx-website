@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_block_services_block_services",
+  "info": {
+    "displayName": "BlockServices"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockServices",
+      "required": true
+    }
+  }
+}

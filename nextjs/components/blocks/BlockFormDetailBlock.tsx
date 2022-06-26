@@ -11,14 +11,19 @@ export default function BlockFormDetailBlock() {
   if (!page.blockFormDetail.data) return null
 
   const BlockType = page.blockFormDetail.data.attributes.BlockType
-  const image = {
-    Url: page.blockFormDetail.data.attributes.Image?.data.attributes.url,
-    Alt: page.blockFormDetail.data.attributes.ImageAlt,
-  } as IImage
+  let Image: IImage | null
+  if (page.blockFormDetail.data.attributes.Image.data) {
+    Image = {
+      Url: page.blockFormDetail.data.attributes.Image?.data.attributes.url,
+      Alt: page.blockFormDetail.data.attributes.ImageAlt,
+    }
+  } else {
+    Image = null
+  }
 
   const props: IBlockFormDetail = {
     BlockType: BlockType as Block,
-    Image: image,
+    Image: Image,
   }
 
   return getComponent<IBlockFormDetail>(Block.BlockFormDetail, props)

@@ -1,15 +1,14 @@
 {
-  "collectionName": "components_block_work_steps_block_work_steps",
+  "collectionName": "components_block_image_gallery_block_image_galleries",
   "info": {
-    "displayName": "BlockWorkSteps",
-    "description": ""
+    "displayName": "BlockImageGallery"
   },
   "options": {},
   "attributes": {
     "BlockType": {
       "type": "string",
-      "default": "blockWorkSteps",
-      "required": true
+      "required": true,
+      "default": "blockImageGallery"
     },
     "Title": {
       "type": "string"
@@ -18,7 +17,7 @@
       "displayName": "Items",
       "type": "component",
       "repeatable": true,
-      "component": "block-work-steps.items"
+      "component": "block-image-gallery.items"
     }
   }
 }

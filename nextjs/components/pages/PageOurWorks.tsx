@@ -4,11 +4,12 @@ import { renderByBlockType } from '../../components'
 
 import { Block } from '../../enums/blocks'
 
-export default function PageServices(props) {
+export default function PageOurWorks() {
   return (
     <>
       {renderByBlockType(Block.BlockHero)}
-      {renderByBlockType(Block.BlockServices)}
+      {renderByBlockType(Block.BlockOurWorks)}
+      {renderByBlockType(Block.BlockOurClientsTestimonials)}
     </>
   )
 }

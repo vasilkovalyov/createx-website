@@ -16,9 +16,9 @@ Default.args = {
     Alt: 'alt',
   },
   Title: 'Cubes Building',
-  Description: 'Business Centers',
+  Text: 'Business Centers',
   Link: {
     text: '',
     url: '/',
-  }
-} 
+  },
+}

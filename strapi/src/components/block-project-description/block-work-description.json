@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_block_work_description_block_work_descriptions",
+  "info": {
+    "displayName": "BlockProjectDescription",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockProjectDescription"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "RichText": {
+      "type": "richtext"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-project-description.items"
+    }
+  }
+}

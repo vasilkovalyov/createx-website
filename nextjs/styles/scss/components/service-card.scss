@@ -59,6 +59,7 @@
     &__logo-secondary {
         @include mixins.centeredAbsolute();
         opacity: 0;
+        width: 100%;
     }
 
     &__body {

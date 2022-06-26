@@ -2,32 +2,41 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import PageServices from '../../components/pages/PageServices'
-import PageServiceInner from 'components/pages/PageServiceInner'
+import PageOurWorks from 'components/pages/PageOurWorks'
+import PageOurWorkInner from 'components/pages/PageOurWorkInner'
 
 import { renderBlocks, renderByBlockType } from '../../components'
 import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
 import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
-import { getPageData, getPageServices } from '../../libs/cms/queries'
+import { getPageData, getPageOurWorks, getPageSingleOurWork, getPageSingleService } from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
 import { Page } from '../../enums/pages'
 
 import { PageProvider } from '../../context/project'
 
+const getDataByPath = async (path) => {
+  const [page, subpage] = path.split('/')
+  if (page === 'services' && subpage) {
+    return await getPageSingleService(subpage)
+  }
+  if (page === 'our-work' && !subpage) {
+    return await getPageOurWorks(page)
+  }
+  if (page === 'our-work' && subpage) {
+    return await getPageSingleOurWork(page)
+  }
+  console.log('page', page)
+  return await getPageData(page)
+}
+
 export const getServerSideProps = async ({ params, resolvedUrl }) => {
   const NODE_ENV = process.env.NODE_ENV
-
   const pageName = resolvedUrl.replace('/en', '')
-  let data: any
   const pathName = !pageName ? '/' : pageName.replace('/', '')
 
-  if (pathName === 'services') {
-    data = await getPageServices(pathName)
-  } else {
-    data = await getPageData(pathName)
-  }
+  const data = await getDataByPath(pathName)
 
   let page = {}
   if (data) {
@@ -50,19 +59,19 @@ const defaultSeo: ISeo = {
 
 const DynamicPage = (page: IPageField) => {
   const seo = defaultSeo
-  let updatedPage = page
+  const updatedPage = page
   const router = useRouter()
 
   let pageBody
   let showFormDetails
   let pageAttributes
-  if (updatedPage?.pages.data.length) {
-    pageAttributes = updatedPage?.pages.data[0].attributes
-    pageBody = pageAttributes.Body
-    showFormDetails = pageAttributes.ShowFormDetails
+
+  if (!updatedPage.pages) {
+    return 'Empty page'
   }
-  if (updatedPage?.servicePages && updatedPage?.servicePages.data.length) {
-    pageAttributes = updatedPage?.servicePages.data[0].attributes
+
+  if (updatedPage?.pages.data && updatedPage?.pages.data.length) {
+    pageAttributes = updatedPage?.pages.data[0].attributes
     pageBody = pageAttributes.Body
     showFormDetails = pageAttributes.ShowFormDetails
   }
@@ -71,21 +80,13 @@ const DynamicPage = (page: IPageField) => {
     return <div>Loading...</div>
   }
 
-  if (pageAttributes.ContentType === Page.ServicePage) {
-    updatedPage = {
-      ...page,
-      pages: page.servicePages,
-    }
-  }
-
   const renderPages = () => {
-    if (pageAttributes.ContentType === Page.ServicePage) {
-      console.log('updatedPage', updatedPage)
-      return <PageServiceInner />
+    if (pageAttributes.ContentType === Page.OurWorkPage) {
+      return <PageOurWorkInner />
     }
 
-    if (pageAttributes.ContentType === Page.ServicesPage) {
-      return <PageServices />
+    if (pageAttributes.ContentType === Page.OurWorksPage) {
+      return <PageOurWorks />
     }
 
     if (pageBody && pageBody.length) {

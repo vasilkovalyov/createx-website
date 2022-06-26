@@ -14,29 +14,35 @@ export interface FieldAttributes<T> {
   Link: IMenuItemField
   Theme?: ColorTheme
   Text: string
-  Image: IImageFieldData
+  Image: {
+    id?: Identificator
+    data?: IImageFieldData
+  }
   ImageAlt: string
   ServiceDescriptionImageAlt?: string
-  ClientImage?: IImageFieldData
+  ClientImage?: {
+    id?: Identificator
+    data?: IImageFieldData
+  }
   ClientImageAlt?: string
   Overlay?: boolean | null
   BreadCrumbs: IBreadCrumbsField
 }
 
 export interface IImageFieldData {
-  id?: Identificator
-  data: {
-    attributes: {
-      url: string
-      width?: string | number
-      height?: string | number
-    }
+  attributes: {
+    url: string
+    width?: string | number
+    height?: string | number
   }
 }
 
 export interface IImageField {
   data: any
-  Image: IImageFieldData
+  Image: {
+    id?: Identificator
+    data?: IImageFieldData
+  }
   ImageAlt: string
 }
 
@@ -57,6 +63,14 @@ export interface IPageDataField {
       ShowFormDetails: boolean
       Slug: string
       BlockHero: FieldAttributes<any>
+      work_page: {
+        data: {
+          attributes: {
+            CategoryName: string
+            CategorySlug: string
+          }
+        }
+      }
     }
   }[]
 }
@@ -80,7 +94,8 @@ export interface IPageField {
   }
   pages: IPageDataField
   services: IServiceFields | null
-  servicePages: IPageDataField
+  workCategory: ICategoryFields | null
+  works: IWorkFields | null
 }
 
 export interface IBlockFormDetailField extends IImageField {
@@ -172,8 +187,47 @@ export interface IServiceFields {
     id?: Identificator
     attributes: {
       Title: string
+      Slug: string
+      SlugText: string
       Text: string
-      Image: IImageFieldData
+      PreviewImage: {
+        id?: Identificator
+        data?: IImageFieldData
+      }
+      PreviewImageSmall: {
+        id?: Identificator
+        data?: IImageFieldData
+      }
+      PreviewLogoPrimary: {
+        id?: Identificator
+        data?: IImageFieldData
+      }
+      PreviewLogoSecondary: {
+        id?: Identificator
+        data?: IImageFieldData
+      }
+      ImageAlt: string
+      page: {
+        data: {
+          attributes: {
+            Slug
+          }
+        }
+      }
+    }
+  }[]
+}
+
+export interface IWorkFields {
+  data: {
+    id?: Identificator
+    attributes: {
+      Title: string
+      Text: string
+      Image: {
+        id?: Identificator
+        data?: IImageFieldData
+      }
       ImageAlt: string
       Link: {
         Name: string
@@ -187,4 +241,19 @@ export interface IServiceFields {
       }
     }
   }[]
+}
+
+export interface ICategoryFields {
+  data: {
+    attributes: {
+      Items: {
+        id: Identificator
+        Name: string
+        Slug: string
+        Image: IImageField
+        Image2: IImageField
+        ImageAlt: string
+      }[]
+    }
+  }
 }

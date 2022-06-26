@@ -16,7 +16,8 @@ export function PageProvider({ children, ...props }: Props) {
     blockFormDetail: props.blockFormDetail,
     NODE_ENV: props.NODE_ENV,
     services: props.services,
-    servicePages: props.servicePages,
+    works: props.works,
+    workCategory: props.workCategory,
   }
 
   return <PagesStateContext.Provider value={state}>{children}</PagesStateContext.Provider>

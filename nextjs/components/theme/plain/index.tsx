@@ -12,6 +12,8 @@ import BlockServices from './BlockServices'
 import BlockPricing from './BlockPricing'
 import BlockWorkSteps from './BlockWorkSteps'
 import BlockServiceDescription from './BlockServiceDescription'
+import BlockOurWorks from './BlockOurWorks'
+import BlockPreviewServices from './BlockPreviewServices'
 
 const components: IRegistryItem[] = [
   {
@@ -57,6 +59,14 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockServiceDescription,
     component: BlockServiceDescription,
+  },
+  {
+    BlockType: Block.BlockOurWorks,
+    component: BlockOurWorks,
+  },
+  {
+    BlockType: Block.BlockPreviewServices,
+    component: BlockPreviewServices,
   },
 ]
 

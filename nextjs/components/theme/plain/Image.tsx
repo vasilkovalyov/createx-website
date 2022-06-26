@@ -1,6 +1,6 @@
 import React from 'react'
 import { IImage } from '../../../interfaces/common'
-import { usePage } from 'context/project'
+import { usePage } from '../../../context/project'
 
 export default function Image({ Url, Alt, className }: IImage) {
   const [page] = usePage()

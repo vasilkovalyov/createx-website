@@ -28,7 +28,7 @@ export interface IHeader {
 
 export interface IFooter {
   BlockType: Block
-  Image: IImage
+  Image: IImage | null
   Menu?: IMenu[] | null
   Text: string
   ContactInformation: IContactInformation
@@ -48,5 +48,5 @@ export interface IContentBlock {
 
 export interface IBlockFormDetail {
   BlockType: Block
-  Image: IImage
+  Image: IImage | null
 }

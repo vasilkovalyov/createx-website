@@ -17,7 +17,7 @@ Default.args = {
     Alt: 'alt',
   },
   Title: 'Judith Warren',
-  Description: 'Lead Accountant',
+  Text: 'Lead Accountant',
   Socials: {
     Items: [
       {
@@ -35,6 +35,6 @@ Default.args = {
         Url: '/',
         Icon: 'icon-facebook' as SocialIcon,
       },
-    ]
-  }
-} 
+    ],
+  },
+}

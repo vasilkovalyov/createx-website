@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Pages blocks
-import PageServices from './pages/PageServices'
-import PageServiceInner from './pages/PageServiceInner'
+import PageOurWorks from './pages/PageOurWorks'
+import PageOurWorkInner from './pages/PageOurWorkInner'
 
 // Component blocks
 import BlockHeroBlock from './blocks/BlockHeroBlock'
@@ -16,6 +16,8 @@ import BlockServicesBlock from './blocks/BlockServicesBlock'
 import BlockPricingBlock from './blocks/BlockPricingBlock'
 import BlockWorkStepsBlock from './blocks/BlockWorkStepsBlock'
 import BlockServiceDescriptionBlock from './blocks/BlockServiceDescriptionBlock'
+import BlockOurWorksBlock from './blocks/BlockOurWorksBlock'
+import BlockPreviewServicesBlock from './blocks/BlockPreviewServicesBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -25,8 +27,8 @@ import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
   // Pages blocks
-  servicesPage: PageServices,
-  PageServiceInner: PageServiceInner,
+  PageOurWorks: PageOurWorks,
+  PageOurWorkInner: PageOurWorkInner,
 
   // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
@@ -40,6 +42,8 @@ export const blockComponents = {
   [Block.BlockServices]: BlockServicesBlock,
   [Block.BlockWorkSteps]: BlockWorkStepsBlock,
   [Block.BlockServiceDescription]: BlockServiceDescriptionBlock,
+  [Block.BlockOurWorks]: BlockOurWorksBlock,
+  [Block.BlockPreviewServices]: BlockPreviewServicesBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {

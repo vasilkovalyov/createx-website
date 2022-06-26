@@ -3,32 +3,34 @@ import { usePage } from '../../context/project'
 import { getComponent } from 'components'
 import { IBlockService } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
-import { ILink, IService } from '../../interfaces/common'
+import { IImage, IService } from '../../interfaces/common'
 
 export default function BlockServicesBlock() {
   const [page] = usePage()
 
   if (!page?.services || page?.services.data.length === 0) return null
+  const data = page.services.data[0].attributes.page.data
+  const parentPage = data ? data.attributes.Slug : ''
 
   const services = page?.services.data.map((item): IService => {
-    let link: ILink | null
-    if (item.attributes.Link) {
-      link = {
-        url: item.attributes.Link.Slug.data.attributes.Slug,
-        text: item.attributes.Link.Name,
+    const urlPage = parentPage ? `${parentPage}/${item.attributes.Slug}` : item.attributes.Slug
+    let Image: IImage | null
+    if (item.attributes.PreviewImage.data) {
+      Image = {
+        Url: item.attributes.PreviewImage.data.attributes.url,
+        Alt: item.attributes.ImageAlt,
       }
     } else {
-      link = null
+      Image = null
     }
-
     return {
-      Image: {
-        Url: item.attributes.Image.data.attributes.url,
-        Alt: item.attributes.ImageAlt,
-      },
+      Image: Image,
       Title: item.attributes.Title,
       Text: item.attributes.Text,
-      Link: link,
+      Link: {
+        url: urlPage,
+        text: item.attributes.SlugText,
+      },
     } as IService
   })
 

@@ -50,12 +50,6 @@
     },
     "SubscribeForm": {
       "type": "boolean"
-    },
-    "BreadcrumbsInner": {
-      "displayName": "BreadcrumbsInner",
-      "type": "component",
-      "repeatable": false,
-      "component": "breadcrumbs-inner.breadcrumbs-inner"
     }
   }
 }

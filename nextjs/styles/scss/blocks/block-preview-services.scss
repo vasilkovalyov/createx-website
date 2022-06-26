@@ -1,0 +1,16 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.block-preview-services {
+    padding: spacing.$xxl 0;
+    
+    @include responsive.mq($from: tablet) {
+        padding: 116px 0;
+    }
+
+    .preview-services-list {
+        .service-card {
+            max-width: 100%;
+        }
+    }
+}

@@ -16,10 +16,16 @@ export default function BlockFooterBlock() {
   if (!page) return null
 
   const BlockType = page.blockFooter.data.attributes.BlockType
-  const image = {
-    Url: page.blockFooter.data.attributes.Image?.data.attributes.url,
-    Alt: page.blockFooter.data.attributes.ImageAlt,
-  } as IImage
+  let Image: IImage | null
+  if (page.blockFooter.data.attributes.Image.data) {
+    Image = {
+      Url: page.blockFooter.data.attributes.Image?.data.attributes.url,
+      Alt: page.blockFooter.data.attributes.ImageAlt,
+    }
+  } else {
+    Image = null
+  }
+
   const text = page.blockFooter.data.attributes.Text
   const menu = page.blockFooter.data.attributes.Menu
   const convertedMenu = getConvertMenuArray(menu) || null
@@ -38,7 +44,7 @@ export default function BlockFooterBlock() {
 
   const props: IFooter = {
     BlockType: BlockType as Block,
-    Image: image,
+    Image: Image,
     Text: text,
     Menu: convertedMenu,
     ContactInformation: page.blockFooter.data.attributes.ContactInformation,

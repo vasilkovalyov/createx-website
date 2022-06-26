@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_block_preview_services_block_preview_services",
+  "info": {
+    "displayName": "BlockPreviewServices"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockPreviewServices",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../base/setup.scss';
+@use '../tools/mixins.scss';
+
+.block-our-works {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: spacing.$xxxl 0;
+    }
+
+    
+    .our-work-list {
+        margin-bottom: 30px;
+    }
+}

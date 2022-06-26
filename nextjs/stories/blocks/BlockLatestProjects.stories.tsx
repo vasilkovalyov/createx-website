@@ -25,7 +25,7 @@ Default.args = {
         Alt: 'Qualified Workers',
       },
       Title: 'Red Finger Building',
-      Description: 'Business Centers',
+      Text: 'Business Centers',
       Link: {
         text: 'View Project',
         url: '/',
@@ -38,7 +38,7 @@ Default.args = {
         Alt: 'Cubes Building',
       },
       Title: 'Cubes Building',
-      Description: 'Business Centers',
+      Text: 'Business Centers',
       Link: {
         text: 'View Project',
         url: '/',
@@ -51,7 +51,7 @@ Default.args = {
         Alt: 'The Pencil Building',
       },
       Title: 'The Pencil Building',
-      Description: 'Stores & Malls',
+      Text: 'Stores & Malls',
       Link: {
         text: 'View Project',
         url: '/',
@@ -64,7 +64,7 @@ Default.args = {
         Alt: 'Qualified Workers',
       },
       Title: 'Red Finger Building',
-      Description: 'Business Centers',
+      Text: 'Business Centers',
       Link: {
         text: 'View Project',
         url: '/',
@@ -78,7 +78,7 @@ Default.args = {
         Alt: 'Cubes Building',
       },
       Title: 'Cubes Building',
-      Description: 'Business Centers',
+      Text: 'Business Centers',
       Link: {
         text: 'View Project',
         url: '/',
@@ -91,7 +91,7 @@ Default.args = {
         Alt: 'The Pencil Building',
       },
       Title: 'The Pencil Building',
-      Description: 'Stores & Malls',
+      Text: 'Stores & Malls',
       Link: {
         text: 'View Project',
         url: '/',

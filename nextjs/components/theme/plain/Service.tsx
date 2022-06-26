@@ -13,7 +13,7 @@ export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text
   if (type === 'card') {
     return (
       <div className="service-card shadow-wrapper">
-        <ImageComponent Url={Image.Url} Alt={Image.Alt} className="service-card__image" />
+        {Image && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="service-card__image" />}
         <div className="service-card__overlay overlay overlay--light"></div>
         <div className="service-card__body">
           {Logo || Logo2 ? (
@@ -34,11 +34,11 @@ export default function Service({ type, reverse, Image, Logo, Logo2, Title, Text
               )}
             </div>
           ) : null}
-          <Typography level="h6" text={Title} className="service-card__title" />
+          <Typography level="h6" text={Title} className="service-card__title text-align--center" />
         </div>
         {Link && (
-          <LinkComponent href={Link.url}>
-            <a href="#" className="service-card__link" target={Link.target}></a>
+          <LinkComponent href={`/en/${Link.url}`}>
+            <a className="service-card__link" target={Link.target}></a>
           </LinkComponent>
         )}
       </div>

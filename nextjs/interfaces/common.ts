@@ -107,10 +107,12 @@ export interface IService {
 
 export interface IProject {
   id?: Identificator
-  Image: IImage
+  Image?: IImage
   Title: string
-  Description: string
+  Text: string
   Link?: ILink
+  CategoryName: string
+  CategorySlug: string
 }
 
 export interface IBenefit {
@@ -125,7 +127,7 @@ export interface IPerson {
   id?: Identificator
   Image: IImage
   Title: string
-  Description: string
+  Text: string
   Socials: {
     Items: ISocialLink[]
   }
@@ -206,4 +208,17 @@ export interface IAccordion {
   Text: string
   className?: string
   isOpen?: boolean
+}
+
+export interface IWorkCategoriesList {
+  Items: IWorkCategories[]
+  onClick?: (value: string) => void
+}
+
+export interface IWorkCategories {
+  id: Identificator
+  Name: string
+  Slug: string
+  Image?: IImage | null
+  Image2?: IImage | null
 }

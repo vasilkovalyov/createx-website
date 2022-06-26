@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_related_projects_block_related_projects",
+  "info": {
+    "displayName": "BlockRelatedProjects"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockRelatedProjects",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

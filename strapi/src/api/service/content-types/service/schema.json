@@ -14,12 +14,23 @@
   "attributes": {
     "Title": {
       "type": "string",
+      "required": true,
+      "default": "Services"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
       "required": true
     },
-    "Text": {
-      "type": "text"
+    "PreviewImageSmall": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "Image": {
+    "PreviewImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -30,16 +41,49 @@
     "ImageAlt": {
       "type": "string"
     },
-    "service_page": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::service-page.service-page",
-      "mappedBy": "service"
+    "Text": {
+      "type": "text"
     },
-    "Link": {
-      "type": "component",
-      "repeatable": false,
-      "component": "service.link"
+    "PreviewLogoPrimary": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "PreviewLogoSecondary": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "block-benefits.block-benefits",
+        "block-hero.block-hero",
+        "block-price.block-price",
+        "block-related-projects.block-related-projects",
+        "block-service-description.block-service-description",
+        "block-project-steps.block-work-steps"
+      ]
+    },
+    "ContentType": {
+      "type": "string",
+      "default": "servicePage"
+    },
+    "SlugText": {
+      "type": "string",
+      "default": "Learn more"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "services"
     }
   }
 }

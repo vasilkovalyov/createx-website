@@ -2,7 +2,182 @@ import { request, gql, GraphQLClient } from 'graphql-request'
 
 import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL } from './fragments'
 
-export async function getPageServices(page: string) {
+export async function getPageSingleService(page: string) {
+  const url = 'http://localhost:1337/graphql'
+  const graphQLClient = new GraphQLClient(url)
+
+  const query = gql`
+    query SingleService($page: String!) {
+      blockHeader {
+        data {
+          attributes {
+            ...GetHeader
+          }
+        }
+      }
+      blockFooter {
+        data {
+          id
+          attributes {
+            ...GetFooter
+          }
+        }
+      }
+      blockFormDetail {
+        data {
+          attributes {
+            ...GetFormDetail
+          }
+        }
+      }
+      pages: services(filters: { Slug: { contains: $page } }) {
+        data {
+          id
+          attributes {
+            ContentType
+            Title
+            Slug
+            Body {
+              ... on ComponentBlockHeroBlockHero {
+                BlockType
+                Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Title
+                Text
+                Overlay
+              }
+            }
+          }
+        }
+      }
+    }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
+  `
+
+  const data = await graphQLClient.request(query, {
+    page: page,
+  })
+  return data
+}
+
+export async function getPageSingleOurWork(page: string) {
+  const url = 'http://localhost:1337/graphql'
+  const graphQLClient = new GraphQLClient(url)
+
+  const query = gql`
+    query PAGE_DATA($page: String) {
+      blockHeader {
+        data {
+          attributes {
+            ...GetHeader
+          }
+        }
+      }
+      blockFooter {
+        data {
+          id
+          attributes {
+            ...GetFooter
+          }
+        }
+      }
+      blockFormDetail {
+        data {
+          attributes {
+            ...GetFormDetail
+          }
+        }
+      }
+      pages(filters: { Slug: { contains: $page } }) {
+        data {
+          attributes {
+            ContentType
+            Slug
+            ShowFormDetails
+            Seo {
+              Title
+              Keywords
+              Description
+            }
+            ShowFormDetails
+          }
+        }
+      }
+    }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
+  `
+
+  const data = await graphQLClient.request(query, {
+    page: page,
+  })
+  return data
+}
+
+export async function getPageOurWorks(page: string) {
+  const url = 'http://localhost:1337/graphql'
+  const graphQLClient = new GraphQLClient(url)
+
+  const query = gql`
+    query PAGE_SERVICES {
+      blockHeader {
+        data {
+          attributes {
+            ...GetHeader
+          }
+        }
+      }
+      blockFooter {
+        data {
+          id
+          attributes {
+            ...GetFooter
+          }
+        }
+      }
+      blockFormDetail {
+        data {
+          attributes {
+            ...GetFormDetail
+          }
+        }
+      }
+      pages(filters: { Slug: { contains: "our-work" } }) {
+        data {
+          attributes {
+            ContentType
+            Name
+            Seo {
+              Title
+              Keywords
+              Description
+            }
+            ShowFormDetails
+          }
+        }
+      }
+    }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
+  `
+
+  const data = await graphQLClient.request(query, {
+    page: page,
+  })
+  return data
+}
+
+export async function getPageData(page: string) {
   const url = 'http://localhost:1337/graphql'
   const graphQLClient = new GraphQLClient(url, {
     // headers: {
@@ -10,7 +185,7 @@ export async function getPageServices(page: string) {
     // },
   })
 
-  const pageData = page === '/' ? 'home' : page
+  const pageData = page === '' ? 'home' : page
 
   const query = gql`
     query PAGE_DATA($page: String) {
@@ -40,9 +215,39 @@ export async function getPageServices(page: string) {
         data {
           id
           attributes {
+            page {
+              data {
+                attributes {
+                  Slug
+                }
+              }
+            }
             Title
             Text
-            Image {
+            Slug
+            SlugText
+            PreviewImage {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            PreviewImageSmall {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            PreviewLogoPrimary {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            PreviewLogoSecondary {
               data {
                 attributes {
                   url
@@ -50,16 +255,6 @@ export async function getPageServices(page: string) {
               }
             }
             ImageAlt
-            Link {
-              Name
-              Slug: service_page {
-                data {
-                  attributes {
-                    Slug
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -68,225 +263,21 @@ export async function getPageServices(page: string) {
           attributes {
             ContentType
             Slug
-            ShowFormDetails
-            Body {
-              ... on ComponentBlockHeroBlockHero {
-                Title
-                Text
-                BlockType
-                HeroImage: Image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                ImageAlt
-                Overlay
-              }
-            }
-          }
-        }
-      }
-    }
-    ${FRAGMENT_HEADER}
-    ${FRAGMENT_FOOTER}
-    ${FRAGMENT_FORM_DETAIL}
-  `
-
-  const data = await graphQLClient.request(query, {
-    page: pageData,
-  })
-  return data
-}
-
-export async function getPageData(page: string) {
-  const url = 'http://localhost:1337/graphql'
-  const graphQLClient = new GraphQLClient(url, {
-    // headers: {
-    //   Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
-    // },
-  })
-
-  const pageData = page === '/' ? 'home' : page
-
-  const query = gql`
-    query PAGE_DATA($page: String) {
-      blockHeader {
-        data {
-          attributes {
-            ...GetHeader
-          }
-        }
-      }
-      blockFooter {
-        data {
-          id
-          attributes {
-            ...GetFooter
-          }
-        }
-      }
-      blockFormDetail {
-        data {
-          attributes {
-            ...GetFormDetail
-          }
-        }
-      }
-      servicePages(filters: { Slug: { contains: $page } }) {
-        data {
-          attributes {
-            ContentType
-            Title
-            Slug
-            ShowFormDetails
             Seo {
               Title
-              Description
               Keywords
+              Description
             }
-            BreadcrumbsInner {
-              pages {
-                data {
-                  id
-                  attributes {
-                    Slug
-                    Name
-                  }
-                }
-              }
-              activePage {
-                data {
-                  attributes {
-                    Slug
-                  }
-                }
-              }
-              inner_page {
-                data {
-                  id
-                  attributes {
-                    Slug
-                    Title
-                  }
-                }
-              }
-            }
-            Body {
-              ... on ComponentBlockServiceDescriptionBlockServiceDescription {
-                BlockType
-                Title
-                Image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                ServiceDescriptionImageAlt: ImageAlt
-                ServiceDescriptionItems: Items {
-                  id
-                  Title
-                  Text
-                }
-              }
-              ... on ComponentBlockHeroBlockHero {
-                Title
-                Text
-                BlockType
-                HeroImage: Image {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-                ImageAlt
-                Overlay
-              }
-              ... on ComponentBlockWorkStepsBlockWorkSteps {
-                BlockType
-                Title
-                Items {
-                  id
-                  WorkStepTitle: Title
-                  Text
-                  ShowNumber
-                }
-              }
-              ... on ComponentBlockPriceBlockPrice {
-                BlockType
-                Title
-                Text
-                PriceCol {
-                  id
-                  PriceCost
-                  PricePlan
-                }
-                PriceRow {
-                  id
-                  Title
-                  Plan1
-                  Text1
-                  Available1
-                  Plan2
-                  Text2
-                  Available2
-                  Plan3
-                  Text3
-                  Available3
-                }
-              }
-              ... on ComponentBlockBenefitsBlockBenefits {
-                id
-                BlockType
-                Text
-                Title
-                Theme
-                Items {
-                  id
-                  Image {
-                    data {
-                      attributes {
-                        url
-                      }
-                    }
-                  }
-                  ImageAlt
-                  Title
-                  Text
-                }
-              }
-            }
-          }
-        }
-      }
-      pages(filters: { Slug: { contains: $page } }) {
-        data {
-          attributes {
-            ContentType
-            Slug
             ShowFormDetails
-            Breadcrumbs {
-              pages {
-                data {
-                  id
-                  attributes {
-                    Slug
-                    Name
-                  }
-                }
-              }
-              activePage {
-                data {
-                  attributes {
-                    Slug
-                  }
-                }
-              }
-            }
             Body {
+              ... on ComponentBlockServicesBlockServices {
+                BlockType
+              }
+              ... on ComponentBlockPreviewServicesBlockPreviewServices {
+                BlockType
+                Title
+                Text
+              }
               ... on ComponentBlockIntroCarouselBlockIntroCarousel {
                 id
                 TitleIntroCarousel: Title
@@ -338,7 +329,7 @@ export async function getPageData(page: string) {
                 Title
                 Text
                 BlockType
-                HeroImage: Image {
+                Image {
                   data {
                     attributes {
                       url

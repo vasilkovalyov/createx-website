@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_image_gallery_items",
+  "info": {
+    "displayName": "Items"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ImageAlt": {
+      "type": "string"
+    }
+  }
+}

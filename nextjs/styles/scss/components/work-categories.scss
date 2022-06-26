@@ -1,0 +1,95 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+@use '../base/setup.scss';
+
+.work-categories {
+    position: relative;
+    top: -94px;
+
+    .row {
+        .col {
+            @include responsive.mq($from: tablet_large) {
+                max-width: 20%;
+                flex: 0 0 20%;
+            }
+        }
+    }
+
+    .work-category {
+        max-width: 100%;
+    }
+}
+
+.work-category {
+    position: relative;
+    max-width: 230px;
+    width: 100%;
+    height: 154px;
+    
+    margin-bottom: 32px;
+    cursor: pointer;
+    @include mixins.flexCentered();
+	@include mixins.animate(background-color);
+
+    @include responsive.mq($from: tablet) {
+        padding: spacing.$l;
+    }
+
+
+    &:hover {
+        background-color: var(--primary-color);
+
+        .work-category__title {
+            color: var(--text-color-light);
+        }
+
+        .work-category__logo-primary {
+            opacity: 0;
+        }
+
+        .work-category__logo-secondary {
+            opacity: 1;
+        }
+    }
+
+    &__image {
+        @include mixins.absoluteCover();
+        opacity: 0;
+        @include mixins.animate(opacity);
+
+        img {
+            @include mixins.coverImage();
+        }
+    }
+
+    &__logo-wrapper {
+        position: relative;
+        margin-bottom: 18px;
+
+        @include responsive.mq($until: tablet) {
+            width: 40%;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        @include mixins.animate(opacity);
+    }
+
+    &__logo-secondary {
+        @include mixins.centeredAbsolute();
+        opacity: 0;
+    }
+
+    &__title {
+        @include mixins.animate(color);
+        margin-bottom: 0;
+        @include mixins.animate(color);
+
+        @include responsive.mq($until: tablet) {
+            font-size: fz.$size-xs;
+        }
+    }
+}

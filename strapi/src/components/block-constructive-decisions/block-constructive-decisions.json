@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_block_constructive_decisions_block_constructive_decisions",
+  "info": {
+    "displayName": "Block-Constructive-Decisions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockConstructiveDecisions"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}

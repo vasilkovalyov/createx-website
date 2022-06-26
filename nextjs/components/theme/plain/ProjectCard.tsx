@@ -6,13 +6,13 @@ import Button from './Button'
 
 import { IProject } from '../../../interfaces/common'
 
-export default function ProjectCard({ Image, Title, Description, Link }: IProject) {
+export default function ProjectCard({ Image, Title, Text, Link, CategorySlug }: IProject) {
   return (
-    <div className="project-card shadow-wrapper">
-      <ImageComponent Url={Image.Url} Alt={Image.Alt} className="project-card__image" />
+    <div className="project-card shadow-wrapper" data-category={CategorySlug}>
+      {Image && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="project-card__image" />}
       <div className="project-card__body text-align--center">
         <Typography level="h6" text={Title} className="project-card__title" />
-        <Typography text={Description} className="project-card__description text-xs text-color-secondary" />
+        <Typography text={Text} className="project-card__description text-xs text-color-secondary" />
         <Button name="View project" url={Link?.url} outline={true} className="project-card__btn" />
       </div>
     </div>
