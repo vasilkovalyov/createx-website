@@ -1,4 +1,4 @@
-import { IImage, IBenefit, IContactInformation, IService, IWorkCategories } from './common'
+import { IImage, IBenefit, IContactInformation, IService, IProjectCategories } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
@@ -100,12 +100,12 @@ export interface IBlockService {
   Items: IService[]
 }
 
-export interface IBlockWorkSteps {
+export interface IBlockProjectSteps {
   BlockType: Block
   Title
   Items: {
     id: Identificator
-    WorkStepTitle: string
+    ProjectStepTitle: string
     Text: string
     ShowNumber: boolean
   }[]
@@ -150,8 +150,8 @@ export interface IBlockServiceDescription {
   }[]
 }
 
-export interface IBlockOurWorks {
-  Categories: IWorkCategories[]
+export interface IBlockOurProjects {
+  Categories: IProjectCategories[]
   Items: IProject[]
 }
 

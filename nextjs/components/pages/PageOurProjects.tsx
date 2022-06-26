@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { renderByBlockType } from '../../components'
+import { renderByBlockType } from '..'
 
 import { Block } from '../../enums/blocks'
 
-export default function PageOurWorks() {
+export default function PageOurProjects() {
   return (
     <>
       {renderByBlockType(Block.BlockHero)}
-      {renderByBlockType(Block.BlockOurWorks)}
+      {renderByBlockType(Block.BlockOurProjects)}
       {renderByBlockType(Block.BlockOurClientsTestimonials)}
     </>
   )

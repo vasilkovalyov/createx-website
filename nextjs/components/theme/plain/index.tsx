@@ -10,9 +10,9 @@ import BlockIntroCarousel from './BlockIntroCarousel'
 import BlockBenefits from './BlockBenefits'
 import BlockServices from './BlockServices'
 import BlockPricing from './BlockPricing'
-import BlockWorkSteps from './BlockWorkSteps'
+import BlockProjectSteps from './BlockProjectSteps'
 import BlockServiceDescription from './BlockServiceDescription'
-import BlockOurWorks from './BlockOurWorks'
+import BlockOurProject from './BlockOurProject'
 import BlockPreviewServices from './BlockPreviewServices'
 
 const components: IRegistryItem[] = [
@@ -53,16 +53,16 @@ const components: IRegistryItem[] = [
     component: BlockPricing,
   },
   {
-    BlockType: Block.BlockWorkSteps,
-    component: BlockWorkSteps,
+    BlockType: Block.BlockProjectSteps,
+    component: BlockProjectSteps,
   },
   {
     BlockType: Block.BlockServiceDescription,
     component: BlockServiceDescription,
   },
   {
-    BlockType: Block.BlockOurWorks,
-    component: BlockOurWorks,
+    BlockType: Block.BlockOurProjects,
+    component: BlockOurProject,
   },
   {
     BlockType: Block.BlockPreviewServices,

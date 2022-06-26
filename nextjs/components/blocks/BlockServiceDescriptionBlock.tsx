@@ -5,7 +5,7 @@ import { IBlockServiceDescription } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IAccordion, IImage } from '../../interfaces/common'
 
-export default function BlockWorkStepsBlock() {
+export default function BlockServiceDescriptionBlock() {
   const [page] = usePage()
 
   if (!page?.pages || !page?.pages.data || !page.pages.data[0].attributes.Body?.length) return null

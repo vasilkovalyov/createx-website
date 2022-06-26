@@ -94,8 +94,8 @@ export interface IPageField {
   }
   pages: IPageDataField
   services: IServiceFields | null
-  workCategory: ICategoryFields | null
-  works: IWorkFields | null
+  projectCategory: ICategoryFields | null
+  works: IProjectFields | null
 }
 
 export interface IBlockFormDetailField extends IImageField {
@@ -218,7 +218,7 @@ export interface IServiceFields {
   }[]
 }
 
-export interface IWorkFields {
+export interface IProjectFields {
   data: {
     id?: Identificator
     attributes: {

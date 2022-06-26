@@ -5,7 +5,7 @@
 @use '../settings/colors.scss';
 @use '../tools/mixins.scss';
 
-.block-work-steps {
+.block-project-steps {
     padding: spacing.$xxl 0;
     
     @include responsive.mq($from: tablet) {
@@ -20,7 +20,7 @@
         }
     }
 
-    .work-steps {
+    .project-steps {
         &__col {
             &:nth-child(1),
             &:nth-child(2),
@@ -28,7 +28,7 @@
             &:nth-child(4n + 1),
             &:nth-child(4n + 2),
             &:nth-child(4n + 3) {
-                .work-step {
+                .project-step {
                     &:after {
                         content: '';
                         position: absolute;
@@ -51,7 +51,7 @@
             }
 
             &:not(:last-child) {
-                .work-step {
+                .project-step {
                     &:after {
                         @include responsive.mq($until: tablet) {
                             bottom: -58px;
@@ -64,7 +64,7 @@
         }
     }
 
-    .work-step {
+    .project-step {
         position: relative;
         margin-bottom: 60px;
 
@@ -73,13 +73,13 @@
         }
 
         &:hover {
-            .work-step__number {
+            .project-step__number {
                 @include responsive.mq($from: tablet) {
                     color: var(--primary-color);
                 }
             }
 
-            .work-step__number-circle {
+            .project-step__number-circle {
 
                 &::before {
                     @include responsive.mq($from: tablet) {

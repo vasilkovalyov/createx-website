@@ -17,5 +17,5 @@ Default.args = {
   Link: {
     text: '',
     url: '/',
-  }
-} 
+  },
+}

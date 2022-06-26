@@ -210,12 +210,12 @@ export interface IAccordion {
   isOpen?: boolean
 }
 
-export interface IWorkCategoriesList {
-  Items: IWorkCategories[]
+export interface IProjectCategoriesList {
+  Items: IProjectCategories[]
   onClick?: (value: string) => void
 }
 
-export interface IWorkCategories {
+export interface IProjectCategories {
   id: Identificator
   Name: string
   Slug: string

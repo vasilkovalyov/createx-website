@@ -4,7 +4,7 @@
 @use '../tools/mixins.scss';
 @use '../base/setup.scss';
 
-.work-categories {
+.project-categories {
     position: relative;
     top: -94px;
 
@@ -17,12 +17,12 @@
         }
     }
 
-    .work-category {
+    .project-category {
         max-width: 100%;
     }
 }
 
-.work-category {
+.project-category {
     position: relative;
     max-width: 230px;
     width: 100%;
@@ -41,15 +41,15 @@
     &:hover {
         background-color: var(--primary-color);
 
-        .work-category__title {
+        .project-category__title {
             color: var(--text-color-light);
         }
 
-        .work-category__logo-primary {
+        .project-category__logo-primary {
             opacity: 0;
         }
 
-        .work-category__logo-secondary {
+        .project-category__logo-secondary {
             opacity: 1;
         }
     }

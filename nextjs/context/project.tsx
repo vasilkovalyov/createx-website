@@ -17,7 +17,7 @@ export function PageProvider({ children, ...props }: Props) {
     NODE_ENV: props.NODE_ENV,
     services: props.services,
     works: props.works,
-    workCategory: props.workCategory,
+    projectCategory: props.projectCategory,
   }
 
   return <PagesStateContext.Provider value={state}>{children}</PagesStateContext.Provider>

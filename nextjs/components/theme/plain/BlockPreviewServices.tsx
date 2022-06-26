@@ -4,7 +4,6 @@ import Container from './Container'
 import Row from './Grid/Row'
 import Col from './Grid/Col'
 import Service from './Service'
-import WorkCategories from './WorkCategories'
 import BlockHeading from './BlockHeading'
 
 import { IBlockPreviewServices } from '../../../interfaces/blocks'

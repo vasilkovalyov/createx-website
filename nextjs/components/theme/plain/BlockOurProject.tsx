@@ -4,20 +4,20 @@ import Container from './Container'
 import Row from './Grid/Row'
 import Col from './Grid/Col'
 import ProjectCard from './ProjectCard'
-import WorkCategories from './WorkCategories'
+import ProjectCategories from './ProjectCategories'
 
-import { IBlockOurWorks } from '../../../interfaces/blocks'
+import { IBlockOurProjects } from '../../../interfaces/blocks'
 
-export default function BlockOurWorks({ Categories, Items }: IBlockOurWorks) {
+export default function BlockOurProject({ Categories, Items }: IBlockOurProjects) {
   function onClick(value: string) {
     console.log(value)
   }
 
   return (
-    <section className="block-our-works">
-      <Container className="block-our-works__container">
-        <WorkCategories Items={Categories} onClick={onClick} />
-        <div className="our-work-list">
+    <section className="block-our-projects">
+      <Container className="block-our-projects__container">
+        <ProjectCategories Items={Categories} onClick={onClick} />
+        <div className="our-projects-list">
           <Row>
             {Items && Items.length ? (
               <>

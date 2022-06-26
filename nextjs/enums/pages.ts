@@ -1,6 +1,6 @@
 export enum Page {
   // ServicesPage = 'servicesPage',
   // ServicePage = 'servicePage',
-  OurWorksPage = 'ourWorksPage',
-  OurWorkPage = 'ourWorkPage',
+  OurProjectsPage = 'ourProjectsPage',
+  OurProjectPage = 'ourProjectPage',
 }

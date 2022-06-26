@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import BlockWorkSteps from '../../components/theme/plain/BlockWorkSteps'
+import BlockProjectSteps from '../../components/theme/plain/BlockProjectSteps'
 
 export default {
-  title: 'Blocks/BlockWorkSteps',
-  component: BlockWorkSteps,
-} as ComponentMeta<typeof BlockWorkSteps>
+  title: 'Blocks/BlockProjectSteps',
+  component: BlockProjectSteps,
+} as ComponentMeta<typeof BlockProjectSteps>
 
-const Template: ComponentStory<typeof BlockWorkSteps> = (args) => <BlockWorkSteps {...args} />
+const Template: ComponentStory<typeof BlockProjectSteps> = (args) => <BlockProjectSteps {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

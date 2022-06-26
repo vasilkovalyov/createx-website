@@ -2,8 +2,8 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import PageOurWorks from 'components/pages/PageOurWorks'
-import PageOurWorkInner from 'components/pages/PageOurWorkInner'
+import PageOurProjects from 'components/pages/PageOurProjects'
+import PageOurProjectInner from 'components/pages/PageOurProjectInner'
 
 import { renderBlocks, renderByBlockType } from '../../components'
 import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
@@ -81,12 +81,12 @@ const DynamicPage = (page: IPageField) => {
   }
 
   const renderPages = () => {
-    if (pageAttributes.ContentType === Page.OurWorkPage) {
-      return <PageOurWorkInner />
+    if (pageAttributes.ContentType === Page.OurProjectPage) {
+      return <PageOurProjectInner />
     }
 
-    if (pageAttributes.ContentType === Page.OurWorksPage) {
-      return <PageOurWorks />
+    if (pageAttributes.ContentType === Page.OurProjectsPage) {
+      return <PageOurProjects />
     }
 
     if (pageBody && pageBody.length) {

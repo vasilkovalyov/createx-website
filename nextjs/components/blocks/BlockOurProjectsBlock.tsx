@@ -1,19 +1,19 @@
 import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
-import { IBlockOurWorks } from '../../interfaces/blocks'
-import { IImage, IProject, IWorkCategories } from '../../interfaces/common'
+import { IBlockOurProjects } from '../../interfaces/blocks'
+import { IImage, IProject, IProjectCategories } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
 
-export default function BlockOurWorksBlock() {
+export default function BlockOurProjectsBlock() {
   const [page] = usePage()
 
   if (!page?.works || !page?.works.data.length) return null
 
-  let categories: IWorkCategories[] | []
+  let categories: IProjectCategories[] | []
 
-  if (page.workCategory !== null) {
-    categories = page.workCategory.data.attributes.Items.map((item) => {
+  if (page.projectCategory !== null) {
+    categories = page.projectCategory.data.attributes.Items.map((item) => {
       let image: IImage | null
       let image2: IImage | null
 
@@ -75,7 +75,7 @@ export default function BlockOurWorksBlock() {
   const props = {
     Categories: categories,
     Items: items,
-  } as IBlockOurWorks
+  } as IBlockOurProjects
 
-  return getComponent<IBlockOurWorks>(Block.BlockOurWorks, props)
+  return getComponent<IBlockOurProjects>(Block.BlockOurWorks, props)
 }

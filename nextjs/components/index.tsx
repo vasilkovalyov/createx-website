@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Pages blocks
-import PageOurWorks from './pages/PageOurWorks'
-import PageOurWorkInner from './pages/PageOurWorkInner'
+import PageOurProjects from './pages/PageOurProjects'
+import PageOurProjectInner from './pages/PageOurProjectInner'
 
 // Component blocks
 import BlockHeroBlock from './blocks/BlockHeroBlock'
@@ -14,9 +14,9 @@ import BlockIntroCarouselBlock from './blocks/BlockIntroCarouselBlock'
 import BlockBenefitsBlock from './blocks/BlockBenefitsBlock'
 import BlockServicesBlock from './blocks/BlockServicesBlock'
 import BlockPricingBlock from './blocks/BlockPricingBlock'
-import BlockWorkStepsBlock from './blocks/BlockWorkStepsBlock'
+import BlockProjectStepsBlock from './blocks/BlockProjectStepsBlock'
 import BlockServiceDescriptionBlock from './blocks/BlockServiceDescriptionBlock'
-import BlockOurWorksBlock from './blocks/BlockOurWorksBlock'
+import BlockOurProjectsBlock from './blocks/BlockOurProjectsBlock'
 import BlockPreviewServicesBlock from './blocks/BlockPreviewServicesBlock'
 
 import plainThemeComponents from './theme/plain'
@@ -27,8 +27,8 @@ import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
   // Pages blocks
-  PageOurWorks: PageOurWorks,
-  PageOurWorkInner: PageOurWorkInner,
+  PageOurProjects: PageOurProjects,
+  PageOurProjectInner: PageOurProjectInner,
 
   // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
@@ -40,9 +40,9 @@ export const blockComponents = {
   [Block.BlockBenefits]: BlockBenefitsBlock,
   [Block.BlockPricing]: BlockPricingBlock,
   [Block.BlockServices]: BlockServicesBlock,
-  [Block.BlockWorkSteps]: BlockWorkStepsBlock,
+  [Block.BlockProjectSteps]: BlockProjectStepsBlock,
   [Block.BlockServiceDescription]: BlockServiceDescriptionBlock,
-  [Block.BlockOurWorks]: BlockOurWorksBlock,
+  [Block.BlockOurProjects]: BlockOurProjectsBlock,
   [Block.BlockPreviewServices]: BlockPreviewServicesBlock,
 }
 
