@@ -1,23 +1,25 @@
 {
   "collectionName": "components_block_benefits_items",
   "info": {
-    "displayName": "Items"
+    "displayName": "Items",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "Text": {
       "type": "text"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ImageAlt": {
       "type": "string"

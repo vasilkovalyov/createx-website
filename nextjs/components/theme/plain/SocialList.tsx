@@ -22,7 +22,7 @@ export default function PersonCard({ Items, className, size = 'large' }: ISocial
   }
 
   return (
-    <ul className={`social-list list-reset ${socialSize} ${className ? className : ''}`}>
+    <ul className={cn('social-list list-reset', socialSize, className)}>
       {Items.map((link) => (
         <li key={link.id} className="social-list__item">
           <Link href={link.Url}>

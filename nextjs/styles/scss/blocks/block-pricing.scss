@@ -1,11 +1,24 @@
 @use '../settings/spacing.scss';
 @use '../tools/responsive.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
 
 .block-pricing {
+    position: relative;
     padding: spacing.$xxl 0;
     
     @include responsive.mq($from: tablet) {
         padding: 116px 0;
+    }
+
+    &__overlay {
+        @include mixins.absoluteCover();
+        background-color: colors.$grey-extra-light;
+    }
+
+    &__container {
+        position: relative;
     }
 
     .block-heading {

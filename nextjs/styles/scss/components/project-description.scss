@@ -6,7 +6,7 @@
     width: 100%;
     padding: spacing.$s;
     
-    @include responsive.mq($from: tablet) {
+    @include responsive.mq($from: tablet_large) {
         padding: spacing.$xxl calc(spacing.$m + spacing.$xxl);
     }
 

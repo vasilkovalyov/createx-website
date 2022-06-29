@@ -8,7 +8,8 @@
   "attributes": {
     "BlockType": {
       "type": "string",
-      "default": "blockProjectDescription"
+      "default": "blockProjectDescription",
+      "required": true
     },
     "Title": {
       "type": "string"

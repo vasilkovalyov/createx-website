@@ -4,7 +4,7 @@ import cn from 'classnames'
 import Typography from './Typography'
 import { IBlockHeading } from '../../../interfaces/common'
 
-function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', aligned }: IBlockHeading) {
+function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', aligned, className }: IBlockHeading) {
   const alignedContent = cn({
     'block-heading--center text-align--center': aligned === 'center',
     'block-heading--right text-align--right': aligned === 'right',
@@ -17,7 +17,7 @@ function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', a
   })
 
   return (
-    <div className={`block-heading ${alignedContent}`}>
+    <div className={cn('block-heading', alignedContent, className)}>
       {Title && <Typography level={headingLevel} text={Title} className="block-heading__title" />}
       {Text && <Typography text={Text} className={`block-heading__text ${textSizeView}`} />}
     </div>

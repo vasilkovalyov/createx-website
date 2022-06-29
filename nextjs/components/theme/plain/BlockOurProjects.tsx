@@ -16,7 +16,7 @@ export default function BlockOurProject({ Categories, Items }: IBlockOurProjects
   return (
     <section className="block-our-projects">
       <Container className="block-our-projects__container">
-        <ProjectCategories Items={Categories} onClick={onClick} />
+        {Categories && Categories.length ? <ProjectCategories Items={Categories} onClick={onClick} /> : null}
         <div className="our-projects-list">
           <Row>
             {Items && Items.length ? (

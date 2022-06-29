@@ -4,7 +4,7 @@ import Typography from './Typography'
 
 import { IProjectDescription } from '../../../interfaces/common'
 
-export default function ProjectDescription({ Items }: IProjectDescription) {
+export default function ProjectDescription({ Items }: { Items: IProjectDescription[] }) {
   return (
     <div className="project-description shadow-wrapper">
       {Items && Items.length ? (

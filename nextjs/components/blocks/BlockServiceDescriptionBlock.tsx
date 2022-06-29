@@ -17,8 +17,8 @@ export default function BlockServiceDescriptionBlock() {
 
   let items: IAccordion[] | []
   let image: IImage | null
-  if (data.ServiceDescriptionItems) {
-    items = data.ServiceDescriptionItems.map((item) => {
+  if (data.Items) {
+    items = data.Items.map((item) => {
       return {
         id: item.id,
         Title: item.Title,
@@ -28,10 +28,10 @@ export default function BlockServiceDescriptionBlock() {
   } else {
     items = []
   }
-  if (data.Image.data) {
+  if (data.Image && data.Image.data) {
     image = {
       Url: data.Image.data.attributes.url,
-      Alt: data.ServiceDescriptionImageAlt as string,
+      Alt: data.ImageAlt as string,
     }
   } else {
     image = null

@@ -37,6 +37,7 @@ export async function getPageSingleService(page: string) {
             ContentType
             Title
             Slug
+            ShowFormDetails
             Body {
               ... on ComponentBlockHeroBlockHero {
                 BlockType
@@ -51,6 +52,76 @@ export async function getPageSingleService(page: string) {
                 Title
                 Text
                 Overlay
+              }
+              ... on ComponentBlockServiceDescriptionBlockServiceDescription {
+                BlockType
+                Title
+                Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Items {
+                  id
+                  Title
+                  Text
+                }
+              }
+              ... on ComponentBlockProjectStepsBlockWorkSteps {
+                BlockType
+                Title
+                Items {
+                  id
+                  Title
+                  Text
+                  ShowNumber
+                }
+              }
+              ... on ComponentBlockPriceBlockPrice {
+                BlockType
+                Title
+                Text
+                Overlay
+                PriceRow {
+                  id
+                  Title
+                  Plan1
+                  Plan2
+                  Plan3
+                  Text1
+                  Text2
+                  Text3
+                  Available1
+                  Available2
+                  Available3
+                }
+                PriceCol {
+                  id
+                  PriceCost
+                  PricePlan
+                }
+              }
+              ... on ComponentBlockBenefitsBlockBenefits {
+                BlockType
+                Title
+                Text
+                Theme
+                Items {
+                  id
+                  Title
+                  Text
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                }
               }
             }
           }
@@ -68,12 +139,12 @@ export async function getPageSingleService(page: string) {
   return data
 }
 
-export async function getPageSingleOurWork(page: string) {
+export async function getPageSingleProject(page: string) {
   const url = 'http://localhost:1337/graphql'
   const graphQLClient = new GraphQLClient(url)
 
   const query = gql`
-    query PAGE_DATA($page: String) {
+    query SingleProject($page: String!) {
       blockHeader {
         data {
           attributes {
@@ -96,18 +167,57 @@ export async function getPageSingleOurWork(page: string) {
           }
         }
       }
-      pages(filters: { Slug: { contains: $page } }) {
+      pages: projects(filters: { Slug: { contains: $page } }) {
         data {
+          id
           attributes {
             ContentType
+            Title
             Slug
             ShowFormDetails
-            Seo {
-              Title
-              Keywords
-              Description
+            Body {
+              ... on ComponentBlockHeadingPageBlockHeading {
+                BlockType
+              }
+              ... on ComponentBlockImageGalleryBlockImageGallery {
+                BlockType
+                Items {
+                  id
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                }
+              }
+              ... on ComponentBlockProjectDescriptionBlockWorkDescription {
+                BlockType
+                Title
+                RichText
+                Items {
+                  id
+                  Title
+                  Text
+                }
+              }
+              ... on ComponentBlockConstructiveDecisionsBlockConstructiveDecisions {
+                BlockType
+                Title
+                Overlay
+                Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                RichText
+              }
             }
-            ShowFormDetails
           }
         }
       }
@@ -162,6 +272,49 @@ export async function getPageOurWorks(page: string) {
               Description
             }
             ShowFormDetails
+            Body {
+              ... on ComponentBlockHeroBlockHero {
+                id
+                Title
+                Text
+                BlockType
+                Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                ImageAlt
+                Overlay
+              }
+              ... on ComponentBlockOurClientsBlockOurClients {
+                id
+                BlockType
+                Title
+                ClientImage: Image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                Items {
+                  id
+                  Image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                  ImageAlt
+                  Name
+                  Position
+                  Text
+                }
+              }
+            }
           }
         }
       }
@@ -258,6 +411,63 @@ export async function getPageData(page: string) {
           }
         }
       }
+      projectCategories {
+        data {
+          id
+          attributes {
+            Title
+            Name
+            PreviewLogoPrimary {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            PreviewLogoSecondary {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            ImageAlt
+          }
+        }
+      }
+      projects {
+        data {
+          id
+          attributes {
+            Title
+            Slug
+            SlugText
+            page {
+              data {
+                attributes {
+                  Slug
+                }
+              }
+            }
+            PreviewImage {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            ImageAlt
+            Text
+            project_categories {
+              data {
+                attributes {
+                  Name
+                }
+              }
+            }
+          }
+        }
+      }
       pages(filters: { Slug: { contains: $page } }) {
         data {
           attributes {
@@ -270,6 +480,10 @@ export async function getPageData(page: string) {
             }
             ShowFormDetails
             Body {
+              ... on ComponentBlockOurProjectsBlockOurProjects {
+                id
+                BlockType
+              }
               ... on ComponentBlockServicesBlockServices {
                 BlockType
               }

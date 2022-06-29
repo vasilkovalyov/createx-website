@@ -17,7 +17,7 @@ export default function ContactInformation({
   })
 
   return (
-    <div className={`contact-information ${themeColor} ${className ? className : ''}`}>
+    <div className={cn('contact-information', themeColor, className)}>
       <ul className="contact-information__list list-reset">
         {Address && (
           <li className="contact-information__item">

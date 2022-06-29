@@ -12,8 +12,12 @@ import BlockServices from './BlockServices'
 import BlockPricing from './BlockPricing'
 import BlockProjectSteps from './BlockProjectSteps'
 import BlockServiceDescription from './BlockServiceDescription'
-import BlockOurProject from './BlockOurProject'
+import BlockOurProject from './BlockOurProjects'
 import BlockPreviewServices from './BlockPreviewServices'
+import BlockImageGallery from './BlockImageGallery'
+import BlockProjectDescription from './BlockProjectDescription'
+import BlockHeading from './BlockHeading'
+import BlockConstructiveDecisions from './BlockConstructiveDecisions'
 
 const components: IRegistryItem[] = [
   {
@@ -23,6 +27,10 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockFooter,
     component: Footer,
+  },
+  {
+    BlockType: Block.BlockHeading,
+    component: BlockHeading,
   },
   {
     BlockType: Block.BlockHero,
@@ -67,6 +75,18 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockPreviewServices,
     component: BlockPreviewServices,
+  },
+  {
+    BlockType: Block.BlockImageGallery,
+    component: BlockImageGallery,
+  },
+  {
+    BlockType: Block.BlockProjectDescription,
+    component: BlockProjectDescription,
+  },
+  {
+    BlockType: Block.BlockConstructiveDecisions,
+    component: BlockConstructiveDecisions,
   },
 ]
 

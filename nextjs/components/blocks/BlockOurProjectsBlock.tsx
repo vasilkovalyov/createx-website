@@ -8,28 +8,29 @@ import { Block } from '../../enums/blocks'
 export default function BlockOurProjectsBlock() {
   const [page] = usePage()
 
-  if (!page?.works || !page?.works.data.length) return null
+  if (!page?.projects.data || !page?.projects.data.length) return null
 
   let categories: IProjectCategories[] | []
+  let projects: IProject[] | []
 
-  if (page.projectCategory !== null) {
-    categories = page.projectCategory.data.attributes.Items.map((item) => {
+  if (page.projectCategories.data !== null) {
+    categories = page.projectCategories.data.map((item) => {
       let image: IImage | null
       let image2: IImage | null
 
-      if (item.Image.data) {
+      if (item.attributes.PreviewLogoPrimary) {
         image = {
-          Url: item.Image.data.attributes.url,
-          Alt: item.ImageAlt as string,
+          Url: item.attributes.PreviewLogoPrimary.data.attributes.url,
+          Alt: item.attributes.ImageAlt as string,
         }
       } else {
         image = null
       }
 
-      if (item.Image.data) {
+      if (item.attributes.PreviewLogoSecondary) {
         image2 = {
-          Url: item.Image2.data.attributes.url,
-          Alt: item.ImageAlt as string,
+          Url: item.attributes.PreviewLogoSecondary.data.attributes.url,
+          Alt: item.attributes.ImageAlt as string,
         }
       } else {
         image2 = null
@@ -37,8 +38,8 @@ export default function BlockOurProjectsBlock() {
 
       return {
         id: item.id,
-        Name: item.Name,
-        Slug: item.Slug,
+        Title: item.attributes.Title,
+        Name: item.attributes.Name,
         Image: image,
         Image2: image2,
       }
@@ -47,35 +48,50 @@ export default function BlockOurProjectsBlock() {
     categories = []
   }
 
-  const items: IProject[] = page.works.data.map((item) => {
-    let image: IImage | null
-    if (item.attributes.Image.data) {
-      image = {
-        Url: item.attributes.Image.data.attributes.url,
-        Alt: item.attributes.ImageAlt as string,
+  if (page.projects.data !== null) {
+    projects = page.projects.data.map((item) => {
+      let image: IImage | null
+      let categories: string[]
+      if (item.attributes.PreviewImage.data) {
+        image = {
+          Url: item.attributes.PreviewImage.data.attributes.url,
+          Alt: item.attributes.ImageAlt as string,
+        }
+      } else {
+        image = null
       }
-    } else {
-      image = null
-    }
 
-    return {
-      id: item.id,
-      Title: item.attributes.Title,
-      Text: item.attributes.Text,
-      Image: image,
-      Link: {
-        url: `${item.attributes.Link.page.data.attributes.Slug}/${item.attributes.Link.work_page.data.attributes.Slug}`,
-        text: item.attributes.Link.Name,
-      },
-      CategoryName: item.attributes?.work_page.data.attributes.CategoryName,
-      CategorySlug: item.attributes?.work_page.data.attributes.CategorySlug,
-    } as unknown as IProject
-  })
+      if (item.attributes.project_categories.data) {
+        categories = item.attributes.project_categories.data.map((item) => {
+          return item.attributes.Name
+        })
+      } else {
+        categories = []
+      }
+
+      const parentPage = item.attributes.page.data ? item.attributes.page.data.attributes.Slug : ''
+      const urlPage = parentPage ? `${parentPage}/${item.attributes.Slug}` : item.attributes.Slug
+
+      return {
+        id: item.id,
+        Title: item.attributes.Title,
+        Text: item.attributes.Text,
+        Image: image,
+        Link: {
+          url: urlPage,
+          text: item.attributes.SlugText,
+        },
+        categories: categories,
+      } as unknown as IProject
+    })
+  } else {
+    projects = []
+  }
 
   const props = {
     Categories: categories,
-    Items: items,
+    Items: projects,
   } as IBlockOurProjects
 
-  return getComponent<IBlockOurProjects>(Block.BlockOurWorks, props)
+  return getComponent<IBlockOurProjects>(Block.BlockOurProjects, props)
 }

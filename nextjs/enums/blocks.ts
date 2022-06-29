@@ -15,4 +15,7 @@ export enum Block {
   BlockServiceDescription = 'blockServiceDescription',
   BlockOurProjects = 'blockOurProjects',
   BlockPreviewServices = 'blockPreviewServices',
+  BlockHeading = 'blockHeading',
+  BlockImageGallery = 'blockImageGallery',
+  BlockProjectDescription = 'blockProjectDescription',
 }

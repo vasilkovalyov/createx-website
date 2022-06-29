@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_our_projects_block_our_projects",
+  "info": {
+    "displayName": "BlockOurProjects",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockOurProjects"
+    }
+  }
+}

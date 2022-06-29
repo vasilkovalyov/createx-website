@@ -25,7 +25,7 @@ export default function BlockProjectSteps({ Title, Items }: IBlockProjectSteps) 
                     ) : null}
                   </div>
                   <div className="project-step__body">
-                    <Typography level="h6" text={item.ProjectStepTitle} className="project-step__title" />
+                    <Typography level="h6" text={item.Title} className="project-step__title" />
                     {item.Text && (
                       <Typography text={item.Text} className="project-step__text text-color-secondary text-sm" />
                     )}

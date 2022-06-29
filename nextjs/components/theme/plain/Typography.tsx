@@ -13,11 +13,11 @@ export default function Typography({ level, className, text, aligned }: ITypogra
     const Component = level
     return (
       <Component
-        className={`heading ${className ? className : ''} ${alignedContent}`}
+        className={cn('heading', className, alignedContent)}
         dangerouslySetInnerHTML={{ __html: text }}
       ></Component>
     )
   } else {
-    return <p className={`text ${className ? className : ''} ${alignedContent}`}>{text}</p>
+    return <p className={cn('text', className, alignedContent)}>{text}</p>
   }
 }

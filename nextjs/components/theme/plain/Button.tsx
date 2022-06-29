@@ -16,18 +16,17 @@ function Button({ url, className, outline, name, size, fullwidth, color, onClick
     'btn--white': color === 'white',
   })
 
-  const classNameProp = className ? className : ''
   const outlineProp = outline ? 'btn--outline' : ''
   if (url) {
     return (
       <LinkComponent href={`/en/${url}`}>
-        <a className={`btn ${colorButton} ${outlineProp} ${sizeField} ${classNameProp}`}>{name && name}</a>
+        <a className={cn('btn', colorButton, outlineProp, sizeField, className)}>{name && name}</a>
       </LinkComponent>
     )
   }
 
   return (
-    <button className={`btn ${outlineProp} ${classNameProp} ${sizeField}`} onClick={() => onClick}>
+    <button className={cn('btn', outlineProp, className, sizeField)} onClick={() => onClick}>
       {name}
     </button>
   )

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_block_image_gallery_block_image_galleries",
   "info": {
-    "displayName": "BlockImageGallery"
+    "displayName": "BlockImageGallery",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,9 +10,6 @@
       "type": "string",
       "required": true,
       "default": "blockImageGallery"
-    },
-    "Title": {
-      "type": "string"
     },
     "Items": {
       "displayName": "Items",

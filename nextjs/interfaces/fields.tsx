@@ -56,6 +56,7 @@ export interface IBreadCrumbsField {
 export interface IPageDataField {
   data: {
     attributes: FieldAttributes<any>[] & {
+      Title: string
       ContentType: string
       BreadCrumbs: IBreadCrumbsField | null
       BreadCrumbsInner: IBreadCrumbsField | null
@@ -63,14 +64,8 @@ export interface IPageDataField {
       ShowFormDetails: boolean
       Slug: string
       BlockHero: FieldAttributes<any>
-      work_page: {
-        data: {
-          attributes: {
-            CategoryName: string
-            CategorySlug: string
-          }
-        }
-      }
+      RichText: string
+      Reverse: string
     }
   }[]
 }
@@ -93,9 +88,15 @@ export interface IPageField {
     }
   }
   pages: IPageDataField
-  services: IServiceFields | null
-  projectCategory: ICategoryFields | null
-  works: IProjectFields | null
+  services: {
+    data: IServiceFields[] | null
+  }
+  projectCategories: {
+    data: ICategoryFields[] | null
+  }
+  projects: {
+    data: IProjectFields[] | null
+  }
 }
 
 export interface IBlockFormDetailField extends IImageField {
@@ -183,77 +184,78 @@ export interface IItemField {
 }
 
 export interface IServiceFields {
-  data: {
-    id?: Identificator
-    attributes: {
-      Title: string
-      Slug: string
-      SlugText: string
-      Text: string
-      PreviewImage: {
-        id?: Identificator
-        data?: IImageFieldData
-      }
-      PreviewImageSmall: {
-        id?: Identificator
-        data?: IImageFieldData
-      }
-      PreviewLogoPrimary: {
-        id?: Identificator
-        data?: IImageFieldData
-      }
-      PreviewLogoSecondary: {
-        id?: Identificator
-        data?: IImageFieldData
-      }
-      ImageAlt: string
-      page: {
-        data: {
-          attributes: {
-            Slug
-          }
+  id?: Identificator
+  attributes: {
+    Title: string
+    Slug: string
+    SlugText: string
+    Text: string
+    PreviewImage: {
+      id?: Identificator
+      data?: IImageFieldData
+    }
+    PreviewImageSmall: {
+      id?: Identificator
+      data?: IImageFieldData
+    }
+    PreviewLogoPrimary: {
+      id?: Identificator
+      data?: IImageFieldData
+    }
+    PreviewLogoSecondary: {
+      id?: Identificator
+      data?: IImageFieldData
+    }
+    ImageAlt: string
+    page: {
+      data: {
+        attributes: {
+          Slug
         }
       }
     }
-  }[]
+  }
 }
 
 export interface IProjectFields {
-  data: {
-    id?: Identificator
-    attributes: {
-      Title: string
-      Text: string
-      Image: {
-        id?: Identificator
-        data?: IImageFieldData
-      }
-      ImageAlt: string
-      Link: {
-        Name: string
-        Slug: {
-          data: {
-            attributes: {
-              Slug
-            }
-          }
+  id?: Identificator
+  attributes: {
+    Title: string
+    Text: string
+    PreviewImage: {
+      id?: Identificator
+      data?: IImageFieldData
+    }
+    ImageAlt: string
+    Slug: string
+    SlugText: string
+    page: {
+      data: {
+        attributes: {
+          Slug
         }
       }
     }
-  }[]
+    project_categories: {
+      data:
+        | {
+            attributes: {
+              Name
+            }
+          }[]
+        | null
+    }
+  }
 }
 
 export interface ICategoryFields {
-  data: {
-    attributes: {
-      Items: {
-        id: Identificator
-        Name: string
-        Slug: string
-        Image: IImageField
-        Image2: IImageField
-        ImageAlt: string
-      }[]
-    }
+  id: Identificator
+  attributes: {
+    Title: string
+    Name: string
+    Slug: string
+    PreviewLogoPrimary: IImageField
+    PreviewLogoSecondary: IImageField
+    ImageAlt: string
   }
 }

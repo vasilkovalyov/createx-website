@@ -7,6 +7,7 @@ import Image from './Image'
 import { IBlockImageGallery } from '../../../interfaces/blocks'
 
 export default function BlockImageGallery({ Items }: IBlockImageGallery) {
+  const base = 'http://localhost:1337'
   return (
     <section className="block-image-gallery">
       <Container className="block-image-gallery__container">
@@ -23,7 +24,7 @@ export default function BlockImageGallery({ Items }: IBlockImageGallery) {
               clickable: true,
               renderBullet: (index, className) => {
                 return `<div class="${className} gallery-thumbnail">
-                            <img src="${Items[index].Url}" alt="${Items[index].Alt}" class="gallery-thumbnail__image" />
+                            <img src="${base}${Items[index].Url}" alt="${Items[index].Alt}" class="gallery-thumbnail__image" />
                         </div>`
               },
             },

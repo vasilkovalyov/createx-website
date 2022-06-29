@@ -26,6 +26,16 @@
                 opacity: 0.4;
             }
         }
+
+        .block-heading__title {
+            color: var(--text-color-light);
+        }
+        
+        .benefit__text,
+        .block-heading__text {
+            color: var(--text-color-light);
+            opacity: 0.6;
+        }
     }
 
     &--grey {
@@ -44,11 +54,6 @@
 
         &__title {
             margin-bottom: 26px;
-            color: inherit;
-        }
-
-        &__text {
-            color: inherit;
         }
     }
 

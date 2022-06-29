@@ -1,0 +1,37 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../tools/mixins.scss';
+
+.block-project-description {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: spacing.$xxxl 0;
+    }
+
+    &__title {
+        margin-bottom: 44px;
+    }
+
+    &__content {
+        margin-bottom: 20px;
+    }
+
+    &__content-col {
+        @include responsive.mq($from: tablet_large) {
+            padding-top: spacing.$xxl;
+        }
+    }
+    
+    .project-description {
+        max-width: 100%;
+
+        @include responsive.mq($until: tablet) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

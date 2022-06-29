@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { ICol } from '../../../../interfaces/common'
 
@@ -9,5 +10,5 @@ export default function Col({ className, children, base, sm, md, lg, xl }: ICol)
     (md ? ` ${['md-' + md]}` : '') +
     (lg ? ` ${['lg-' + lg]}` : '') +
     (xl ? ` ${['xl-' + xl]}` : '')
-  return <div className={`col ${mediaClasses} ${className ? className : ''}`}>{children}</div>
+  return <div className={cn('col', mediaClasses, className)}>{children}</div>
 }

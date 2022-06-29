@@ -30,7 +30,7 @@ export default function Carousel({
   })
 
   return (
-    <div className={`carousel ${className ? className : ''}`}>
+    <div className={cn('carousel', className)}>
       <div className="carousel__wrapper">
         <Swiper
           spaceBetween={0}
@@ -53,10 +53,10 @@ export default function Carousel({
       </div>
       {useCustomNavigation ? (
         <div className="swiper-button-control">
-          <button className={`swiper-button swiper-button-prev ${typeButtonClass}`} ref={navigationPrevRef}>
+          <button className={cn('swiper-button swiper-button-prev', typeButtonClass)} ref={navigationPrevRef}>
             <IcoMoonIcon icon={EnumsIcon.ArrowLeft} className="swiper-button__icon" />
           </button>
-          <button className={`swiper-button swiper-button-next ${typeButtonClass}`} ref={navigationNextRef}>
+          <button className={cn('swiper-button swiper-button-next', typeButtonClass)} ref={navigationNextRef}>
             <IcoMoonIcon icon={EnumsIcon.ArrowRight} className="swiper-button__icon" />
           </button>
         </div>

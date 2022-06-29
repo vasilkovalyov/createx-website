@@ -9,7 +9,7 @@ import Button from './Button'
 import { EnumsIcon } from '../../../enums/icons'
 import { IBlockPricing } from '../../../interfaces/blocks'
 
-export default function BlockPricing({ Title, Text, PriceCol, PriceRow }: IBlockPricing) {
+export default function BlockPricing({ Title, Text, PriceCol, PriceRow, Overlay }: IBlockPricing) {
   const getValueOfTable = (bool: boolean | null, text: string | null): any | string => {
     if (bool !== null && bool === true) {
       return <IcoMoonIcon icon={EnumsIcon.Check} />
@@ -21,6 +21,7 @@ export default function BlockPricing({ Title, Text, PriceCol, PriceRow }: IBlock
   }
   return (
     <section className="block-pricing">
+      {Overlay && <div className="block-pricing__overlay"></div>}
       <Container className="block-pricing__container">
         <BlockHeading Title={Title} Text={Text} aligned="center" />
         <div className="table-wrapper">

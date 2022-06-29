@@ -9,14 +9,14 @@
     "Image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
     },
     "ImageAlt": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "Title": {
       "type": "string"

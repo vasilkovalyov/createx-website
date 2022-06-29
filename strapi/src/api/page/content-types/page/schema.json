@@ -36,7 +36,8 @@
         "block-our-clients.block-our-clients",
         "block-partners.block-partners",
         "block-preview-services.block-preview-services",
-        "block-services.block-services"
+        "block-services.block-services",
+        "block-our-projects.block-our-projects"
       ]
     },
     "ShowFormDetails": {
@@ -54,6 +55,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::service.service",
+      "mappedBy": "page"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
       "mappedBy": "page"
     }
   }

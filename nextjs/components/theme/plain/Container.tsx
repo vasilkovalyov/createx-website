@@ -15,7 +15,7 @@ function Container({ children, className, containerWidth }: IContainer) {
     'container--large': containerWidth === 'large',
   })
 
-  return <div className={`container ${containerWidthVariant} ${className ? className : ''}`}>{children}</div>
+  return <div className={cn('container', containerWidthVariant, className)}>{children}</div>
 }
 
 export default Container

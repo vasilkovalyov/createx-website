@@ -20,7 +20,7 @@ export default function ProjectCategories({ Items, onClick }: IProjectCategories
           <>
             {Items.map((item) => (
               <Col key={item.id} base={5} sm={5} md={4} className="project-categories__col">
-                <div className="project-category bg-color-white shadow-wrapper" onClick={(e) => handleClick(item.Slug)}>
+                <div className="project-category bg-color-white shadow-wrapper" onClick={(e) => handleClick(item.Name)}>
                   <div className="project-category__logo-wrapper">
                     {item.Image && (
                       <Image
@@ -38,7 +38,7 @@ export default function ProjectCategories({ Items, onClick }: IProjectCategories
                     )}
                   </div>
                   <div className="project-category__body text-align--center">
-                    <Typography text={item.Name} className="project-category__title color-grey-dark" />
+                    <Typography text={item.Title} className="project-category__title color-grey-dark" />
                   </div>
                 </div>
               </Col>

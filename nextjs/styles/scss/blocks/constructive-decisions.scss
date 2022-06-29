@@ -12,6 +12,15 @@
         padding: calc(spacing.$m + spacing.$xxxl) 0;
     }
 
+    &__inner {
+        position: relative;
+        padding: spacing.$m 0;
+    
+        @include responsive.mq($from: wide) {
+            padding: calc(spacing.$m + spacing.$xxxl) 0;
+        }
+    }
+
     &__overlay {
         @include mixins.absoluteCover();
         background-color: colors.$grey-extra-light;
@@ -48,6 +57,31 @@
         &__title {
             @include responsive.mq($from: wide) {
                 margin-bottom: 66px;
+            }
+        }
+    }
+
+    &__content {
+        ul {
+            @include mixins.listreset();
+
+            li {
+                position: relative;
+                padding-left: 34px;
+
+                &::before {
+                    content: "\e905";
+                    font-family: 'icomoon' !important;
+                    position: absolute;
+                    top: -3px;
+                    left: 0;
+                    font-size: fz.$size-l;
+                    color: var(--primary-color);
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 22px;
+                }
             }
         }
     }

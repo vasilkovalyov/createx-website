@@ -6,6 +6,7 @@ import Row from './Grid/Row'
 import Col from './Grid/Col'
 import ImageComponent from './Image'
 import Accordion from './Accordion'
+import BlockHeading from './BlockHeading'
 
 import { IBlockServiceDescription } from '../../../interfaces/blocks'
 
@@ -20,7 +21,7 @@ export default function BlockServiceDescription({ Title, Image, Items }: IBlockS
             </Col>
           )}
           <Col base={12} md={6} xl={4}>
-            {Title && <Typography level="h2" text={Title} className="block-service-description__title" />}
+            {Title && <BlockHeading Title={Title} className="block-service-description__title" />}
             {Items && Items.length ? (
               <>
                 {Items.map((item, index) => (

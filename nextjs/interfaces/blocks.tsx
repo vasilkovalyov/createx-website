@@ -1,4 +1,4 @@
-import { IImage, IBenefit, IContactInformation, IService, IProjectCategories } from './common'
+import { IImage, IBenefit, IContactInformation, IService, IProjectCategories, IProjectDescription } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
@@ -24,7 +24,7 @@ export interface IBlockConstructiveDecisions {
   Overlay?: boolean
   BlockType: Block
   Title: string
-  List: IList
+  RichText: string
   Image?: IImage
   Reverse?: boolean
 }
@@ -76,7 +76,7 @@ export interface IBlockOurHistory {
 
 export interface IBlockImageGallery {
   BlockType: Block
-  Items: IImage[]
+  Items: IImage[] | []
 }
 
 interface IOurOffice extends IContactInformation {
@@ -105,7 +105,7 @@ export interface IBlockProjectSteps {
   Title
   Items: {
     id: Identificator
-    ProjectStepTitle: string
+    Title: string
     Text: string
     ShowNumber: boolean
   }[]
@@ -137,6 +137,7 @@ export interface IBlockPricing {
   Text?: string
   PriceCol: IPriceCol[]
   PriceRow: IPriceRow[]
+  Overlay?: boolean
 }
 
 export interface IBlockServiceDescription {
@@ -151,8 +152,9 @@ export interface IBlockServiceDescription {
 }
 
 export interface IBlockOurProjects {
-  Categories: IProjectCategories[]
-  Items: IProject[]
+  BlockType: Block
+  Categories: IProjectCategories[] | []
+  Items: IProject[] | []
 }
 
 export interface IBlockPreviewServices {
@@ -160,4 +162,18 @@ export interface IBlockPreviewServices {
   Title: string
   Text: string
   Items: IService[] | []
+}
+
+export interface IBlockProjectsWithCategories {
+  BlockType: Block
+  Title: string
+  Categories: any[]
+  Items: any[]
+}
+
+export interface IBlockProjectDescription {
+  BlockType: Block
+  Title: string
+  RichText: string
+  Items: IProjectDescription[] | []
 }

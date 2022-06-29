@@ -1,3 +1,5 @@
+@use '../tools/responsive.scss';
+
 #wrapper {
     display: flex;
     flex-direction: column;
@@ -7,4 +9,14 @@
 
 .main {
     flex: 1;
+}
+
+.page-title {
+    padding-top: 120px;
+
+    .block-heading__title {
+        @include responsive.mq($from: tablet_large) {
+            font-size: 64px;
+        }
+    }
 }

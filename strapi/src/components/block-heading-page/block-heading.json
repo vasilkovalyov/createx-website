@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_heading_block_headings",
+  "info": {
+    "displayName": "BlockHeadingPage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockHeading",
+      "required": true
+    }
+  }
+}

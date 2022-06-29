@@ -8,7 +8,7 @@ import { IImage, IService } from '../../interfaces/common'
 export default function BlockServicesBlock() {
   const [page] = usePage()
 
-  if (!page?.services || page?.services.data.length === 0) return null
+  if (!page?.services.data || page?.services.data.length === 0) return null
   const data = page.services.data[0].attributes.page.data
   const parentPage = data ? data.attributes.Slug : ''
 

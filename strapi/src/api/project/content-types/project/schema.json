@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "default": "Project"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "PreviewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "project_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-category.project-category",
+      "inversedBy": "projects"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "block-constructive-decisions.block-constructive-decisions",
+        "block-heading-page.block-heading",
+        "block-hero.block-hero",
+        "block-image-gallery.block-image-gallery",
+        "block-project-description.block-work-description"
+      ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "projects"
+    },
+    "SlugText": {
+      "type": "string",
+      "default": "View Project"
+    },
+    "ContentType": {
+      "type": "string",
+      "required": true,
+      "default": "projectPage"
+    },
+    "ShowFormDetails": {
+      "type": "boolean"
+    }
+  }
+}

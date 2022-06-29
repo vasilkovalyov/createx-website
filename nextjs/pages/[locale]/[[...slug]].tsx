@@ -2,17 +2,13 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import PageOurProjects from 'components/pages/PageOurProjects'
-import PageOurProjectInner from 'components/pages/PageOurProjectInner'
-
 import { renderBlocks, renderByBlockType } from '../../components'
 import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
 import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
-import { getPageData, getPageOurWorks, getPageSingleOurWork, getPageSingleService } from '../../libs/cms/queries'
+import { getPageData, getPageSingleProject, getPageSingleService } from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
-import { Page } from '../../enums/pages'
 
 import { PageProvider } from '../../context/project'
 
@@ -21,13 +17,9 @@ const getDataByPath = async (path) => {
   if (page === 'services' && subpage) {
     return await getPageSingleService(subpage)
   }
-  if (page === 'our-work' && !subpage) {
-    return await getPageOurWorks(page)
-  }
   if (page === 'our-work' && subpage) {
-    return await getPageSingleOurWork(page)
+    return await getPageSingleProject(subpage)
   }
-  console.log('page', page)
   return await getPageData(page)
 }
 
@@ -80,14 +72,12 @@ const DynamicPage = (page: IPageField) => {
     return <div>Loading...</div>
   }
 
-  const renderPages = () => {
-    if (pageAttributes.ContentType === Page.OurProjectPage) {
-      return <PageOurProjectInner />
-    }
+  console.log('updatedPage', updatedPage)
 
-    if (pageAttributes.ContentType === Page.OurProjectsPage) {
-      return <PageOurProjects />
-    }
+  const renderPages = () => {
+    // if (pageAttributes.ContentType === Page.OurProjectPage) {
+    // return <PageOurProjectInner />
+    // }
 
     if (pageBody && pageBody.length) {
       return renderBlocks(pageBody)

@@ -91,6 +91,7 @@ export interface IBlockHeading {
   headingLevel?: HeadingLevel
   textSize?: TextSize
   aligned?: AlignContentType
+  className?: string
 }
 
 export interface IService {
@@ -111,8 +112,7 @@ export interface IProject {
   Title: string
   Text: string
   Link?: ILink
-  CategoryName: string
-  CategorySlug: string
+  categories: string[]
 }
 
 export interface IBenefit {
@@ -196,11 +196,9 @@ export interface IPosition {
 }
 
 export interface IProjectDescription {
-  Items: {
-    id: Identificator
-    Title: string
-    Text: string
-  }[]
+  id: Identificator
+  Title: string
+  Text: string
 }
 
 export interface IAccordion {
@@ -217,8 +215,8 @@ export interface IProjectCategoriesList {
 
 export interface IProjectCategories {
   id: Identificator
+  Title: string
   Name: string
-  Slug: string
   Image?: IImage | null
   Image2?: IImage | null
 }

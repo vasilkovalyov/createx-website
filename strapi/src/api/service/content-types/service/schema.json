@@ -84,6 +84,9 @@
       "relation": "manyToOne",
       "target": "api::page.page",
       "inversedBy": "services"
+    },
+    "ShowFormDetails": {
+      "type": "boolean"
     }
   }
 }

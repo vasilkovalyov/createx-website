@@ -12,7 +12,7 @@ export default function Image({ Items, icon, className, type = 'default' }: ILis
   })
 
   return (
-    <ul className={`list ${listType} ${className ? className : ''}`}>
+    <ul className={cn('list', listType, className)}>
       {Items &&
         Items.length &&
         Items.map((item) => (

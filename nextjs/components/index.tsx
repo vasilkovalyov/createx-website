@@ -1,8 +1,6 @@
 import React from 'react'
 
 // Pages blocks
-import PageOurProjects from './pages/PageOurProjects'
-import PageOurProjectInner from './pages/PageOurProjectInner'
 
 // Component blocks
 import BlockHeroBlock from './blocks/BlockHeroBlock'
@@ -18,6 +16,10 @@ import BlockProjectStepsBlock from './blocks/BlockProjectStepsBlock'
 import BlockServiceDescriptionBlock from './blocks/BlockServiceDescriptionBlock'
 import BlockOurProjectsBlock from './blocks/BlockOurProjectsBlock'
 import BlockPreviewServicesBlock from './blocks/BlockPreviewServicesBlock'
+import BlockHeadingBlock from './blocks/BlockHeadingBlock'
+import BlockImageGalleryBlock from './blocks/BlockImageGalleryBlock'
+import BlockProjectDescriptionBlock from './blocks/BlockProjectDescriptionBlock'
+import BlockConstructiveDecisionsBlock from './blocks/BlockConstructiveDecisionsBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -27,8 +29,8 @@ import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
   // Pages blocks
-  PageOurProjects: PageOurProjects,
-  PageOurProjectInner: PageOurProjectInner,
+  // PageOurProjects: PageOurProjects,
+  // PageOurProjectInner: PageOurProjectInner,
 
   // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
@@ -44,6 +46,10 @@ export const blockComponents = {
   [Block.BlockServiceDescription]: BlockServiceDescriptionBlock,
   [Block.BlockOurProjects]: BlockOurProjectsBlock,
   [Block.BlockPreviewServices]: BlockPreviewServicesBlock,
+  [Block.BlockHeading]: BlockHeadingBlock,
+  [Block.BlockImageGallery]: BlockImageGalleryBlock,
+  [Block.BlockProjectDescription]: BlockProjectDescriptionBlock,
+  [Block.BlockConstructiveDecisions]: BlockConstructiveDecisionsBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
