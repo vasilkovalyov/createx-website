@@ -35,12 +35,6 @@
     "Text": {
       "type": "text"
     },
-    "project_categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::project-category.project-category",
-      "inversedBy": "projects"
-    },
     "Body": {
       "type": "dynamiczone",
       "components": [
@@ -48,7 +42,8 @@
         "block-heading-page.block-heading",
         "block-hero.block-hero",
         "block-image-gallery.block-image-gallery",
-        "block-project-description.block-work-description"
+        "block-project-description.block-work-description",
+        "block-related-projects.block-related-projects"
       ]
     },
     "page": {
@@ -68,6 +63,12 @@
     },
     "ShowFormDetails": {
       "type": "boolean"
+    },
+    "project_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project-category.project-category",
+      "inversedBy": "projects"
     }
   }
 }

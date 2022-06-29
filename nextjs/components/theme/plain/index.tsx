@@ -18,6 +18,9 @@ import BlockImageGallery from './BlockImageGallery'
 import BlockProjectDescription from './BlockProjectDescription'
 import BlockHeading from './BlockHeading'
 import BlockConstructiveDecisions from './BlockConstructiveDecisions'
+import BlockNews from './BlockNews'
+import BlockLatestNews from './BlockLatestNews'
+import BlockLatestProjects from './BlockLatestProjects'
 
 const components: IRegistryItem[] = [
   {
@@ -87,6 +90,22 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockConstructiveDecisions,
     component: BlockConstructiveDecisions,
+  },
+  {
+    BlockType: Block.BlockNews,
+    component: BlockNews,
+  },
+  {
+    BlockType: Block.BlockLatestNews,
+    component: BlockLatestNews,
+  },
+  {
+    BlockType: Block.BlockLatestProjects,
+    component: BlockLatestProjects,
+  },
+  {
+    BlockType: Block.BlockRelatedProjects,
+    component: BlockLatestProjects,
   },
 ]
 

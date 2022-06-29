@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_latest_news_block_latest_news",
+  "info": {
+    "displayName": "BlockLatestNews"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockLatestNews",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

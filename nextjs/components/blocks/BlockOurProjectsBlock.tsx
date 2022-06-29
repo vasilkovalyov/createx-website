@@ -51,7 +51,7 @@ export default function BlockOurProjectsBlock() {
   if (page.projects.data !== null) {
     projects = page.projects.data.map((item) => {
       let image: IImage | null
-      let categories: string[]
+      let category: string[]
       if (item.attributes.PreviewImage.data) {
         image = {
           Url: item.attributes.PreviewImage.data.attributes.url,
@@ -61,12 +61,10 @@ export default function BlockOurProjectsBlock() {
         image = null
       }
 
-      if (item.attributes.project_categories.data) {
-        categories = item.attributes.project_categories.data.map((item) => {
-          return item.attributes.Name
-        })
+      if (item.attributes.project_category.data) {
+        category = item.attributes.project_category.data.attributes.Name
       } else {
-        categories = []
+        category = []
       }
 
       const parentPage = item.attributes.page.data ? item.attributes.page.data.attributes.Slug : ''
@@ -81,7 +79,7 @@ export default function BlockOurProjectsBlock() {
           url: urlPage,
           text: item.attributes.SlugText,
         },
-        categories: categories,
+        category: category,
       } as unknown as IProject
     })
   } else {

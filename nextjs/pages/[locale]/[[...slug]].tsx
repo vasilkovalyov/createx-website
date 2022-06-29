@@ -7,7 +7,13 @@ import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
 import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
-import { getPageData, getPageSingleProject, getPageSingleService } from '../../libs/cms/queries'
+import {
+  getPageData,
+  getPageSingleProject,
+  getPageSingleService,
+  getPageSinglePost,
+  getRelatedProjects,
+} from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
 
 import { PageProvider } from '../../context/project'
@@ -18,7 +24,17 @@ const getDataByPath = async (path) => {
     return await getPageSingleService(subpage)
   }
   if (page === 'our-work' && subpage) {
-    return await getPageSingleProject(subpage)
+    const data = await getPageSingleProject(subpage)
+    const relatedProjects = await getRelatedProjects(
+      data.pages.data[0].attributes.project_category.data.attributes.Name,
+    )
+    return {
+      ...data,
+      ...relatedProjects,
+    }
+  }
+  if (page === 'news' && subpage) {
+    return await getPageSinglePost(subpage)
   }
   return await getPageData(page)
 }
@@ -75,10 +91,6 @@ const DynamicPage = (page: IPageField) => {
   console.log('updatedPage', updatedPage)
 
   const renderPages = () => {
-    // if (pageAttributes.ContentType === Page.OurProjectPage) {
-    // return <PageOurProjectInner />
-    // }
-
     if (pageBody && pageBody.length) {
       return renderBlocks(pageBody)
     }

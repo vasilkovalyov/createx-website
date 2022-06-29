@@ -44,6 +44,26 @@
       "relation": "manyToMany",
       "target": "api::post-category.post-category",
       "inversedBy": "posts"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "posts"
+    },
+    "ContentType": {
+      "type": "string",
+      "default": "postPage",
+      "required": true
+    },
+    "ShowFormDetails": {
+      "type": "boolean"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "block-heading-page.block-heading"
+      ]
     }
   }
 }

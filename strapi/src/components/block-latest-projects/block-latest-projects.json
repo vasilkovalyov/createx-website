@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_latest_projects_block_latest_projects",
+  "info": {
+    "displayName": "BlockLatestProjects"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockLatestProjects",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

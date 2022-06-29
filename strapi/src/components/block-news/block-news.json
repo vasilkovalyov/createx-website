@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_block_news_block_news",
+  "info": {
+    "displayName": "BlockNews"
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockNews",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

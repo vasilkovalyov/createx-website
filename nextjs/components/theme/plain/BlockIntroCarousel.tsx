@@ -21,7 +21,7 @@ export default function BlockIntroCarousel({ Items, Title, Link, Text }: IBlockI
                 className="block-intro-carousel__btn"
                 name={Link.text}
                 url={Link.url}
-                outline={true}
+                type="outline"
                 color="white"
               />
             )}

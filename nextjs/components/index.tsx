@@ -20,6 +20,10 @@ import BlockHeadingBlock from './blocks/BlockHeadingBlock'
 import BlockImageGalleryBlock from './blocks/BlockImageGalleryBlock'
 import BlockProjectDescriptionBlock from './blocks/BlockProjectDescriptionBlock'
 import BlockConstructiveDecisionsBlock from './blocks/BlockConstructiveDecisionsBlock'
+import BlockNewsBlock from './blocks/BlockNewsBlock'
+import BlockLatestNewsBlock from './blocks/BlockLatestNewsBlock'
+import BlockLatestProjectsBlock from './blocks/BlockLatestProjectsBlock'
+import BlockRelatedProjectsBlock from './blocks/BlockRelatedProjectsBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -50,6 +54,10 @@ export const blockComponents = {
   [Block.BlockImageGallery]: BlockImageGalleryBlock,
   [Block.BlockProjectDescription]: BlockProjectDescriptionBlock,
   [Block.BlockConstructiveDecisions]: BlockConstructiveDecisionsBlock,
+  [Block.BlockNews]: BlockNewsBlock,
+  [Block.BlockLatestNews]: BlockLatestNewsBlock,
+  [Block.BlockLatestProjects]: BlockLatestProjectsBlock,
+  [Block.BlockRelatedProjects]: BlockRelatedProjectsBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {

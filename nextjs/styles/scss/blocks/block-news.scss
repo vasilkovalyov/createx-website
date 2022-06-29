@@ -1,0 +1,37 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/colors.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/mixins.scss';
+
+
+.block-news {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: 120px 0;
+    }
+
+    .col {
+        display: flex;
+    }
+
+    .news-post {
+        max-width: 100%;
+    }
+}
+
+.news-categories {
+    padding: spacing.$m 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+
+    &__btn {
+        color: colors.$grey-dark;
+
+        &.active {
+
+        }
+    }
+}

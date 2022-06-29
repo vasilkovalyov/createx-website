@@ -77,12 +77,13 @@ export interface ICol {
 export interface IButton {
   url?: string
   className?: string
-  outline?: boolean
+  type?: 'outline' | '' | 'transparent'
   color?: 'white' | 'primary'
   name?: string
+  uppercase?: boolean
   size?: 'small' | 'extra-small' | ''
   fullwidth?: boolean
-  onClick?: () => void
+  onClick?: (v?: string) => void
 }
 
 export interface IBlockHeading {
@@ -112,7 +113,7 @@ export interface IProject {
   Title: string
   Text: string
   Link?: ILink
-  categories: string[]
+  category: string
 }
 
 export interface IBenefit {
@@ -152,9 +153,13 @@ export interface INewsPost {
   Image?: IImage
   Title: string
   Text?: string
-  Category: string
+  Categories: {
+    Title: string
+    Name: string
+  }[]
   Date: string
   Slug: string
+  Link: ILink
 }
 
 export interface ITestimonial {
@@ -219,4 +224,10 @@ export interface IProjectCategories {
   Name: string
   Image?: IImage | null
   Image2?: IImage | null
+}
+
+export interface INewsCategories {
+  id: Identificator
+  Title: string
+  Name: string
 }

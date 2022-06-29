@@ -1,4 +1,13 @@
-import { IImage, IBenefit, IContactInformation, IService, IProjectCategories, IProjectDescription } from './common'
+import {
+  IImage,
+  IBenefit,
+  IContactInformation,
+  IService,
+  IProjectCategories,
+  IProjectDescription,
+  INewsCategories,
+  INewsPost,
+} from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
@@ -164,16 +173,16 @@ export interface IBlockPreviewServices {
   Items: IService[] | []
 }
 
-export interface IBlockProjectsWithCategories {
-  BlockType: Block
-  Title: string
-  Categories: any[]
-  Items: any[]
-}
-
 export interface IBlockProjectDescription {
   BlockType: Block
   Title: string
   RichText: string
   Items: IProjectDescription[] | []
+}
+
+export interface IBlockNews {
+  BlockType: Block
+  Title: string
+  Categories: INewsCategories[]
+  Items: INewsPost[]
 }

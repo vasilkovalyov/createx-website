@@ -4,7 +4,7 @@ import cn from 'classnames'
 
 import { IButton } from '../../../interfaces/common'
 
-function Button({ url, className, outline, name, size, fullwidth, color, onClick }: IButton) {
+function Button({ url, className, type, name, size, fullwidth, color, uppercase = true, onClick }: IButton) {
   const sizeField = cn({
     'btn--small': size === 'small',
     'btn--extra-small': size === 'extra-small',
@@ -16,17 +16,25 @@ function Button({ url, className, outline, name, size, fullwidth, color, onClick
     'btn--white': color === 'white',
   })
 
-  const outlineProp = outline ? 'btn--outline' : ''
+  const typeButton = cn({
+    'btn--outline': type === 'outline',
+    'btn--transparent': type === 'transparent',
+  })
+
+  const uppercaseBtn = cn({
+    'text-uppercase': uppercase === true,
+  })
+
   if (url) {
     return (
       <LinkComponent href={`/en/${url}`}>
-        <a className={cn('btn', colorButton, outlineProp, sizeField, className)}>{name && name}</a>
+        <a className={cn('btn', colorButton, typeButton, sizeField, uppercaseBtn, className)}>{name && name}</a>
       </LinkComponent>
     )
   }
 
   return (
-    <button className={cn('btn', outlineProp, className, sizeField)} onClick={() => onClick}>
+    <button className={cn('btn', typeButton, sizeField, uppercaseBtn, className)} onClick={() => onClick}>
       {name}
     </button>
   )

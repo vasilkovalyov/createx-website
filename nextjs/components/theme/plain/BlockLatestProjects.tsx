@@ -16,16 +16,18 @@ export default function BlockLatestProjects({ Title, Text, Link, Items }: IBlock
     <section className="block-latest-project">
       <Container className="block-latest-project__container">
         <BlockHeading Title={Title} />
-        <Carousel
-          slides={Items.map((item, index) => (
-            <div key={index} className="block-latest-project__slide">
-              <ProjectCard {...item} />
-            </div>
-          ))}
-          className="block-latest-project__carousel"
-          settings={{ ...swiperForThreeVisiblePosts }}
-          typeButton="secondary"
-        />
+        {Items && Items.length ? (
+          <Carousel
+            slides={Items.map((item, index) => (
+              <div key={index} className="block-latest-project__slide">
+                <ProjectCard {...item} />
+              </div>
+            ))}
+            className="block-latest-project__carousel"
+            settings={{ ...swiperForThreeVisiblePosts }}
+            typeButton="secondary"
+          />
+        ) : null}
 
         <div className="block-additional-info block-latest-project__additional-info">
           {Text && <Typography level="h4" text={Text} className="block-additional-info__title" />}

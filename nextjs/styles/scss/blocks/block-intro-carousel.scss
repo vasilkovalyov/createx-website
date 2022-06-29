@@ -8,7 +8,7 @@
 .block-intro-carousel {
     &__inner {
         min-height: 100vh;
-        padding: 130px 0 130px;
+        padding: 30px 0 130px;
         display: flex;
 
         @media (max-height: 700px) and (orientation:landscape) {
@@ -42,6 +42,10 @@
         z-index: 3;
         max-width: 595px;
         width: 100%;
+
+        @include responsive.mq($from: tablet_large) {
+            margin-bottom: 200px;
+        }
     }
 
     &__title {

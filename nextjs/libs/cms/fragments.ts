@@ -1,5 +1,69 @@
 import { gql } from 'graphql-request'
 
+export const FRAGMENT_PROJECT = gql`
+  fragment GetProject on Project {
+    Title
+    Slug
+    SlugText
+    page {
+      data {
+        attributes {
+          Slug
+        }
+      }
+    }
+    PreviewImage {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+    ImageAlt
+    Text
+    project_category {
+      data {
+        attributes {
+          Name
+        }
+      }
+    }
+  }
+`
+
+export const FRAGMENT_POST = gql`
+  fragment GetPost on Post {
+    Title
+    Slug
+    Image {
+      data {
+        attributes {
+          url
+        }
+      }
+    }
+    ImageAlt
+    Date
+    Text
+    page {
+      data {
+        attributes {
+          Slug
+        }
+      }
+    }
+    post_categories {
+      data {
+        id
+        attributes {
+          Title
+          Name
+        }
+      }
+    }
+  }
+`
+
 export const FRAGMENT_HEADER = gql`
   fragment GetHeader on BlockHeader {
     BlockType

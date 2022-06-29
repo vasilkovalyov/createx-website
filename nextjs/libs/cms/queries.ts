@@ -1,6 +1,62 @@
 import { request, gql, GraphQLClient } from 'graphql-request'
 
-import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL } from './fragments'
+import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL, FRAGMENT_POST, FRAGMENT_PROJECT } from './fragments'
+
+export async function getPageSinglePost(page: string) {
+  const url = 'http://localhost:1337/graphql'
+  const graphQLClient = new GraphQLClient(url)
+
+  const query = gql`
+    query SinglePost($page: String!) {
+      blockHeader {
+        data {
+          attributes {
+            ...GetHeader
+          }
+        }
+      }
+      blockFooter {
+        data {
+          id
+          attributes {
+            ...GetFooter
+          }
+        }
+      }
+      blockFormDetail {
+        data {
+          attributes {
+            ...GetFormDetail
+          }
+        }
+      }
+      pages: posts(filters: { Slug: { contains: $page } }) {
+        data {
+          id
+          attributes {
+            ContentType
+            Title
+            Slug
+            ShowFormDetails
+            Body {
+              ... on ComponentBlockHeadingPageBlockHeading {
+                BlockType
+              }
+            }
+          }
+        }
+      }
+    }
+    ${FRAGMENT_HEADER}
+    ${FRAGMENT_FOOTER}
+    ${FRAGMENT_FORM_DETAIL}
+  `
+
+  const data = await graphQLClient.request(query, {
+    page: page,
+  })
+  return data
+}
 
 export async function getPageSingleService(page: string) {
   const url = 'http://localhost:1337/graphql'
@@ -139,6 +195,28 @@ export async function getPageSingleService(page: string) {
   return data
 }
 
+export async function getRelatedProjects(category: string) {
+  const url = 'http://localhost:1337/graphql'
+  const graphQLClient = new GraphQLClient(url)
+
+  const query = gql`
+    query RelatedProject($category: String!) {
+      relatedProjects: projects(filters: { project_category: { Name: { contains: $category } } }) {
+        data {
+          attributes {
+            ...GetProject
+          }
+        }
+      }
+    }
+    ${FRAGMENT_PROJECT}
+  `
+  const data = await graphQLClient.request(query, {
+    category: category,
+  })
+  return data
+}
+
 export async function getPageSingleProject(page: string) {
   const url = 'http://localhost:1337/graphql'
   const graphQLClient = new GraphQLClient(url)
@@ -175,7 +253,19 @@ export async function getPageSingleProject(page: string) {
             Title
             Slug
             ShowFormDetails
+            project_category {
+              data {
+                attributes {
+                  Title
+                  Name
+                }
+              }
+            }
             Body {
+              ... on ComponentBlockRelatedProjectsBlockRelatedProjects {
+                BlockType
+                Title
+              }
               ... on ComponentBlockHeadingPageBlockHeading {
                 BlockType
               }
@@ -364,6 +454,31 @@ export async function getPageData(page: string) {
           }
         }
       }
+      postCategories {
+        data {
+          id
+          attributes {
+            Title
+            Name
+          }
+        }
+      }
+      latestPosts: posts(sort: "createdAt:desc", pagination: { limit: 3 }) {
+        data {
+          id
+          attributes {
+            ...GetPost
+          }
+        }
+      }
+      posts {
+        data {
+          id
+          attributes {
+            ...GetPost
+          }
+        }
+      }
       services {
         data {
           id
@@ -435,36 +550,19 @@ export async function getPageData(page: string) {
           }
         }
       }
+      latestProjects: projects(sort: "createdAt:desc", pagination: { limit: 6 }) {
+        data {
+          id
+          attributes {
+            ...GetProject
+          }
+        }
+      }
       projects {
         data {
           id
           attributes {
-            Title
-            Slug
-            SlugText
-            page {
-              data {
-                attributes {
-                  Slug
-                }
-              }
-            }
-            PreviewImage {
-              data {
-                attributes {
-                  url
-                }
-              }
-            }
-            ImageAlt
-            Text
-            project_categories {
-              data {
-                attributes {
-                  Name
-                }
-              }
-            }
+            ...GetProject
           }
         }
       }
@@ -480,8 +578,19 @@ export async function getPageData(page: string) {
             }
             ShowFormDetails
             Body {
+              ... on ComponentBlockLatestProjectsBlockLatestProjects {
+                BlockType
+                Title
+              }
+              ... on ComponentBlockLatestNewsBlockLatestNews {
+                BlockType
+                Title
+              }
+              ... on ComponentBlockNewsBlockNews {
+                BlockType
+                Title
+              }
               ... on ComponentBlockOurProjectsBlockOurProjects {
-                id
                 BlockType
               }
               ... on ComponentBlockServicesBlockServices {
@@ -493,7 +602,6 @@ export async function getPageData(page: string) {
                 Text
               }
               ... on ComponentBlockIntroCarouselBlockIntroCarousel {
-                id
                 TitleIntroCarousel: Title
                 Text
                 BlockType
@@ -519,7 +627,6 @@ export async function getPageData(page: string) {
                 }
               }
               ... on ComponentBlockBenefitsBlockBenefits {
-                id
                 BlockType
                 Text
                 Theme
@@ -539,7 +646,6 @@ export async function getPageData(page: string) {
                 }
               }
               ... on ComponentBlockHeroBlockHero {
-                id
                 Title
                 Text
                 BlockType
@@ -554,7 +660,6 @@ export async function getPageData(page: string) {
                 Overlay
               }
               ... on ComponentBlockOurClientsBlockOurClients {
-                id
                 BlockType
                 Title
                 ClientImage: Image {
@@ -584,6 +689,8 @@ export async function getPageData(page: string) {
         }
       }
     }
+    ${FRAGMENT_PROJECT}
+    ${FRAGMENT_POST}
     ${FRAGMENT_HEADER}
     ${FRAGMENT_FOOTER}
     ${FRAGMENT_FORM_DETAIL}

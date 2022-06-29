@@ -31,7 +31,7 @@ export default function Position({ Title, Link, Location, WorkTime }: IPosition)
         </Col>
         <Col base={12} sm={4}>
           <div className="position__btn-wrapper">
-            <Button name="Apply now" url={Link?.url} outline={true} className="position__btn" size="small" />
+            <Button name="Apply now" url={Link?.url} type="outline" className="position__btn" size="small" />
           </div>
         </Col>
       </Row>

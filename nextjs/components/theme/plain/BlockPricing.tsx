@@ -55,13 +55,13 @@ export default function BlockPricing({ Title, Text, PriceCol, PriceRow, Overlay 
               <tr className="table__body-row">
                 <td className="table__body-col"></td>
                 <td className="table__body-col table__body-col-btn-wrapper">
-                  <Button size="extra-small" name="send request" outline={true} />
+                  <Button size="extra-small" name="send request" type="outline" />
                 </td>
                 <td className="table__body-col table__body-col-btn-wrapper">
-                  <Button size="extra-small" name="send request" outline={true} />
+                  <Button size="extra-small" name="send request" type="outline" />
                 </td>
                 <td className="table__body-col table__body-col-btn-wrapper">
-                  <Button size="extra-small" name="send request" outline={true} />
+                  <Button size="extra-small" name="send request" type="outline" />
                 </td>
               </tr>
             </tbody>

@@ -92,10 +92,25 @@ export interface IPageField {
     data: IServiceFields[] | null
   }
   projectCategories: {
-    data: ICategoryFields[] | null
+    data: IProjectCategoryField[] | null
   }
   projects: {
     data: IProjectFields[] | null
+  }
+  relatedProjects: {
+    data: IProjectFields[] | null
+  }
+  latestProjects: {
+    data: IProjectFields[] | null
+  }
+  posts: {
+    data: IPostField[] | null
+  }
+  postCategories: {
+    data: IPostCategoryField[] | null
+  }
+  latestPosts: {
+    data: IPostField[] | null
   }
 }
 
@@ -236,10 +251,39 @@ export interface IProjectFields {
         }
       }
     }
-    project_categories: {
+    project_category: {
+      data: {
+        attributes: {
+          Name
+        }
+      } | null
+    }
+  }
+}
+
+export interface IPostField {
+  id?: Identificator
+  attributes: {
+    Title: string
+    Text: string
+    Image: {
+      data?: IImageFieldData
+    }
+    ImageAlt: string
+    Slug: string
+    Date: string
+    page: {
+      data: {
+        attributes: {
+          Slug
+        }
+      }
+    }
+    post_categories: {
       data:
         | {
             attributes: {
+              Title
               Name
             }
           }[]
@@ -248,7 +292,15 @@ export interface IProjectFields {
   }
 }
 
-export interface ICategoryFields {
+export interface IPostCategoryField {
+  id: Identificator
+  attributes: {
+    Title: string
+    Name: string
+  }
+}
+
+export interface IProjectCategoryField {
   id: Identificator
   attributes: {
     Title: string
