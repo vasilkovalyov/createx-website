@@ -24,6 +24,8 @@ import BlockNewsBlock from './blocks/BlockNewsBlock'
 import BlockLatestNewsBlock from './blocks/BlockLatestNewsBlock'
 import BlockLatestProjectsBlock from './blocks/BlockLatestProjectsBlock'
 import BlockRelatedProjectsBlock from './blocks/BlockRelatedProjectsBlock'
+import BlockOurHistoryBlock from './blocks/BlockOurHistoryBlock'
+import BlockOurTeamBlock from './blocks/BlockOurTeamBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -33,9 +35,6 @@ import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
   // Pages blocks
-  // PageOurProjects: PageOurProjects,
-  // PageOurProjectInner: PageOurProjectInner,
-
   // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
   [Block.BlockFooter]: BlockFooterBlock,
@@ -58,6 +57,8 @@ export const blockComponents = {
   [Block.BlockLatestNews]: BlockLatestNewsBlock,
   [Block.BlockLatestProjects]: BlockLatestProjectsBlock,
   [Block.BlockRelatedProjects]: BlockRelatedProjectsBlock,
+  [Block.BlockOurHistory]: BlockOurHistoryBlock,
+  [Block.BlockOurTeam]: BlockOurTeamBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {

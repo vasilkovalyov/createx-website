@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_block_our_team_block_our_teams",
+  "info": {
+    "displayName": "BlockOurTeam",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockOurTeam"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "block-our-team.items"
+    }
+  }
+}

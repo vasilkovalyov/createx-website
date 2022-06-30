@@ -21,6 +21,8 @@ import BlockConstructiveDecisions from './BlockConstructiveDecisions'
 import BlockNews from './BlockNews'
 import BlockLatestNews from './BlockLatestNews'
 import BlockLatestProjects from './BlockLatestProjects'
+import BlockOurHistory from './BlockOurHistory'
+import BlockOurTeam from './BlockOurTeam'
 
 const components: IRegistryItem[] = [
   {
@@ -106,6 +108,14 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockRelatedProjects,
     component: BlockLatestProjects,
+  },
+  {
+    BlockType: Block.BlockOurHistory,
+    component: BlockOurHistory,
+  },
+  {
+    BlockType: Block.BlockOurTeam,
+    component: BlockOurTeam,
   },
 ]
 

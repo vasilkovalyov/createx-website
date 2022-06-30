@@ -33,14 +33,16 @@
         "block-benefits.items",
         "block-hero.block-hero",
         "block-intro-carousel.block-intro-carousel",
+        "block-latest-news.block-latest-news",
+        "block-latest-projects.block-latest-projects",
         "block-news.block-news",
         "block-our-clients.block-our-clients",
+        "block-our-history.block-our-history",
         "block-our-projects.block-our-projects",
         "block-partners.block-partners",
         "block-preview-services.block-preview-services",
         "block-services.block-services",
-        "block-latest-news.block-latest-news",
-        "block-latest-projects.block-latest-projects"
+        "block-our-team.block-our-team"
       ]
     },
     "ShowFormDetails": {

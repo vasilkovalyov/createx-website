@@ -22,5 +22,9 @@
 
     &__link {
         color: inherit;
+
+        &:hover {
+            opacity: 0.7;
+        }
     }
 }

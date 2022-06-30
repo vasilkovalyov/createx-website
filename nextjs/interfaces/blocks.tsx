@@ -7,6 +7,8 @@ import {
   IProjectDescription,
   INewsCategories,
   INewsPost,
+  IHistory,
+  IPerson,
 } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
@@ -70,17 +72,10 @@ export interface IBlockOurClientsTestimonials {
   Items: ITestimonial[]
 }
 
-export interface IHistory {
-  id: Identificator
-  Image: IImage
-  Text: string
-  Date: string
-}
-
 export interface IBlockOurHistory {
   BlockType: Block
   Title: string
-  Items: IHistory[]
+  Items: IHistory[] | []
 }
 
 export interface IBlockImageGallery {
@@ -185,4 +180,11 @@ export interface IBlockNews {
   Title: string
   Categories: INewsCategories[]
   Items: INewsPost[]
+}
+
+export interface IBlockOurTeam {
+  BlockType: Block
+  Title: string
+  Text: string
+  Items: IPerson[] | []
 }

@@ -126,12 +126,10 @@ export interface IBenefit {
 
 export interface IPerson {
   id?: Identificator
-  Image: IImage
+  Image?: IImage
   Title: string
   Text: string
-  Socials: {
-    Items: ISocialLink[]
-  }
+  Socials?: ISocialLink[]
 }
 
 export interface ISocialLink {
@@ -230,4 +228,11 @@ export interface INewsCategories {
   id: Identificator
   Title: string
   Name: string
+}
+
+export interface IHistory {
+  id?: Identificator
+  Image?: IImage | null
+  Text?: string
+  Date: string
 }

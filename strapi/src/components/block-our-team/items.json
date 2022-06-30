@@ -1,0 +1,60 @@
+{
+  "collectionName": "components_block_our_team_items",
+  "info": {
+    "displayName": "Items",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "SocialUrl1": {
+      "type": "string"
+    },
+    "SocialIcon1": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "facebook",
+        "linked-in"
+      ]
+    },
+    "SocialUrl2": {
+      "type": "string"
+    },
+    "SocialIcon2": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "facebook",
+        "linked-in"
+      ]
+    },
+    "SocialUrl3": {
+      "type": "string"
+    },
+    "SocialIcon3": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "facebook",
+        "linked-in"
+      ]
+    }
+  }
+}
