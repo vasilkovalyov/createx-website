@@ -8,6 +8,7 @@ import { IBlockImageGallery } from '../../../interfaces/blocks'
 
 export default function BlockImageGallery({ Items }: IBlockImageGallery) {
   const base = 'http://localhost:1337'
+  // const base = ''
   return (
     <section className="block-image-gallery">
       <Container className="block-image-gallery__container">

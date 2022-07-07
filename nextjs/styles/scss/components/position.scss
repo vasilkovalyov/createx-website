@@ -9,6 +9,9 @@
     width: 100%;
     border: 1px solid #E5E8ED;
     margin-bottom: 18px;
+    box-shadow: setup.$base-shadow-invisible;
+
+	@include mixins.animate(box-shadow);
 
     @include responsive.mq($from: mobile_md) {
         padding: spacing.$m spacing.$xxl;
@@ -47,6 +50,14 @@
 
     &__btn-wrapper {
         @include responsive.mq($from: mobile_md) {
+            text-align: right;
+        }
+
+        @include responsive.mq($from: tablet) {
+            text-align: left;
+        }
+
+        @include responsive.mq($from: tablet_large) {
             text-align: right;
         }
     }

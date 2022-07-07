@@ -1,0 +1,10 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.block-testimonial {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: 56px 0 74px;
+    }
+}

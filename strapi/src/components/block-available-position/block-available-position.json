@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_block_available_position_block_available_positions",
+  "info": {
+    "displayName": "BlockAvailablePosition",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "default": "blockAvailablePositions",
+      "required": true
+    },
+    "Aside": {
+      "displayName": "Aside",
+      "type": "component",
+      "repeatable": false,
+      "component": "block-available-position.aside"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-available-position.items"
+    }
+  }
+}

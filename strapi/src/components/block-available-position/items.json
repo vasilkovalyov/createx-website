@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_block_available_position_items",
+  "info": {
+    "displayName": "Items"
+  },
+  "options": {},
+  "attributes": {
+    "Location": {
+      "type": "string"
+    },
+    "TypeWork": {
+      "type": "enumeration",
+      "enum": [
+        "Full time",
+        "Part time"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

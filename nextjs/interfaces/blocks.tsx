@@ -9,6 +9,7 @@ import {
   INewsPost,
   IHistory,
   IPerson,
+  IPosition,
 } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
@@ -28,6 +29,11 @@ export interface IBlockBenefits {
   Title: string
   Text?: string
   Theme?: ColorTheme
+  Items: IBenefit[]
+}
+
+export interface IBlockProjectStatistics {
+  BlockType: Block
   Items: IBenefit[]
 }
 
@@ -70,6 +76,10 @@ export interface IBlockOurClientsTestimonials {
   Title: string
   Image: IImage | null
   Items: ITestimonial[]
+}
+
+export interface IBlockTestimonial extends ITestimonial {
+  BlockType: Block
 }
 
 export interface IBlockOurHistory {
@@ -187,4 +197,15 @@ export interface IBlockOurTeam {
   Title: string
   Text: string
   Items: IPerson[] | []
+}
+
+export interface IBlockAvailablePositions {
+  BlockType: Block
+  Items: IPosition[]
+  Aside?: {
+    Title: string
+    Text: string
+    Subscribe: boolean
+    SendCV: boolean
+  }
 }

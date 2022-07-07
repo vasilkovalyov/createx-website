@@ -1,16 +1,27 @@
 @use '../tools/responsive.scss';
 @use '../settings/spacing.scss';
+@use '../settings/colors.scss';
 
 .block-preview-services {
     padding: spacing.$xxl 0;
+    background-color: colors.$grey-extra-light;
     
     @include responsive.mq($from: tablet) {
-        padding: 116px 0;
+        padding: 116px 0 90px;
     }
 
     .preview-services-list {
         .service-card {
             max-width: 100%;
+            margin-bottom: 26px;
+        }
+    }
+
+    .block-heading {
+        margin-bottom: 56px;
+
+        &__title {
+            margin-bottom: 30px;
         }
     }
 }

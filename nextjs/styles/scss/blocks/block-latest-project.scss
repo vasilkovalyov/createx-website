@@ -2,8 +2,14 @@
 
 .block-latest-project {
     padding: 40px 0;
+
+    @include responsive.mq($from: tablet_large) {
+        padding: 120px 0;
+    }
     
     .block-heading {
+        margin-bottom: 68px;
+        
         &__title {
             width: 100%;
             margin-bottom: 26px;
@@ -20,11 +26,10 @@
         }
     }
 
-    &__carousel {
-        margin-bottom: 20px;
-
-        @include responsive.mq($from: tablet) {
-            margin-bottom: 60px;
+    .carousel__wrapper {
+        .swiper-container {
+            margin: 0 -10px;
+            padding: 0 10px;
         }
     }
 
@@ -34,7 +39,7 @@
         
         @include responsive.mq($from: tablet) {
             position: absolute;
-            top: -70px;
+            top: -94px;
             right: 0;
             margin: 0 -10px;
         }
@@ -47,6 +52,10 @@
             @include responsive.mq($from: tablet) {
             }
         }
+    }
+
+    &__slide {
+        padding-bottom: 60px;
     }
 
     .project-card {

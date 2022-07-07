@@ -9,10 +9,6 @@ import { ICarousel } from '../../../interfaces/common'
 import IcoMoonIcon from './IcoMoonIcon'
 import { EnumsIcon } from '../../../enums/icons'
 
-type SwiperType = React.HTMLAttributes<HTMLElement> & {
-  swiper: SwiperCore
-}
-
 export default function Carousel({
   slides,
   settings,
@@ -20,7 +16,6 @@ export default function Carousel({
   typeButton = 'primary',
   useCustomNavigation = true,
 }: ICarousel) {
-  // const sliderRef = useRef<SwiperType>(null)
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
 

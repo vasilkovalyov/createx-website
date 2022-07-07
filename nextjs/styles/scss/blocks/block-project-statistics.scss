@@ -1,0 +1,29 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/colors.scss';
+
+.block-project-statistics {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: 116px 0 spacing.$xxl;
+    }
+
+    .project-statistics {
+        margin-left: auto;
+        margin-right: auto;
+
+        .benefit__title {
+            font-size: 46px;
+            color: var(--primary-color);
+        }
+
+        .benefit__text {
+            font-size: fz.$size-xs;
+            max-width: 240px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}

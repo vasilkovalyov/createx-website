@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof BlockProjectSteps> = (args) => <BlockProje
 
 export const Default = Template.bind({})
 Default.args = {
-  Title: 'Our offices',
+  Title: 'That’s how we do it',
   Items: [
     {
       id: '1',

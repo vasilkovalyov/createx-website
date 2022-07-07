@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import ImageComponent from './Image'
 import Row from './Grid/Row'
@@ -7,14 +8,18 @@ import Typography from './Typography'
 
 import { ITestimonial } from '../../../interfaces/common'
 
-export default function Testimonial({ Image, Text, Name, Position, Image2 }: ITestimonial) {
+export default function Testimonial({ Image, RichText, Name, Position, Image2 }: ITestimonial) {
   return (
     <div className="testimonial">
       {Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="testimonial__image" />}
       <div className="testimonial__body shadow-wrapper bg-color-white">
         <Row justify="space-between" className="testimonial__row">
           <Col base={12}>
-            <div className="testimonial__text font-bold" dangerouslySetInnerHTML={{ __html: Text }} />
+            {RichText && (
+              <div className="testimonial__text">
+                <ReactMarkdown>{RichText}</ReactMarkdown>
+              </div>
+            )}
           </Col>
           <Col base={12} md={7}>
             <Typography text={Name} className="client-testimonial__author font-bold" />

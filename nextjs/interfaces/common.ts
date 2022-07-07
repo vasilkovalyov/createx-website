@@ -164,7 +164,8 @@ export interface ITestimonial {
   id?: Identificator
   Image?: IImage
   Image2?: IImage
-  Text: string
+  Text?: string
+  RichText?: string
   Name: string
   Position?: string
 }
@@ -192,8 +193,9 @@ export interface ICarousel {
 }
 
 export interface IPosition {
+  id?: Identificator
   Location: string
-  WorkTime: string
+  TypeWork: string
   Title: string
   Link: ILink
 }

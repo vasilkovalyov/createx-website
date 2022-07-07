@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Position> = (args) => <Position {...args} 
 export const Default = Template.bind({})
 Default.args = {
   Location: 'New York',
-  WorkTime: 'Full Time',
+  TypeWork: 'Full Time',
   Title: 'Financial Compliance Analyst',
   Link: {
     text: '',

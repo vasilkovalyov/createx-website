@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_block_testimonial_block_testimonials",
+  "info": {
+    "displayName": "BlockTestimonial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockTestimonial"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageAlt": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Image2Alt": {
+      "type": "string"
+    },
+    "RichText": {
+      "type": "richtext"
+    }
+  }
+}

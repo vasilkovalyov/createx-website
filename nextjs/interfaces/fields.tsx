@@ -14,6 +14,7 @@ export interface FieldAttributes<T> {
   Link: IMenuItemField
   Theme?: ColorTheme
   Text: string
+  RichText?: string
   Image: {
     id?: Identificator
     data?: IImageFieldData

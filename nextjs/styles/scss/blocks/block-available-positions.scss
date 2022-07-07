@@ -1,0 +1,66 @@
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/colors.scss';
+
+.block-available-positions {
+    padding: spacing.$xl 0;
+    
+    @include responsive.mq($from: tablet_large) {
+        padding: 116px 0 86px;
+    }
+
+    &__aside {
+        .block-heading {
+            margin-bottom: 50px;
+
+            &__title {
+                margin-bottom: 34px;
+            }
+        }
+    }
+
+    &__aside-buttons {
+        flex-wrap: wrap;
+
+        @include responsive.mq($from: mobile_md) {
+            justify-content: space-between;
+            margin-left: -16px;
+            margin-right: -16px;
+            flex-wrap: nowrap;
+        }
+
+        @include responsive.mq($from: tablet) {
+            flex-wrap: wrap;
+        }
+
+        @include responsive.mq($from: wide) {
+            flex-wrap: nowrap;
+        }
+
+        .btn {
+            margin-bottom: 20px;
+
+            @include responsive.mq($from: mobile_md) {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+
+            &:not(:last-child) {
+                @include responsive.mq($from: wide) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    &__list {
+        @include responsive.mq($until: wide) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .position {
+        max-width: 100%;
+    }
+}

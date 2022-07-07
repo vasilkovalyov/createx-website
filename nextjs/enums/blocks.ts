@@ -22,4 +22,7 @@ export enum Block {
   BlockLatestNews = 'blockLatestNews',
   BlockRelatedProjects = 'blockRelatedProjects',
   BlockOurTeam = 'blockOurTeam',
+  BlockProjectStatistics = 'blockProjectStatistics',
+  BlockTestimonial = 'blockTestimonial',
+  BlockAvailablePositions = 'blockAvailablePositions',
 }

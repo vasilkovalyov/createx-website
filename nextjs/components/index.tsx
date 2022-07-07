@@ -26,6 +26,9 @@ import BlockLatestProjectsBlock from './blocks/BlockLatestProjectsBlock'
 import BlockRelatedProjectsBlock from './blocks/BlockRelatedProjectsBlock'
 import BlockOurHistoryBlock from './blocks/BlockOurHistoryBlock'
 import BlockOurTeamBlock from './blocks/BlockOurTeamBlock'
+import BlockProjectStatisticsBlock from './blocks/BlockProjectStatisticsBlock'
+import BlockTestimonialBlock from './blocks/BlockTestimonialBlock'
+import BlockAvailablePositionsBlock from './blocks/BlockAvailablePositionsBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -59,6 +62,9 @@ export const blockComponents = {
   [Block.BlockRelatedProjects]: BlockRelatedProjectsBlock,
   [Block.BlockOurHistory]: BlockOurHistoryBlock,
   [Block.BlockOurTeam]: BlockOurTeamBlock,
+  [Block.BlockProjectStatistics]: BlockProjectStatisticsBlock,
+  [Block.BlockTestimonial]: BlockTestimonialBlock,
+  [Block.BlockAvailablePositions]: BlockAvailablePositionsBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
