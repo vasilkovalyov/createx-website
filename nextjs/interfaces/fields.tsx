@@ -8,6 +8,7 @@ export interface FieldAttributes<T> {
   Slug: string
   Name: string
   Title: string
+  Title2: string
   TitleIntroCarousel: string
   PageLink: IMenuItemField
   Items: T[]

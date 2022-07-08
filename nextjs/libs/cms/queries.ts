@@ -578,6 +578,26 @@ export async function getPageData(page: string) {
             }
             ShowFormDetails
             Body {
+              ... on ComponentBlockOurOfficesBlockOurOffices {
+                BlockType
+                Title
+                Text
+                Items {
+                  id
+                  Title
+                  Address
+                  Phone
+                  Email
+                  Schedule
+                }
+                Title2
+                Socials {
+                  id
+                  Url
+                  Icon
+                  Target
+                }
+              }
               ... on ComponentBlockAvailablePositionBlockAvailablePosition {
                 BlockType
                 Aside {

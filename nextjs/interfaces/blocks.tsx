@@ -10,6 +10,7 @@ import {
   IHistory,
   IPerson,
   IPosition,
+  ISocialLink,
 } from './common'
 import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
@@ -103,6 +104,8 @@ export interface IBlockOurOffices {
   Title: string
   Text: string
   Items: IOurOffice[]
+  Title2?: string
+  Socials: ISocialLink[]
 }
 
 export interface IBlockFormDetail {

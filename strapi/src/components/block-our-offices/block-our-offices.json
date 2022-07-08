@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_block_our_offices_block_our_offices",
+  "info": {
+    "displayName": "BlockOurOffices",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "BlockType": {
+      "type": "string",
+      "required": true,
+      "default": "blockOurOffices"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Items": {
+      "displayName": "Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "block-our-offices.items"
+    },
+    "Title2": {
+      "type": "string"
+    },
+    "Socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social-link.social-link"
+    }
+  }
+}

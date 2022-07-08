@@ -26,6 +26,7 @@ import BlockOurTeam from './BlockOurTeam'
 import BlockProjectStatistics from './BlockProjectStatistics'
 import BlockTestimonial from './BlockTestimonial'
 import BlockAvailablePositions from './BlockAvailablePositions'
+import BlockOurOffices from './BlockOurOffices'
 
 const components: IRegistryItem[] = [
   {
@@ -131,6 +132,10 @@ const components: IRegistryItem[] = [
   {
     BlockType: Block.BlockAvailablePositions,
     component: BlockAvailablePositions,
+  },
+  {
+    BlockType: Block.BlockOurOffices,
+    component: BlockOurOffices,
   },
 ]
 

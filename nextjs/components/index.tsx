@@ -29,6 +29,7 @@ import BlockOurTeamBlock from './blocks/BlockOurTeamBlock'
 import BlockProjectStatisticsBlock from './blocks/BlockProjectStatisticsBlock'
 import BlockTestimonialBlock from './blocks/BlockTestimonialBlock'
 import BlockAvailablePositionsBlock from './blocks/BlockAvailablePositionsBlock'
+import BlockOurOfficesBlock from './blocks/BlockOurOfficesBlock'
 
 import plainThemeComponents from './theme/plain'
 import { IRegistryItem } from '../interfaces/blocks'
@@ -65,6 +66,7 @@ export const blockComponents = {
   [Block.BlockProjectStatistics]: BlockProjectStatisticsBlock,
   [Block.BlockTestimonial]: BlockTestimonialBlock,
   [Block.BlockAvailablePositions]: BlockAvailablePositionsBlock,
+  [Block.BlockOurOffices]: BlockOurOfficesBlock,
 }
 
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {

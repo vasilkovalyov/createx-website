@@ -45,7 +45,8 @@
         "block-project-statistics.block-project-statistics",
         "block-services.block-services",
         "block-testimonial.block-testimonial",
-        "block-available-position.block-available-position"
+        "block-available-position.block-available-position",
+        "block-our-offices.block-our-offices"
       ]
     },
     "ShowFormDetails": {

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_block_our_offices_items",
+  "info": {
+    "displayName": "Items"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Schedule": {
+      "type": "string"
+    }
+  }
+}

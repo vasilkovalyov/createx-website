@@ -26,7 +26,7 @@ export default function PersonCard({ Items, className, size = 'large' }: ISocial
       {Items.map((link) => (
         <li key={link.id} className="social-list__item">
           <Link href={link.Url}>
-            <a target="_blank" className="social-list__link">
+            <a target={link.Target} className="social-list__link">
               {renderSocialIcon(link.Icon as unknown as EnumsIcon)}
             </a>
           </Link>
