@@ -164,8 +164,8 @@ export interface INewsPost {
 
 export interface ITestimonial {
   id?: Identificator
-  Image?: IImage
-  Image2?: IImage
+  Image?: IImage | null
+  Image2?: IImage | null
   Text?: string
   RichText?: string
   Name: string

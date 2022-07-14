@@ -15,12 +15,11 @@ export default function BlockOurClientsTestimonialsBlock() {
 
   const updatedItems = (items: ITestimonialField[]): ITestimonial[] => {
     return items.map((item) => {
+      const image: IImage | null = getImageData(item.Image.data || null, item.ImageAlt)
+
       return {
         ...item,
-        Image: {
-          Url: item.Image.data.attributes.url,
-          Alt: item.ImageAlt,
-        },
+        Image: image,
       }
     })
   }
