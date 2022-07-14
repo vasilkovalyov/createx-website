@@ -1,0 +1,57 @@
+@use '../settings/spacing.scss';
+@use '../tools/mixins.scss';
+
+.block-post-single {
+    padding-bottom: 100px;
+    
+    &__image {
+        margin-bottom: 40px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            max-height: 500px;
+            height: 44vw;
+        }
+    }
+
+    &__content {
+        max-width: 810px;
+        width: 100%;
+        margin: 0 auto;
+        padding: spacing.$l 0;
+
+
+        ul {
+            @include mixins.listreset();
+            margin-bottom: 20px;
+            
+            li {
+                position: relative;
+                padding-left: 32px;
+
+                &:before {
+                    content: "\e905";
+                    font-family: 'icomoon' !important;
+                    color: var(--primary-color);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        blockquote {
+            position: relative;
+
+            &::before {
+                content: "\e914";
+                font-family: 'icomoon' !important;
+                color: var(--primary-color);
+                position: absolute;
+                top: 0;
+                left: -40px;
+            }
+        }
+    }
+}

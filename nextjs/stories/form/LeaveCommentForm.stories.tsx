@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof LeaveCommentForm> = (args) => <LeaveCommen
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

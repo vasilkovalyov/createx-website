@@ -27,6 +27,7 @@ import BlockProjectStatistics from './BlockProjectStatistics'
 import BlockTestimonial from './BlockTestimonial'
 import BlockAvailablePositions from './BlockAvailablePositions'
 import BlockOurOffices from './BlockOurOffices'
+import BlockPostHero from './BlockPostHero'
 
 const components: IRegistryItem[] = [
   {

@@ -13,7 +13,7 @@ $mq-breakpoints: (
   tablet_large: $tablet_large,
   wide: $wide,
   laptop: $laptop,
-  laptop-md: $laptop,
+  laptop-md: $laptop-md,
 );
 
 @import '~sass-mq';

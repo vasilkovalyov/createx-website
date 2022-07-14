@@ -1,4 +1,3 @@
-@use '../tools/responsive.scss';
 @use '../settings/spacing.scss';
 
 .accordion {
@@ -36,9 +35,5 @@
 
     &__body {
         display: none;
-    }
-
-    &__text {
-
     }
 }

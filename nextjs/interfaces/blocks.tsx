@@ -202,6 +202,13 @@ export interface IBlockOurTeam {
   Items: IPerson[] | []
 }
 
+export interface IBlockPostHero {
+  BlockType?: Block
+  Title: string
+  Category?: string | null
+  Date?: string | null
+}
+
 export interface IBlockAvailablePositions {
   BlockType: Block
   Items: IPosition[]

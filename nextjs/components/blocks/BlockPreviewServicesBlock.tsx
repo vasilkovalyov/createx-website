@@ -2,7 +2,7 @@ import { usePage } from '../../context/project'
 
 import { getComponent } from 'components'
 import { IBlockPreviewServices } from '../../interfaces/blocks'
-import { IImage, ILink, IProject, IService, IProjectCategories } from '../../interfaces/common'
+import { IImage, ILink, IService } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
 
 export default function BlockPreviewServicesBlock() {

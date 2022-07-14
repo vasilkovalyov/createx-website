@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof TextArea> = (args) => <TextArea {...args} 
 export const Default = Template.bind({})
 
 Default.args = {
-	label: 'Message',
-	name: 'message',
-	placeholder: 'Your message',
-	value: ''
-} 
+  label: 'Message',
+  name: 'message',
+  placeholder: 'Your message',
+  value: '',
+}

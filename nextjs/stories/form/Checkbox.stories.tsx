@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} 
 export const Default = Template.bind({})
 
 Default.args = {
-    label: 'Checkbox',
-    name: 'checkbox',
-    value: 'checkbox',
-    checked: false
+  label: 'Checkbox',
+  name: 'checkbox',
+  value: 'checkbox',
+  checked: false,
 }

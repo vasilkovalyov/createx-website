@@ -12,10 +12,10 @@ const Template: ComponentStory<typeof Benefit> = (args) => <Benefit {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
-	Image: {
-			Url: '/images/service-icon-orange.svg',
-			Alt: 'alt',
-	},
-	Title: 'Quality',
-	Text: 'Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.',
-} 
+  Image: {
+    Url: '/images/service-icon-orange.svg',
+    Alt: 'alt',
+  },
+  Title: 'Quality',
+  Text: 'Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.',
+}

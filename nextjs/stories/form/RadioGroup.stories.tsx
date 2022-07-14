@@ -12,29 +12,29 @@ const Template: ComponentStory<typeof RadioGroup> = (args) => <RadioGroup {...ar
 export const Default = Template.bind({})
 
 Default.args = {
-    label: 'Preferred contact method',
-    required: false,
-    items: [
-        {
-            id: '1',
-            label: 'Phone',
-            name: 'contact',
-            value: 'phone',
-            checked: false
-        },
-        {
-            id: '2',
-            label: 'Email',
-            name: 'contact',
-            value: 'email',
-            checked: false
-        },
-        {
-            id: '3',
-            label: 'Viber',
-            name: 'contact',
-            value: 'viber',
-            checked: false
-        },
-    ]
+  label: 'Preferred contact method',
+  required: false,
+  items: [
+    {
+      id: '1',
+      label: 'Phone',
+      name: 'contact',
+      value: 'phone',
+      checked: false,
+    },
+    {
+      id: '2',
+      label: 'Email',
+      name: 'contact',
+      value: 'email',
+      checked: false,
+    },
+    {
+      id: '3',
+      label: 'Viber',
+      name: 'contact',
+      value: 'viber',
+      checked: false,
+    },
+  ],
 }

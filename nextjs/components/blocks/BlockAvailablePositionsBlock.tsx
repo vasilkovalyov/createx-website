@@ -3,8 +3,6 @@ import { usePage } from '../../context/project'
 import { getComponent } from 'components'
 import { IBlockAvailablePositions } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
-import { IBenefit, IImage } from '../../interfaces/common'
-import { IBenefitField } from 'interfaces/fields'
 
 export default function BlockAvailablePositionsBlock() {
   const [page] = usePage()

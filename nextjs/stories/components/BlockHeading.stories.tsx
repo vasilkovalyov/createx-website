@@ -15,5 +15,5 @@ export const Default = Template.bind({})
 Default.args = {
   Title: 'Our core values',
   Text: 'Our mission is to set the highest standards for construction sphere.',
-  aligned: 'center' as AlignContentType
-} 
+  aligned: 'center' as AlignContentType,
+}

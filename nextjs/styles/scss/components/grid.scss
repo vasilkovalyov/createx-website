@@ -1,4 +1,3 @@
-@use '../settings/font-sizes.scss' as fz;
 @use '../tools/responsive.scss';
 @use '../settings/spacing.scss';
 
@@ -43,11 +42,8 @@
     
     .col {
         flex: 1 1 100%;
-        
-        // @include responsive.mq($from: mobile_md) {
-            padding-left: spacing.$xxs;
-            padding-right: spacing.$xxs;
-        // }
+        padding-left: spacing.$xxs;
+        padding-right: spacing.$xxs;
 
         @include responsive.mq($from: tablet) {
             padding-left: spacing.$s;
@@ -56,10 +52,8 @@
     }
     
     .col > .row {
-        // @include responsive.mq($from: mobile_md) {
-            margin-left: -(spacing.$xxs);
-            margin-right: -(spacing.$xxs);
-        // }
+        margin-left: -(spacing.$xxs);
+        margin-right: -(spacing.$xxs);
 
         @include responsive.mq($from: tablet) {
             margin-left: -(spacing.$s);

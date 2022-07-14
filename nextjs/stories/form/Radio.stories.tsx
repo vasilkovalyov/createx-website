@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />
 export const Default = Template.bind({})
 
 Default.args = {
-    label: 'Radio',
-    name: 'radio',
-    value: 'radio',
-    checked: false
+  label: 'Radio',
+  name: 'radio',
+  value: 'radio',
+  checked: false,
 }

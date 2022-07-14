@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof CVForm> = (args) => <CVForm />
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

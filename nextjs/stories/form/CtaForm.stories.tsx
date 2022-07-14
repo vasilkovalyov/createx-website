@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof CtaForm> = (args) => <CtaForm />
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

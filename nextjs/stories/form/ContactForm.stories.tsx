@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof ContactForm> = (args) => <ContactForm />
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

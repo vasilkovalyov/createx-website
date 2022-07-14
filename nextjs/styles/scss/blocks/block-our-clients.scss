@@ -4,12 +4,6 @@
 @use '../tools/mixins.scss';
 
 .block-our-clients {
-    // padding: spacing.$xl 0;
-    
-    // @include responsive.mq($from: tablet_large) {
-    //     padding: spacing.$xxxl 0;
-    // }
-
     &__inner {
         position: relative;
         padding: spacing.$xl 0;

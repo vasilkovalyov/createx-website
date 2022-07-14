@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof AskQuestionForm> = (args) => <AskQuestionF
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

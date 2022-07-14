@@ -20,6 +20,8 @@ export interface IImage {
   id?: Identificator
   Url: string
   Alt: string
+  width?: string
+  height?: string
   className?: string
 }
 

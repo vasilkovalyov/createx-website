@@ -12,9 +12,9 @@ export default {
       control: { type: 'select' },
     },
     icon: {
-        options: EnumsIcon,
-        control: { type: 'select' },
-      },
+      options: EnumsIcon,
+      control: { type: 'select' },
+    },
   },
 } as ComponentMeta<typeof List>
 
@@ -26,28 +26,28 @@ Default.args = {
   icon: 'icon-check-outline',
   Items: [
     {
-        id: '1',
-        Text: 'Vitae ultrices ornare eu sed in est quisque duis id.',
+      id: '1',
+      Text: 'Vitae ultrices ornare eu sed in est quisque duis id.',
     },
     {
-        id: '2',
-        Text: 'A fermentum in morbi pretium aliquam adipiscing donec tempus.',
+      id: '2',
+      Text: 'A fermentum in morbi pretium aliquam adipiscing donec tempus.',
     },
     {
-        id: '3',
-        Text: 'Mauris odio pellentesque commodo, diam.',
+      id: '3',
+      Text: 'Mauris odio pellentesque commodo, diam.',
     },
     {
-        id: '4',
-        Text: 'Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.',
+      id: '4',
+      Text: 'Fermentum vestibulum est fermentum, egestas gravida scelerisque quis.',
     },
     {
-        id: '5',
-        Text: 'At pharetra libero blandit risus, fringilla sed commodo diam.',
+      id: '5',
+      Text: 'At pharetra libero blandit risus, fringilla sed commodo diam.',
     },
     {
-        id: '6',
-        Text: 'Integer ultricies viverra ut enim viverra ut.',
+      id: '6',
+      Text: 'Integer ultricies viverra ut enim viverra ut.',
     },
-  ]
-} 
+  ],
+}

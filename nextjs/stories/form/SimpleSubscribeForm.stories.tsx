@@ -11,5 +11,4 @@ const Template: ComponentStory<typeof SimpleSubscribeForm> = (args) => <SimpleSu
 
 export const Default = Template.bind({})
 
-Default.args = {
-} 
+Default.args = {}

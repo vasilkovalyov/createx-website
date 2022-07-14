@@ -1,0 +1,36 @@
+@use '../base/setup.scss';
+@use '../settings/font-weights.scss' as fw;
+@use '../tools/responsive.scss';
+
+.navigation {
+    @include responsive.mq($from: setup.$header-menu-breakpoint) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-navigation {
+    .navigation__list {
+        @include responsive.mq($from: setup.$header-menu-breakpoint) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .navigation__item {
+        &:not(:last-child) {
+            @include responsive.mq($from: setup.$header-menu-breakpoint) {
+                margin-right: 42px;
+            }
+        }
+    }
+
+    .navigation__link {
+        font-weight: fw.$bold;
+        color: var(--text-color-primary);
+
+        &:hover {
+            color: setup.$base-link-color;
+        }
+    }
+}

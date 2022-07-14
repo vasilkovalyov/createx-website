@@ -15,7 +15,7 @@
     padding-top: 120px;
 
     .block-heading__title {
-        @include responsive.mq($from: tablet_large) {
+        @include responsive.mq($from: laptop-md) {
             font-size: 64px;
         }
     }

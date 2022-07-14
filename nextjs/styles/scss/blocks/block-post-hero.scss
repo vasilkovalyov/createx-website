@@ -1,0 +1,44 @@
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+@use '../settings/spacing.scss';
+
+.block-post-hero {
+    padding: 211px 0 100px;
+    min-height: 600px;
+    margin-bottom: -80px;
+
+    .block-heading__title {
+        letter-spacing: 1px;
+        
+        @include responsive.mq($from: laptop-md) {
+            font-size: 64px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .post-details {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+
+        &__item {
+            font-size: fz.$size-s;
+
+            &:not(:first-child) {
+                &:before {
+                    content: '|';
+                    margin: 0 10px;
+                }
+            }
+
+            &--date {
+                .icomoon-icon {
+                    font-size: fz.$size-m;
+                    margin-right: 10px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+    }
+}

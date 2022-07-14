@@ -15,8 +15,8 @@ export default function BlockProjectStatistics({ Items }: IBlockProjectStatistic
           <Row>
             {Items &&
               Items.length &&
-              Items.map((item) => (
-                <Col key={item.id} base={12} sm={6} lg={3}>
+              Items.map((item, index) => (
+                <Col key={index} base={12} sm={6} lg={3}>
                   <Benefit {...item} className="project-statistics" />
                 </Col>
               ))}

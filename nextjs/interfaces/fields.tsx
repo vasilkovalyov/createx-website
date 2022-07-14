@@ -68,6 +68,19 @@ export interface IPageDataField {
       BlockHero: FieldAttributes<any>
       RichText: string
       Reverse: string
+      Date: string
+      Image: {
+        data?: IImageFieldData
+      }
+      ImageAlt: string
+      post_categories?: {
+        data: {
+          attributes: {
+            Title: string
+            Name: string
+          }
+        }[]
+      }
     }
   }[]
 }

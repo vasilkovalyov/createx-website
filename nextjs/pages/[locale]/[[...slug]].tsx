@@ -2,6 +2,8 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
+import PagePostSingle from 'components/pages/PagePostSingle'
+
 import { renderBlocks, renderByBlockType } from '../../components'
 import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
@@ -15,6 +17,7 @@ import {
   getRelatedProjects,
 } from '../../libs/cms/queries'
 import { Block } from '../../enums/blocks'
+import { Page } from '../../enums/pages'
 
 import { PageProvider } from '../../context/project'
 
@@ -88,15 +91,19 @@ const DynamicPage = (page: IPageField) => {
     return <div>Loading...</div>
   }
 
-  console.log('updatedPage', updatedPage)
-
   const renderPages = () => {
+    if (pageAttributes.ContentType === Page.PagePostSingle) {
+      return <PagePostSingle />
+    }
+
     if (pageBody && pageBody.length) {
       return renderBlocks(pageBody)
     }
 
     return null
   }
+
+  console.log('updatedPage', updatedPage)
 
   return (
     <>

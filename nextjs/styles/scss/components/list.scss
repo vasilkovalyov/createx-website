@@ -1,11 +1,6 @@
 @use '../settings/font-sizes.scss' as fz;
-@use '../settings/colors.scss';
 
 .list {
-    &--default {
-        
-    }
-
     &--with-icon {
         .list__item {
             padding-left: 34px;
@@ -26,9 +21,5 @@
         left: 0;
         font-size: fz.$size-l;
         color: var(--primary-color);
-    }
-
-    &__text {
-
     }
 }

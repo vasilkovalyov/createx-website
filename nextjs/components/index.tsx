@@ -1,6 +1,7 @@
 import React from 'react'
 
 // Pages blocks
+import PagePostSingle from './pages/PagePostSingle'
 
 // Component blocks
 import BlockHeroBlock from './blocks/BlockHeroBlock'
@@ -39,6 +40,8 @@ import { IContentBlock } from '../interfaces/pages'
 
 export const blockComponents = {
   // Pages blocks
+  PagePostSingle: PagePostSingle,
+
   // Component blocks
   [Block.BlockHeader]: BlockHeaderBlock,
   [Block.BlockFooter]: BlockFooterBlock,

@@ -1,6 +1,13 @@
 import { request, gql, GraphQLClient } from 'graphql-request'
 
-import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL, FRAGMENT_POST, FRAGMENT_PROJECT } from './fragments'
+import {
+  FRAGMENT_HEADER,
+  FRAGMENT_FOOTER,
+  FRAGMENT_FORM_DETAIL,
+  FRAGMENT_POST,
+  FRAGMENT_PROJECT,
+  FRAGMENT_POST_INNER,
+} from './fragments'
 
 export async function getPageSinglePost(page: string) {
   const url = 'http://localhost:1337/graphql'
@@ -36,8 +43,27 @@ export async function getPageSinglePost(page: string) {
           attributes {
             ContentType
             Title
+            Date
             Slug
+            RichText
             ShowFormDetails
+            Image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            ImageAlt
+            post_categories {
+              data {
+                attributes {
+                  Title
+                  Name
+                }
+              }
+            }
+
             Body {
               ... on ComponentBlockHeadingPageBlockHeading {
                 BlockType

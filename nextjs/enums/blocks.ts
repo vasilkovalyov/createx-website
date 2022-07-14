@@ -26,4 +26,5 @@ export enum Block {
   BlockTestimonial = 'blockTestimonial',
   BlockAvailablePositions = 'blockAvailablePositions',
   BlockOurOffices = 'blockOurOffices',
+  BlockPostHero = 'blockPostHero',
 }

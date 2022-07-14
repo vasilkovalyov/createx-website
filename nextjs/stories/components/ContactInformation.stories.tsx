@@ -7,8 +7,8 @@ export default {
   component: ContactInformation,
   argTypes: {
     icon: {
-        options: ['light', 'dark'],
-        control: { type: 'select' },
+      options: ['light', 'dark'],
+      control: { type: 'select' },
     },
   },
 } as ComponentMeta<typeof ContactInformation>
@@ -17,8 +17,8 @@ const Template: ComponentStory<typeof ContactInformation> = (args) => <ContactIn
 
 export const Default = Template.bind({})
 Default.args = {
-    Address: '8502 Preston Rd. Inglewood, New York',
-    Phone: '(405) 555-0128',
-    Email: 'hello@createx.com',
-    Schedule: 'Mon - Fri 9:00 - 18:00',
+  Address: '8502 Preston Rd. Inglewood, New York',
+  Phone: '(405) 555-0128',
+  Email: 'hello@createx.com',
+  Schedule: 'Mon - Fri 9:00 - 18:00',
 }

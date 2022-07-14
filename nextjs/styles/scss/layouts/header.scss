@@ -1,4 +1,28 @@
+@use '../settings/spacing.scss';
+@use '../base/setup.scss';
+@use '../tools/responsive.scss';
+
 .header {
     position: relative;
     z-index: 2;
+
+    @include responsive.mq($from: setup.$header-menu-breakpoint) {
+        padding: spacing.$xl 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+    }
+
+    &__logo {
+        margin-right: 60px;
+        max-width: 130px;
+        width: 100%;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
 }
