@@ -4,28 +4,25 @@ import { getComponent } from 'components'
 import { IBlockProjectDescription } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IProjectDescription } from 'interfaces/common'
+import { getBlockData } from 'utilities/blockData'
 
 export default function BlockProjectDescriptionBlock() {
   const [page] = usePage()
 
-  if (!page?.pages || !page?.pages.data || !page.pages.data[0].attributes.Body?.length) return null
-  const data = page.pages.data[0].attributes.Body.filter((item) => {
-    if (item.BlockType === Block.BlockProjectDescription) return item
-  })[0]
-
-  if (!data) return null
+  const blockData = getBlockData(page, Block.BlockProjectDescription)
+  if (!blockData) return null
 
   let items: IProjectDescription[] | []
 
-  if (data.Items && data.Items.length) {
-    items = data.Items
+  if (blockData.Items && blockData.Items.length) {
+    items = blockData.Items
   } else {
     items = []
   }
 
   const props = {
-    Title: data.Title,
-    RichText: data.RichText,
+    Title: blockData.Title,
+    RichText: blockData.RichText,
     Items: items,
   } as unknown as IBlockProjectDescription
 

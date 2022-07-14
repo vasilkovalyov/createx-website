@@ -4,32 +4,22 @@ import { getComponent } from 'components'
 import { IBlockLatestProjects } from '../../interfaces/blocks'
 import { IImage, IProject } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockRelatedProjectsBlock() {
   const [page] = usePage()
 
-  const data = page?.pages.data[0].attributes.Body?.filter((item) => {
-    if (item.BlockType === Block.BlockRelatedProjects) {
-      return item.BlockType === Block.BlockRelatedProjects
-    }
-  })[0]
+  const blockData = getBlockData(page, Block.BlockRelatedProjects)
+  if (!blockData) return null
 
-  if (!data) return
   if (!page?.relatedProjects.data || !page?.relatedProjects.data.length) return null
 
   let projects: IProject[] | []
   if (page.relatedProjects && page.relatedProjects.data) {
     projects = page.relatedProjects.data.map((item) => {
-      let image: IImage | null
+      const image: IImage | null = getImageData(item.attributes.PreviewImage.data || null, item.attributes.ImageAlt)
+
       let category: string[]
-      if (item.attributes.PreviewImage.data) {
-        image = {
-          Url: item.attributes.PreviewImage.data.attributes.url,
-          Alt: item.attributes.ImageAlt as string,
-        }
-      } else {
-        image = null
-      }
 
       if (item.attributes.project_category.data) {
         category = item.attributes.project_category.data.attributes.Name
@@ -57,7 +47,7 @@ export default function BlockRelatedProjectsBlock() {
   }
 
   const props = {
-    Title: data.Title,
+    Title: blockData.Title,
     Items: projects,
   } as IBlockLatestProjects
 

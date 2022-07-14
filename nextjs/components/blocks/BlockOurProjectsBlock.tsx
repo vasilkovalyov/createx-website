@@ -4,6 +4,7 @@ import { getComponent } from 'components'
 import { IBlockOurProjects } from '../../interfaces/blocks'
 import { IImage, IProject, IProjectCategories } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
+import { getImageData } from 'utilities/blockData'
 
 export default function BlockOurProjectsBlock() {
   const [page] = usePage()
@@ -15,26 +16,14 @@ export default function BlockOurProjectsBlock() {
 
   if (page.projectCategories.data !== null) {
     categories = page.projectCategories.data.map((item) => {
-      let image: IImage | null
-      let image2: IImage | null
-
-      if (item.attributes.PreviewLogoPrimary) {
-        image = {
-          Url: item.attributes.PreviewLogoPrimary.data.attributes.url,
-          Alt: item.attributes.ImageAlt as string,
-        }
-      } else {
-        image = null
-      }
-
-      if (item.attributes.PreviewLogoSecondary) {
-        image2 = {
-          Url: item.attributes.PreviewLogoSecondary.data.attributes.url,
-          Alt: item.attributes.ImageAlt as string,
-        }
-      } else {
-        image2 = null
-      }
+      const image: IImage | null = getImageData(
+        item.attributes.PreviewLogoPrimary.data || null,
+        item.attributes.ImageAlt,
+      )
+      const image2: IImage | null = getImageData(
+        item.attributes.PreviewLogoSecondary.data || null,
+        item.attributes.ImageAlt,
+      )
 
       return {
         id: item.id,
@@ -50,16 +39,8 @@ export default function BlockOurProjectsBlock() {
 
   if (page.projects.data !== null) {
     projects = page.projects.data.map((item) => {
-      let image: IImage | null
+      const image: IImage | null = getImageData(item.attributes.PreviewImage.data || null, item.attributes.ImageAlt)
       let category: string[]
-      if (item.attributes.PreviewImage.data) {
-        image = {
-          Url: item.attributes.PreviewImage.data.attributes.url,
-          Alt: item.attributes.ImageAlt as string,
-        }
-      } else {
-        image = null
-      }
 
       if (item.attributes.project_category.data) {
         category = item.attributes.project_category.data.attributes.Name

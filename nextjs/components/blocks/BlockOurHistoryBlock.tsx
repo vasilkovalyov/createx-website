@@ -4,28 +4,16 @@ import { getComponent } from 'components'
 import { IBlockOurHistory } from '../../interfaces/blocks'
 import { IImage, IHistory } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockOurHistoryBlock() {
   const [page] = usePage()
 
-  const data = page?.pages.data[0].attributes.Body?.filter((item) => {
-    if (item.BlockType === Block.BlockOurHistory) {
-      return item.BlockType === Block.BlockOurHistory
-    }
-  })[0]
+  const blockData = getBlockData(page, Block.BlockOurHistory)
+  if (!blockData) return null
 
-  if (!data) return
-
-  const items: IHistory[] = data.Items.map((item) => {
-    let image: IImage | null
-    if (item.Image.data) {
-      image = {
-        Url: item.Image.data.attributes.url,
-        Alt: item.ImageAlt as string,
-      }
-    } else {
-      image = null
-    }
+  const items: IHistory[] = blockData.Items.map((item) => {
+    const image: IImage | null = getImageData(item.Image.data || null, item.ImageAlt)
 
     return {
       id: item.id,
@@ -36,7 +24,7 @@ export default function BlockOurHistoryBlock() {
   })
 
   const props = {
-    Title: data.Title,
+    Title: blockData.Title,
     Items: items,
   } as IBlockOurHistory
 

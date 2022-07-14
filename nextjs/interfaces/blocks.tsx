@@ -35,7 +35,7 @@ export interface IBlockBenefits {
 
 export interface IBlockProjectStatistics {
   BlockType: Block
-  Items: IBenefit[]
+  Items?: IBenefit[] | []
 }
 
 export interface IBlockConstructiveDecisions {

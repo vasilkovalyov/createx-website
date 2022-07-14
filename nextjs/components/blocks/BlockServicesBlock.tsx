@@ -4,6 +4,7 @@ import { getComponent } from 'components'
 import { IBlockService } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IImage, IService } from '../../interfaces/common'
+import { getImageData } from 'utilities/blockData'
 
 export default function BlockServicesBlock() {
   const [page] = usePage()
@@ -14,17 +15,10 @@ export default function BlockServicesBlock() {
 
   const services = page?.services.data.map((item): IService => {
     const urlPage = parentPage ? `${parentPage}/${item.attributes.Slug}` : item.attributes.Slug
-    let Image: IImage | null
-    if (item.attributes.PreviewImage.data) {
-      Image = {
-        Url: item.attributes.PreviewImage.data.attributes.url,
-        Alt: item.attributes.ImageAlt,
-      }
-    } else {
-      Image = null
-    }
+    const image: IImage | null = getImageData(item.attributes.PreviewImage.data || null, item.attributes.ImageAlt)
+
     return {
-      Image: Image,
+      Image: image,
       Title: item.attributes.Title,
       Text: item.attributes.Text,
       Link: {

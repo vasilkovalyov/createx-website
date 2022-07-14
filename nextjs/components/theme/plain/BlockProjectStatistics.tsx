@@ -13,13 +13,13 @@ export default function BlockProjectStatistics({ Items }: IBlockProjectStatistic
       <Container className="block-project-statistics__container">
         <div className="block-project-statistics__items">
           <Row>
-            {Items &&
-              Items.length &&
-              Items.map((item, index) => (
-                <Col key={index} base={12} sm={6} lg={3}>
-                  <Benefit {...item} className="project-statistics" />
-                </Col>
-              ))}
+            {Items && Items.length
+              ? Items.map((item, index) => (
+                  <Col key={index} base={12} sm={6} lg={3}>
+                    <Benefit {...item} className="project-statistics" />
+                  </Col>
+                ))
+              : null}
           </Row>
         </div>
       </Container>

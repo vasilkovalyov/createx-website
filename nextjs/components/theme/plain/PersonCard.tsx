@@ -7,7 +7,6 @@ import SocialList from './SocialList'
 import { IPerson } from '../../../interfaces/common'
 
 export default function PersonCard({ Image, Title, Text, Socials }: IPerson) {
-  console.log('Socials', Socials)
   return (
     <div className="person-card">
       <div className="person-card__image-wrapper">

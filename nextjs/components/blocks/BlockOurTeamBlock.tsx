@@ -5,29 +5,16 @@ import { IBlockOurTeam } from '../../interfaces/blocks'
 import { IImage, IPerson, ISocialLink } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
 import { SocialIcon } from 'enums/icons'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockOurTeamBlock() {
   const [page] = usePage()
 
-  const data = page?.pages.data[0].attributes.Body?.filter((item) => {
-    if (item.BlockType === Block.BlockOurTeam) {
-      return item.BlockType === Block.BlockOurTeam
-    }
-  })[0]
+  const blockData = getBlockData(page, Block.BlockOurTeam)
+  if (!blockData) return null
 
-  if (!data) return null
-
-  const items: IPerson[] = data.Items.map((person) => {
-    let image: IImage | null
-    if (person.Image.data) {
-      image = {
-        Url: person.Image.data.attributes.url,
-        Alt: person.ImageAlt as string,
-      }
-    } else {
-      image = null
-    }
-
+  const items: IPerson[] = blockData.Items.map((person) => {
+    const image: IImage | null = getImageData(person.Image.data || null, person.ImageAlt)
     const socials: ISocialLink[] = []
 
     if (person.SocialIcon1 && person.SocialUrl1) {
@@ -65,8 +52,8 @@ export default function BlockOurTeamBlock() {
   })
 
   const props = {
-    Title: data.Title,
-    Text: data.Text,
+    Title: blockData.Title,
+    Text: blockData.Text,
     Items: items,
   } as IBlockOurTeam
 

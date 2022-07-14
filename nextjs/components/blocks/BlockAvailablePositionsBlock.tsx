@@ -17,7 +17,6 @@ export default function BlockAvailablePositionsBlock() {
     Items: data.Items,
     Aside: data.Aside,
   } as IBlockAvailablePositions
-  console.log('props', props)
 
   return getComponent<IBlockAvailablePositions>(Block.BlockAvailablePositions, props)
 }

@@ -5,22 +5,19 @@ import { IBlockIntroCarousel } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IImage, ILink } from '../../interfaces/common'
 import { IImageField } from 'interfaces/fields'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockIntroCarouselBlock() {
   const [page] = usePage()
 
-  if (!page?.pages.data[0].attributes.Body) return null
-
-  const blockIntroCarouselData = page?.pages.data[0].attributes.Body.filter(
-    (item) => item.BlockType === Block.BlockIntroCarousel,
-  )[0]
-  if (!blockIntroCarouselData) return null
+  const blockData = getBlockData(page, Block.BlockIntroCarousel)
+  if (!blockData) return null
 
   let link: ILink | null
-  if (blockIntroCarouselData.PageLink.page.data) {
+  if (blockData.PageLink.page.data) {
     link = {
-      url: `${blockIntroCarouselData.PageLink.page.data.attributes.Slug}`,
-      text: blockIntroCarouselData.PageLink.Name,
+      url: `${blockData.PageLink.page.data.attributes.Slug}`,
+      text: blockData.PageLink.Name,
     }
   } else {
     link = null
@@ -42,10 +39,10 @@ export default function BlockIntroCarouselBlock() {
   }
 
   const props = {
-    BlockType: blockIntroCarouselData.BlockType,
-    Title: blockIntroCarouselData.TitleIntroCarousel,
-    Text: blockIntroCarouselData.Text,
-    Items: items(blockIntroCarouselData.Items),
+    BlockType: blockData.BlockType,
+    Title: blockData.TitleIntroCarousel,
+    Text: blockData.Text,
+    Items: items(blockData.Items),
     Link: link,
   } as unknown as IBlockIntroCarousel
 

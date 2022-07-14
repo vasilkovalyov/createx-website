@@ -4,6 +4,7 @@ import { getComponent } from 'components'
 import { IBlockNews } from '../../interfaces/blocks'
 import { IImage, INewsPost, INewsCategories } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 interface Category {
   Title: string
@@ -13,11 +14,8 @@ interface Category {
 export default function BlockNewsBlock() {
   const [page] = usePage()
 
-  const data = page?.pages.data[0].attributes.Body?.filter((item) => {
-    if (item.BlockType === Block.BlockNews) {
-      return item.BlockType === Block.BlockNews
-    }
-  })[0]
+  const blockData = getBlockData(page, Block.BlockNews)
+  if (!blockData) return null
 
   if (!page?.posts.data || !page?.posts.data.length) return null
 
@@ -38,16 +36,8 @@ export default function BlockNewsBlock() {
 
   if (page.posts.data !== null) {
     posts = page.posts.data.map((item) => {
-      let image: IImage | null
+      const image: IImage | null = getImageData(item.attributes.Image.data || null, item.attributes.ImageAlt)
       let categories: Category[]
-      if (item.attributes.Image.data) {
-        image = {
-          Url: item.attributes.Image.data.attributes.url,
-          Alt: item.attributes.ImageAlt as string,
-        }
-      } else {
-        image = null
-      }
 
       if (item.attributes.post_categories.data) {
         categories = item.attributes.post_categories.data.map((item) => {
@@ -79,7 +69,7 @@ export default function BlockNewsBlock() {
   }
 
   const props = {
-    Title: data?.Title,
+    Title: blockData?.Title,
     Categories: categories,
     Items: posts,
   } as IBlockNews

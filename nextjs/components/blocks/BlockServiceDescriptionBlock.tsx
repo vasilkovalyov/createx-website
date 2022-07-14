@@ -5,20 +5,19 @@ import { IBlockServiceDescription } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IAccordion, IImage } from '../../interfaces/common'
 
+import { getBlockData, getImageData } from 'utilities/blockData'
+
 export default function BlockServiceDescriptionBlock() {
   const [page] = usePage()
 
-  if (!page?.pages || !page?.pages.data || !page.pages.data[0].attributes.Body?.length) return null
-  const data = page.pages.data[0].attributes.Body.filter((item) => {
-    if (item.BlockType === Block.BlockServiceDescription) return item
-  })[0]
-
-  if (!data) return null
+  const blockData = getBlockData(page, Block.BlockServiceDescription)
+  if (!blockData) return null
 
   let items: IAccordion[] | []
-  let image: IImage | null
-  if (data.Items) {
-    items = data.Items.map((item) => {
+  const Image: IImage | null = getImageData(blockData.Image?.data || null, blockData.ImageAlt)
+
+  if (blockData.Items) {
+    items = blockData.Items.map((item) => {
       return {
         id: item.id,
         Title: item.Title,
@@ -28,19 +27,11 @@ export default function BlockServiceDescriptionBlock() {
   } else {
     items = []
   }
-  if (data.Image && data.Image.data) {
-    image = {
-      Url: data.Image.data.attributes.url,
-      Alt: data.ImageAlt as string,
-    }
-  } else {
-    image = null
-  }
 
   const props = {
-    ...data,
+    ...blockData,
     Items: items,
-    Image: image,
+    Image: Image,
   } as unknown as IBlockServiceDescription
 
   return getComponent<IBlockServiceDescription>(Block.BlockServiceDescription, props)

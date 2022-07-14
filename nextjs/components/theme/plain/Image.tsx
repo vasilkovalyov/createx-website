@@ -12,7 +12,7 @@ export default function Image({ Url, Alt, className, width = 'auto', height = 'a
     <div className={cn('image-block', className)}>
       <img
         src={`${devPath}${Url}`}
-        alt={Alt && 'image description'}
+        alt={Alt || 'image description'}
         className="image-block__image "
         width={width}
         height={height}

@@ -5,41 +5,31 @@ import { IBlockProjectStatistics } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { IBenefit, IImage } from '../../interfaces/common'
 import { IBenefitField } from 'interfaces/fields'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockBenefitsBlock() {
   const [page] = usePage()
 
-  if (!page?.pages.data[0].attributes.Body) return null
+  const blockData = getBlockData(page, Block.BlockProjectStatistics)
+  if (!blockData) return null
 
-  const blockProjectStatisticsData = page?.pages.data[0].attributes.Body.filter(
-    (item) => item.BlockType === Block.BlockProjectStatistics,
-  )[0]
-  if (!blockProjectStatisticsData) return null
-
-  const items = (items: IBenefitField[]): IBenefit[] => {
+  const items = (items: IBenefitField[]): IBenefit[] | null => {
+    if (!items.length) return []
     return items.map((item) => {
-      let Image: IImage | null
-      if (item.Image.data) {
-        Image = {
-          Url: item.Image.data.attributes.url,
-          Alt: item.Image.ImageAlt,
-        }
-      } else {
-        Image = null
-      }
+      const image: IImage | null = getImageData(item.Image.data || null, item.Image.ImageAlt)
       return {
         ...item,
-        Image: Image,
+        Image: image,
       }
     })
   }
 
   const props = {
-    BlockType: blockProjectStatisticsData.BlockType,
-    Title: blockProjectStatisticsData.Title,
-    Text: blockProjectStatisticsData.Text,
-    Theme: blockProjectStatisticsData.Theme,
-    Items: items(blockProjectStatisticsData.Items),
+    BlockType: blockData.BlockType,
+    Title: blockData.Title,
+    Text: blockData.Text,
+    Theme: blockData.Theme,
+    Items: items(blockData.Items),
   } as unknown as IBlockProjectStatistics
 
   return getComponent<IBlockProjectStatistics>(Block.BlockProjectStatistics, props)

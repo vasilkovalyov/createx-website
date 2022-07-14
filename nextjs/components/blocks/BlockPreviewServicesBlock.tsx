@@ -4,17 +4,15 @@ import { getComponent } from 'components'
 import { IBlockPreviewServices } from '../../interfaces/blocks'
 import { IImage, ILink, IService } from '../../interfaces/common'
 import { Block } from '../../enums/blocks'
+import { getBlockData, getImageData } from 'utilities/blockData'
 
 export default function BlockPreviewServicesBlock() {
   const [page] = usePage()
 
-  if (!page?.pages.data[0].attributes.Body) return null
+  const blockData = getBlockData(page, Block.BlockPreviewServices)
+  if (!blockData) return null
 
-  const data = page?.pages.data[0].attributes.Body.filter((item) => {
-    if (item.BlockType === Block.BlockPreviewServices) return item
-  })[0]
-
-  const services = data ? page.services?.data : []
+  const services = blockData ? page.services?.data : []
 
   let items: IService[] | []
 
@@ -23,45 +21,25 @@ export default function BlockPreviewServicesBlock() {
       const parentPage = service.attributes.page.data ? service.attributes.page.data.attributes.Slug : ''
       const urlPage = parentPage ? `${parentPage}/${service.attributes.Slug}` : service.attributes.Slug
 
-      let Image: IImage | null
-      let Logo: IImage | null
-      let Logo2: IImage | null
-
-      const imageData = service.attributes.PreviewImageSmall.data
-      const logoData1 = service.attributes.PreviewLogoPrimary.data
-      const logoData2 = service.attributes.PreviewLogoSecondary.data
-
-      if (imageData) {
-        Image = {
-          Url: imageData.attributes.url,
-          Alt: service.attributes.ImageAlt,
-        }
-      } else {
-        Image = null
-      }
-      if (logoData1) {
-        Logo = {
-          Url: logoData1.attributes.url,
-          Alt: service.attributes.ImageAlt,
-        }
-      } else {
-        Logo = null
-      }
-      if (logoData2) {
-        Logo2 = {
-          Url: logoData2.attributes.url,
-          Alt: service.attributes.ImageAlt,
-        }
-      } else {
-        Logo2 = null
-      }
+      const image: IImage | null = getImageData(
+        service.attributes.PreviewImageSmall.data || null,
+        service.attributes.ImageAlt,
+      )
+      const logo: IImage | null = getImageData(
+        service.attributes.PreviewLogoPrimary.data || null,
+        service.attributes.ImageAlt,
+      )
+      const logo2: IImage | null = getImageData(
+        service.attributes.PreviewLogoSecondary.data || null,
+        service.attributes.ImageAlt,
+      )
 
       return {
         id: service.id,
         Title: service.attributes.Title,
-        Image: Image,
-        Logo: Logo,
-        Logo2: Logo2,
+        Image: image,
+        Logo: logo,
+        Logo2: logo2,
         Link: {
           url: urlPage,
         } as ILink,
@@ -72,8 +50,8 @@ export default function BlockPreviewServicesBlock() {
   }
 
   const props = {
-    Title: data.Title,
-    Text: data.Text,
+    Title: blockData.Title,
+    Text: blockData.Text,
     Items: items,
   } as IBlockPreviewServices
 

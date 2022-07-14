@@ -5,15 +5,13 @@ import { IBlockOurOffices } from '../../interfaces/blocks'
 import { Block } from '../../enums/blocks'
 import { SocialIcon } from 'enums/icons'
 import { ISocialLink } from 'interfaces/common'
+import { getBlockData } from 'utilities/blockData'
 
 export default function BlockOurOfficesBlock() {
   const [page] = usePage()
 
-  const data = page?.pages.data[0].attributes.Body?.filter((item) => {
-    if (item.BlockType === Block.BlockOurOffices) return item
-  })[0]
-
-  if (!data) return
+  const blockData = getBlockData(page, Block.BlockOurOffices)
+  if (!blockData) return null
 
   const getSocialUpdateItems = (socialList: ISocialLink[]): ISocialLink[] | [] => {
     if (!socialList.length) return []
@@ -26,8 +24,8 @@ export default function BlockOurOfficesBlock() {
   }
 
   const props = {
-    ...data,
-    Socials: getSocialUpdateItems(data.Socials),
+    ...blockData,
+    Socials: getSocialUpdateItems(blockData.Socials),
   } as unknown as IBlockOurOffices
 
   return getComponent<IBlockOurOffices>(Block.BlockOurOffices, props)

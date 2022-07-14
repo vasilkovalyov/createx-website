@@ -10,21 +10,17 @@ import { ISocialLink } from '../../interfaces/common'
 import { getConvertMenuArray } from '../../utilities/convertDataFromBackend'
 
 import { SocialIcon } from 'enums/icons'
+import { getImageData } from 'utilities/blockData'
 
 export default function BlockFooterBlock() {
   const [page] = usePage()
   if (!page) return null
 
   const BlockType = page.blockFooter.data.attributes.BlockType
-  let Image: IImage | null
-  if (page.blockFooter.data.attributes.Image.data) {
-    Image = {
-      Url: page.blockFooter.data.attributes.Image?.data.attributes.url,
-      Alt: page.blockFooter.data.attributes.ImageAlt,
-    }
-  } else {
-    Image = null
-  }
+  const image: IImage | null = getImageData(
+    page.blockFooter.data.attributes.Image?.data || null,
+    page.blockFooter.data.attributes.ImageAlt,
+  )
 
   const text = page.blockFooter.data.attributes.Text
   const menu = page.blockFooter.data.attributes.Menu
@@ -44,7 +40,7 @@ export default function BlockFooterBlock() {
 
   const props: IFooter = {
     BlockType: BlockType as Block,
-    Image: Image,
+    Image: image,
     Text: text,
     Menu: convertedMenu,
     ContactInformation: page.blockFooter.data.attributes.ContactInformation,
