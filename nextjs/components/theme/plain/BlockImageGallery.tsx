@@ -5,10 +5,11 @@ import Container from './Container'
 import Image from './Image'
 
 import { IBlockImageGallery } from '../../../interfaces/blocks'
+import { getImageBasePath } from '../../../utilities/common'
 
 export default function BlockImageGallery({ Items }: IBlockImageGallery) {
-  const base = 'http://localhost:1337'
-  // const base = ''
+  const base = process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : ''
+
   return (
     <section className="block-image-gallery">
       <Container className="block-image-gallery__container">
@@ -26,7 +27,9 @@ export default function BlockImageGallery({ Items }: IBlockImageGallery) {
                 clickable: true,
                 renderBullet: (index, className) => {
                   return `<div class="${className} gallery-thumbnail">
-                                <img src="${base}${Items[index].Url}" alt="${Items[index].Alt}" class="gallery-thumbnail__image" />
+                                <img src="${getImageBasePath(Items[index].Url)}" alt="${
+                    Items[index].Alt
+                  }" class="gallery-thumbnail__image" />
                             </div>`
                 },
               },

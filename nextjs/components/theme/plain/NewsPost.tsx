@@ -12,7 +12,7 @@ export default function NewsPost({ Image, Title, Categories, Date, Text, IsCompa
     <div className={`news-post shadow-wrapper ${IsCompact ? 'news-post--compact' : ''}`}>
       {Image && Image.Url && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="news-post__image" />}
       <div className="news-post__body">
-        {Link.url ? (
+        {Link && Link.url ? (
           <LinkComponent href={`/en/${Link.url}`}>
             <a className="news-post__link-title">
               <Typography level="h6" text={Title} className="news-post__title" />

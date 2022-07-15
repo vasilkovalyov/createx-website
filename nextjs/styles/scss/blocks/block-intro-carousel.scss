@@ -6,7 +6,8 @@
 
 .block-intro-carousel {
     &__inner {
-        min-height: 100vh;
+        min-height: 770px;
+        height: 100vh;
         padding: 100px 0 130px;
         display: flex;
 
@@ -152,7 +153,8 @@
     }
 
     &__slide {
-        min-height: 100vh;
+        min-height: 770px;
+        height: 100vh;
         display: flex;
 
         @media (max-height: 700px) and (orientation:landscape) {
@@ -160,7 +162,7 @@
         }
 
         @include responsive.mq($from: setup.$header-menu-breakpoint) {
-            min-height: 100vh;
+            height: 100vh;
         }
     }
 

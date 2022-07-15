@@ -1,7 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import NewsPost from '../../components/theme/plain/NewsPost'
-import { EnumsIcon } from '../../enums/icons'
 
 export default {
   title: 'Components/NewsPost',

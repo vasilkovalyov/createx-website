@@ -92,7 +92,7 @@ const DynamicPage = (page: IPageField) => {
   }
 
   const renderPages = () => {
-    if (pageAttributes.ContentType === Page.PagePostSingle) {
+    if (pageAttributes && pageAttributes.ContentType === Page.PagePostSingle) {
       return <PagePostSingle />
     }
 
