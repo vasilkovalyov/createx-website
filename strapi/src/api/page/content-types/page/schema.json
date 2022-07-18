@@ -78,13 +78,13 @@
       "target": "api::post.post",
       "mappedBy": "page"
     },
-    "HeaderBackgroundType": {
+    "HeaderTheme": {
       "type": "enumeration",
       "enum": [
-        "white",
-        "transparent"
+        "light",
+        "dark"
       ],
-      "default": "transparent"
+      "default": "dark"
     }
   }
 }

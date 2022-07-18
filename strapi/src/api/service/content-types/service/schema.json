@@ -66,9 +66,9 @@
         "block-benefits.block-benefits",
         "block-hero.block-hero",
         "block-price.block-price",
+        "block-project-steps.block-work-steps",
         "block-related-projects.block-related-projects",
-        "block-service-description.block-service-description",
-        "block-project-steps.block-work-steps"
+        "block-service-description.block-service-description"
       ]
     },
     "ContentType": {
@@ -87,6 +87,14 @@
     },
     "ShowFormDetails": {
       "type": "boolean"
+    },
+    "HeaderTheme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "dark"
     }
   }
 }

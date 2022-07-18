@@ -1,4 +1,4 @@
-import { ColorTheme, Identificator } from '../types/common'
+import { ColorTheme, HeaderThemeType, Identificator } from '../types/common'
 import { IBenefit, IContactInformation, ISocialList } from './common'
 import { IHeaderContacts } from './pages'
 
@@ -64,6 +64,7 @@ export interface IPageDataField {
       BreadCrumbs: IBreadCrumbsField | null
       BreadCrumbsInner: IBreadCrumbsField | null
       Body?: FieldAttributes<any>[] | null
+      HeaderTheme: HeaderThemeType
       ShowFormDetails: boolean
       Slug: string
       BlockHero: FieldAttributes<any>

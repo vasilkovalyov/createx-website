@@ -1,13 +1,6 @@
-import { request, gql, GraphQLClient } from 'graphql-request'
+import { gql, GraphQLClient } from 'graphql-request'
 
-import {
-  FRAGMENT_HEADER,
-  FRAGMENT_FOOTER,
-  FRAGMENT_FORM_DETAIL,
-  FRAGMENT_POST,
-  FRAGMENT_PROJECT,
-  FRAGMENT_POST_INNER,
-} from './fragments'
+import { FRAGMENT_HEADER, FRAGMENT_FOOTER, FRAGMENT_FORM_DETAIL, FRAGMENT_POST, FRAGMENT_PROJECT } from './fragments'
 
 export async function getPageSinglePost(page: string) {
   const url = 'http://localhost:1337/graphql'
@@ -46,6 +39,7 @@ export async function getPageSinglePost(page: string) {
             Date
             Slug
             RichText
+            HeaderTheme
             ShowFormDetails
             Image {
               data {
@@ -119,6 +113,7 @@ export async function getPageSingleService(page: string) {
             ContentType
             Title
             Slug
+            HeaderTheme
             ShowFormDetails
             Body {
               ... on ComponentBlockHeroBlockHero {
@@ -278,6 +273,7 @@ export async function getPageSingleProject(page: string) {
             ContentType
             Title
             Slug
+            HeaderTheme
             ShowFormDetails
             project_category {
               data {
@@ -387,6 +383,7 @@ export async function getPageOurWorks(page: string) {
               Keywords
               Description
             }
+            HeaderTheme
             ShowFormDetails
             Body {
               ... on ComponentBlockHeroBlockHero {
@@ -602,6 +599,7 @@ export async function getPageData(page: string) {
               Keywords
               Description
             }
+            HeaderTheme
             ShowFormDetails
             Body {
               ... on ComponentBlockOurOfficesBlockOurOffices {

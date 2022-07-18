@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import cn from 'classnames'
+import { usePage } from 'context/project'
 
 import Container from '../Container'
 import Navigation from './Navigation'
@@ -11,8 +13,16 @@ import { EnumsIcon } from 'enums/icons'
 import Typography from '../Typography'
 
 export default function Header({ Image, Menu, Phone, PhoneIcon, PhoneText, Email, EmailIcon, EmailText }: IHeader) {
+  const [page] = usePage()
+  const headerTheme = page.pages.data[0].attributes.HeaderTheme
+
+  const headerThemeColor = cn({
+    'header--light': headerTheme === 'light',
+    'header--dark': headerTheme === 'dark',
+  })
+
   return (
-    <header className="header">
+    <header className={cn('header', headerThemeColor)}>
       <Container className="header__container">
         {Image && Image.Url ? (
           <Link href="/">

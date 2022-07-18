@@ -69,6 +69,14 @@
       "relation": "manyToOne",
       "target": "api::project-category.project-category",
       "inversedBy": "projects"
+    },
+    "HeaderTheme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "dark"
     }
   }
 }

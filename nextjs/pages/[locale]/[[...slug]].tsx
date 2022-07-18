@@ -42,7 +42,7 @@ const getDataByPath = async (path) => {
   return await getPageData(page)
 }
 
-export const getServerSideProps = async ({ params, resolvedUrl }) => {
+export const getServerSideProps = async ({ resolvedUrl }) => {
   const NODE_ENV = process.env.NODE_ENV
   const pageName = resolvedUrl.replace('/en', '')
   const pathName = !pageName ? '/' : pageName.replace('/', '')

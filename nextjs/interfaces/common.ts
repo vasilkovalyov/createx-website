@@ -138,7 +138,7 @@ export interface ISocialLink {
   id?: Identificator
   Url: string
   Icon: SocialIcon
-  Target: string
+  Target?: string
 }
 
 export interface ISocialList {

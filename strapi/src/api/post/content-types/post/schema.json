@@ -64,6 +64,13 @@
       "components": [
         "block-heading-page.block-heading"
       ]
+    },
+    "HeaderTheme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ]
     }
   }
 }
