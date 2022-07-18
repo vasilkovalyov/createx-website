@@ -13,7 +13,7 @@ $heading-line-height:         fz.$h-lh !default;
 
 $base-text-color:             var(--text-color-primary) !default;
 $base-background-color:       var(--bg-page) !default;
-$base-link-color:             var(--link-color) !default;
+$base-link-color:             var(--primary-color) !default;
 
 $base-link-hover-color:       rgba(var(--link-color), 0.5) !default;
 
@@ -27,8 +27,8 @@ $padding-container:           0 spacing.$m;
 
 $animation-speed:             0.3s;
 
-$header-menu-breakpoint:      responsive.$tablet;
-$base-animation-breakpoint:   responsive.$tablet_large;
+$header-menu-breakpoint:      responsive.$wide;
+$base-animation-breakpoint:   responsive.$wide;
 
 $border-radius-sm:            4px;
 $base-shadow:                 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);

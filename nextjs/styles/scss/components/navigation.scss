@@ -6,10 +6,20 @@
     @include responsive.mq($from: setup.$header-menu-breakpoint) {
         display: flex;
         align-items: center;
+        margin-right: 30px;
     }
 }
 
 .header-navigation {
+    @include responsive.mq($until: setup.$header-menu-breakpoint) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        
+        display: none;
+    }
+
     .navigation__list {
         @include responsive.mq($from: setup.$header-menu-breakpoint) {
             display: flex;

@@ -1,5 +1,6 @@
 import { ColorTheme, Identificator } from '../types/common'
 import { IBenefit, IContactInformation, ISocialList } from './common'
+import { IHeaderContacts } from './pages'
 
 export interface FieldAttributes<T> {
   [x: string]: any
@@ -133,7 +134,7 @@ export interface IBlockFormDetailField extends IImageField {
   BlockType: string
 }
 
-export interface IHeaderBlockField extends IImageField {
+export interface IHeaderBlockField extends IImageField, IHeaderContacts {
   BlockType: string
   Menu: IMenuField
 }

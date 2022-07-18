@@ -32,6 +32,24 @@
     "ImageAlt": {
       "type": "string",
       "required": true
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "PhoneText": {
+      "type": "string"
+    },
+    "EmailText": {
+      "type": "string"
+    },
+    "PhoneIcon": {
+      "type": "boolean"
+    },
+    "EmailIcon": {
+      "type": "boolean"
     }
   }
 }

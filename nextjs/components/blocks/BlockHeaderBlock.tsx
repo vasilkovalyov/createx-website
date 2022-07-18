@@ -21,6 +21,7 @@ export default function BlockHeaderBlock() {
   const convertedMenu = getConvertMenu(menu) || null
 
   const props: IHeader = {
+    ...page.blockHeader.data.attributes,
     BlockType: BlockType as Block,
     Image: image,
     Menu: convertedMenu,

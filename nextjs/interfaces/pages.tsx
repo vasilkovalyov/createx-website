@@ -20,10 +20,25 @@ export interface IMenu {
   pages: IMenuItem[]
 }
 
-export interface IHeader {
+export interface IHeaderContacts {
+  Phone?: string
+  PhoneText?: string
+  PhoneIcon?: boolean
+  Email?: string
+  EmailText?: string
+  EmailIcon?: boolean
+}
+
+export interface IHeader extends IHeaderContacts {
   BlockType: Block
   Image?: IImage | null
   Menu?: IMenu | null
+  Phone?: string
+  PhoneText?: string
+  PhoneIcon?: boolean
+  Email?: string
+  EmailText?: string
+  EmailIcon?: boolean
 }
 
 export interface IFooter {

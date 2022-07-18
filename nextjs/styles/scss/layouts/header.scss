@@ -1,28 +1,92 @@
 @use '../settings/spacing.scss';
+@use '../settings/font-sizes.scss' as fz;
 @use '../base/setup.scss';
 @use '../tools/responsive.scss';
 
 .header {
-    position: relative;
-    z-index: 2;
+    padding: spacing.$m 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
 
     @include responsive.mq($from: setup.$header-menu-breakpoint) {
         padding: spacing.$xl 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 5;
+
     }
 
     &__logo {
+        max-width: 100px;
         margin-right: 60px;
-        max-width: 130px;
         width: 100%;
+
+        @include responsive.mq($from: setup.$header-menu-breakpoint) {
+            max-width: 130px;
+        }
     }
 
     &__container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header-contacts {
+    @include responsive.mq($from: setup.$header-menu-breakpoint) {
+        margin-left: auto;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 16px;
+
+            @include responsive.mq($from: setup.$header-menu-breakpoint) {
+                margin-right: 36px;
+            }
+        }
+    }
+
+    &__item-wrapper {
+        display: flex;
+    }
+
+    &__icon {
+        font-size: fz.$size-xl;
+        color: var(--primary-color);
+
+        @include responsive.mq($from: setup.$header-menu-breakpoint) {
+            font-size: fz.$size-xxl;
+            min-width: 32px;
+            margin-right: 10px;
+        }
+
+        @include responsive.mq($from: laptop) {
+            font-size: 40px;
+            min-width: 46px;
+        }
+    }
+
+    &__text {
+        font-size: fz.$size-xs;
+        margin-bottom: 0;
+
+        @include responsive.mq($until: setup.$header-menu-breakpoint) {
+            display: none;
+        }
+    }
+
+    &__link {
+        font-size: fz.$size-s;
+        color: setup.$heading-color;
+
+        @include responsive.mq($until: setup.$header-menu-breakpoint) {
+            display: none;
+        }
+
+        @include responsive.mq($from: laptop) {
+            font-size: fz.$size-m;
+        }
     }
 }

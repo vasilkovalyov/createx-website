@@ -8,8 +8,6 @@ import { IBlockImageGallery } from '../../../interfaces/blocks'
 import { getImageBasePath } from '../../../utilities/common'
 
 export default function BlockImageGallery({ Items }: IBlockImageGallery) {
-  const base = process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : ''
-
   return (
     <section className="block-image-gallery">
       <Container className="block-image-gallery__container">

@@ -29,6 +29,7 @@
     "Body": {
       "type": "dynamiczone",
       "components": [
+        "block-available-position.block-available-position",
         "block-benefits.block-benefits",
         "block-benefits.items",
         "block-hero.block-hero",
@@ -38,15 +39,14 @@
         "block-news.block-news",
         "block-our-clients.block-our-clients",
         "block-our-history.block-our-history",
+        "block-our-offices.block-our-offices",
         "block-our-projects.block-our-projects",
         "block-our-team.block-our-team",
         "block-partners.block-partners",
         "block-preview-services.block-preview-services",
         "block-project-statistics.block-project-statistics",
         "block-services.block-services",
-        "block-testimonial.block-testimonial",
-        "block-available-position.block-available-position",
-        "block-our-offices.block-our-offices"
+        "block-testimonial.block-testimonial"
       ]
     },
     "ShowFormDetails": {
@@ -77,6 +77,14 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "page"
+    },
+    "HeaderBackgroundType": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "transparent"
+      ],
+      "default": "transparent"
     }
   }
 }

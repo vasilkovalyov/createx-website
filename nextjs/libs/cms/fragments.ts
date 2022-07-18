@@ -119,6 +119,12 @@ export const FRAGMENT_HEADER = gql`
         }
       }
     }
+    Phone
+    PhoneText
+    PhoneIcon
+    Email
+    EmailText
+    EmailIcon
   }
 `
 
