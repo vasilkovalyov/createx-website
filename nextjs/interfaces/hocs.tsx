@@ -1,7 +1,5 @@
-import { ComponentType } from 'react-markdown/lib/ast-to-react'
-
 export interface ILocationsSelect<T> {
-  Component: ComponentType<T>
+  Component: any
   onChange?: (value) => void
   rest: T
 }

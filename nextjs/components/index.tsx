@@ -84,15 +84,14 @@ export function renderBlocks(blocks: IContentBlock[] | any[]) {
 
 export function renderBlock(BlockType: Block, index?: number) {
   const Component = BlockType ? blockComponents[BlockType] : null
-  // const byBlockType = registeredComponents['plain']?.filter((c) => c.BlockType === BlockType)
   if (!Component) return <></>
   return <Component key={index} />
 }
 
 export function getComponent<T>(BlockType: Block, props: T) {
-  let Component: React.ComponentType | null
-  const byBlockType = registeredComponents['plain']?.filter((c) => c.BlockType === BlockType)
-  Component = byBlockType[0]?.component || null
+  const byBlockType = registeredComponents['plain']?.find((c) => c.BlockType === BlockType)
+  if (!byBlockType) return null
+  const Component: any | null = byBlockType?.component || null
   if (!Component) return null
   return <Component {...props} />
 }

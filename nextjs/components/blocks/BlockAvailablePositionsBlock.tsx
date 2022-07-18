@@ -9,7 +9,7 @@ export default function BlockAvailablePositionsBlock() {
 
   if (!page?.pages.data[0].attributes.Body) return null
 
-  const data = page?.pages.data[0].attributes.Body.filter((item) => item.BlockType === Block.BlockAvailablePositions)[0]
+  const data = page?.pages.data[0].attributes.Body.find((item) => item.BlockType === Block.BlockAvailablePositions)
   if (!data) return null
 
   const props = {
