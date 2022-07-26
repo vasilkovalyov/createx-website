@@ -25,6 +25,10 @@ function Button({ url, className, type, name, size, fullwidth, color, uppercase 
     'text-uppercase': uppercase === true,
   })
 
+  function handleClick(e) {
+    onClick && onClick(e)
+  }
+
   if (url) {
     return (
       <LinkComponent href={`/en/${url}`}>
@@ -34,7 +38,7 @@ function Button({ url, className, type, name, size, fullwidth, color, uppercase 
   }
 
   return (
-    <button className={cn('btn', typeButton, sizeField, uppercaseBtn, className)} onClick={() => onClick}>
+    <button className={cn('btn', typeButton, sizeField, uppercaseBtn, className)} onClick={(e) => handleClick(e)}>
       {name}
     </button>
   )

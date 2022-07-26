@@ -62,10 +62,13 @@
         background-color: transparent;
         border-color: transparent;
 
-        &.active,
-        &:hover {
+        &.active {
             color: var(--primary-color);
             border-color: var(--primary-color);
+        }
+        
+        &:hover {
+            color: var(--primary-color);
         }
     }
 

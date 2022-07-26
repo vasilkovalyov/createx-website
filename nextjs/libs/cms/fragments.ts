@@ -31,39 +31,6 @@ export const FRAGMENT_PROJECT = gql`
   }
 `
 
-export const FRAGMENT_POST_INNER = gql`
-  fragment GetPost on Post {
-    Title
-    Slug
-    Image {
-      data {
-        attributes {
-          url
-        }
-      }
-    }
-    ImageAlt
-    Date
-    RichText
-    page {
-      data {
-        attributes {
-          Slug
-        }
-      }
-    }
-    post_categories {
-      data {
-        id
-        attributes {
-          Title
-          Name
-        }
-      }
-    }
-  }
-`
-
 export const FRAGMENT_POST = gql`
   fragment GetPost on Post {
     Title

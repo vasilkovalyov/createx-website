@@ -56,6 +56,13 @@ export interface IBreadCrumbsField {
   activePage: IMenuDataField
 }
 
+export interface IPageMetaPagination {
+  total: number
+  page: number
+  pageSize: number
+  pageCount: number
+}
+
 export interface IPageDataField {
   data: {
     attributes: FieldAttributes<any>[] & {
@@ -87,7 +94,7 @@ export interface IPageDataField {
   }[]
 }
 
-export interface IPageField {
+export interface IPageField extends IPostsPageFields {
   NODE_ENV: string
   blockHeader: {
     data: {
@@ -120,13 +127,19 @@ export interface IPageField {
   latestProjects: {
     data: IProjectFields[] | null
   }
-  posts: {
-    data: IPostField[] | null
-  }
   postCategories: {
     data: IPostCategoryField[] | null
   }
   latestPosts: {
+    data: IPostField[] | null
+  }
+}
+
+export interface IPostsPageFields {
+  posts: {
+    meta: {
+      pagination: IPageMetaPagination
+    }
     data: IPostField[] | null
   }
 }

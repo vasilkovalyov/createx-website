@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { memo } from 'react'
 import cn from 'classnames'
 
 import Typography from './Typography'
 import { IBlockHeading } from '../../../interfaces/common'
 
-function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', aligned, className }: IBlockHeading) {
+function BlockHeadingMemo({
+  Title,
+  Text,
+  headingLevel = 'h2',
+  textSize = 'middle',
+  aligned,
+  className,
+}: IBlockHeading) {
   const alignedContent = cn({
     'block-heading--center text-align--center': aligned === 'center',
     'block-heading--right text-align--right': aligned === 'right',
@@ -24,4 +31,5 @@ function BlockHeading({ Title, Text, headingLevel = 'h2', textSize = 'middle', a
   )
 }
 
+const BlockHeading = memo(BlockHeadingMemo)
 export default BlockHeading

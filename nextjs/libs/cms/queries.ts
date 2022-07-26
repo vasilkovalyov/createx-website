@@ -445,11 +445,7 @@ export async function getPageOurWorks(page: string) {
 
 export async function getPageData(page: string) {
   const url = 'http://localhost:1337/graphql'
-  const graphQLClient = new GraphQLClient(url, {
-    // headers: {
-    //   Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
-    // },
-  })
+  const graphQLClient = new GraphQLClient(url)
 
   const pageData = page === '' ? 'home' : page
 
@@ -494,7 +490,15 @@ export async function getPageData(page: string) {
           }
         }
       }
-      posts {
+      posts(sort: "createdAt:desc", pagination: { start: 0, limit: 2 }) {
+        meta {
+          pagination {
+            total
+            page
+            pageSize
+            pageCount
+          }
+        }
         data {
           id
           attributes {

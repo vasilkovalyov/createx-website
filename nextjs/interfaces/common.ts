@@ -85,7 +85,7 @@ export interface IButton {
   uppercase?: boolean
   size?: 'small' | 'extra-small' | ''
   fullwidth?: boolean
-  onClick?: (v?: string) => void
+  onClick?: (e: React.MouseEventHandler<HTMLButtonElement>) => void
 }
 
 export interface IBlockHeading {
@@ -153,13 +153,15 @@ export interface INewsPost {
   Image?: IImage
   Title: string
   Text?: string
-  Categories: {
-    Title: string
-    Name: string
-  }[]
+  Categories: Category[]
   Date: string
   Slug: string
   Link: ILink
+}
+
+export interface Category {
+  Title: string
+  Name: string
 }
 
 export interface ITestimonial {

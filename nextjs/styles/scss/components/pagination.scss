@@ -1,0 +1,42 @@
+@use '../base/setup.scss';
+@use '../settings/font-weights.scss' as fw;
+@use '../settings/font-sizes.scss' as fz;
+@use '../tools/responsive.scss';
+
+.pagination {
+    &__list {
+
+    }
+
+    &__item {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__page {
+        .active {
+            color: var(--primary-color);
+        }
+    }
+
+    &__btn {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: fz.$size-s;
+        font-weight: fw.$bold;
+        font-family: setup.$base-font-family;
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+
+        &--prev {}
+        &--next {}
+    }
+
+    .disabled {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+}

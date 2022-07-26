@@ -16,6 +16,7 @@ import { Block } from '../enums/blocks'
 import { ColorTheme, Identificator } from '../types/common'
 import { IList, ILink, IProject, ITestimonial } from './common'
 import { IBreadcrumbs } from './common'
+import { IPageMetaPagination } from './fields'
 
 export interface IBlockHero {
   Image: IImage
@@ -193,6 +194,9 @@ export interface IBlockNews {
   Title: string
   Categories: INewsCategories[]
   Items: INewsPost[]
+  meta?: {
+    pagination: IPageMetaPagination
+  }
 }
 
 export interface IBlockOurTeam {

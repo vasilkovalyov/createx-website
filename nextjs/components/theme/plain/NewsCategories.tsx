@@ -1,17 +1,16 @@
-import React from 'react'
+import React, { memo, useState } from 'react'
+import cn from 'classnames'
 
 import Button from './Button'
 
 import { INewsCategories } from '../../../interfaces/common'
+import { Identificator } from 'types/common'
 
-export default function NewsCategories({
-  Items,
-  onClick,
-}: {
-  Items: INewsCategories[]
-  onClick?: (value: string) => void
-}) {
-  function handleClick(value: string) {
+function NewsCategoriesMemo({ Items, onClick }: { Items: INewsCategories[]; onClick?: (value: string) => void }) {
+  const [activeCategory, setActiveCategory] = useState<Identificator>(Items[0].id)
+
+  const handleClick = (value: string, id: Identificator) => {
+    setActiveCategory(id)
     onClick && onClick(value)
   }
 
@@ -25,8 +24,8 @@ export default function NewsCategories({
                 name={item.Title}
                 type="transparent"
                 uppercase={false}
-                onClick={() => handleClick(item.Name)}
-                className="news-categories__btn"
+                onClick={() => handleClick(item.Name, item.id)}
+                className={cn('news-categories__btn', { active: item.id === activeCategory })}
               />
             </li>
           ))}
@@ -35,3 +34,6 @@ export default function NewsCategories({
     </ul>
   )
 }
+
+const NewsCategories = memo(NewsCategoriesMemo)
+export default NewsCategories
