@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, memo, useCallback } from 'react'
 import cn from 'classnames'
 import IcoMoonIcon from '../IcoMoonIcon'
 import { EnumsIcon } from 'enums/icons'
+import { IPageMetaPagination } from 'interfaces/fields'
 
-interface IClickMetaData {
-  start: number
-  pageSize?: number
+interface PaginationMeta {
+  pagination: Partial<IPageMetaPagination>
 }
 
 export interface IPagination<T> {
@@ -18,7 +18,7 @@ export interface IPagination<T> {
   onPrevPage?: (pageNum: number, meta: T) => void
 }
 
-export default function PaginationMemo({ page = 1, pageCount, pageSize, onClick }: IPagination<IClickMetaData>) {
+export default function Pagination({ page = 1, pageCount, pageSize, onClick }: IPagination<PaginationMeta>) {
   const [currentPage, setCurrentPage] = useState<number>(page)
 
   const getUpdatedStartWithNumber = useCallback((pageNum: number) => pageNum * pageSize - pageSize, [currentPage])
@@ -27,8 +27,10 @@ export default function PaginationMemo({ page = 1, pageCount, pageSize, onClick 
     setCurrentPage(pageNum)
     onClick &&
       onClick(pageNum, {
-        start: getUpdatedStartWithNumber(pageNum),
-        pageSize,
+        pagination: {
+          start: getUpdatedStartWithNumber(pageNum),
+          pageSize,
+        },
       })
   }
 
@@ -37,8 +39,10 @@ export default function PaginationMemo({ page = 1, pageCount, pageSize, onClick 
     setCurrentPage(page)
     onClick &&
       onClick(page, {
-        start: getUpdatedStartWithNumber(page),
-        pageSize,
+        pagination: {
+          start: getUpdatedStartWithNumber(page),
+          pageSize,
+        },
       })
   }
 
@@ -47,8 +51,10 @@ export default function PaginationMemo({ page = 1, pageCount, pageSize, onClick 
     setCurrentPage(page)
     onClick &&
       onClick(page, {
-        start: getUpdatedStartWithNumber(page),
-        pageSize,
+        pagination: {
+          start: getUpdatedStartWithNumber(page),
+          pageSize,
+        },
       })
   }
 
@@ -90,3 +96,5 @@ export default function PaginationMemo({ page = 1, pageCount, pageSize, onClick 
     </div>
   )
 }
+
+// export default memo(PaginationMemo)

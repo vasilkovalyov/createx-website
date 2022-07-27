@@ -50,13 +50,13 @@ export interface IImageField {
 }
 
 export interface IBreadCrumbsField {
-  // [x: string]: any
   pages: IMenuDataFields
   inner_page?: IMenuDataField
   activePage: IMenuDataField
 }
 
 export interface IPageMetaPagination {
+  start?: number
   total: number
   page: number
   pageSize: number

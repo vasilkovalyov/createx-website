@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 import { ITypography } from '../../../interfaces/common'
 
-export default function Typography({ level, className, text, aligned }: ITypography) {
+export default function TypographyMemo({ level, className, text, aligned }: ITypography) {
   const alignedContent = cn({
     'text-align--center': aligned === 'center',
     'text-align--right': aligned === 'right',

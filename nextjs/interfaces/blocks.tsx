@@ -189,14 +189,16 @@ export interface IBlockProjectDescription {
   Items: IProjectDescription[] | []
 }
 
+export interface IMeta {
+  pagination: IPageMetaPagination
+}
+
 export interface IBlockNews {
   BlockType: Block
   Title: string
   Categories: INewsCategories[]
   Items: INewsPost[]
-  meta?: {
-    pagination: IPageMetaPagination
-  }
+  meta: IMeta
 }
 
 export interface IBlockOurTeam {

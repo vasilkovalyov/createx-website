@@ -12,7 +12,7 @@ export const getPosts = (
   const graphQLClient = new GraphQLClient(url)
 
   const query = `
-    query Posts($start: Int!, $limit: Int, $category: String) {
+    query Posts($start: Int, $limit: Int, $category: String) {
         posts(sort: "createdAt:desc", pagination: { start: $start, limit: $limit }, filters: { post_categories: { Name: { contains: $category } } } ) {
           meta {
             pagination {
@@ -32,8 +32,6 @@ export const getPosts = (
       }
       ${FRAGMENT_POST}
     `
-  console.log('limit', limit)
-
   const data = graphQLClient.request(query, {
     start: start,
     limit: limit || null,
