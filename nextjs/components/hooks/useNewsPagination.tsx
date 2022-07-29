@@ -14,26 +14,31 @@ export default function useNewsLoader(
 
   const onClickPagination = useCallback(async (currentPage, meta) => {
     try {
-      const data = await getPosts(meta.pagination.start, meta.pagination.pageSize)
+      const data = await getPosts({
+        start: meta.pagination.start,
+        limit: meta.pagination.pageSize,
+      })
       if (data.posts.data && data.posts.data.length) setPosts(getFormattedPosts(data.posts.data))
     } catch (e) {
       console.log(e)
     }
   }, [])
 
-  const onClickCategories = useCallback(async (value: string) => {
+  const onClickCategories = useCallback(async (category: string) => {
     try {
-      let category = ''
       let data: IPostsPageFields | null = null
-      if (value !== 'all-news') {
+      if (category !== 'all-news') {
         setIsShowPagination(false)
-        category = value
-        data = await getPosts(0, null, category)
+        data = await getPosts({
+          start: 0,
+          category,
+        })
       } else {
-        if (meta) {
-          data = await getPosts(0, meta.pagination.pageSize)
-          setIsShowPagination(true)
-        }
+        data = await getPosts({
+          start: 0,
+          limit: meta.pagination.pageSize,
+        })
+        setIsShowPagination(true)
       }
 
       if (data && data.posts.data) setPosts(getFormattedPosts(data.posts.data))
