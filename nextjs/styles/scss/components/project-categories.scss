@@ -34,8 +34,12 @@
     @include responsive.mq($from: tablet) {
         padding: spacing.$l;
     }
+    
+    &.active {
+        pointer-events: none;
+    }
 
-
+    &.active,
     &:hover {
         background-color: var(--primary-color);
 

@@ -28,7 +28,7 @@
         color: colors.$grey-dark;
 
         &.active {
-
+            pointer-events: none;
         }
     }
 }

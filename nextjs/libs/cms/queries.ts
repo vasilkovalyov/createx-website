@@ -585,7 +585,15 @@ export async function getPageData(page: string) {
           }
         }
       }
-      projects {
+      projects(sort: "createdAt:desc", pagination: { start: 0, limit: 3 }) {
+        meta {
+          pagination {
+            total
+            page
+            pageSize
+            pageCount
+          }
+        }
         data {
           id
           attributes {

@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import cn from 'classnames'
 import Image from './Image'
 import Typography from './Typography'
 
@@ -9,7 +9,9 @@ import Col from './Grid/Col'
 import { IProjectCategoriesList } from '../../../interfaces/common'
 
 export default function ProjectCategories({ Items, onClick }: IProjectCategoriesList) {
+  const [activeCategory, setActiveCategory] = useState<string>('all-projects')
   function handleClick(value: string) {
+    setActiveCategory(value)
     onClick && onClick(value)
   }
 
@@ -20,7 +22,12 @@ export default function ProjectCategories({ Items, onClick }: IProjectCategories
           <>
             {Items.map((item) => (
               <Col key={item.id} base={5} sm={5} md={4} className="project-categories__col">
-                <div className="project-category bg-color-white shadow-wrapper" onClick={(e) => handleClick(item.Name)}>
+                <div
+                  className={cn('project-category bg-color-white shadow-wrapper', {
+                    active: activeCategory === item.Name,
+                  })}
+                  onClick={(e) => handleClick(item.Name)}
+                >
                   <div className="project-category__logo-wrapper">
                     {item.Image && (
                       <Image

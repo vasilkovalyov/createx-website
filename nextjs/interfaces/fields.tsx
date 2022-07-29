@@ -94,7 +94,7 @@ export interface IPageDataField {
   }[]
 }
 
-export interface IPageField extends IPostsPageFields {
+export interface IPageField extends IPostsPageFields, IProjectsPageFields {
   NODE_ENV: string
   blockHeader: {
     data: {
@@ -118,9 +118,6 @@ export interface IPageField extends IPostsPageFields {
   projectCategories: {
     data: IProjectCategoryField[] | null
   }
-  projects: {
-    data: IProjectFields[] | null
-  }
   relatedProjects: {
     data: IProjectFields[] | null
   }
@@ -140,7 +137,16 @@ export interface IPostsPageFields {
     meta: {
       pagination: IPageMetaPagination
     }
-    data: IPostField[] | null
+    data: IPostField[] | []
+  }
+}
+
+export interface IProjectsPageFields {
+  projects: {
+    meta: {
+      pagination: IPageMetaPagination
+    }
+    data: IProjectFields[] | []
   }
 }
 

@@ -173,6 +173,7 @@ export interface IBlockOurProjects {
   BlockType: Block
   Categories: IProjectCategories[] | []
   Items: IProject[] | []
+  meta: IMeta
 }
 
 export interface IBlockPreviewServices {

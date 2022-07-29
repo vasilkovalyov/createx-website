@@ -96,5 +96,3 @@ export default function Pagination({ page = 1, pageCount, pageSize, onClick }: I
     </div>
   )
 }
-
-// export default memo(PaginationMemo)

@@ -70,6 +70,7 @@ export default function BlockOurProjectsBlock() {
   const props = {
     Categories: categories,
     Items: projects,
+    meta: page.projects.meta,
   } as IBlockOurProjects
 
   return getComponent<IBlockOurProjects>(Block.BlockOurProjects, props)
