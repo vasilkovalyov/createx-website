@@ -6,7 +6,7 @@ import Button from './Button'
 
 import { IProject } from '../../../interfaces/common'
 
-export default function ProjectCard({ Image, Title, Text, Link, category }: IProject) {
+export default function ProjectCard({ Image, Title, Text, Link }: IProject) {
   return (
     <div className="project-card shadow-wrapper">
       {Image && <ImageComponent Url={Image.Url} Alt={Image.Alt} className="project-card__image" />}

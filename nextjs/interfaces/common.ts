@@ -85,7 +85,7 @@ export interface IButton {
   uppercase?: boolean
   size?: 'small' | 'extra-small' | ''
   fullwidth?: boolean
-  onClick?: (e: React.MouseEventHandler<HTMLButtonElement>) => void
+  onClick?: (e?: React.MouseEventHandler<HTMLButtonElement>) => void
 }
 
 export interface IBlockHeading {

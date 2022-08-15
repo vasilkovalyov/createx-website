@@ -7,10 +7,6 @@
     @include responsive.mq($from: tablet_large) {
         padding: spacing.$xxxl 0;
     }
-    
-    .our-projects-list {
-        margin-bottom: 30px;
-    }
 }
 
 .block-our-projects {
@@ -23,5 +19,13 @@
     .project-categories {
         top: -100px;
         margin-bottom: -20px;
+    }
+}
+
+.our-projects-list {
+    margin-bottom: 30px;
+
+    .project-card {
+        max-width: 100%;
     }
 }

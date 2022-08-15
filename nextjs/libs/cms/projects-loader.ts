@@ -2,12 +2,9 @@ import { gql, GraphQLClient } from 'graphql-request'
 import { IProjectsPageFields } from 'interfaces/fields'
 
 import { FRAGMENT_PROJECT } from './fragments'
+import { IGetPosts } from 'interfaces/functions'
 
-export const getProjects = (
-  start: number | null,
-  limit: number | null,
-  category?: string | '',
-): Promise<IProjectsPageFields> => {
+export const getProjects = ({ start, limit, category }: IGetPosts): Promise<IProjectsPageFields> => {
   const url = 'http://localhost:1337/graphql'
   const graphQLClient = new GraphQLClient(url)
 
@@ -34,8 +31,8 @@ export const getProjects = (
     `
   const data = graphQLClient.request(query, {
     start: start,
-    limit: limit || null,
-    category: category || '',
+    limit: limit,
+    category: category,
   })
   return data
 }

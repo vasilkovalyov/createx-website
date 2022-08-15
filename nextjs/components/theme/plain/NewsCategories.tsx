@@ -8,7 +8,6 @@ import { Identificator } from 'types/common'
 
 function NewsCategoriesMemo({ Items, onClick }: { Items: INewsCategories[]; onClick?: (value: string) => void }) {
   const [activeCategory, setActiveCategory] = useState<Identificator>(Items[0].id)
-  console.log(1)
 
   const handleClick = (value: string, id: Identificator) => {
     setActiveCategory(id)

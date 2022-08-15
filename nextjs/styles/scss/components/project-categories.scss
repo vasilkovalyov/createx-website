@@ -78,6 +78,10 @@
     &__logo {
         width: 100%;
         @include mixins.animate(opacity);
+
+        img {
+            margin: 0 auto;
+        }
     }
 
     &__logo-secondary {

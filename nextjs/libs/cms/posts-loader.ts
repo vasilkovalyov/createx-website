@@ -1,13 +1,8 @@
-import { gql, GraphQLClient } from 'graphql-request'
+import { GraphQLClient } from 'graphql-request'
 import { IPostsPageFields } from 'interfaces/fields'
 
 import { FRAGMENT_POST } from './fragments'
-
-interface IGetPosts {
-  start: number | null
-  limit?: number
-  category?: string | null
-}
+import { IGetPosts } from 'interfaces/functions'
 
 export const getPosts = ({ start, limit, category }: IGetPosts): Promise<IPostsPageFields> => {
   const url = 'http://localhost:1337/graphql'

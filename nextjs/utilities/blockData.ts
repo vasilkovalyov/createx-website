@@ -1,6 +1,13 @@
 import { Block as EnumBlock } from 'enums/blocks'
-import { Category, IImage, INewsPost } from 'interfaces/common'
-import { FieldAttributes, IImageFieldData, IPageField, IPostField } from 'interfaces/fields'
+import { Category, IImage, INewsPost, IProject, IProjectCategories } from 'interfaces/common'
+import {
+  FieldAttributes,
+  IImageFieldData,
+  IPageField,
+  IPostField,
+  IProjectCategoryField,
+  IProjectFields,
+} from 'interfaces/fields'
 
 export const getBlockData = (page: IPageField, Block: EnumBlock): FieldAttributes<any> | null => {
   if (!page?.pages.data) null
@@ -64,5 +71,51 @@ export const getFormattedPosts = (posts: IPostField[]): INewsPost[] | [] => {
       },
       Categories: categories,
     } as INewsPost
+  })
+}
+
+export const getFormattedCategories = (categories: IProjectCategoryField[]): IProjectCategories[] => {
+  return categories.map((item) => {
+    const image: IImage | null = getImageData(item.attributes.PreviewLogoPrimary.data || null, item.attributes.ImageAlt)
+    const image2: IImage | null = getImageData(
+      item.attributes.PreviewLogoSecondary.data || null,
+      item.attributes.ImageAlt,
+    )
+
+    return {
+      id: item.id,
+      Title: item.attributes.Title,
+      Name: item.attributes.Name,
+      Image: image,
+      Image2: image2,
+    }
+  })
+}
+
+export const getFormattedProjects = (projects: IProjectFields[]): IProject[] | [] => {
+  return projects.map((item) => {
+    const image: IImage | null = getImageData(item.attributes.PreviewImage.data || null, item.attributes.ImageAlt)
+    let category: string[]
+
+    if (item.attributes.project_category.data) {
+      category = item.attributes.project_category.data.attributes.Name
+    } else {
+      category = []
+    }
+
+    const parentPage = item.attributes.page.data ? item.attributes.page.data.attributes.Slug : ''
+    const urlPage = parentPage ? `${parentPage}/${item.attributes.Slug}` : item.attributes.Slug
+
+    return {
+      id: item.id,
+      Title: item.attributes.Title,
+      Text: item.attributes.Text,
+      Image: image,
+      Link: {
+        url: urlPage,
+        text: item.attributes.SlugText,
+      },
+      category: category,
+    } as unknown as IProject
   })
 }
