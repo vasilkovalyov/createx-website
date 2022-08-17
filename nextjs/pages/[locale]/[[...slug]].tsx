@@ -9,13 +9,9 @@ import PrimaryLayout from '../../components/theme/plain/Layout/PrimaryLayout'
 
 import { ISeo } from '../../interfaces/pages'
 import { IPageField } from '../../interfaces/fields'
-import {
-  getPageData,
-  getPageSingleProject,
-  getPageSingleService,
-  getPageSinglePost,
-  getRelatedProjects,
-} from '../../libs/cms/queries'
+
+import QueryAjax from '../../services/QueryAjax'
+
 import { Block } from '../../enums/blocks'
 import { Page } from '../../enums/pages'
 
@@ -24,11 +20,11 @@ import { PageProvider } from '../../context/project'
 const getDataByPath = async (path) => {
   const [page, subpage] = path.split('/')
   if (page === 'services' && subpage) {
-    return await getPageSingleService(subpage)
+    return QueryAjax.getPageSingleService(subpage)
   }
   if (page === 'our-work' && subpage) {
-    const data = await getPageSingleProject(subpage)
-    const relatedProjects = await getRelatedProjects(
+    const data = await QueryAjax.getPageSingleProject(subpage)
+    const relatedProjects = await QueryAjax.getRelatedProjects(
       data.pages.data[0].attributes.project_category.data.attributes.Name,
     )
     return {
@@ -37,9 +33,9 @@ const getDataByPath = async (path) => {
     }
   }
   if (page === 'news' && subpage) {
-    return await getPageSinglePost(subpage)
+    return await QueryAjax.getPageSinglePost(subpage)
   }
-  return await getPageData(page)
+  return await QueryAjax.getPageData(page)
 }
 
 export const getServerSideProps = async ({ resolvedUrl }) => {
