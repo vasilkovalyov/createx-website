@@ -1,0 +1,23 @@
+h1 {
+  @apply text-h1_sm tablet:text-h1_md desktop:text-h1_lg;
+}
+
+h2 {
+  @apply text-h2_sm tablet:text-h2_md desktop:text-h2_lg;
+}
+
+h3 {
+  @apply text-h3_sm tablet:text-h3_md desktop:text-h3_lg;
+}
+
+h4 {
+  @apply text-h4_sm tablet:text-h4_md desktop:text-h4_lg;
+}
+
+h5 {
+  @apply text-h5_sm tablet:text-h5_md desktop:text-h5_lg;
+}
+
+h6 {
+  @apply text-h6_sm tablet:text-h6_md desktop:text-h6_lg;
+}

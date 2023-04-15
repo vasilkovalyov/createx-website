@@ -1,0 +1,82 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
+  ],
+  future: {
+    applyComplexClasses: true,
+  },
+  theme: {
+    extend: {
+      // backgroundImage: {
+      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      //   'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      // },
+      fontFamily: {
+        heading: ['Ubuntu', 'sans-serif'],
+        base: ['Ubuntu', 'serif'],
+      },
+      colors: {
+        white: '#ffffff',
+        blue: '#5A87FC',
+        pink: '#F52F6E',
+        orange: '#FF5A30',
+        green: '#03CEA4',
+        gray: {
+          100: '#F4F5F6',
+          200: '#E5E8ED',
+          300: '#D7DADD',
+          400: '#B3B7BC',
+          500: '#9A9CA5',
+          600: '#787A80',
+          700: '#424551',
+          800: '#1E212C',
+        },
+      },
+      borderRadius: {
+        none: '0',
+        sm: '4px',
+        full: '9999px',
+      },
+      boxShadow: {
+        sm: '0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1), 0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);',
+        md: '0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03)',
+      },
+      fontSize: {
+        xs: '12px',
+        sm: '14px',
+        md: '16px',
+        lg: '18px',
+        xl: '20px',
+        h1_sm: ['40px'],
+        h1_md: ['50px'],
+        h1_lg: ['64px'],
+        h2_sm: ['38px'],
+        h2_md: ['42px'],
+        h2_lg: ['46px'],
+        h3_sm: ['28px'],
+        h3_md: ['30px'],
+        h3_lg: ['32px'],
+        h4_sm: ['24px'],
+        h4_md: ['26px'],
+        h4_lg: ['28px'],
+        h5_sm: ['20px'],
+        h5_md: ['22px'],
+        h5_lg: ['24px'],
+        h6_sm: ['16px'],
+        h6_md: ['18px'],
+        h6_lg: ['20px'],
+      },
+      screens: {
+        mobile: '640px',
+        tablet: '768px',
+        tablet_lg: '1024px',
+        laptop: '1280px',
+        desktop: '1440px',
+      },
+    },
+  },
+  plugins: [],
+}
