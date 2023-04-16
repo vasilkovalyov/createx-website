@@ -95,6 +95,7 @@ module.exports = {
       },
       margin: {
         0: '0px',
+        4: '4px',
         8: '8px',
         10: '10px',
         12: '12px',
@@ -127,9 +128,10 @@ module.exports = {
       },
     },
     transitionProperty: {
+      color: 'color',
       opacity: 'opacity',
       visibility: 'visibility',
-      color: 'color',
+      translate: 'translate',
     },
   },
   plugins: [],

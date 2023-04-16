@@ -1,0 +1,14 @@
+@layer components {
+  .product-preview {
+    max-height: 440px;
+    height: 440px;
+
+    &:hover &__body {
+      @apply translate-y-0 transition-translate duration-300 ease-in-out;
+    }
+
+    &__body {
+      @apply translate-y-[80px] transition-translate duration-300 ease-in-out;
+    }
+  }
+}
