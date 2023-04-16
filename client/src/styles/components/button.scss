@@ -1,0 +1,33 @@
+.btn {
+  @apply inline-block uppercase font-bold text-md bg-primary tracking-wide border-transparent rounded-sm text-white px-40 py-14;
+
+  &--small {
+    @apply text-sm px-32 py-12;
+  }
+  &--primary {
+    @apply text-primary border-primary;
+  }
+  &--white {
+    @apply text-white;
+
+    &.btn--white {
+      @apply text-white border-white;
+    }
+    &.btn--primary {
+      @apply text-primary border-primary;
+    }
+  }
+  &--outline {
+    @apply bg-transparent text-primary border-[1px];
+
+    &.btn--white {
+      @apply text-white border-white;
+    }
+    &.btn--primary {
+      @apply text-primary border-primary;
+    }
+  }
+  &--transparent {
+    @apply bg-transparent border-0;
+  }
+}
