@@ -113,6 +113,19 @@ module.exports = {
         1: '1px',
         2: '2px',
       },
+      height: {
+        285: '285px',
+      },
+      zIndex: {
+        1: '1',
+        2: '2',
+        3: '3',
+      },
+    },
+    transitionProperty: {
+      opacity: 'opacity',
+      visibility: 'visibility',
+      color: 'color',
     },
   },
   plugins: [],

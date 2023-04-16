@@ -1,5 +1,8 @@
-export interface ImageUiType {
+import { StaticImageData } from 'next/image'
+
+export interface ImageUiType extends Omit<StaticImageData, 'width' | 'height'> {
   id?: string
-  src: string
   alt: string
+  width?: number
+  height?: number
 }

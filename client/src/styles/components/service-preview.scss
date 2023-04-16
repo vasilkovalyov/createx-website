@@ -1,0 +1,37 @@
+@layer components {
+  .service-preview {
+    @apply relative text-center shadow-md bg-white h-285 rounded-sm;
+
+    &:hover .service-preview__overlay {
+      @apply opacity-100 visible;
+    }
+
+    &:hover .service-preview__logo-1 {
+      @apply opacity-0 invisible;
+    }
+
+    &:hover .service-preview__logo-2 {
+      @apply opacity-100 visible;
+    }
+
+    &:hover .service-preview__heading {
+      @apply text-white;
+    }
+
+    &__link {
+      @apply fill-absolute cursor-pointer block z-3;
+    }
+
+    &__body {
+      @apply fill-absolute flex-centered flex-col z-2;
+    }
+
+    &__logo-2 {
+      @apply absolute-centered opacity-0 invisible transition-visibility transition-opacity duration-300 ease-in-out;
+    }
+
+    &__heading {
+      @apply transition-color duration-300 ease-in-out;
+    }
+  }
+}
