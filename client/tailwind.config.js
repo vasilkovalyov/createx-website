@@ -52,7 +52,7 @@ module.exports = {
         xl: '20px',
         h1_sm: ['40px'],
         h1_md: ['50px'],
-        h1_lg: ['64px'],
+        h1_lg: ['72px'],
         h2_sm: ['38px'],
         h2_md: ['42px'],
         h2_lg: ['46px'],

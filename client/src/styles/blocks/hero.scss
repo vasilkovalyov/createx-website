@@ -1,0 +1,23 @@
+.block-hero {
+  &__container {
+    max-width: 1230px;
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  &__body {
+    padding: 90px 0 40px;
+    max-width: 568px;
+    width: 100%;
+
+    @media (min-width: $mobile) {
+      min-height: 400px;
+      padding: 140px 0 120px;
+    }
+
+    @media (min-width: $desktop) {
+      min-height: 600px;
+      padding: 190px 0 100px;
+    }
+  }
+}
