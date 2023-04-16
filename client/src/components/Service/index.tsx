@@ -18,7 +18,7 @@ function Service({ heading, image, text, className, href, linkText = 'Learn more
     >
       {image ? (
         <div className="service__image relative mb-24">
-          <Image src={image.src} alt={image.alt} className="object-cover" fill />
+          <Image {...image} className="object-cover" fill />
         </div>
       ) : null}
       <div className="service__body">

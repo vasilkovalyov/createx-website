@@ -1,9 +1,10 @@
 import { IBenefit } from './Benefit.type'
-import image from '../../../public/images/benefit-icon-1.svg'
 export const model: IBenefit = {
   image: {
-    src: image,
+    src: '/images/benefit-icon-1.svg',
     alt: 'Quality',
+    width: 40,
+    height: 40,
   },
   heading: 'Quality',
   text: 'Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.',

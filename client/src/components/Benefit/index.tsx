@@ -7,7 +7,7 @@ import { IBenefit } from './Benefit.type'
 function Benefit({ heading, image, text, className }: IBenefit) {
   return (
     <div className={cn('benefit text-center', className)}>
-      {image ? <Image src={image.src} alt={image.alt} className="mx-auto mb-24" /> : null}
+      {image ? <Image {...image} className="mx-auto mb-24" /> : null}
       {heading ? (
         <Typography level="h6" className="mb-8">
           {heading}

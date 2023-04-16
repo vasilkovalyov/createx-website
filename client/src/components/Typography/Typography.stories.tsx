@@ -15,6 +15,6 @@ type Story = StoryObj<typeof Typography>
 export const Default: Story = {
   args: {
     level: 'h1',
-    text: 'Typography H1',
+    children: 'Typography H1',
   },
 }

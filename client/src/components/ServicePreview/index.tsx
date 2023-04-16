@@ -17,7 +17,7 @@ function ServicePreview({ heading, href, image, logo, logo2, className }: IServi
         </Link>
       ) : null}
       <div className="service-preview__overlay overlay">
-        {image ? <Image src={image.src} alt={image.alt} className="mx-auto mb-24 object-cover" fill /> : null}
+        {image ? <Image {...image} className="mx-auto mb-24 object-cover" fill /> : null}
       </div>
       <div className="service-preview__body">
         <div className="service-preview__logo-wrapper relative mb-24">
