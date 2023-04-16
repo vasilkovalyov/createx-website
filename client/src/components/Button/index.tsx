@@ -24,8 +24,8 @@ function Button({ href, className, fill, size, fullwidth, color, children, ...re
 
   if (href) {
     return (
-      <LinkComponent href={`/en/${href}`}>
-        <a className={buttonClassName}>{children}</a>
+      <LinkComponent href={`/en/${href}`} className={buttonClassName} {...rest}>
+        {children}
       </LinkComponent>
     )
   }
