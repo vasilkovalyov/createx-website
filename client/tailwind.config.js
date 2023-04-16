@@ -77,6 +77,7 @@ module.exports = {
         desktop: '1440px',
       },
       padding: {
+        0: '0px',
         8: '8px',
         10: '10px',
         12: '12px',
@@ -90,8 +91,10 @@ module.exports = {
         42: '42px',
         48: '48px',
         60: '60px',
+        80: '80px',
       },
       margin: {
+        0: '0px',
         8: '8px',
         10: '10px',
         12: '12px',
@@ -105,6 +108,7 @@ module.exports = {
         42: '42px',
         48: '48px',
         60: '60px',
+        80: '80px',
       },
       letterSpacing: {
         wide: '0.5px',
