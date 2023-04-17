@@ -1,0 +1,35 @@
+@layer components {
+  .work-category {
+    @apply shadow-md overflow-hidden rounded-sm cursor-pointer text-center p-34;
+
+    &:hover {
+      @apply bg-primary;
+    }
+
+    &:hover &__category {
+      @apply text-white;
+    }
+
+    &:hover &__logo-2 {
+      @apply opacity-100 visible;
+    }
+
+    &__image {
+      max-width: 60px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__logo-1 {
+      @apply mx-auto;
+    }
+
+    &__logo-2 {
+      @apply absolute-centered opacity-0 invisible transition-visibility transition-opacity duration-300 ease-in-out;
+    }
+
+    &__category {
+      @apply text-gray-600 text-md font-bold transition-color;
+    }
+  }
+}
