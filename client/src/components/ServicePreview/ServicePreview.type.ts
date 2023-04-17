@@ -1,9 +1,9 @@
-import { ImageUiType } from '@/types/common'
+import { IImageUi } from '@/types/common'
 
 export interface IServicePreview {
-  image?: ImageUiType
-  logo?: ImageUiType
-  logo2?: ImageUiType
+  image?: IImageUi
+  logo?: IImageUi
+  logo2?: IImageUi
   heading: string
   className?: string
   href?: string

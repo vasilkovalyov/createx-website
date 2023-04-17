@@ -1,7 +1,7 @@
-import { ImageUiType } from '@/types/common'
+import { IImageUi } from '@/types/common'
 
 export interface IProductPreview {
-  image?: ImageUiType
+  image?: IImageUi
   heading: string
   category: string
   href: string

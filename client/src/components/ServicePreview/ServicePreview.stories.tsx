@@ -4,7 +4,7 @@ import ServicePreview from '.'
 import { model } from './ServicePreview.model'
 
 const meta: Meta<typeof ServicePreview> = {
-  title: 'Components/ServicePreview',
+  title: 'Components/Service Preview',
   component: ServicePreview,
   parameters: {
     layout: 'padded',

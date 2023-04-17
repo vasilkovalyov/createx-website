@@ -1,7 +1,7 @@
-import { ImageUiType } from '@/types/common'
+import { IImageUi } from '@/types/common'
 
 export interface IBenefit {
-  image?: ImageUiType
+  image?: IImageUi
   heading?: string
   text?: string
   className?: string
