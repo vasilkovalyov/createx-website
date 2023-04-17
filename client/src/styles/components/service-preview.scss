@@ -2,19 +2,19 @@
   .service-preview {
     @apply relative text-center shadow-md bg-white h-285 rounded-sm;
 
-    &:hover .service-preview__overlay {
+    &:hover &__overlay {
       @apply opacity-100 visible;
     }
 
-    &:hover .service-preview__logo-1 {
+    &:hover &__logo-1 {
       @apply opacity-0 invisible;
     }
 
-    &:hover .service-preview__logo-2 {
+    &:hover &__logo-2 {
       @apply opacity-100 visible;
     }
 
-    &:hover .service-preview__heading {
+    &:hover &__heading {
       @apply text-white;
     }
 
