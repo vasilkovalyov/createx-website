@@ -1,0 +1,13 @@
+@layer components {
+  .benefit {
+    &--dark &__heading {
+      @apply text-white;
+    }
+    &--dark &__text {
+      @apply text-white opacity-60;
+    }
+    &__text {
+      @apply text-gray-600;
+    }
+  }
+}

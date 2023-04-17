@@ -1,0 +1,18 @@
+.block-benefits {
+  @apply pt-40 desktop:pt-80 pb-40 tablet:pb-80 desktop:pb-120;
+
+  &--dark {
+    @apply bg-gray-800;
+  }
+
+  &--dark &__heading {
+    @apply text-white;
+  }
+  &--dark &__text {
+    @apply text-white opacity-60;
+  }
+
+  &__text {
+    @apply text-gray-600 text-lg text-center mb-20 tablet:mb-60;
+  }
+}

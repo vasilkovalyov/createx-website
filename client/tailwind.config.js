@@ -3,6 +3,7 @@ module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/blocks/**/*.{js,ts,jsx,tsx}',
     './src/app/**/*.{js,ts,jsx,tsx}',
   ],
   future: {
@@ -14,6 +15,19 @@ module.exports = {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       //   'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       // },
+      maxWidth: {
+        285: '285px',
+      },
+      container: {
+        center: true,
+        padding: '24px',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1230px',
+        },
+      },
       fontFamily: {
         heading: ['Ubuntu', 'sans-serif'],
         base: ['Ubuntu', 'serif'],
@@ -92,6 +106,7 @@ module.exports = {
         48: '48px',
         60: '60px',
         80: '80px',
+        120: '120px',
       },
       margin: {
         0: '0px',

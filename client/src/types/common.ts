@@ -11,3 +11,5 @@ export type SocialType = {
   icon: string
   href: string
 }
+
+export type ThemeType = 'light' | 'dark'
