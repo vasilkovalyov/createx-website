@@ -14,8 +14,8 @@ function Hero({ heading, image, text, className }: IHero) {
           <Image {...image} className="object-cover" fill />
         </div>
       ) : null}
-      <div className="block-hero__container container mx-auto px-24 relative">
-        <div className="block-hero__body">
+      <div className="container">
+        <div className="block-hero__body relative">
           <Typography level="h1" className="mb-24">
             {heading}
           </Typography>
