@@ -1,6 +1,6 @@
 @layer components {
   .service-preview {
-    @apply relative text-center shadow-md bg-white h-285 rounded-sm;
+    @apply relative text-center shadow-md bg-white h-285 rounded-sm w-full overflow-hidden;
 
     &:hover &__overlay {
       @apply opacity-100 visible;
