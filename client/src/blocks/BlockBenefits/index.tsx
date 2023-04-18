@@ -13,7 +13,9 @@ function BlockBenefits({ heading, text, items, theme, className }: IBlockBenefit
         <Typography level="h2" className="block-benefits__heading mb-24 text-center">
           {heading}
         </Typography>
-        {text ? <Typography className="block-benefits__text">{text}</Typography> : null}
+        {text ? (
+          <Typography className="block-benefits__text text-lg text-center mb-20 tablet:mb-60">{text}</Typography>
+        ) : null}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {items &&
             items.map((item) => (
