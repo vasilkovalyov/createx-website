@@ -1,6 +1,7 @@
 import { INewsPost } from './NewsPost.type'
 
 export const model: INewsPost = {
+  id: '1',
   image: {
     src: '/images/article-img.jpg',
     alt: 'How to Build Climate Change-Resilient Infrastructure',

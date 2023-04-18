@@ -25,7 +25,7 @@ module.exports = {
           sm: '640px',
           md: '768px',
           lg: '1024px',
-          xl: '1230px',
+          xl: '1280px',
         },
       },
       fontFamily: {
@@ -92,6 +92,7 @@ module.exports = {
       },
       padding: {
         0: '0px',
+        4: '4px',
         8: '8px',
         10: '10px',
         12: '12px',

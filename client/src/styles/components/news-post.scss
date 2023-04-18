@@ -1,10 +1,21 @@
 @layer components {
   .news-post {
-    max-width: 600px;
-    width: 100%;
+    &.news-post--small &__image {
+      @media (min-width: $tablet) {
+        padding-top: 33%;
+      }
+    }
+
+    &.news-post--small &__body {
+      @apply pt-16 pb-4;
+    }
 
     &__image {
       padding-top: 50%;
+    }
+
+    &__body {
+      @apply p-12 md:p-24;
     }
   }
 }
