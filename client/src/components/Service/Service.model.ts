@@ -1,5 +1,6 @@
 import { IService } from './Service.type'
 export const model: IService = {
+  id: '1',
   image: {
     src: '/images/service-img.jpg',
     alt: 'Construction',

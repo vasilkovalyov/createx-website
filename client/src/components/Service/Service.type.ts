@@ -1,6 +1,7 @@
 import { IImageUi } from '@/types/common'
 
 export interface IService {
+  id: string
   image?: IImageUi
   heading: string
   text?: string
