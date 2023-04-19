@@ -1,4 +1,4 @@
-import { IImageUi } from '@/types/common'
+import { IImageUi } from '../../types/common'
 
 export interface IBlockHeroCarousel {
   heading: string
