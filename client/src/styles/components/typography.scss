@@ -1,3 +1,5 @@
-.heading {
-  @apply font-heading;
+@layer components {
+  .heading {
+    @apply font-heading;
+  }
 }
