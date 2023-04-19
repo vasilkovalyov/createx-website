@@ -25,8 +25,8 @@ export default function Carousel({
   })
 
   return (
-    <div className={cn('carousel overflow-hidden', className)}>
-      <div className="carousel__wrapper">
+    <div className={cn('carousel', className)}>
+      <div className="carousel__wrapper overflow-hidden">
         <Swiper
           spaceBetween={0}
           slidesPerView={1}
