@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply inline-block uppercase font-bold text-md bg-primary tracking-wide border-transparent rounded-sm text-white px-40 py-14;
+    @apply inline-block uppercase font-bold text-md bg-primary tracking-wide border-transparent border-1 rounded-sm text-white px-40 py-14;
 
     &--small {
       @apply text-sm px-32 py-12;
@@ -29,7 +29,7 @@
       }
     }
     &--transparent {
-      @apply bg-transparent border-0;
+      @apply bg-transparent border-transparent;
     }
   }
 }
