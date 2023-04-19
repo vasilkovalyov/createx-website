@@ -12,7 +12,7 @@ function TeamMember({ image, name, position, socialLinks, className }: ITeamMemb
   return (
     <div className={cn('team-member', className)}>
       <div className="team-member__image relative rounded-sm overflow-hidden">
-        {image ? <Image {...image} fill className="fill-absolute" /> : null}
+        {image ? <Image {...image} fill className="fill-absolute object-cover" /> : null}
         {socialLinks && socialLinks.length ? (
           <div className="team-member__social-box absolute bottom-0 left-0 right-0 p-24">
             <div className="absolute fill-absolute bg-primary opacity-70"></div>

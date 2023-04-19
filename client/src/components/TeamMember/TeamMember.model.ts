@@ -1,6 +1,7 @@
 import { ITeamMember } from './TeamMember.type'
 
 export const model: ITeamMember = {
+  id: '1',
   image: {
     src: '/images/author-testimonial.jpg',
     alt: 'Diane Mccoy',
