@@ -19,4 +19,14 @@
       @apply fill-absolute bg-gray-800 bg-opacity-60 z-1;
     }
   }
+
+  .bg-overlay {
+    position: relative;
+
+    &::before {
+      content: '';
+      @apply fill-absolute;
+      background: linear-gradient(0deg, #9a9ca5, #9a9ca5);
+    }
+  }
 }

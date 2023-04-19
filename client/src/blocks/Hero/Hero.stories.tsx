@@ -4,7 +4,7 @@ import Hero from '.'
 import { model } from './Hero.model'
 
 const meta: Meta<typeof Hero> = {
-  title: 'Blocks/Hero',
+  title: 'Blocks/Block Hero',
   component: Hero,
   parameters: {
     layout: '',

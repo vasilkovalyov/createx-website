@@ -1,0 +1,27 @@
+@layer blocks {
+  .block-hero-carousel {
+    @apply bg-overlay;
+
+    &__container {
+      @apply lg:min-h-screen pt-60 pb-40 tablet:py-80 desktop:pt-80 desktop:pb-120;
+    }
+
+    &__carousel {
+      @apply fill-absolute;
+
+      .swiper,
+      .carousel__wrapper {
+        height: 100%;
+      }
+    }
+
+    &__slide {
+      @apply lg:min-h-screen;
+    }
+
+    &__body {
+      max-width: 590px;
+      width: 100%;
+    }
+  }
+}
