@@ -12,6 +12,12 @@
     }
   }
 
+  .carousel {
+    &__wrapper {
+      @apply mb-20 md:mb-0;
+    }
+  }
+
   .swiper-button-control {
     @apply flex justify-center md:absolute md:right-3 lg:top-8;
 
@@ -26,23 +32,13 @@
     &:before {
       @media (min-width: $tablet) {
         content: '';
-        @apply absolute -top-10 left-0 -bottom-10 text-gray-100;
-        width: 1px;
+        @apply absolute top-0 left-0 bottom-0 border-gray-500 border-1;
+        left: 3px;
       }
     }
 
     .swiper-pagination-bullet {
-      position: relative;
-
-      &:before {
-        @media (min-width: $tablet) {
-          content: '';
-          width: 12px;
-          height: 20px;
-          background-color: #f4f5f7;
-          @apply absolute top-12 -left-44 z-0;
-        }
-      }
+      @apply relative z-1;
     }
 
     .swiper-pagination-bullet-active {
@@ -68,17 +64,13 @@
     }
 
     &__date {
-      @apply relative cursor-pointer text-gray-500 text-xl;
-
-      @media (min-width: $tablet) {
-        @apply text-h4_lg;
-      }
+      @apply relative cursor-pointer text-gray-500 text-xl lg:text-h4_lg pl-32;
 
       &:before {
         content: '';
-        @apply absolute top-10 -right-16  bg-gray-500 z-10 rounded-full;
-        width: 6px;
-        height: 6px;
+        @apply absolute inset-y-1/2 left-0 -translate-y-1/2  bg-gray-500 z-10 rounded-full;
+        width: 8px;
+        height: 8px;
       }
     }
   }
