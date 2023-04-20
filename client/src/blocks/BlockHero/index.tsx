@@ -4,9 +4,9 @@ import cn from 'classnames'
 
 import Typography from '../../components/Typography'
 
-import { IHero } from './Hero.type'
+import { IHero } from './BlockHero.type'
 
-function Hero({ heading, image, text, className }: IHero) {
+function BlockHero({ heading, image, text, children, className }: IHero) {
   return (
     <div className={cn('block-hero relative', className)}>
       {image ? (
@@ -16,6 +16,7 @@ function Hero({ heading, image, text, className }: IHero) {
       ) : null}
       <div className="container">
         <div className="block-hero__body relative">
+          {children}
           <Typography level="h1" className="mb-24">
             {heading}
           </Typography>
@@ -26,4 +27,4 @@ function Hero({ heading, image, text, className }: IHero) {
   )
 }
 
-export default Hero
+export default BlockHero

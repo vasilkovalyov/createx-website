@@ -1,4 +1,4 @@
-import { IHero } from './Hero.type'
+import { IHero } from './BlockHero.type'
 export const model: IHero = {
   image: {
     src: '/images/hero-bg-image.jpg',
