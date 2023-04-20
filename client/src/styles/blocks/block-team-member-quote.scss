@@ -1,0 +1,32 @@
+.block-team-member-quote {
+  @apply pt-20 md:pt-60 xl:pt-80;
+
+  &__inner {
+    @apply 2xl:py-120;
+  }
+
+  &__image {
+    @apply md:w-1/2 mb-20 md:mb-0 md:mr-20 xl:mr-0;
+  }
+
+  &__body {
+    @apply md:w-8/12 p-20 lg:pt-80 lg:pr-60 lg:pb-60 lg:pl-60 xl:pt-80 xl:pr-90 xl:pb-60 xl:pl-135 bg-white shadow-md rounded-sm;
+    @apply relative;
+
+    @media (min-width: $desktop) {
+      top: -132px;
+      left: -22px;
+    }
+  }
+
+  &__body--full {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__richtext {
+    p {
+      @apply mb-26;
+    }
+  }
+}

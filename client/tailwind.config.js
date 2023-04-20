@@ -18,6 +18,13 @@ module.exports = {
       maxWidth: {
         285: '285px',
       },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
+      },
       container: {
         center: true,
         padding: '24px',
@@ -107,7 +114,11 @@ module.exports = {
         48: '48px',
         60: '60px',
         80: '80px',
+        90: '90px',
+        105: '105px',
         120: '120px',
+        130: '130px',
+        135: '135px',
       },
       margin: {
         0: '0px',
@@ -121,6 +132,7 @@ module.exports = {
         18: '18px',
         20: '20px',
         24: '24px',
+        26: '26px',
         32: '32px',
         34: '34px',
         40: '40px',
