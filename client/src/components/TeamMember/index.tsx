@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 
-import Button from '../Button'
+import IcomoonIcon from '../IcomoonIcon'
 import Typography from '../Typography'
 
 import { ITeamMember } from './TeamMember.type'
@@ -18,9 +18,9 @@ function TeamMember({ image, name, position, socialLinks, className }: ITeamMemb
             <div className="absolute fill-absolute bg-primary opacity-70"></div>
             <ul className="relative z-1 flex flex-wrap justify-center">
               {socialLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-white">
-                    {link.icon}
+                <li key={index} className="mx-6">
+                  <Link href={link.href} className="text-white hover:opacity-50">
+                    <IcomoonIcon icon={link.icon} />
                   </Link>
                 </li>
               ))}

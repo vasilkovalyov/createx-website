@@ -11,7 +11,7 @@ export enum EnumsIcon {
   Cross = 'icon-cross',
   Facebook = 'icon-facebook',
   Iphone = 'icon-iphone',
-  LinkedIn = 'icon-linked_in',
+  LinkedIn = 'icon-linked-in',
   Messanger = 'icon-messanger',
   Minus = 'icon-minus',
   Pin = 'icon-pin',
@@ -27,6 +27,6 @@ export enum SocialIcon {
   Whatsapp = 'icon-whatsapp',
   Youtube = 'icon-youtube',
   Facebook = 'icon-facebook',
-  LinkedIn = 'icon-linked_in',
+  LinkedIn = 'icon-linked-in',
   Messanger = 'icon-messanger',
 }

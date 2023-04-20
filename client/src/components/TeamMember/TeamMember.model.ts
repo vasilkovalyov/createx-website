@@ -10,15 +10,15 @@ export const model: ITeamMember = {
   position: 'Director of Human Resources',
   socialLinks: [
     {
-      icon: 'linkedin',
+      icon: 'icon-linked-in',
       href: '/',
     },
     {
-      icon: 'twitter',
+      icon: 'icon-twitter',
       href: '/',
     },
     {
-      icon: 'facebook',
+      icon: 'icon-facebook',
       href: '/',
     },
   ],
