@@ -1,0 +1,30 @@
+.block-constructive-decisions {
+  &::before {
+    content: '';
+    background-color: #f4f5f7;
+    @apply fill-absolute;
+    @apply xl:bottom-24;
+  }
+
+  &__richtext {
+    p {
+      @apply text-inherit mb-20;
+    }
+    ul {
+      li {
+        position: relative;
+        @apply pl-32;
+
+        &:not(:last-child) {
+          @apply mb-20;
+        }
+
+        &::before {
+          content: '\e905';
+          font-family: 'icomoon' !important;
+          @apply text-primary absolute left-0 top-[50%] -translate-y-2/4 text-xl;
+        }
+      }
+    }
+  }
+}
