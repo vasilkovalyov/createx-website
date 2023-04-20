@@ -1,0 +1,17 @@
+@layer components {
+  .input-field {
+    @apply mb-20;
+
+    &:not(.input-field--textarea) &__input {
+      height: 44px;
+    }
+
+    &__label {
+      @apply text-sm text-gray-700 mb-8;
+    }
+    &__input {
+      @apply w-full border-1 border-gray-300 rounded-sm py-10 px-16 placeholder-gray-500 outline-primary;
+      background-color: #f4f5f7;
+    }
+  }
+}
