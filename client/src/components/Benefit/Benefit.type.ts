@@ -1,4 +1,4 @@
-import { IImageUi, ThemeType } from '@/types/common'
+import { IImageUi, ThemeType } from '../../types/common'
 
 export interface IBenefit {
   id: string
