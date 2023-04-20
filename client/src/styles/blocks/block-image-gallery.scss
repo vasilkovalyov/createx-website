@@ -1,0 +1,42 @@
+.block-image-gallery {
+  &__slide {
+    max-height: 500px;
+    height: 40vw;
+
+    @media (min-width: $laptop) {
+      height: 50vw;
+    }
+  }
+
+  .gallery-thumbnails {
+    @apply flex flex-wrap py-10 md:py-20;
+  }
+
+  .gallery-thumbnail {
+    @apply overflow-hidden rounded-sm mb-20 opacity-60;
+    width: 40px;
+    height: 40px;
+
+    @media (min-width: $tablet) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (min-width: $tablet_lg) {
+      width: 100px;
+      height: 100px;
+    }
+
+    &.swiper-pagination-bullet-active {
+      @apply opacity-100;
+    }
+
+    &:not(:last-child) {
+      @apply mr-8 md:mr-20;
+    }
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+}
