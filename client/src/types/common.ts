@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image'
+import { SocialIcon } from './icons'
 
 export interface IImageUi extends Omit<StaticImageData, 'width' | 'height'> {
   id?: string

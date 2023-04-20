@@ -1,4 +1,4 @@
-import { IImageUi, SocialType } from '@/types/common'
+import { IImageUi, SocialType } from '../../types/common'
 
 export interface ITeamMember {
   id: string
