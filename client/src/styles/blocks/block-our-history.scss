@@ -1,0 +1,85 @@
+.block-our-history {
+  @apply relative overflow-hidden py-40 tablet:py-80 desktop:py-120;
+  background-color: #f4f5f7;
+
+  &__container {
+    @apply relative z-1;
+  }
+
+  .block-heading {
+    &__title {
+      @apply mb-40 lg:mb-64;
+    }
+  }
+
+  .swiper-button-control {
+    @apply flex justify-center md:absolute md:right-3 lg:top-8;
+
+    .swiper-button {
+      @apply static translate-x-0 translate-y-0 mx-10 bg-transparent hover:bg-primary hover:text-white;
+    }
+  }
+
+  .history-list {
+    @apply relative flex flex-wrap mb-30 md:block;
+
+    &:before {
+      @media (min-width: $tablet) {
+        content: '';
+        @apply absolute -top-10 left-0 -bottom-10 text-gray-100;
+        width: 1px;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      position: relative;
+
+      &:before {
+        @media (min-width: $tablet) {
+          content: '';
+          width: 12px;
+          height: 20px;
+          background-color: #f4f5f7;
+          @apply absolute top-12 -left-44 z-0;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      .history-list__date {
+        @apply text-primary;
+
+        &:before {
+          @apply bg-primary;
+        }
+      }
+    }
+
+    &__item {
+      @apply cursor-pointer block w-auto h-auto bg-transparent opacity-100;
+
+      &:not(:last-child) {
+        @apply mr-30;
+
+        @media (min-width: $tablet) {
+          @apply mb-20 mr-0;
+        }
+      }
+    }
+
+    &__date {
+      @apply relative cursor-pointer text-gray-500 text-xl;
+
+      @media (min-width: $tablet) {
+        @apply text-h4_lg;
+      }
+
+      &:before {
+        content: '';
+        @apply absolute top-10 -right-16  bg-gray-500 z-10 rounded-full;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}
