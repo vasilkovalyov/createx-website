@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Carousel from '../../components/Carousel'
 
 import { IBlockImageGallery } from './BlockImageGallery.type'
-import { getImageBasePath } from '../../utils/common'
 
 export default function BlockImageGallery({ items, className }: IBlockImageGallery) {
   return (
