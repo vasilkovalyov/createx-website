@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 import { IFormDetails } from './FormDetails.type'
 
 import Input from '../Input'
@@ -7,9 +8,9 @@ import Button from '../../Button'
 
 import Typography from '../../Typography'
 
-function FormDetails({ heading, onSubmit }: IFormDetails) {
+function FormDetails({ heading, className, onSubmit }: IFormDetails) {
   return (
-    <div className="form-details ">
+    <div className={cn('form-details bg-white', className)}>
       {heading ? (
         <Typography level="h4" className="text-center mb-24">
           {heading}

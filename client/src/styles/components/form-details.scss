@@ -1,8 +1,5 @@
 @layer components {
   .form-details {
-    max-width: 495px;
-    width: 100%;
-
     @apply rounded-sm border-gray-200 shadow-sm p-24 md:py-48 md:px-40;
   }
 }

@@ -1,0 +1,13 @@
+.block-pre-footer {
+  min-height: 620px;
+  background-color: #f4f5f7;
+
+  &__body {
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      max-width: 495px;
+      width: 100%;
+    }
+  }
+}

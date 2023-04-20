@@ -1,4 +1,5 @@
 export interface IFormDetails {
   heading?: string
-  onSubmit: () => void
+  onSubmit?: () => void
+  className?: string
 }
