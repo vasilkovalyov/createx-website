@@ -25,9 +25,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "public/*": ["./public/*"]
-    },
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.json", "./src/images.d.ts"],
   "exclude": ["node_modules", "./.storybook/*"]
 }
-

@@ -4,14 +4,16 @@ export interface ICmsBlockHeader {
   Logo: ICmsMediaImage
   Slug: string
   pages: {
-    data: {
-      attributes: ICmsPageNavigation[] | []
-    }
+    data:
+      | {
+          id: string
+          attributes: ICmsNavigation
+        }[]
+      | null
   }
 }
 
-interface ICmsPageNavigation {
+interface ICmsNavigation {
   Heading: string
   Slug: string
-  Seo: ICmsPageSeo
 }

@@ -3,20 +3,20 @@ export default function getPageName(pathname: string): string {
     case '/': {
       return 'home'
     }
-    case '/portfolio': {
-      return 'portfolio'
-    }
-    case '/workflow': {
-      return 'workflow'
+    case '/about': {
+      return 'about'
     }
     case '/services': {
       return 'services'
     }
-    case '/team': {
-      return 'team'
+    case '/work': {
+      return 'work'
     }
-    case '/contact': {
-      return 'contact'
+    case '/news': {
+      return 'news'
+    }
+    case '/contacts': {
+      return 'contacts'
     }
     default: {
       return '404'

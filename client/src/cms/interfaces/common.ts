@@ -9,11 +9,11 @@ export interface ICmsMediaImage {
     data: {
       attributes: {
         url: string
-        width: string
-        height: string
+        width: number
+        height: number
         formats?: any | null
       }
-    }
+    } | null
   }
   Alt: string
 }

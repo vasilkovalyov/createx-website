@@ -1,18 +1,42 @@
 import React from 'react'
 import Image from 'next/image'
-import cn from 'classnames'
-import { IHeader } from './Header.type'
 
 import Navigation from '../Navigation'
 
-import { model } from '../Navigation/Navigation.model'
+import { usePage } from '@/context/page-context'
+import { IImageUi } from '@/types/common'
+import { INavigationLink } from '../Navigation/Navigation.type'
 
-function Header({ image, className }: IHeader) {
+function Header() {
+  const { header } = usePage()
+  const { Logo, pages } = header.data.attributes
+  let logo: IImageUi | null = null
+  let navigation: INavigationLink[] | [] = []
+
+  if (Logo.Media.data) {
+    logo = {
+      src: Logo.Media.data.attributes.url,
+      alt: Logo.Alt,
+      width: Logo.Media.data.attributes.width,
+      height: Logo.Media.data.attributes.height,
+    }
+  }
+
+  if (pages.data) {
+    navigation = pages.data.map((item) => {
+      return {
+        id: item.id,
+        href: item.attributes.Slug,
+        text: item.attributes.Heading,
+      }
+    })
+  }
+
   return (
-    <div className={cn('header', className)}>
+    <div className="header">
       <div className="header__container container flex items-center">
-        <div className="header__image mr-40 lg:mr-60">{image ? <Image {...image} /> : null}</div>
-        <Navigation items={model.items} />
+        <div className="header__image mr-40 lg:mr-60">{logo ? <Image {...logo} /> : null}</div>
+        {navigation ? <Navigation items={navigation} /> : null}
       </div>
     </div>
   )

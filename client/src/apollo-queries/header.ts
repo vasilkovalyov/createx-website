@@ -17,6 +17,7 @@ export const GetHeader = gql`
     }
     pages {
       data {
+        id
         attributes {
           Heading
           Slug

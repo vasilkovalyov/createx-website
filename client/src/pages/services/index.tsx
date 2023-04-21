@@ -1,8 +1,7 @@
-import Head from 'next/head'
 import { usePage } from '@/context/page-context'
 import Layout from '@/components/Layout'
 
-export default function Home() {
+export default function Services() {
   const { pages } = usePage()
   const seoData = pages.data[0].attributes.Seo
 

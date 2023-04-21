@@ -10,8 +10,6 @@ import { PageProvider } from '@/context/page-context'
 import getPageName from '@/utils/getPageName'
 
 export default function App({ Component, pageProps }: AppProps<{ data: PageResponseProps }>) {
-  console.log(pageProps)
-
   return (
     <PageProvider {...pageProps.data}>
       <Component {...pageProps} />
@@ -21,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps<{ data: PageRespo
 
 App.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
   let pathName: string = getPageName(ctx.pathname)
+  console.log('pathName', pathName)
 
   if (pathName === '404') return { pageProps: { data: null } }
 
