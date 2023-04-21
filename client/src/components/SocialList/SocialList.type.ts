@@ -6,6 +6,6 @@ export interface ISocialList {
   size?: 'sm' | 'md'
 }
 
-interface ISocialListItem extends SocialType {
+export interface ISocialListItem extends SocialType {
   id: string
 }
