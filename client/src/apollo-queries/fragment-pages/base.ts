@@ -1,10 +1,11 @@
 import { gql } from '@apollo/client'
 import { GetHeader } from '../header'
-import { FragmentComponentSeo } from '../fragments-components/component-seo'
+import { FragmentComponentSeo, FragmentComponentBlockHeroCarousel } from '../fragments-components'
 
 export const GetBasePage = gql`
   ${GetHeader}
   ${FragmentComponentSeo}
+  ${FragmentComponentBlockHeroCarousel}
   query ($page: String) {
     header {
       data {
@@ -20,6 +21,9 @@ export const GetBasePage = gql`
           Slug
           Seo {
             ...FragmentComponentSeo
+          }
+          Body {
+            ...FragmentComponentBlockHeroCarousel
           }
         }
       }

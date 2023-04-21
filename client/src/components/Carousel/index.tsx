@@ -32,7 +32,7 @@ export default function Carousel({
           slidesPerView={1}
           onSwiper={(swiper: any) => {
             setTimeout(() => {
-              if (useCustomNavigation) {
+              if (swiper.navigation && useCustomNavigation) {
                 swiper.params.navigation.prevEl = navigationPrevRef.current
                 swiper.params.navigation.nextEl = navigationNextRef.current
                 swiper.navigation.destroy()

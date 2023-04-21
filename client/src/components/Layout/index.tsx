@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { LayoutProps } from './Layout.type'
 
 import { BlockEnum } from '@/utils/blockEnums'
-import { renderByBlockType } from '../../blocks'
+import { renderByBlockType } from '@/cms/blocks'
 
 function Layout({ children, head, className }: LayoutProps) {
   return (

@@ -1,5 +1,6 @@
-import { ICmsBlockHeader } from '@/cms/blocks/CmsBlockHeader/CmsBlockHeader.type'
-import { ICmsPageSeo } from '@/cms/interfaces/common'
+import { ICmsBlockHeader } from '../blocks/CmsBlockHeader/CmsBlockHeader.type'
+import { ICmsPageSeo, ICmsMediaImage } from './common'
+import { ICmsBlockHeroCarousel } from '../blocks/CmsBlockHeroCarousel/CmsBlockHeroCarousel.type'
 
 export interface PageResponseProps {
   header: {
@@ -13,7 +14,27 @@ export interface PageResponseProps {
         Heading: string
         Slug: string
         Seo: ICmsPageSeo
+        Body: FieldAttributes[]
       }
     }[]
   }
+}
+
+export interface FieldAttributes {
+  id: string
+  Slug: string
+  Heading: string
+  Text: string
+  Media: {
+    data: {
+      attributes: {
+        url: string
+        width: number
+        height: number
+        formats?: any | null
+      }
+    } | null
+  }
+  Alt: string
+  Items: FieldAttributes[] | []
 }

@@ -1,8 +1,8 @@
-import { ICmsMediaImage, ICmsPageSeo } from '@/cms/interfaces/common'
+import { ICmsMediaImage } from '@/cms/interfaces/common'
 
 export interface ICmsBlockHeader {
-  Logo: ICmsMediaImage
   Slug: string
+  Logo: ICmsMediaImage
   pages: {
     data:
       | {
