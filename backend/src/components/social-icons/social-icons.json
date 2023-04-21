@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_social_icons_social_icons",
+  "info": {
+    "displayName": "SocialIcons"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "whatsapp",
+        "youtube",
+        "facebook",
+        "messanger",
+        "linked-in"
+      ]
+    },
+    "Link": {
+      "type": "text"
+    }
+  }
+}

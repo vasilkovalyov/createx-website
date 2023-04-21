@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_image_gallery_block_image_galleries",
+  "info": {
+    "displayName": "BlockImageGallery"
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "default": "BlockImageGallery"
+    },
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    }
+  }
+}

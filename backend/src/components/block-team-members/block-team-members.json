@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_block_team_members_block_team_members",
+  "info": {
+    "displayName": "BlockTeamMembers"
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "default": "BlockTeamMembers"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "TeamMember": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team-member.team-member"
+    }
+  }
+}

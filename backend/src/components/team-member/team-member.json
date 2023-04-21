@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_team_member_team_members",
+  "info": {
+    "displayName": "TeamMember",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Position": {
+      "type": "string",
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImageDescription": {
+      "type": "string"
+    },
+    "SocialIcons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social-icons.social-icons"
+    }
+  }
+}

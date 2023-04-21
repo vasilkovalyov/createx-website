@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_block_hero_block_heroes",
+  "info": {
+    "displayName": "BlockHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "default": "BlockHero"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

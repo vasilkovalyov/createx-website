@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_pages",
+  "info": {
+    "singularName": "project-page",
+    "pluralName": "project-pages",
+    "displayName": "ProjectPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Heading"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "block-benefits.block-benefits",
+        "block-hero.block-hero",
+        "block-image-gallery.block-image-gallery",
+        "block-work-steps.block-work-steps"
+      ]
+    },
+    "UsePreFooter": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
