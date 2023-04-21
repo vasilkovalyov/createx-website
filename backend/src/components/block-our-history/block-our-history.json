@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_block_our_history_block_our_histories",
+  "info": {
+    "displayName": "BlockOurHistory"
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string",
+      "required": true,
+      "default": "BlockOurHistory"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Items": {
+      "displayName": "History",
+      "type": "component",
+      "repeatable": true,
+      "component": "history.history"
+    }
+  }
+}

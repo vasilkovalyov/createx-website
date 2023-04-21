@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_history_histories",
+  "info": {
+    "displayName": "History"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Date": {
+      "type": "date"
+    }
+  }
+}

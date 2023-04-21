@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_block_member_quote_block_member_quotes",
+  "info": {
+    "displayName": "BlockMemberQuote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string",
+      "default": "BlockMemberQuote",
+      "required": true
+    },
+    "RichText": {
+      "type": "richtext"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "SignatureImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    }
+  }
+}

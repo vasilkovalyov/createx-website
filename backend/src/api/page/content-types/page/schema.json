@@ -28,7 +28,9 @@
         "block-benefits.block-benefits",
         "block-work-steps.block-work-steps",
         "work-step.work-step",
-        "block-team-members.block-team-members"
+        "block-team-members.block-team-members",
+        "block-member-quote.block-member-quote",
+        "block-our-history.block-our-history"
       ]
     },
     "Seo": {
@@ -39,6 +41,12 @@
     "UsePreFooter": {
       "type": "boolean",
       "default": true
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service",
+      "inversedBy": "page"
     }
   }
 }
