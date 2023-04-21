@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_block_hero_carousel_block_hero_carousels",
+  "info": {
+    "displayName": "BlockHeroCarousel"
+  },
+  "options": {},
+  "attributes": {
+    "Slug": {
+      "type": "string",
+      "default": "BlockHeroCarousel",
+      "required": true
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.image"
+    }
+  }
+}

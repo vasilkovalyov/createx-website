@@ -30,7 +30,9 @@
         "work-step.work-step",
         "block-team-members.block-team-members",
         "block-member-quote.block-member-quote",
-        "block-our-history.block-our-history"
+        "block-our-history.block-our-history",
+        "block-image-gallery.block-image-gallery",
+        "block-hero-carousel.block-hero-carousel"
       ]
     },
     "Seo": {
