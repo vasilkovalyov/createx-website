@@ -1,0 +1,10 @@
+.form-stay-in-touch {
+  max-width: 495px;
+  width: 100%;
+
+  .input-field {
+    &__input {
+      @apply sm:pr-190;
+    }
+  }
+}
