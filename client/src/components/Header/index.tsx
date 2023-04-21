@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Navigation from '../Navigation'
 
@@ -35,7 +36,11 @@ function Header() {
   return (
     <div className="header">
       <div className="header__container container flex items-center">
-        <div className="header__image mr-40 lg:mr-60">{logo ? <Image {...logo} /> : null}</div>
+        {logo ? (
+          <Link href="/" className="header__image mr-40 lg:mr-60">
+            <Image {...logo} />
+          </Link>
+        ) : null}
         {navigation ? <Navigation items={navigation} /> : null}
       </div>
     </div>
