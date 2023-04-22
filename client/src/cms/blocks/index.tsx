@@ -3,6 +3,7 @@ import React from 'react'
 // Component blocks
 import BlockHeader from '@/components/Header'
 import CmsBlockHeroCarousel from '@/cms/blocks/CmsBlockHeroCarousel'
+import CmsBlockHero from '@/cms/blocks/CmsBlockHero'
 
 import { BlockEnum } from '@/utils/blockEnums'
 import { IRegistryItem } from '@/interfaces/common'
@@ -21,6 +22,7 @@ export const blockComponents: IBlockComponents = {
   // Component blocks
   [BlockEnum.BlockHeader]: BlockHeader,
   [BlockEnum.BlockHeroCarousel]: CmsBlockHeroCarousel,
+  [BlockEnum.BlockHero]: CmsBlockHero,
 }
 
 export function renderByBlockType(BlockType: BlockEnum) {

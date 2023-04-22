@@ -11,9 +11,30 @@ export interface ICmsMediaImage {
         url: string
         width: number
         height: number
-        formats?: any | null
+        formats?: {
+          thumbnail: ICmsMediaImageFormats
+          small: ICmsMediaImageFormats
+          medium: ICmsMediaImageFormats
+          large: ICmsMediaImageFormats
+        } | null
       }
     } | null
   }
   Alt: string
+}
+
+interface ICmsMediaImageFormats {
+  ext: string
+  url: string
+  hash: string
+  mime: string
+  name: string
+  path: string | null
+  size: number
+  width: number
+  height: number
+  provider_metadata: {
+    public_id: string
+    resource_type: string
+  }
 }

@@ -4,9 +4,9 @@ import cn from 'classnames'
 
 import Typography from '../../components/Typography'
 
-import { IHero } from './BlockHero.type'
+import { IBlockHero } from './BlockHero.type'
 
-function BlockHero({ heading, image, text, children, className }: IHero) {
+function BlockHero({ heading, image, text, children, className }: IBlockHero) {
   return (
     <div className={cn('block-hero relative', className)}>
       {image ? (
@@ -17,10 +17,10 @@ function BlockHero({ heading, image, text, children, className }: IHero) {
       <div className="container">
         <div className="block-hero__body relative">
           {children}
-          <Typography level="h1" className="mb-24">
+          <Typography level="h1" className="mb-24 uppercase">
             {heading}
           </Typography>
-          {text ? <Typography className="text-gray-700 text-xl">{text}</Typography> : null}
+          {text ? <Typography className="text-gray-600 text-xl">{text}</Typography> : null}
         </div>
       </div>
     </div>

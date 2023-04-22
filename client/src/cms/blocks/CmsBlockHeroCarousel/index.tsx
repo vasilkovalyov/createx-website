@@ -1,10 +1,10 @@
 import { usePage } from '@/context/page-context'
 import { getComponent } from '../'
-import { BlockEnum } from '../../../utils/blockEnums'
-import { IBlockHeroCarousel } from '../../../blocks/BlockHeroCarousel/BlockHeroCarousel.type'
+import { BlockEnum } from '@/utils/blockEnums'
+import { IBlockHeroCarousel } from '@/blocks/BlockHeroCarousel/BlockHeroCarousel.type'
 import { IImageUi } from '@/types/common'
 
-export default function CmsBlockHeroCarousel({}) {
+function CmsBlockHeroCarousel({}) {
   const { pages } = usePage()
 
   const data = pages.data[0].attributes.Body.filter((item) => item.Slug === BlockEnum.BlockHeroCarousel)[0]
@@ -31,4 +31,7 @@ export default function CmsBlockHeroCarousel({}) {
   if (props.items.length) {
     return getComponent<IBlockHeroCarousel>(BlockEnum.BlockHeroCarousel, props)
   }
+  return null
 }
+
+export default CmsBlockHeroCarousel

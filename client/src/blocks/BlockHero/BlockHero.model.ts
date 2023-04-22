@@ -1,5 +1,5 @@
-import { IHero } from './BlockHero.type'
-export const model: IHero = {
+import { IBlockHero } from './BlockHero.type'
+export const model: IBlockHero = {
   image: {
     src: '/images/hero-bg-image.jpg',
     alt: 'SERVICES',

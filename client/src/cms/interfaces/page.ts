@@ -25,6 +25,7 @@ export interface FieldAttributes {
   Slug: string
   Heading: string
   Text: string
+  Image: ICmsMediaImage
   Media: {
     data: {
       attributes: {
