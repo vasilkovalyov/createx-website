@@ -1,6 +1,6 @@
 import React, { ReactNode, createContext, useContext } from 'react'
 
-import { PageResponseProps } from '@/cms/interfaces/page'
+import { IPage, PageResponseProps } from '@/cms/interfaces/page'
 
 type Props = {
   children: ReactNode
@@ -17,11 +17,18 @@ function isPagesStateOk(state: PageResponseProps | null): state is PageResponseP
 }
 
 export function usePage(): PageResponseProps {
-  const state = useContext(PagesStateContext)
+  let state = useContext(PagesStateContext)
 
   if (state === undefined || !isPagesStateOk(state)) {
     throw new Error('usePages must be used within PagesProvider')
   }
+  return state
+}
 
+export function useBreadcrumbs(): PageResponseProps {
+  let state = useContext(PagesStateContext)
+  if (state === undefined || !isPagesStateOk(state)) {
+    throw new Error('usePages must be used within PagesProvider')
+  }
   return state
 }

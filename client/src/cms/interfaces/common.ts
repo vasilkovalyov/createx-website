@@ -5,6 +5,7 @@ export interface ICmsPageSeo {
 }
 
 export interface ICmsMediaImage {
+  id: string
   Media: {
     data: {
       attributes: {

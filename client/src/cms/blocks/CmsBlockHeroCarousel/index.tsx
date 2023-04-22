@@ -4,13 +4,12 @@ import { BlockEnum } from '@/utils/blockEnums'
 import { IBlockHeroCarousel } from '@/blocks/BlockHeroCarousel/BlockHeroCarousel.type'
 import { IImageUi } from '@/types/common'
 
-function CmsBlockHeroCarousel({}) {
-  const { pages } = usePage()
+import { ICmsBlockHeroCarousel } from './CmsBlockHeroCarousel.type'
 
-  const data = pages.data[0].attributes.Body.filter((item) => item.Slug === BlockEnum.BlockHeroCarousel)[0]
-  const items: IImageUi[] | object[] = []
+function CmsBlockHeroCarousel({ Heading, Items, Text }: ICmsBlockHeroCarousel) {
+  let items: IImageUi[] | object[] = []
 
-  data.Items.forEach((item) => {
+  Items.forEach((item) => {
     const media = item.Media.data?.attributes
     if (media) {
       const image: IImageUi = {
@@ -23,11 +22,10 @@ function CmsBlockHeroCarousel({}) {
   })
 
   const props: IBlockHeroCarousel = {
-    heading: data.Heading,
-    text: data.Text,
+    heading: Heading,
+    text: Text,
     items: items as IImageUi[],
   }
-
   if (props.items.length) {
     return getComponent<IBlockHeroCarousel>(BlockEnum.BlockHeroCarousel, props)
   }

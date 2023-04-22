@@ -3,8 +3,7 @@ import Head from 'next/head'
 
 import { LayoutProps } from './Layout.type'
 
-import { BlockEnum } from '@/utils/blockEnums'
-import { renderByBlockType } from '@/cms/blocks'
+import Header from '../Header'
 
 function Layout({ children, head, className }: LayoutProps) {
   return (
@@ -16,7 +15,7 @@ function Layout({ children, head, className }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {renderByBlockType(BlockEnum.BlockHeader)}
+      <Header />
       <main className={className}>{children}</main>
     </div>
   )

@@ -4,11 +4,13 @@ import React from 'react'
 import BlockHeader from '@/components/Header'
 import CmsBlockHeroCarousel from '@/cms/blocks/CmsBlockHeroCarousel'
 import CmsBlockHero from '@/cms/blocks/CmsBlockHero'
+import CmsBlockServices from '@/cms/blocks/CmsBlockServices'
 
 import { BlockEnum } from '@/utils/blockEnums'
 import { IRegistryItem } from '@/interfaces/common'
 
 import plainThemeComponents from '../../blocks'
+import { FieldAttributes } from '../interfaces/page'
 
 interface IBlockComponents {
   [key: string]: React.FunctionComponent
@@ -17,12 +19,9 @@ interface IBlockComponents {
 const registeredComponents: { [theme: string]: IRegistryItem[] } = {
   plain: plainThemeComponents,
 }
-
 export const blockComponents: IBlockComponents = {
   // Component blocks
   [BlockEnum.BlockHeader]: BlockHeader,
-  [BlockEnum.BlockHeroCarousel]: CmsBlockHeroCarousel,
-  [BlockEnum.BlockHero]: CmsBlockHero,
 }
 
 export function renderByBlockType(BlockType: BlockEnum) {
@@ -31,10 +30,20 @@ export function renderByBlockType(BlockType: BlockEnum) {
   return <Component />
 }
 
-export function renderBlocks(blocks: object[] | any[]) {
-  if (!blocks) return null
-  return blocks.map((blockContent, index) => {
-    return <React.Fragment key={index}>{renderBlock(blockContent.Slug, index)}</React.Fragment>
+export function renderBlocks(blocks: FieldAttributes[] | []) {
+  if (!blocks.length) return null
+
+  return blocks.map((block, index) => {
+    if (block.Slug === BlockEnum.BlockHeroCarousel) {
+      return <CmsBlockHeroCarousel key={`${block.Slug}-${index}`} {...block} />
+    }
+    if (block.Slug === BlockEnum.BlockHero) {
+      return <CmsBlockHero key={`${block.Slug}-${index}`} {...block} />
+    }
+    // if (block.Slug === BlockEnum.BlockServices) {
+    //   return <CmsBlockServices key={`${block.Slug}-${index}`} {...block} />
+    // }
+    return null
   })
 }
 

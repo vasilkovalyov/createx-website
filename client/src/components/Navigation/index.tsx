@@ -9,7 +9,7 @@ function Navigation({ items, className }: INavigation) {
       <ul className="navigation__list lg:flex">
         {items.map((item) => (
           <li key={item.id} className="navigation__list-item mr-40">
-            <Link href={item.href} className="text-gray-700 font-bold hover:text-primary">
+            <Link href={`/${item.href}`} className="text-gray-700 font-bold hover:text-primary">
               {item.text}
             </Link>
           </li>

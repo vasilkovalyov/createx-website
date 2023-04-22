@@ -4,6 +4,7 @@ import {
   FragmentComponentSeo,
   FragmentComponentBlockHeroCarousel,
   FragmentComponentBlockHero,
+  FragmentComponentServices,
 } from '../fragments-components'
 
 export const GetBasePage = gql`
@@ -11,11 +12,20 @@ export const GetBasePage = gql`
   ${FragmentComponentSeo}
   ${FragmentComponentBlockHeroCarousel}
   ${FragmentComponentBlockHero}
+  ${FragmentComponentServices}
   query ($page: String) {
     header {
       data {
         attributes {
           ...GetHeader
+        }
+      }
+    }
+    pageServices {
+      data {
+        id
+        attributes {
+          ...FragmentComponentServices
         }
       }
     }

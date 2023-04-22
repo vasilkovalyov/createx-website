@@ -3,4 +3,5 @@ export enum BlockEnum {
   BlockFooter = 'Footer',
   BlockHeroCarousel = 'BlockHeroCarousel',
   BlockHero = 'BlockHero',
+  BlockServices = 'BlockServices',
 }

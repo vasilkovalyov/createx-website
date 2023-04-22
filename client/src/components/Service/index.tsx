@@ -11,7 +11,7 @@ function Service({ heading, image, text, className, href, linkText = 'Learn more
   return (
     <div
       className={cn(
-        'service sm:flex sm:items-start md:items-center',
+        'service sm:flex sm:items-start lg:items-center',
         { 'service--reversed sm:flex-row-reverse': reversed === true },
         className,
       )}

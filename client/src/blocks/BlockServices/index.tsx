@@ -12,7 +12,7 @@ function BlockServices({ items, className }: IBlockServices) {
         <div className="mb-24 md:mb-80">
           {items &&
             items.map((item, index) => (
-              <Service key={item.id} {...item} className="mb-24 lg:mb-80" reversed={index % 2 === 0} />
+              <Service key={item.id} {...item} className="mb-40 sm:mb-60 lg:mb-80" reversed={index % 2 !== 0} />
             ))}
         </div>
       </div>
