@@ -44,11 +44,11 @@
       "type": "boolean",
       "default": true
     },
-    "service": {
+    "page_services": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::service.service",
-      "inversedBy": "page"
+      "relation": "oneToMany",
+      "target": "api::page-service.page-service",
+      "mappedBy": "page"
     }
   }
 }

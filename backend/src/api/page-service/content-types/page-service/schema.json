@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_services",
+  "info": {
+    "singularName": "page-service",
+    "pluralName": "page-services",
+    "displayName": "Page Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Heading"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "page_services"
+    },
+    "Body": {
+      "type": "dynamiczone",
+      "components": [
+        "block-work-steps.block-work-steps"
+      ]
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "LogoLight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "LogoDark": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}
