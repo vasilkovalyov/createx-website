@@ -30,7 +30,6 @@ function Services() {
     {
       id: '1',
       text: pages.data[0].attributes.Heading,
-      href: `/${pages.data[0].attributes.Slug}`,
     },
   ]
 

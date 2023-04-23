@@ -1,6 +1,7 @@
 import { IClientQuote } from './ClientQuote.type'
 
 export const model: IClientQuote = {
+  id: '1',
   image: {
     src: '/images/profile-image.jpg',
     alt: 'Shawn Edwards',

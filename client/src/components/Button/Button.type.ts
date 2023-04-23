@@ -1,4 +1,4 @@
-export interface IButton extends React.DOMAttributes<HTMLButtonElement | HTMLAnchorElement | In> {
+export interface IButton extends React.DOMAttributes<HTMLButtonElement | HTMLAnchorElement> {
   href?: string
   className?: string
   fullwidth?: boolean
