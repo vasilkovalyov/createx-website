@@ -18,6 +18,7 @@ export const GetServicePage = gql`
       data {
         attributes {
           Slug
+          Heading
           page_services(filters: { Slug: { contains: $subpage } }) {
             data {
               attributes {

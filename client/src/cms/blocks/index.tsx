@@ -11,6 +11,7 @@ import { IRegistryItem } from '@/interfaces/common'
 
 import plainThemeComponents from '../../blocks'
 import { FieldAttributes } from '../interfaces/page'
+import { IBreadcrumbItem } from '@/components/Breadcrumbs/Breadcrumbs.type'
 
 interface IBlockComponents {
   [key: string]: React.FunctionComponent
@@ -30,7 +31,7 @@ export function renderByBlockType(BlockType: BlockEnum) {
   return <Component />
 }
 
-export function renderBlocks(blocks: FieldAttributes[] | []) {
+export function renderBlocks(blocks: FieldAttributes[] | [], breadcrumbs?: IBreadcrumbItem[] | null) {
   if (!blocks.length) return null
 
   return blocks.map((block, index) => {
@@ -38,11 +39,9 @@ export function renderBlocks(blocks: FieldAttributes[] | []) {
       return <CmsBlockHeroCarousel key={`${block.Slug}-${index}`} {...block} />
     }
     if (block.Slug === BlockEnum.BlockHero) {
-      return <CmsBlockHero key={`${block.Slug}-${index}`} {...block} />
+      return <CmsBlockHero key={`${block.Slug}-${index}`} {...block} breadcrumbs={breadcrumbs} />
     }
-    // if (block.Slug === BlockEnum.BlockServices) {
-    //   return <CmsBlockServices key={`${block.Slug}-${index}`} {...block} />
-    // }
+
     return null
   })
 }

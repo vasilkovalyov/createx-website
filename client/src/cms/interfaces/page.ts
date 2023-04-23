@@ -16,8 +16,8 @@ export interface PageResponseProps {
 export interface ICmsPageServices {
   id: string
   attributes: {
-    Slug: string
     Heading: string
+    Slug: string
     Text: string
     Image: ICmsMediaImage
     page: {
@@ -33,14 +33,16 @@ export interface ICmsPageServices {
 export interface IPage {
   data: {
     id: string
-    attributes: {
-      Heading: string
-      Slug: string
-      Seo?: ICmsPageSeo | null
-      Body: FieldAttributes[] | []
-      page_services: IPage
-    }
+    attributes: IPageAttributes
   }[]
+}
+
+export interface IPageAttributes {
+  Heading: string
+  Slug: string
+  Seo?: ICmsPageSeo | null
+  Body: FieldAttributes[] | []
+  page_services: IPage
 }
 
 export interface FieldAttributes {

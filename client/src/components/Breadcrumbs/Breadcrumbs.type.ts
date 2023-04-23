@@ -1,8 +1,10 @@
 export interface IBreadcrumbs {
-  items: {
-    id: string
-    text: string
-    href?: string
-  }[]
+  items: IBreadcrumbItem[]
   className?: string
+}
+
+export interface IBreadcrumbItem {
+  id: string
+  text: string
+  href?: string
 }

@@ -4,7 +4,9 @@ import { IBlockHero } from '@/blocks/BlockHero/BlockHero.type'
 import { ICmsBlockHeroCarousel } from './CmsBlockHero.type'
 import { IImageUi } from '@/types/common'
 
-export default function CmsBlockHero({ Heading, Image, Text }: ICmsBlockHeroCarousel) {
+import Breadcrumbs from '@/components/Breadcrumbs'
+
+export default function CmsBlockHero({ Heading, Image, Text, breadcrumbs }: ICmsBlockHeroCarousel) {
   let image: IImageUi | null = null
 
   if (Image.Media.data) {
@@ -19,7 +21,7 @@ export default function CmsBlockHero({ Heading, Image, Text }: ICmsBlockHeroCaro
     heading: Heading,
     text: Text,
     image: image,
-    children: <div>1</div>,
+    children: <Breadcrumbs items={breadcrumbs || []} />,
   }
 
   return getComponent<IBlockHero>(BlockEnum.BlockHero, props)
